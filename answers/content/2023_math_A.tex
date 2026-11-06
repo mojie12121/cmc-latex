@@ -1,0 +1,346 @@
+\answerpaper{数学 A 类}
+
+\answerproblem{一、}{15}
+在空间中给定直线 $L$ 及直线外定点 $P$．设 $M$ 是过 $P$ 点且与直线 $L$ 相切的球面的球心．问：所有可能的球心 $M$ 构成何种曲面？证明你的结论．
+
+\begin{solution}
+这是一个抛物柱面．
+
+证明如下：在空间中建立直角坐标系，使得直线 $L$ 为 $x$-轴，点 $P$ 到 $L$ 的垂线为 $z$-轴，其垂足 $O$ 点为原点．这时，$O=(0,0,0)$，$P=(0,0,a)\ (a>0)$，直线 $L$ 的方向向量为 $\bm{v}=(1,0,0)$．设 $M=(x,y,z)$ 是过 $P$ 点且与直线 $L$ 相切的球面的球心，则球半径 $PM$ 等于 $M$ 到直线 $L$ 的距离，即
+\[
+PM=\frac{\abs{\overrightarrow{OM}\times\bm{v}}}{\abs{\bm{v}}}.
+\]
+\[
+PM^{2}=x^{2}+y^{2}+(z-a)^{2},
+\]
+\[
+\overrightarrow{OM}\times\bm{v}=(x,y,z)\times(1,0,0)=(0,z,-y),
+\]
+故有
+\[
+x^{2}+y^{2}+(z-a)^{2}=z^{2}+y^{2},\qquad z=\frac{1}{2a}\left(x^{2}+a^{2}\right),
+\]
+为抛物柱面．
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $f(x,y,z)=x^{2}+(y^{2}+z^{2})(1-x)^{3}$．
+\begin{enumerate}[label=(\arabic*)]
+  \item 计算 $f$ 的驻点．
+  \item 求 $f$ 在 $\Sigma$ 上的最小值，其中，$\Sigma$ 是 $\{(x,y,z)\mid |x|\le 2,\ y^{2}+z^{2}\le 4\}$ 的边界．
+  \item 求 $f$ 在椭球 $x^{2}+\frac{y^{2}}{2}+\frac{z^{2}}{3}\le 1$ 上的最小值．
+\end{enumerate}
+
+\begin{solution}
+\textbf{(1)} 由
+\[
+\begin{cases}
+f_{x}(x,y,z)=2x-3(y^{2}+z^{2})(1-x)^{2},\\
+f_{y}(x,y,z)=2y(1-x)^{3},\\
+f_{z}(x,y,z)=2z(1-x)^{3}
+\end{cases}
+\]
+求解 $f_{x}(x_{0},y_{0},z_{0})=f_{y}(x_{0},y_{0},z_{0})=f_{z}(x_{0},y_{0},z_{0})=0$ 的点可得函数在整个空间上只有唯一的驻点 $(x_{0},y_{0},z_{0})=(0,0,0)$．
+
+（注：易见由上述方程的第二式可得 $x_{0}=1$ 或 $y_{0}=0$．但 $x_{0}=1$ 与第一个式子矛盾．因此 $x_{0}=0$，进而又有 $y_{0}=z_{0}=0$．）
+
+\textbf{(2)} $\Sigma=\Sigma_{1}\cup\Sigma_{2}\cup\Sigma_{3}$，其中
+\begin{gather*}
+\Sigma_{1}=\left\{(x,y,z)\mid x\in[-2,2],\ y^{2}+z^{2}=4\right\},\\
+\Sigma_{2}=\left\{(x,y,z)\mid x=2,\ y^{2}+z^{2}\le 4\right\},\\
+\Sigma_{3}=\left\{(x,y,z)\mid x=-2,\ y^{2}+z^{2}\le 4\right\}.
+\end{gather*}
+
+在 $\Sigma_{1}$ 上，
+\[
+f(x,y,z)=x^{2}+4(1-x)^{3}=g_{1}(x),\qquad x\in[-2,2].
+\]
+作为一元函数，考虑 $g_{1}$ 在 $[-2,2]$ 内的驻点：
+\[
+g_{1}'(\xi)=2\xi-12(1-\xi)^{2}=0.
+\]
+可得：$\xi_{1}=\frac32$，$\xi_{2}=\frac23$．我们有
+\[
+g_{1}(2)=0,\qquad g_{1}(-2)=112,\qquad g_{1}\left(\frac32\right)=\frac74,\qquad g_{1}\left(\frac23\right)=\frac{16}{27}.
+\]
+故 $f$ 在 $\Sigma_{1}$ 上的最小值为 $0$．
+
+（注：以上讨论说明 $g_{1}(2)=0$ 以及 $g_{1}(-2),g_{1}\left(\frac32\right),g_{1}\left(\frac23\right)\ge 0$ 即可．或不求驻点，直接说明 $g_{1}\ge 0$ 且 $g_{1}(2)=0$．）
+
+在 $\Sigma_{2}$ 上，
+\[
+f(x,y,z)=4-(y^{2}+z^{2})=g_{2}(x,y)\ge 0,\qquad y^{2}+z^{2}\le 4.
+\]
+在 $\Sigma_{3}$ 上，
+\[
+f(x,y,z)=4+27(y^{2}+z^{2})=g_{3}(x,y)\ge 0,\qquad y^{2}+z^{2}\le 4.
+\]
+故 $f$ 在 $\Sigma$ 上的最小值为 $0$．
+
+\textbf{(3)} 注意到椭球 $x^{2}+\frac{y^{2}}{2}+\frac{z^{2}}{3}\le 1$ 完全在 $\Sigma$ 围成的区域 $\Omega$ 内，而且函数 $f$ 在 $\Omega$ 内有唯一驻点 $(0,0,0)$，$f(0,0,0)=0$．因此，$f$ 在 $\overline{\Omega}$ 上的最小值为 $0$．进而 $f$ 在该椭球上的最小值就是 $0$．
+\end{solution}
+
+\answerproblem{三、}{20}
+设 $V$ 是复数域 $\C$ 上的 $n$ 维线性空间，$\bm{A}$ 是 $V$ 上的一个线性变换．证明：存在 $\alpha\in V$ 使得 $\{\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha\}$ 成为 $V$ 的一组基当且仅当对于 $\bm{A}$ 的任一特征值 $\lambda$，$\lambda$ 的几何重数为 $1$．
+
+\begin{solution}
+\textbf{必要性}．设存在 $\alpha\in V$ 使得 $\{\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha\}$ 成为 $V$ 的一组基，显然 $\bm{A}$ 在该基下的矩阵为
+\[
+\bm{A}=
+\begin{pmatrix}
+0 & & & & *\\
+1 & 0 & & & *\\
+ & 1 & \ddots & & \vdots\\
+ & & \ddots & 0 & *\\
+ & & & 1 & *
+\end{pmatrix}.
+\]
+对任意 $c\in\C$，
+\[
+c\bm{E}-\bm{A}=
+\begin{pmatrix}
+c & & & & *\\
+-1 & c & & & *\\
+ & -1 & \ddots & & \vdots\\
+ & & \ddots & c & *\\
+ & & & -1 & *
+\end{pmatrix},
+\]
+其左下角的 $n-1$ 阶子式非零，所以 $\rank(c\bm{E}-\bm{A})\ge n-1$，从而齐次线性方程组
+\[
+(c\bm{E}-\bm{A})X=0
+\]
+的解空间维数为 $n-\rank(c\bm{E}-\bm{A})\le 1$．
+
+又对 $\bm{A}$ 的任一特征值 $\lambda$，
+\[
+(\lambda\bm{E}-\bm{A})X=0
+\]
+一定有非零解，它的解空间维数 $\ge 1$．所以齐次线性方程组
+\[
+(\lambda\bm{E}-\bm{A})X=0
+\]
+的解空间维数为 $1$，即 $\lambda$ 的几何重数为 $1$．
+
+\textbf{充分性}．设 $\bm{A}$ 的互不相同的特征值为 $\lambda_{1},\lambda_{2},\cdots,\lambda_{s}$，代数重数分别为 $d_{1},d_{2},\cdots,d_{s}$，其中 $d_{1}+d_{2}+\cdots+d_{s}=n$，即 $\bm{A}$ 的特征多项式为
+\[
+f(x)=(x-\lambda_{1})^{d_{1}}(x-\lambda_{2})^{d_{2}}\cdots(x-\lambda_{s})^{d_{s}}.
+\]
+对于 $1\le i\le s$，记 $V_{\lambda_{i}}=\operatorname{Ker}(\bm{A}-\lambda_{i}\bm{E})^{d_{i}}$，其中 $\bm{E}$ 为恒等变换，则 $V_{\lambda_{i}}$ 为 $\bm{A}$-不变子空间且
+\[
+V=V_{\lambda_{1}}\oplus V_{\lambda_{2}}\oplus\cdots\oplus V_{\lambda_{s}}.
+\]
+由于 $\lambda_{i}$ 的几何重数为 $1$，故 $\bm{A}|_{V_{\lambda_{i}}}$ 的 Jordan 标准型为
+\[
+\begin{pmatrix}
+\lambda_{i} & & & \\
+1 & \lambda_{i} & & \\
+ & \ddots & \ddots & \\
+ & & 1 & \lambda_{i}
+\end{pmatrix}_{d_{i}\times d_{i}}.
+\]
+所以存在 $\alpha_{i}\in V_{\lambda_{i}}$ 使得 $(\bm{A}-\lambda_{i}\bm{E})^{d_{i}-1}\alpha_{i}\neq 0$．
+
+令
+\[
+\alpha=\alpha_{1}+\alpha_{2}+\cdots+\alpha_{s},
+\]
+则 $\{\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha\}$ 是 $V$ 的一组基．若否，则 $\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha$ 线性相关，从而存在次数 $\le n-1$ 的非零多项式 $p(x)\in\C[x]$ 使得 $p(\bm{A})\alpha=0$．由于 $V_{\lambda_{i}}$ 为 $\bm{A}$-不变子空间，所以 $p(\bm{A})\alpha_{i}\in V_{\lambda_{i}}$．由
+\[
+0=p(\bm{A})\alpha=p(\bm{A})\alpha_{1}+p(\bm{A})\alpha_{2}+\cdots+p(\bm{A})\alpha_{s}
+\]
+可知 $p(\bm{A})\alpha_{i}=0$．由于 $(\bm{A}-\lambda_{i}\bm{E})^{d_{i}-1}\alpha_{i}\neq 0$，所以 $(x-\lambda_{i})^{d_{i}}$ 是 $\bm{A}$ 的零化 $\alpha_{i}$ 的次数最低的多项式，从而
+\[
+(x-\lambda_{i})^{d_{i}}\mid p(x).
+\]
+又当 $i\neq j$ 时，$(x-\lambda_{i})^{d_{i}}$ 与 $(x-\lambda_{j})^{d_{j}}$ 互素，所以
+\[
+(x-\lambda_{1})^{d_{1}}(x-\lambda_{2})^{d_{2}}\cdots(x-\lambda_{s})^{d_{s}}\mid p(x),
+\]
+即 $f(x)\mid p(x)$，这与 $\deg p(x)<\deg f(x)$ 且 $p(x)\neq 0$ 矛盾．
+\end{solution}
+
+\answerproblem{四、}{15}
+设 $n\ge 3$ 为自然数，$\theta=\frac{2\pi}{n}$．对任意 $1\le s,t\le n$，取 $a_{st}=\sin\bigl((s+t)\theta\bigr)$，令矩阵 $\bm{A}=(a_{st})_{n\times n}$，计算 $\bm{E}+\bm{A}^{2023}$ 的行列式，其中 $\bm{E}$ 为 $n$ 阶单位矩阵．
+
+\begin{solution}
+\textbf{1)} 显见，$\bm{A}$ 为实对称矩阵，可以对角化．对 $n\ge 3$ 且 $n\neq 4$ 时 $a_{11}=\sin\frac{4\pi}{n}\neq 0$ 恒成立，而当 $n=4$ 时有 $a_{12}=\sin\frac{3\pi}{2}\neq 0$，所以 $\bm{A}\neq 0$．
+
+\textbf{2)} 断言：$\bm{A}$ 的最小多项式为 $x^{3}-\frac{n^{2}}{4}x$．事实上，对任意 $1\le s,t\le n$，
+\[
+\sin(s+t)\theta=\frac{1}{2\ii}\left(\ee^{\ii(s+t)\theta}-\ee^{-\ii(s+t)\theta}\right).
+\]
+令
+\[
+v=\begin{pmatrix}\ee^{\ii\theta}\\ \ee^{2\ii\theta}\\ \vdots\\ \ee^{n\ii\theta}\end{pmatrix},
+\]
+则容易得到
+\[
+\bm{A}=\frac{1}{2\ii}\left(vv^{t}-\overline{vv^{t}}\right)=\frac{1}{2\ii}\left(vv^{t}-\bar{v}v^{*}\right),
+\]
+其中 $v^{*}=\bar{v}^{t}$．注意到
+\[
+v^{t}v=\ee^{2\ii\theta}+\ee^{2\ii\cdot 2\theta}+\cdots+\ee^{2\ii n\theta}=\ee^{2\ii\theta}\cdot\frac{1-\ee^{2\ii n\theta}}{1-\ee^{2\ii\theta}}=0,
+\]
+和
+\[
+v^{*}v=1+1+\cdots+1=n.
+\]
+故有
+\[
+\bm{A}^{2}=-\frac{1}{4}\left[\left(vv^{t}-\bar{v}v^{*}\right)\left(vv^{t}-\bar{v}v^{*}\right)\right]=\frac{n}{4}\left(vv^{*}+\bar{v}v^{t}\right).
+\]
+所以
+\[
+\bm{A}^{3}=\bm{A}^{2}\bm{A}=\frac{n}{4}\left[\left(vv^{*}+\bar{v}v^{t}\right)\left(vv^{t}-\bar{v}v^{*}\right)\right]\cdot\frac{1}{2\ii}=\frac{n^{2}}{4}\bm{A}.
+\]
+由此得 $\bm{A}$ 的一个零化多项式为 $x^{3}-\frac{n^{2}}{4}x$．由
+\[
+x^{3}-\frac{n^{2}}{4}x=x\left(x+\frac{n}{2}\right)\left(x-\frac{n}{2}\right)
+\]
+可知 $\bm{A}$ 的最小多项式 $\varphi(x)$ 只可能是下列 $7$ 个多项式之一：
+\begin{gather*}
+x,\quad x+\frac{n}{2},\quad x-\frac{n}{2},\quad x\left(x+\frac{n}{2}\right),\quad x\left(x-\frac{n}{2}\right),\\
+\left(x+\frac{n}{2}\right)\left(x-\frac{n}{2}\right),\quad x^{3}-\frac{n^{2}}{4}x.
+\end{gather*}
+
+显然，$\varphi(x)$ 不可能为一次多项式，因为 $x$，$x+\frac{n}{2}$，$x-\frac{n}{2}$ 均不能零化 $\bm{A}$（关于 $x$，由 $\bm{A}\neq 0$ 知 $x$ 不能零化 $\bm{A}$；对 $x+\frac{n}{2}$ 和 $x-\frac{n}{2}$，考察 $\bm{A}\pm\frac{n}{2}\bm{E}$ 的 $(1,1)$ 位置元素，由 $\frac{n}{2}>1$ 直接知 $\bm{A}\pm\frac{n}{2}\bm{E}$ 的 $(1,1)$ 位置元素不可能为 $0$）．
+
+其次，$\varphi(x)$ 也不可能为二次多项式．我们先考察多项式 $x\left(x+\frac{n}{2}\right)$，看 $\bm{A}\left(\bm{A}+\frac{n}{2}\bm{E}\right)$ 的 $(n,n)$ 位置元素．$\bm{A}^{2}$ 的 $(n,n)$ 位置元素为
+\[
+\frac{n}{4}\left(\ee^{\ii n\theta}\cdot\ee^{-\ii n\theta}+\ee^{-\ii n\theta}\cdot\ee^{\ii n\theta}\right)=\frac{n}{2},
+\]
+$\bm{A}$ 的 $(n,n)$ 位置元素为
+\[
+\sin\left(2n\cdot\frac{2\pi}{n}\right)=0,
+\]
+从而 $\frac{n}{2}\bm{A}$ 的 $(n,n)$ 位置元素也为 $0$，这便得到 $\bm{A}\left(\bm{A}+\frac{n}{2}\bm{E}\right)$ 的 $(n,n)$ 位置元素为 $\frac{n}{2}\neq 0$．故 $x\left(x+\frac{n}{2}\right)$ 不能充当 $\varphi(x)$．
+
+同理可知，$x\left(x-\frac{n}{2}\right)$ 和 $x^{2}-\left(\frac{n}{2}\right)^{2}$ 也不能充当 $\varphi(x)$．至此我们得到 $\bm{A}$ 的最小多项式 $\varphi(x)$ 为 $x^{3}-\frac{n^{2}}{4}x$．断言真．
+
+\textbf{3)} 由于 $x^{3}-\frac{n^{2}}{4}x=x\left(x+\frac{n}{2}\right)\left(x-\frac{n}{2}\right)$ 是 $\bm{A}$ 的最小多项式，得到 $\bm{A}$ 的互不相同的特征值为 $0$，$\frac{n}{2}$ 和 $-\frac{n}{2}$．再由
+\[
+\bm{A}=\frac{1}{2\ii}\left(vv^{t}-\bar{v}v^{*}\right)
+\]
+可知 $\rank\bm{A}\le\rank\left(vv^{t}\right)+\rank\left(\bar{v}v^{*}\right)\le 2$，因此 $\bm{A}$ 至多有两个非 $0$ 特征值．故 $\bm{A}$ 的 $n$ 个特征值为
+\[
+\underbrace{0,\cdots,0}_{n-2},\ \frac{n}{2},\ -\frac{n}{2},
+\]
+所以 $\bm{E}+\bm{A}^{2023}$ 的 $n$ 个特征值为
+\[
+\underbrace{1,\cdots,1}_{n-2},\ 1+\left(\frac{n}{2}\right)^{2023},\ 1-\left(\frac{n}{2}\right)^{2023}.
+\]
+由此得到
+\[
+\abs{\bm{E}+\bm{A}^{2023}}=\left(1+\left(\frac{n}{2}\right)^{2023}\right)\left(1-\left(\frac{n}{2}\right)^{2023}\right)=1-\left(\frac{n}{2}\right)^{4046}.
+\]
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $E\subset\R^{n}$ 非空有界，$\bm{c}\in\R^{n}$，$\bm{c}$ 非零．用
+\[
+  \operatorname{diam}E=\sup_{x,y\in E}\norm{\bm{x}-\bm{y}}
+\]
+表示 $E$ 的直径，记 $E+\bm{c}=\{\bm{x}+\bm{c}\mid \bm{x}\in E\}$．证明：$\operatorname{diam}E<\operatorname{diam}\bigl(E\cup(E+\bm{c})\bigr)$．
+
+\begin{solution}
+（为简单起见，对于 $\R^{n}$ 中的点 $\bm{x}$，简记 $\norm{\bm{x}}$ 为 $\abs{\bm{x}}$．）
+
+记 $\rho=\operatorname{diam}E$．若 $\rho=0$，即 $E$ 为单点集，结论显然成立．
+
+下设 $\rho>0$．取 $\varepsilon>0$ 使得 $\varepsilon<\rho$ 且 $\varepsilon<\frac{\abs{\bm{c}}^{2}}{4\rho}$．可取到 $\bm{x},\bm{y}\in E$ 使得 $a=\abs{\bm{x}-\bm{y}}\ge\rho-\varepsilon$．
+
+记
+\[
+\cos\theta=\frac{(\bm{x}-\bm{y})\cdot\bm{c}}{\abs{\bm{y}-\bm{x}}\cdot\abs{\bm{c}}}.
+\]
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \coordinate (X) at (0,0);
+  \coordinate (Y) at (7,0);
+  \coordinate (XC) at (-1.5,1.8);
+  \coordinate (YC) at (5.5,1.8);
+  \draw (X) -- (Y);
+  \draw (X) -- (XC);
+  \draw (Y) -- (YC);
+  \draw[dashed] (XC) -- (Y);
+  \fill (X) circle (1.1pt) node[below left] {$\bm{x}$};
+  \fill (Y) circle (1.1pt) node[below right] {$\bm{y}$};
+  \fill (XC) circle (1.1pt) node[above left] {$\bm{x}+\bm{c}$};
+  \fill (YC) circle (1.1pt) node[above right] {$\bm{y}+\bm{c}$};
+  \draw (X) ++(0:0.8) arc[start angle=0, end angle=130, radius=0.8];
+  \node at (1.45,0.62) {$\pi-\theta$};
+  \draw (Y) ++(130:0.8) arc[start angle=130, end angle=180, radius=0.8];
+  \node at (6.2,0.62) {$\theta$};
+\end{tikzpicture}
+\end{center}
+
+若 $\cos\theta\ge 0$，则
+\begin{align*}
+\abs{(\bm{x}+\bm{c})-\bm{y}}&=\sqrt{a^{2}+\abs{\bm{c}}^{2}+2a\abs{\bm{c}}\cos\theta}\ge\sqrt{a^{2}+\abs{\bm{c}}^{2}}\\
+&\ge\sqrt{(\rho-\varepsilon)^{2}+\abs{\bm{c}}^{2}}=\sqrt{\rho^{2}-2\rho\varepsilon+\varepsilon^{2}+\abs{\bm{c}}^{2}}>\sqrt{\rho^{2}+\frac{\abs{\bm{c}}^{2}}{2}}>\rho.
+\end{align*}
+由此即得 $\operatorname{diam}E<\operatorname{diam}\left(E\cup(E+\bm{c})\right)$．
+
+同理，若 $\cos\theta<0$，则
+\[
+\abs{(\bm{y}+\bm{c})-\bm{x}}>\rho.
+\]
+同样得到结论．
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $a=\sqrt[3]{3}$，$x_{1}=a$，$x_{n+1}=a^{x_{n}}\ (n=1,2,\dots)$．证明：数列 $\{x_{n}\}_{n=1}^{\infty}$ 极限存在，但不是 $3$．
+
+\begin{solution}
+易证数列单调上升，有上界 $3$，从而数列极限存在．
+
+具体地，由于 $a=x_{1}=\sqrt[3]{3}>1$，$x_{2}=a^{x_{1}}>a=x_{1}$．一般地，归纳可得 $x_{n+1}=a^{x_{n}}>a^{x_{n-1}}=x_{n}\ (n\ge 2)$．
+
+另一方面，注意到 $a^{3}=3$，归纳可得 $x_{n}\le 3\ (n\ge 1)$．
+
+下证 $\{x_{n}\}$ 的极限不为 $3$．
+
+\textbf{法 I}．我们来归纳地证明 $1<x_{1}<x_{2}<\cdots<x_{n}<\cdots<\frac52$．
+
+具体地，$1<x_{1}=\sqrt[3]{3}=\sqrt[3]{\frac{24}{8}}<\sqrt[3]{\frac{125}{8}}=\frac52$．
+
+假设对某个 $n\ge 1$，$1<x_{n}<\frac52$ 成立，那么
+\[
+x_{n+1}=a^{x_{n}}<\left(\sqrt[3]{3}\right)^{\frac52}=\sqrt[6]{243},
+\]
+而另一方面
+\[
+\left(\frac52\right)^{6}=\left(\frac{25}{4}\right)^{3}=\left(6+\frac14\right)^{3}=216+3\cdot 6^{2}\cdot\frac14+\cdots=243+\cdots>243,
+\]
+其中 $\cdots$ 显然为正数，故得证 $\sqrt[6]{243}<\frac52$．
+
+由于所有的项 $x_{n}$ 都不超过 $\frac52$，所以数列的极限不可能为 $3$．
+
+\textbf{法 II}．我们来寻找 $\{x_{n}\}$ 的上界 $L$．为此，我们需要关系式 $3^{\frac{L}{3}}\le L$，即 $3^{\frac13}\le L^{\frac1L}$．考虑 $f(x)=x^{\frac1x}\ (x>0)$．我们有
+\[
+f'(x)=x^{\frac1x}\cdot\frac{1-\ln x}{x^{2}},\qquad x>0.
+\]
+可见 $f$ 在 $(0,\ee]$ 上严格单增，在 $[\ee,+\infty)$ 上严格单减．我们来归纳地证明 $x_{n}<\ee$．
+
+易见 $x_{1}=3^{\frac13}<\ee^{\frac1e}<\ee$．
+
+若对某个 $n\ge 1$，$x_{n}<\ee$，则 $x_{n+1}=3^{\frac{x_{n}}{3}}<\ee^{\frac{x_{n}}{\ee}}<\ee$．
+
+因此，$\ee$ 是 $\{x_{n}\}$ 的上界．即数列 $\{x_{n}\}$ 的极限不可能为 $3$．
+
+\textbf{法 III}．设 $\{x_{n}\}$ 的极限为 $L$．考察前面关于 $\{x_{n}\}$ 单调有界性的证明，事实上可以得到数列 $\{x_{n}\}$ 严格单增，进而 $x_{n}<L\ (\forall n\ge 1)$．记 $f(x)=a^{x}$，则
+\[
+f'(3)=a^{3}\ln a=\ln 3>1.
+\]
+
+若 $L=3$，由 $f$ 的连续可导性，有 $\delta>0$ 使得当 $x\in(3-\delta,3+\delta)$ 时，$f'(x)>1$．我们有 $N\ge 1$ 使得当 $n\ge N$ 时，$3-\delta<x_{n}<3$．此时，由中值定理，有 $\xi_{n}\in(x_{n},L)$，使得
+\[
+\abs{x_{n+1}-3}=f(3)-f(x_{n})=f'(\xi_{n})(3-x_{n})\ge 3-x_{n},\qquad n\ge N.
+\]
+特别，归纳可得
+\[
+\abs{x_{n}-3}\ge 3-x_{N}>0,\qquad \forall n\ge N.
+\]
+与 $\{x_{n}\}$ 收敛于 $3$ 矛盾．因此，$\{x_{n}\}$ 的极限不可能是 $3$．
+\end{solution}

@@ -1,0 +1,208 @@
+\answerpaper{非数学 B 类}
+
+\answerproblem{一、}{30}
+填空题：
+\begin{enumerate}[label=(\arabic*)]
+  \item 极限 $\displaystyle \lim_{x\to 0}\frac{\ln(1+x^2)-x^2}{\sin^4 x}=\underline{\hspace{3.5em}}$．
+  \item $\displaystyle \int_{-2}^{2}(x^3\cos^5 x+\sqrt{4-x^2})\dd x=\underline{\hspace{3.5em}}$．
+  \item 设 $y=y(x)$ 由方程 $\displaystyle \ee^{3y}+\int_0^{x+y}\cos t^2\dd t=1$ 确定．则 $\displaystyle \left.\frac{\dd^2 y}{\dd x^2}\right|_{(0,0)}=\underline{\hspace{3.5em}}$．
+  \item 设 $z=f(xy,\ee^{x+y})$，其中 $f$ 具有二阶连续偏导数．则
+  \[
+    z_{xy}=\underline{\hspace{10em}}.
+  \]
+  \item 设 $D:\ x^2+y^2\le r^2$，其中 $r>0$．则 $\displaystyle \lim_{r\to 0^+}\frac{\displaystyle \iint_D (\ee^{x^2+y^2}-1)\dd x\dd y}{r^4}=\underline{\hspace{3.5em}}$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} $x\to 0$ 时，$\ln(1+x^2)=x^2-\frac{x^4}{2}+o(x^4)$，$\sin^4x=x^4+o(x^4)$．故原式 $=-\frac{1}{2}$．
+
+\textbf{(2)} 由于积分区间对称，被积函数第一项是奇函数，故原式 $=\int_{-2}^{2}\sqrt{4-x^2}\dd x$．注意，此积分为圆心在原点，半径为 $2$ 的上半圆盘的面积，故积分 $=2\pi$．
+
+\textbf{(3)} 两端对 $x$ 求导得
+\[
+  3y'\ee^{3y}+(1+y')\cos(x+y)^2=0.
+\]
+继续求导得
+\[
+  3y''\ee^{3y}+9(y')^2\ee^{3y}+y''\cos(x+y)^2-2(x+y)(1+y')^2\sin(x+y)^2=0.
+\]
+将 $x=0$，$y=0$ 分别代入上面两式，得
+\[
+  \left.y'(x)\right|_{(0,0)}=-\frac{1}{4},\qquad
+  \left.y''(x)\right|_{(0,0)}=-\frac{9}{64}.
+\]
+
+\textbf{(4)}
+\begin{align*}
+  z_x &= yf_1+\ee^{x+y}f_2,\\
+  z_{xy} &= (xf_{11}+\ee^{x+y}f_{12})y+f_1+(xf_{21}+\ee^{x+y}f_{22})\ee^{x+y}+\ee^{x+y}f_2\\
+  &= xyf_{11}+(x+y)\ee^{x+y}f_{12}+\ee^{2(x+y)}f_{22}+f_1+\ee^{x+y}f_2.
+\end{align*}
+
+\textbf{(5)} 利用极坐标变换 $x=\rho\cos\theta$，$y=\rho\sin\theta$，则
+\[
+  \iint_D(\ee^{x^2+y^2}-1)\dd x\dd y
+  =2\pi\int_0^r(\ee^{\rho^2}-1)\rho\dd\rho
+  =\pi(\ee^{r^2}-1-r^2).
+\]
+注意，$r\to 0^+$ 时，$\ee^{r^2}-1-r^2=\frac{r^4}{2}+o(r^4)$，故原式 $=\frac{\pi}{2}$．
+\end{solution}
+
+\answerproblem{二、}{14}
+用 Lagrange 乘子法求函数 $f(x,y,z)=x+2y+3z$ 在平面 $x-y+z=1$ 和圆柱面 $x^2+y^2=1$ 的交线上的最大值．
+\begin{solution}
+构造 Lagrange 函数
+\[
+  L(x,y,z;\lambda,\mu)=x+2y+3z-\lambda(x-y+z-1)-\mu(x^2+y^2-1).
+\]
+解方程组
+\[
+  \begin{cases}
+    L_x=1-\lambda-2\mu x=0,\\
+    L_y=2+\lambda-2\mu y=0,\\
+    L_z=3-\lambda=0,\\
+    x-y+z-1=0,\\
+    x^2+y^2-1=0.
+  \end{cases}
+\]
+不难得到，$\lambda=3$，$x=-\frac{1}{\mu}$，$y=\frac{5}{2\mu}$．代入 $x^2+y^2-1=0$ 得 $\mu=\pm\frac{\sqrt{29}}{2}$．于是
+\[
+  x=\mp\frac{2}{\sqrt{29}},\qquad
+  y=\pm\frac{5}{\sqrt{29}},\qquad
+  z=1\pm\frac{7}{\sqrt{29}}.
+\]
+注意到
+\[
+  f\left(\mp\frac{2}{\sqrt{29}},\pm\frac{5}{\sqrt{29}},1\pm\frac{7}{\sqrt{29}}\right)=3\pm\sqrt{29}.
+\]
+所以函数 $f$ 在给定曲线上的最大值为 $3+\sqrt{29}$．
+\end{solution}
+
+\answerproblem{三、}{14}
+求函数 $\displaystyle f(x)=\frac{1}{(x-1)(x+3)}$ 在 $x_0=2$ 处的 Taylor 级数，并确定它的收敛域．
+\begin{solution}
+\[
+  f(x)=\frac{1}{4}\left(\frac{1}{x-1}-\frac{1}{x+3}\right)
+  =\frac{1}{4}\left(\frac{1}{1+x-2}-\frac{1}{5}\cdot\frac{1}{1+\frac{x-2}{5}}\right).
+\]
+又
+\[
+  \frac{1}{1+x-2}=\sum_{n=0}^{\infty}(-1)^n(x-2)^n,\qquad \abs{x-2}<1,
+\]
+\[
+  \frac{1}{1+\frac{x-2}{5}}=\sum_{n=0}^{\infty}(-1)^n\left(\frac{x-2}{5}\right)^n,\qquad \abs{\frac{x-2}{5}}<1.
+\]
+于是得到 $f(x)$ 在 $x=2$ 处的 Taylor 展式
+\[
+  f(x)=\frac{1}{4}\sum_{n=0}^{\infty}(-1)^n\left(1-\frac{1}{5^{n+1}}\right)(x-2)^n,\qquad \abs{x-2}<1.
+\]
+当 $x=1$ 时，级数变为 $\frac{1}{4}\sum_{n=0}^{\infty}\left(1-\frac{1}{5^{n+1}}\right)$，它的通项不趋于零，发散．
+
+当 $x=3$ 时，级数变为 $\frac{1}{4}\sum_{n=0}^{\infty}(-1)^n\left(1-\frac{1}{5^{n+1}}\right)$，它的通项不趋于零，发散．
+
+所以该幂级数的收敛域为 $(1,3)$．
+\end{solution}
+
+\answerproblem{四、}{14}
+求微分方程 $(x^3-y^2)\dd x+(x^2y+xy)\dd y=0$ 的通解．
+\begin{solution}
+\textbf{解法 1}．设 $u=y^2$，则原方程化为 $\dfrac{\dd u}{\dd x}=\dfrac{2u}{x(1+x)}-\dfrac{2x^2}{x+1}$．
+
+这线性方程的通解为
+\[
+  \left(\frac{1+x}{x}\right)^2u+(1+x)^2=C.
+\]
+即
+\[
+  \left(\frac{1+x}{x}\right)^2y^2+(1+x)^2=C.
+\]
+
+\textbf{解法 2}．原方程可化为
+\[
+  x\dd x+y\dd y+y\frac{x\dd y-y\dd x}{x^2}=0,
+\]
+即，
+\[
+  \frac{1}{2}\dd(x^2+y^2)+y\dd\left(\frac{y}{x}\right)=0.
+\]
+两边同时除以 $\sqrt{x^2+y^2}$，得
+\[
+  \frac{1}{2}\cdot\frac{\dd(x^2+y^2)}{\sqrt{x^2+y^2}}
+  +\frac{1}{\sqrt{1+\left(\frac{y}{x}\right)^2}}\cdot\frac{y}{x}\cdot\dd\left(\frac{y}{x}\right)=0,
+\]
+即，
+\[
+  \dd\left(\sqrt{x^2+y^2}\right)+\dd\left(\sqrt{1+\left(\frac{y}{x}\right)^2}\right)=0.
+\]
+故，
+\[
+  \sqrt{x^2+y^2}+\frac{\sqrt{x^2+y^2}}{x}=C,
+\]
+即，
+\[
+  (1+x)\sqrt{x^2+y^2}=Cx.
+\]
+
+\textbf{解法 3}．将原方程化为 $x\dd x+y\dd y+y\dfrac{x\dd y-y\dd x}{x^2}=0$，即
+\[
+  \frac{1}{2}\dd(x^2+y^2)+y\dd\left(\frac{y}{x}\right)=0.
+\]
+令 $x=r\cos\theta$，$y=r\sin\theta$，则 $r=\sqrt{x^2+y^2}$，$\tan\theta=\frac{y}{x}$，方程化为
+\[
+  \frac{1}{2}\dd r^2+r\sin\theta\dd\tan\theta=0,
+\]
+\[
+  \dd r+\sec\theta\tan\theta\dd\theta=0.
+\]
+积分得，$r+\sec\theta=C$．
+
+换回原变量，得原方程的通解为
+\[
+  \sqrt{x^2+y^2}+\frac{\sqrt{x^2+y^2}}{x}=C.
+\]
+\end{solution}
+
+\answerproblem{五、}{14}
+已知 $\displaystyle \int_0^{+\infty}\frac{\sin x}{x}\dd x=\frac{\pi}{2}$．
+\begin{enumerate}[label=(\arabic*)]
+  \item 计算 $\displaystyle I_1=\int_0^{+\infty}\left(\frac{\sin x}{x}\right)^2\dd x$．
+  \item 计算 $\displaystyle I_2=\int_0^{+\infty}\left(\frac{\sin x}{x}\right)^3\dd x$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 当 $a>0$ 时，做变换 $x=\frac{u}{a}$，$\displaystyle \int_0^{+\infty}\frac{\sin(ax)}{x}\dd x=\int_0^{+\infty}\frac{\sin u}{\frac{u}{a}}\dd\left(\frac{u}{a}\right)=\frac{\pi}{2}$．
+
+\begin{align*}
+  \int_0^{+\infty}\left(\frac{\sin x}{x}\right)^2\dd x
+  &=\left.-\frac{1}{x}\cdot\sin^2x\right|_{0}^{+\infty}+\int_0^{+\infty}\frac{1}{x}\cdot2\sin x\cos x\dd x\\
+  &=\int_0^{+\infty}\frac{\sin(2x)}{x}\dd x=\frac{\pi}{2}.
+\end{align*}
+
+\textbf{(2)} 当 $a>0$ 时，做变换 $x=\frac{u}{a}$，易得 $\displaystyle \int_0^{+\infty}\left(\frac{\sin(ax)}{x}\right)^2\dd x=\frac{\pi}{2}a$．因此
+\begin{align*}
+  \int_0^{+\infty}\left(\frac{\sin x}{x}\right)^3\dd x
+  &=\left.-\frac{1}{2x^2}\cdot\sin^3x\right|_{0}^{+\infty}+\int_0^{+\infty}\frac{1}{2x^2}\cdot3\sin^2x\cos x\dd x\\
+  &=\frac{3}{4}\int_0^{+\infty}\frac{\sin x\sin(2x)}{x^2}\dd x
+   =\frac{3}{8}\int_0^{+\infty}\frac{\cos x-\cos(3x)}{x^2}\dd x\\
+  &=\frac{3}{8}\int_0^{+\infty}\frac{(1-\cos(3x))-(1-\cos x)}{x^2}\dd x\\
+  &=\frac{3}{8}\int_0^{+\infty}\frac{2\sin^2\left(\frac{3x}{2}\right)-2\sin^2\left(\frac{x}{2}\right)}{x^2}\dd x\\
+  &=\frac{3}{4}\left(\int_0^{+\infty}\frac{\sin^2\left(\frac{3x}{2}\right)}{x^2}\dd x-\int_0^{+\infty}\frac{\sin^2\left(\frac{x}{2}\right)}{x^2}\dd x\right)\\
+  &=\frac{3}{4}\cdot\frac{\pi}{2}=\frac{3\pi}{8}.
+\end{align*}
+\end{solution}
+
+\answerproblem{六、}{14}
+设 $f(x)$ 是 $(-\infty,+\infty)$ 上具有连续导数的非负函数，且存在 $M>0$ 使得对任意的 $x,y\in(-\infty,+\infty)$，有 $\abs{f'(x)-f'(y)}\le M\abs{x-y}$．证明：对于任意实数 $x$，恒有 $(f'(x))^2\le 2Mf(x)$．
+\begin{solution}
+\textbf{证明}．任取 $x\in(-\infty,+\infty)$，对任意 $h\in(-\infty,+\infty)$，且 $h\ne 0$，恒有
+\begin{align*}
+  0\le f(x+h)&=f(x)+\int_0^h f'(x+t)\dd t\\
+  &=f(x)+\int_0^h(f'(x+t)-f'(x))\dd t+f'(x)h.
+\end{align*}
+取 $h$ 使得 $hf'(x)\le 0$，则
+\[
+  -f'(x)h\le f(x)+\int_0^h(f'(x+t)-f'(x))\dd t\le f(x)+M\frac{h^2}{2}.
+\]
+\[
+  \abs{f'(x)}\le\frac{f(x)}{\abs{h}}+M\frac{\abs{h}}{2}.
+\]
+取 $\abs{h}=\sqrt{\frac{2f(x)}{M}}$，即得所证不等式 $(f'(x))^2\le 2Mf(x)$．
+\end{solution}

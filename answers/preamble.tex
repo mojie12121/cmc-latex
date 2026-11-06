@@ -1,0 +1,27 @@
+% ============================================================
+%  安徽省大学生数学竞赛（CMC 安徽赛区）近三年答案汇编
+%  答案册导言区
+% ============================================================
+
+\input{../preamble}
+
+% ---------- 页眉 ----------
+\fancyhead[L]{\small\color{cmcgray}安徽省大学生数学竞赛近三年答案汇编}
+
+% ---------- 答案册专用命令 ----------
+% 每份试卷的小节标题
+\newcommand{\answerpaper}[1]{%
+  \needspace{18\baselineskip}%
+  \section{#1}%
+}
+
+% 题目与分值，后接题目正文
+\newcommand{\answerproblem}[2]{%
+  \par\needspace{5\baselineskip}%
+  \medskip\noindent\textbf{#1（本题 #2 分）}\quad
+}
+
+% 解答环境
+\newenvironment{solution}{%
+  \par\smallskip\noindent\textbf{【解答】}\par\nobreak
+}{\par\medskip}

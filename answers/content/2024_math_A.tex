@@ -1,0 +1,349 @@
+\answerpaper{数学 A 类}
+
+\answerproblem{一、}{15}
+设双叶双曲面 $S: x^2+y^2-z^2=-2$．记以 $M_0(1,1,-1)$ 为顶点且与 $S$ 的上半叶
+\[
+  S^+ = \{(x,y,z)\in S \mid z\ge\sqrt{2}\}
+\]
+相切的所有切线构成的锥面为 $\Sigma$．
+\begin{enumerate}[label=(\arabic*)]
+  \item 求锥面 $\Sigma$ 的方程；
+  \item 求 $S^+\cap\Sigma$ 所在平面 $\pi$ 的方程．
+\end{enumerate}
+
+\begin{solution}
+\textbf{(1)} 设过顶点 $M(1,1,-1)$，方向向量为 $(l,m,n)$ 的直线的参数方程为
+\begin{equation}
+  L:\begin{cases}
+    x-1=lt,\\
+    y-1=mt,\\
+    z+1=nt.
+  \end{cases}\tag{1}
+\end{equation}
+将 (1) 代入 $S$ 的方程可得
+\[
+  (1+lt)^2+(1+mt)^2-(-1+nt)^2+2=0.
+\]
+即
+\begin{equation}
+  (l^2+m^2-n^2)t^2+2(l+m+n)t+3=0.\tag{2}
+\end{equation}
+既然 $L$ 与 $S$ 相切，由 (2) 则有
+\[
+  4(l+m+n)^2-12(l^2+m^2-n^2)=0.
+\]
+即
+\begin{equation}
+  l^2+m^2-2n^2-lm-ln-mn=0.\tag{3}
+\end{equation}
+结合 (1) 与 (3)，消去参数 $t$ 可得锥面方程
+\[
+  (x-1)^2+(y-1)^2-2(z+1)^2-(x-1)(y-1)-(x-1)(z+1)-(y-1)(z+1)=0.
+\]
+
+\textbf{(2)} 对于任意的 $M_1(x_1,y_1,z_1)\in S^+\cap\Sigma$，设 $M(x,y,z)$ 是连接 $M_0$ 与 $M_1$ 的直线上任意一点，并设 $\overrightarrow{M_1M}=t\overrightarrow{M_0M_1}$，其中 $t$ 为参数．于是有
+\begin{equation}
+  \begin{cases}
+    x-x_1=t(x_1-1),\\
+    y-y_1=t(y_1-1),\\
+    z-z_1=t(z_1+1).
+  \end{cases}\tag{4}
+\end{equation}
+将 (4) 与 $S^+$ 的方程联立则有
+\begin{equation}
+  \bigl(x_1(1+t)-t\bigr)^2+\bigl(y_1(1+t)-t\bigr)^2-\bigl(z_1(1+t)+t\bigr)^2+2=0.\tag{5}
+\end{equation}
+利用 $x_1^2+y_1^2-z_1^2=-2$，由 (5) 可得
+\begin{equation}
+  (-1-2x_1-2y_1+2z_1)t^2-2(x_1+y_1+z_1+2)t=0.\tag{6}
+\end{equation}
+由于 $M_1(x_1,y_1,z_1)$ 是切点，因此有 $x_1+y_1+z_1+2=0$，因此所求的平面 $\pi$ 的方程为
+\[
+  x+y+z+2=0.
+\]
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $s\ge 0$，
+\[
+  \varphi(s)=\int_0^{+\infty}\frac{\ln(1+sx^2)}{x(1+x^2)}\dd x.
+\]
+求 $\varphi(1)$ 和 $\varphi(2)$．
+
+\begin{solution}
+我们有 $\lim\limits_{x\to 0^+}\dfrac{\ln(1+x)}{\sqrt{x}}=0$，$\lim\limits_{x\to+\infty}\dfrac{\ln(1+x)}{\sqrt{x}}=0$．因此，有常数 $C>0$，使得
+\[
+  \ln(1+x)\le C\sqrt{x},\qquad \forall x>0.
+\]
+从而，
+\[
+  \frac{\ln(1+sx^2)}{x(1+x^2)}\le C\frac{\sqrt{s}}{1+x^2},\qquad \forall x>0,\ s\ge 0.
+\]
+因此，广义积分 $\displaystyle\int_0^{+\infty}\frac{\ln(1+sx^2)}{x(1+x^2)}\dd x$ 关于 $s\in[0,+\infty)$ 内闭一致收敛．进而 $\varphi$ 在 $[0,+\infty)$ 上连续．
+
+另一方面，由
+\[
+  \frac{x}{(1+x^2)(1+sx^2)}\le \frac{1}{2\sqrt{s}(1+x^2)},\qquad \forall x>0,\ s>0
+\]
+可得，积分 $\displaystyle\int_0^{+\infty}\frac{\ln(1+sx^2)}{x(1+x^2)}\dd x$ 形式求导后得到的积分 $\displaystyle\int_0^{+\infty}\frac{x}{(1+x^2)(1+sx^2)}\dd x$ 关于 $s\in(0,+\infty)$ 内闭一致收敛．因此，$\varphi$ 在 $(0,+\infty)$ 内连续可导且
+\begin{align*}
+  \varphi'(s)&=\int_0^{+\infty}\frac{x}{(1+x^2)(1+sx^2)}\dd x\\
+  &=\frac{1}{1-s}\int_0^{+\infty}\Bigl(\frac{x}{1+x^2}-\frac{sx}{1+sx^2}\Bigr)\dd x\\
+  &=\frac{1}{2(1-s)}\ln\frac{1+x^2}{1+sx^2}\biggr|_{x=0}^{+\infty}=-\frac{\ln s}{2(1-s)}.
+\end{align*}
+（上式当 $s=1$ 时理解为相应的极限，或不妨只考虑 $s\ne 1$ 的情形）
+
+结合 $\varphi(0)=0$，得到
+\begin{align*}
+  \varphi(1)&=-\int_0^1\frac{\ln s}{2(1-s)}\dd s=-\int_0^1\frac{\ln(1-s)}{2s}\dd s\\
+  &=-\lim_{\varepsilon\to 0^+}\int_0^{1-\varepsilon}\frac{\ln(1-s)}{2s}\dd s
+   =\lim_{\varepsilon\to 0^+}\int_0^{1-\varepsilon}\sum_{n=1}^{\infty}\frac{s^{n-1}}{2n}\dd s\\
+  &=\lim_{\varepsilon\to 0^+}\sum_{n=1}^{\infty}\int_0^{1-\varepsilon}\frac{s^{n-1}}{2n}\dd s
+   =\lim_{\varepsilon\to 0^+}\sum_{n=1}^{\infty}\frac{(1-\varepsilon)^n}{2n^2}\\
+  &=\sum_{n=1}^{\infty}\frac{1}{2n^2}=\frac{\pi^2}{12}.
+\end{align*}
+
+同理，
+\begin{align*}
+  \varphi(2)&=-\int_0^2\frac{\ln s}{2(1-s)}\dd s=-\int_{-1}^1\frac{\ln(1-s)}{2s}\dd s\\
+  &=-\lim_{\varepsilon\to 0^+}\int_{-(1-\varepsilon)}^{1-\varepsilon}\frac{\ln(1-s)}{2s}\dd s
+   =\lim_{\varepsilon\to 0^+}\int_{-(1-\varepsilon)}^{1-\varepsilon}\sum_{n=1}^{\infty}\frac{s^{n-1}}{2n}\dd s\\
+  &=\lim_{\varepsilon\to 0^+}\sum_{n=1}^{\infty}\int_{-(1-\varepsilon)}^{1-\varepsilon}\frac{s^{n-1}}{2n}\dd s
+   =\lim_{\varepsilon\to 0^+}\sum_{n=0}^{\infty}\frac{(1-\varepsilon)^{2n+1}}{(2n+1)^2}\\
+  &=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}=\frac{\pi^2}{8}.
+\end{align*}
+
+\textbf{注.} 计算中有多种其它方法，例如，可利用
+\begin{align*}
+  \int_0^1\frac{\ln(1+s)}{s}\dd s&=\int_0^1\frac{\ln(1-s^2)-\ln(1-s)}{s}\dd s\\
+  &=\int_0^1\frac{\ln(1-s)}{2s}\dd s-\int_0^1\frac{\ln(1-s)}{s}\dd s
+   =-\int_0^1\frac{\ln(1-s)}{2s}\dd s;
+\end{align*}
+\begin{align*}
+  \int_0^1\frac{\ln(1-s)}{s}\dd s
+  &=\lim_{\beta\to 1^-}\lim_{\alpha\to 0^+}\int_0^1\frac{(1-s)^\alpha\ln(1-s)}{s^\beta}\dd s\\
+  &=\lim_{\beta\to 1^-}\lim_{\alpha\to 0^+}\frac{\dd}{\dd\alpha}\int_0^1\frac{(1-s)^\alpha}{s^\beta}\dd s.
+\end{align*}
+\end{solution}
+
+\answerproblem{三、}{20}
+设
+\[
+  A=\begin{pmatrix}
+    a_{11} & a_{12} & a_{13}\\
+    a_{21} & a_{22} & a_{23}\\
+    a_{31} & a_{32} & a_{33}
+  \end{pmatrix}
+\]
+为实数域 $\R$ 上的 $3\times 3$ 不可逆方阵．若 $A$ 的伴随矩阵 $A^*$ 为
+\[
+  A^*=\begin{pmatrix}
+    a_{11}^2 & a_{12}^2 & a_{13}^2\\
+    a_{21}^2 & a_{22}^2 & a_{23}^2\\
+    a_{31}^2 & a_{32}^2 & a_{33}^2
+  \end{pmatrix},
+\]
+求 $A$．
+
+\begin{solution}
+\textbf{(1)} 由矩阵 $A$ 不可逆知 $\rank(A^*)=0$ 或 $1$．
+
+\textbf{(2)} 若 $\rank(A^*)=0$，则显然有 $A^*=0$，进而 $A=0$．
+
+\textbf{(3)} 若 $\rank(A^*)=1$，则 $A^*$ 的任何 $2$ 阶子式皆为 $0$．特别地有
+\[
+  \begin{vmatrix}
+    a_{11}^2 & a_{12}^2\\
+    a_{21}^2 & a_{22}^2
+  \end{vmatrix}=0,\qquad
+  \begin{vmatrix}
+    a_{21}^2 & a_{22}^2\\
+    a_{31}^2 & a_{32}^2
+  \end{vmatrix}=0,\qquad
+  \begin{vmatrix}
+    a_{11}^2 & a_{12}^2\\
+    a_{31}^2 & a_{32}^2
+  \end{vmatrix}=0.
+\]
+于是得到
+\[
+  \begin{cases}
+    a_{11}a_{22}=\pm a_{12}a_{21},\\
+    a_{21}a_{32}=\pm a_{22}a_{31},\\
+    a_{12}a_{31}=\pm a_{11}a_{32}.
+  \end{cases}
+\]
+如果上面三个等式中有某个等式的正号成立，不妨设 $a_{11}a_{22}=a_{12}a_{21}$，于是 $A$ 有子式
+\[
+  \begin{vmatrix}
+    a_{11} & a_{12}\\
+    a_{21} & a_{22}
+  \end{vmatrix}=0,
+\]
+它是矩阵 $A$ 中元素 $a_{33}$ 的代数余子式，由伴随矩阵 $A^*$ 的定义得到 $a_{33}^2=0$，即 $a_{33}=0$．如果上面三个等式中每个等式出现的都是负号，则将该三个等式的左右两边分别相乘得
+\[
+  a_{11}a_{22}a_{21}a_{32}a_{12}a_{31}=-a_{11}a_{22}a_{21}a_{32}a_{12}a_{31},
+\]
+从而 $a_{11},a_{12},a_{21},a_{22},a_{31},a_{32}$ 中至少有一个为 $0$．总之 $A^*$ 至少有一个元素是 $0$．
+
+不妨设 $a_{11}^2=0$．若 $A^*$ 的第一列不全为 $0$，则由 $\rank(A^*)=1$ 知 $A^*$ 的第二列和第三列皆可由 $A^*$ 的第一列线性表出，故 $A^*$ 的第一行元素全部为 $0$．从而 $A^*$ 有一整行元素全为 $0$ 或有一整列元素全为 $0$．相应地，$A$ 也有一整行元素全为 $0$ 或有一整列元素全为 $0$．不妨设 $A$ 的第一行元素全为 $0$，此时 $A$ 的其它元素的代数余子式全为 $0$，故 $a_{22}^2=a_{23}^2=a_{32}^2=a_{33}^2=0$．这表明在矩阵 $A$ 中有 $a_{22}=a_{23}=a_{32}=a_{33}=0$，所以矩阵 $A$ 的元素 $a_{12}$ 和 $a_{13}$ 的代数余子式都是 $0$，由 $A^*$ 的定义得到 $a_{21}^2=a_{31}^2=0$，这导致 $A^*=0$，与 $\rank(A^*)=1$ 矛盾．故我们总有 $A=0$．
+\end{solution}
+
+\answerproblem{四、}{15}
+熟知实数域 $\R$ 上的一元多项式集合 $\R[x]$ 在多项式加法和数乘下构成 $\R$ 上的一个线性空间．设 $f_i(x)\in\R[x]$ 且次数为 $n_i$，$1\le i\le 2024$，这里规定零多项式的次数为 $-\infty$，已知
+\[
+  \sum_{i=1}^{2024} n_i<2047276,
+\]
+证明：$f_1(x),f_2(x),\cdots,f_{2024}(x)$ 为空间 $\R[x]$ 中线性相关的向量组．
+
+\begin{solution}
+记向量组 $f_1(x),f_2(x),\cdots,f_{2024}(x)$ 为向量组 (I)，若向量组 (I) 中有零多项式 $0$，即包含 $\R[x]$ 中的零元，则显然向量组 (I) 线性相关．若向量组 (I) 中每个多项式都是非零多项式，则向量组 (I) 中一定有两个次数相同的多项式．事实上，若 $n_1,n_2,\cdots,n_{2024}$ 两两不同，不失一般性可假设 $n_1<n_2<\cdots<n_{2024}$．于是 $n_i\ge i-1$，进而
+\[
+  \sum_{i=1}^{2024} n_i\ge \sum_{i=1}^{2024}(i-1)=\frac{2023\times 2024}{2}=2047276,
+\]
+矛盾．
+
+由于向量组 (I) 中存在次数相同的两个多项式，不妨设 $n_i=n_j=n$，$j>i$，且有
+\[
+  f_i(x)=ax^n+\cdots,\qquad f_j(x)=bx^n+\cdots,
+\]
+其中 $a,b\ne 0$．令 $g(x)=f_i(x)-\dfrac{a}{b}f_j(x)$，则显然有向量组 (I) 与向量组 (II)：
+\[
+  f_1(x),\cdots,f_{i-1}(x),g(x),f_{i+1}(x),\cdots,f_j(x),\cdots,f_{2024}(x)
+\]
+等价．
+
+注意到 $\deg g(x)<\deg f_i(x)$，故向量组 (II) 中多项式的次数之和小于 $\displaystyle\sum_{i=1}^{2024}n_i<2047276$．类似地，向量组 (II) 中一定有零多项式或者有两个次数相同的多项式，从而向量组 (II) 线性相关或者得到与向量组 (II) 等价的向量组 (III) 且向量组 (III) 中多项式次数之和小于向量组 (II) 中多项式的次数之和，又由向量组等价的传递性易知向量组 (III) 与向量组 (I) 等价．重复前述过程，每一步都可以得到一个与之前向量组等价的向量组使得其若不包含零多项式时其中多项式的次数之和更低，这个过程一直进行下去，最后我们可以得到与向量组 (I) 等价的向量组 (IV)，其中的多项式的次数之和 $<0$．由此得到向量组 (IV) 中一定包含零多项式，所以向量组 (IV) 在 $\R[x]$ 中线性相关．由等价性，向量组 (I)，即 $f_1(x),f_2(x)\cdots,f_{2024}(x)$，在 $\R[x]$ 中线性相关．
+\end{solution}
+
+\answerproblem{五、}{15}
+讨论以下级数的收敛性：
+\[
+  \sum_{n=2}^{\infty}\frac{(-1)^n}{n+(-1)^{[\sqrt{n}]}},
+  \qquad
+  \sum_{n=2}^{\infty}\frac{(-1)^n}{\sqrt{n}+(-1)^{[\sqrt{n}]}},
+\]
+其中 $[x]$ 表示 $x$ 的整数部分．
+
+\begin{solution}
+\textbf{I.} 由 Leibniz 判别法，级数 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n}$ 收敛．而
+\[
+  \abs{\frac{(-1)^n}{n+(-1)^{[\sqrt{n}]}}-\frac{(-1)^n}{n}}
+  =\frac{1}{n\bigl(n+(-1)^{[\sqrt{n}]}\bigr)}\le \frac{1}{n(n-1)},\qquad \forall n\ge 2.
+\]
+因此，$\displaystyle\sum_{n=2}^{\infty}\Bigl(\frac{(-1)^n}{n+(-1)^{[\sqrt{n}]}}-\frac{(-1)^n}{n}\Bigr)$ 绝对收敛．从而 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n+(-1)^{[\sqrt{n}]}}$ 收敛．显然，它不是绝对收敛的．
+
+\textbf{II.} 对于第二个级数，同样易见它不是绝对收敛的．我们给出以下两种方法证明其收敛．
+
+\textbf{方法 1.} 由于级数的一般项趋于零，因此，对相邻两项加括号后不改变其收敛性，即我们只要证明级数
+\[
+  \sum_{n=1}^{\infty}\Bigl(\frac{1}{\sqrt{2n}+(-1)^{[\sqrt{2n}]}}
+  -\frac{1}{\sqrt{2n+1}+(-1)^{[\sqrt{2n+1}]}}\Bigr)
+\]
+收敛，即
+\[
+  \sum_{n=1}^{\infty}
+  \frac{(-1)^{[\sqrt{2n+1}]}-(-1)^{[\sqrt{2n}]}+\sqrt{2n+1}-\sqrt{2n}}
+  {\bigl(\sqrt{2n}+(-1)^{[\sqrt{2n}]}\bigr)\bigl(\sqrt{2n+1}+(-1)^{[\sqrt{2n+1}]}\bigr)}
+\]
+收敛．而这只要证明
+\[
+  \sum_{n=1}^{\infty}
+  \frac{(-1)^{[\sqrt{2n+1}]}-(-1)^{[\sqrt{2n}]}}
+  {\bigl(\sqrt{2n}+(-1)^{[\sqrt{2n}]}\bigr)\bigl(\sqrt{2n+1}+(-1)^{[\sqrt{2n+1}]}\bigr)}
+\]
+收敛．注意到 $[\sqrt{2k+1}]-[\sqrt{2k}]=1$ 当且仅当存在 $m$ 使得 $2k+1=(2m+1)^2$，即 $k=2m^2+2m$．我们有
+\begin{align*}
+  &\sum_{n=1}^{\infty}\abs{\frac{(-1)^{[\sqrt{2n+1}]}-(-1)^{[\sqrt{2n}]}}
+  {\bigl(\sqrt{2n}+(-1)^{[\sqrt{2n}]}\bigr)\bigl(\sqrt{2n+1}+(-1)^{[\sqrt{2n+1}]}\bigr)}}\\
+  &\qquad=\sum_{m=1}^{\infty}\frac{2}{\bigl(\sqrt{4m^2+4m+1}\bigr)\cdot 2m}<+\infty.
+\end{align*}
+因此，级数 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{\sqrt{n}+(-1)^{[\sqrt{n}]}}$ 条件收敛．
+
+\textbf{方法 2.} 由 Leibniz 判别法，级数 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{\sqrt{n}}$ 收敛．记 $S_1=0$，$S_n=\displaystyle\sum_{k=2}^{n}(-1)^{k+[\sqrt{k}]}$，则易见 $|S_n|\le 2+2\sqrt{n}$．我们有
+\begin{align*}
+  \sum_{k=2}^{n}\frac{(-1)^{k+[\sqrt{k}]}}{k}
+  &=\sum_{k=2}^{n}\frac{S_k-S_{k-1}}{k}
+   =\sum_{k=2}^{n}\frac{S_k}{k}-\sum_{k=2}^{n}\frac{S_{k-1}}{k}\\
+  &=\sum_{k=2}^{n}\frac{S_k}{k}-\sum_{k=2}^{n-1}\frac{S_k}{k+1}
+   =\frac{S_n}{n}+\sum_{k=2}^{n-1}\frac{S_k}{k(k+1)},\qquad \forall n\ge 2.
+\end{align*}
+因此，级数 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^{n+[\sqrt{n}]}}{n}$ 收敛．这样要证明原级数收敛，只要证明
+\[
+  \sum_{n=2}^{\infty}\Bigl(\frac{(-1)^n}{\sqrt{n}}
+  -\frac{(-1)^n}{\sqrt{n}+(-1)^{[\sqrt{n}]}}
+  -\frac{(-1)^{n+[\sqrt{n}]}}{n}\Bigr)
+\]
+收敛，即 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^{n+1}}{n\bigl(\sqrt{n}+(-1)^{[\sqrt{n}]}\bigr)}$ 收敛．而该级数是绝对收敛的．因此，级数 $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{\sqrt{n}+(-1)^{[\sqrt{n}]}}$ 条件收敛．
+
+\textbf{注.} 若没有讨论绝对收敛性，不扣分．
+\end{solution}
+
+\answerproblem{六、}{20}
+\begin{enumerate}[label=(\arabic*)]
+  \item 设 $f_1(t)=\dfrac{t+3}{2}$，$f_2(t)=\dfrac{t+6}{3}$，$\{n_k\}$ 为取值于 $\{1,2\}$ 的整数列．令 $F_1(t)=f_{n_1}(t)$，$F_{k+1}(t)=F_k\bigl(f_{n_{k+1}}(t)\bigr)\ (k\ge 1)$．证明：对任何 $x\in\R$，极限 $\lim\limits_{k\to+\infty}F_k(x)$ 存在且与 $x$ 无关．
+  \item 若题 (1) 中的 $f_1,f_2$ 改为 $f_1(t)=t-\arctan t$，$f_2(t)=2\arctan t-t$，结论如何？
+\end{enumerate}
+
+\begin{solution}
+\textbf{(1)} 我们有
+\[
+  f_1'(t)=\frac{1}{2},\qquad f_2'(t)=\frac{1}{3},\qquad \forall t\in\R.
+\]
+因此，由微分中值定理可得
+\[
+  |f_k(t)-f_k(s)|\le \frac{1}{2}|t-s|,\qquad \forall k=1,2;\ t,s\in\R.
+\]
+这表明 $f_1,f_2$ 都是压缩映射．而它们的唯一的不动点恰好都是 $\bar{x}=3$．
+
+于是，任取 $x\in\R$，对于任何 $k\ge 1$，我们有
+\begin{align*}
+  |F_k(x)-3|
+  &=\bigl|f_{n_1}\circ f_{n_2}\circ\cdots\circ f_{n_k}(x)-f_{n_1}(3)\bigr|\\
+  &\le \frac{1}{2}\bigl|f_{n_2}\circ\cdots\circ f_{n_k}(x)-3\bigr|
+   =\frac{1}{2}\bigl|f_{n_2}\circ\cdots\circ f_{n_k}(x)-f_{n_2}(3)\bigr|\\
+  &\le \cdots\le \frac{1}{2^{k-1}}\bigl|f_{n_k}(x)-3\bigr|
+   =\frac{1}{2^{k-1}}\bigl|f_{n_k}(x)-f_{n_k}(3)\bigr|\\
+  &\le \frac{1}{2^k}|x-3|.
+\end{align*}
+令 $k\to+\infty$ 即得 $\lim\limits_{k\to+\infty}F_k(x)=3$．
+
+\textbf{(2)} 当 $f_1(t)=t-\arctan t$，$f_2(t)=2\arctan t-t$ 时，
+\[
+  f_1'(t)=\frac{t^2}{1+t^2},\qquad f_2'(t)=\frac{1-t^2}{1+t^2},\qquad \forall x\in\R.
+\]
+因此，对任何 $t\in\R$，有 $|f_1'(t)|<1$，$|f_2'(t)|\le 1$ 且当且仅当 $t=0$ 时，有 $|f_2'(t)|=1$．由此结合 $f_1(0)=f_2(0)=0$ 可得 $f_1,f_2$ 有唯一的不动点 $\bar{x}=0$．进而
+\[
+  |f_k(t)|\le |t|,\qquad \forall k=1,2;\ t\in\R.
+\]
+
+现任取 $x\in\R$，则 $|F_k(x)|\le |x|\ (k\ge 1)$．我们要证明 $\lim\limits_{k\to+\infty}F_k(x)=0$．否则有 $\{F_k(x)\}$ 的子列 $\{F_{m_k}(x)\}$ 满足 $0<\delta<|F_{m_k}(x)|\le |x|\ (k\ge 1)$．这样，$|f_1'|,|f_2'|$ 在
+$\bigl[\frac{\delta}{2},|x|\bigr]\cup\bigl[-|x|,-\frac{\delta}{2}\bigr]$ 上有上界 $\ell<1$．由微分中值定理，对任何 $y\in[\delta,|x|]$，有
+\begin{align*}
+  |f_k(\pm y)|
+  &=\Bigl|f_k(\pm y)-f_k\Bigl(\pm\frac{\delta}{2}\Bigr)+f_k\Bigl(\pm\frac{\delta}{2}\Bigr)-f_k(0)\Bigr|\\
+  &\le \Bigl|f_k(\pm y)-f_k\Bigl(\pm\frac{\delta}{2}\Bigr)\Bigr|
+   +\Bigl|f_k\Bigl(\pm\frac{\delta}{2}\Bigr)-f_k(0)\Bigr|\\
+  &\le \ell\Bigl(y-\frac{\delta}{2}\Bigr)+\frac{\delta}{2}
+   =\ell y+(1-\ell)\frac{\delta}{2}\\
+  &\le \ell y+(1-\ell)\frac{y}{2}=\frac{\ell+1}{2}y,\qquad k=1,2.
+\end{align*}
+另一方面，
+\begin{align*}
+  \delta &\le |F_{m_k}(x)|=\bigl|f_{n_1}\circ f_{n_2}\circ\cdots\circ f_{n_{m_k}}(x)\bigr|\\
+  &\le \bigl|f_{n_j}\circ f_{n_{j+1}}\circ\cdots\circ f_{n_{m_k}}(x)\bigr|\le |x|,
+  \qquad \forall j=1,2,\dots,m_k,
+\end{align*}
+因此，
+\begin{align*}
+  |F_{m_k}(x)|
+  &=\bigl|f_{n_1}\circ f_{n_2}\circ\cdots\circ f_{n_{m_k}}(x)\bigr|\\
+  &\le \frac{\ell+1}{2}\bigl|f_{n_2}\circ\cdots\circ f_{n_{m_k}}(x)\bigr|\\
+  &\le \cdots\le \Bigl(\frac{\ell+1}{2}\Bigr)^{m_k}|x|,\qquad k\ge 1.
+\end{align*}
+令 $k\to+\infty$ 得 $\lim\limits_{k\to+\infty}|F_{m_k}(x)|=0$．矛盾．
+
+因此，$\lim\limits_{k\to+\infty}F_k(x)=0$．
+
+\textbf{注.} 注意到 $F_k$ 的定义方式，$\{|F_k(x)-\bar{x}|\}$ 不见得是单调下降的．
+\end{solution}

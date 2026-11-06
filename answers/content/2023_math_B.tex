@@ -1,0 +1,302 @@
+\answerpaper{数学 B 类}
+
+\answerproblem{一、}{15}
+在空间中给定两不同点 $P$ 和 $Q$．过 $P$ 点直线 $L(P)$ 和过 $Q$ 点直线 $L(Q)$ 正交于点 $M$．问：所有可能的正交点 $M$ 构成何种曲面？证明你的结论．
+\begin{solution}
+在空间中建立直角坐标系，使得线段 $PQ$ 的中点为原点 $O$，直线 $PQ$ 为 $x$ 轴，$P=(-a,0,0)$，$Q=(a,0,0)$（$a>0$）．
+
+设过 $P$ 点直线 $L(P)$ 和过 $Q$ 点直线 $L(Q)$ 正交于 $M=(x,y,z)$ 点，则有
+\begin{gather*}
+\overrightarrow{PM}\cdot\overrightarrow{QM}=0,\\
+(x+a,y,z)\cdot(x-a,y,z)=0,\\
+x^{2}+y^{2}+z^{2}=a^{2},
+\end{gather*}
+为球面．
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $f(x,y,z)=x^{2}+(y^{2}+z^{2})(1-x)^{3}$．
+\begin{enumerate}[label=(\arabic*)]
+  \item 计算 $f$ 的驻点．
+  \item 求 $f$ 在 $\Sigma$ 上的最小值，其中，$\Sigma$ 是 $\{(x,y,z)\mid |x|\le 2,\ y^{2}+z^{2}\le 4\}$ 的边界．
+  \item 求 $f$ 在椭球 $x^{2}+\frac{y^{2}}{2}+\frac{z^{2}}{3}\le 1$ 上的最小值．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)}
+\[
+\begin{cases}
+f_{x}(x,y,z)=2x-3(y^{2}+z^{2})(1-x)^{2},\\
+f_{y}(x,y,z)=2y(1-x)^{3},\\
+f_{z}(x,y,z)=2z(1-x)^{3}.
+\end{cases}
+\]
+求解 $f_{x}(x_{0},y_{0},z_{0})=f_{y}(x_{0},y_{0},z_{0})=f_{z}(x_{0},y_{0},z_{0})=0$ 的点可得函数在整个空间上只有唯一的驻点 $(x_{0},y_{0},z_{0})=(0,0,0)$．
+
+（注．易见由上述方程的第二式可得 $x_{0}=1$ 或 $y_{0}=0$．但 $x_{0}=1$ 与第一个式子矛盾．因此 $x_{0}=0$，进而又有 $y_{0}=z_{0}=0$．）
+
+\textbf{(2)} $\Sigma=\Sigma_{1}\cup\Sigma_{2}\cup\Sigma_{3}$，其中
+\begin{gather*}
+\Sigma_{1}=\{(x,y,z)\mid x\in[-2,2],\ y^{2}+z^{2}=4\},\\
+\Sigma_{2}=\{(x,y,z)\mid x=2,\ y^{2}+z^{2}\le 4\},\\
+\Sigma_{3}=\{(x,y,z)\mid x=-2,\ y^{2}+z^{2}\le 4\}.
+\end{gather*}
+
+在 $\Sigma_{1}$ 上，
+\[
+f(x,y,z)=x^{2}+4(1-x)^{3}=g_{1}(x),\qquad x\in[-2,2].
+\]
+作为一元函数，考虑 $g_{1}$ 在 $[-2,2]$ 内的驻点：
+\[
+g_{1}'(\xi)=2\xi-12(1-\xi)^{2}=0.
+\]
+可得：$\xi_{1}=\frac{3}{2}$，$\xi_{2}=\frac{2}{3}$．
+
+我们有
+\[
+g_{1}(2)=0,\qquad g_{1}(-2)=112,\qquad g_{1}\Bigl(\frac{3}{2}\Bigr)=\frac{7}{4},\qquad g_{1}\Bigl(\frac{2}{3}\Bigr)=\frac{16}{27}.
+\]
+故 $f$ 在 $\Sigma_{1}$ 上的最小值为 $0$．
+
+（注：以上讨论说明 $g_{1}(2)=0$ 以及 $g_{1}(-2),g_{1}\bigl(\frac{3}{2}\bigr),g_{1}\bigl(\frac{2}{3}\bigr)\ge 0$ 即可．或不求驻点，直接说明 $g_{1}\ge 0$ 且 $g_{1}(2)=0$．）
+
+在 $\Sigma_{2}$ 上，
+\[
+f(x,y,z)=4-(y^{2}+z^{2})=g_{2}(x,y)\ge 0,\qquad y^{2}+z^{2}\le 4.
+\]
+在 $\Sigma_{3}$ 上，
+\[
+f(x,y,z)=4+27(y^{2}+z^{2})=g_{3}(x,y)\ge 0,\qquad y^{2}+z^{2}\le 4.
+\]
+故 $f$ 在 $\Sigma$ 上的最小值为 $0$．
+
+\textbf{(3)} 注意到椭球 $x^{2}+\frac{y^{2}}{2}+\frac{z^{2}}{3}\le 1$ 完全在 $\Sigma$ 围成的区域 $\Omega$ 内，而且函数 $f$ 在 $\Omega$ 内有唯一驻点 $(0,0,0)$，$f(0,0,0)=0$．因此，$f$ 在 $\overline{\Omega}$ 上的最小值为 $0$．进而 $f$ 在该椭球上的最小值就是 $0$．
+\end{solution}
+
+\answerproblem{三、}{20}
+设 $V$ 是复数域 $\C$ 上的 $n$ 维线性空间，$\bm{A}$ 是 $V$ 上的一个线性变换．证明：存在 $\alpha\in V$ 使得 $\{\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha\}$ 成为 $V$ 的一组基当且仅当对于 $\bm{A}$ 的任一特征值 $\lambda$，$\lambda$ 的几何重数为 $1$．
+\begin{solution}
+必要性．设存在 $\alpha\in V$ 使得 $\{\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha\}$ 成为 $V$ 的一组基，显然 $\bm{A}$ 在该基下的矩阵为
+\[
+A=\begin{pmatrix}
+0 & & & & *\\
+1 & 0 & & & *\\
+ & 1 & \ddots & & \vdots\\
+ & & \ddots & 0 & *\\
+ & & & 1 & *
+\end{pmatrix}.
+\]
+对任意 $c\in\C$，
+\[
+cI-A=\begin{pmatrix}
+c & & & & *\\
+-1 & c & & & *\\
+ & -1 & \ddots & & \vdots\\
+ & & \ddots & c & *\\
+ & & & -1 & *
+\end{pmatrix},
+\]
+其左下角的 $n-1$ 阶子式非零，所以 $\rank(cI-A)\ge n-1$，从而齐次线性方程组
+\[
+(cI-A)X=0
+\]
+的解空间维数为 $n-\rank(cI-A)\le 1$．
+
+又对 $\bm{A}$ 的任一特征值 $\lambda$，
+\[
+(\lambda I-A)X=0
+\]
+一定有非零解，它的解空间维数 $\ge 1$．所以齐次线性方程组
+\[
+(\lambda I-A)X=0
+\]
+的解空间维数为 $1$，即 $\lambda$ 的几何重数为 $1$．
+
+充分性：设 $\bm{A}$ 的互不相同的特征值为 $\lambda_{1},\lambda_{2},\cdots,\lambda_{s}$，代数重数分别为 $d_{1},d_{2},\cdots,d_{s}$，其中 $d_{1}+d_{2}+\cdots+d_{s}=n$，即 $\bm{A}$ 的特征多项式为
+\[
+f(x)=(x-\lambda_{1})^{d_{1}}(x-\lambda_{2})^{d_{2}}\cdots(x-\lambda_{s})^{d_{s}}.
+\]
+对于 $1\le i\le s$，记 $V_{\lambda_{i}}=\operatorname{Ker}(\bm{A}-\lambda_{i}\bm{I})^{d_{i}}$，其中 $\bm{I}$ 为恒等变换，则 $V_{\lambda_{i}}$ 为 $\bm{A}$-不变子空间且
+\[
+V=V_{\lambda_{1}}\oplus V_{\lambda_{2}}\oplus\cdots\oplus V_{\lambda_{s}}.
+\]
+由于 $\lambda_{i}$ 的几何重数为 $1$，故 $\bm{A}|_{V_{\lambda_{i}}}$ 的 Jordan 标准型为
+\[
+\begin{pmatrix}
+\lambda_{i} & & & \\
+1 & \lambda_{i} & & \\
+ & \ddots & \ddots & \\
+ & & 1 & \lambda_{i}
+\end{pmatrix}_{d_{i}\times d_{i}}.
+\]
+所以存在 $\alpha_{i}\in V_{\lambda_{i}}$ 使得 $(\bm{A}-\lambda_{i}\bm{I})^{d_{i}-1}\alpha_{i}\ne 0$．
+
+令
+\[
+\alpha=\alpha_{1}+\alpha_{2}+\cdots+\alpha_{s},
+\]
+则 $\{\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha\}$ 是 $V$ 的一组基．若否，则 $\alpha,\bm{A}\alpha,\cdots,\bm{A}^{n-1}\alpha$ 线性相关，从而存在次数 $\le n-1$ 的非零多项式 $p(x)\in\C[x]$ 使得 $p(\bm{A})\alpha=0$．由于 $V_{\lambda_{i}}$ 为 $\bm{A}$-不变子空间，所以 $p(\bm{A})\alpha_{i}\in V_{\lambda_{i}}$．由
+\[
+0=p(\bm{A})\alpha=p(\bm{A})\alpha_{1}+p(\bm{A})\alpha_{2}+\cdots+p(\bm{A})\alpha_{s}
+\]
+可知 $p(\bm{A})\alpha_{i}=0$．由于 $(\bm{A}-\lambda_{i}\bm{I})^{d_{i}-1}\alpha_{i}\ne 0$，所以 $(x-\lambda_{i})^{d_{i}}$ 是 $\bm{A}$ 的零化 $\alpha_{i}$ 的次数最低的多项式，从而
+\[
+(x-\lambda_{i})^{d_{i}}\mid p(x).
+\]
+又当 $i\ne j$ 时，$(x-\lambda_{i})^{d_{i}}$ 与 $(x-\lambda_{j})^{d_{j}}$ 互素，所以
+\[
+(x-\lambda_{1})^{d_{1}}(x-\lambda_{2})^{d_{2}}\cdots(x-\lambda_{s})^{d_{s}}\mid p(x),
+\]
+即 $f(x)\mid p(x)$，这与 $\deg p(x)<\deg f(x)$ 且 $p(x)\ne 0$ 矛盾．
+\end{solution}
+
+\answerproblem{四、}{15}
+证明对任意 $n$ 阶方阵 $A$，存在主对角线上元素为 $1$ 或 $-1$ 的 $n$ 阶对角矩阵 $J$ 使得 $A+J$ 可逆．
+\begin{solution}
+对 $n$ 做归纳．当 $n=1$ 时，$A=(a)$，显然 $a+1$ 或者 $a-1$ 中一定有一个数非零，结论成立．
+
+设结论对 $n-1$ 阶矩阵成立，下面考察 $n$ 阶方阵 $A$．记
+\[
+A=\begin{pmatrix}A_{1} & \beta\\ \alpha & a_{nn}\end{pmatrix},
+\]
+其中 $A_{1}$ 为 $n-1$ 阶矩阵，$\alpha$ 为 $n-1$ 维行向量，$\beta$ 为 $n-1$ 维列向量，$a_{nn}$ 为一个数．由归纳假设，存在主对角线上元素为 $1$ 或 $-1$ 的 $n-1$ 阶对角矩阵 $J_{1}$ 使得 $A_{1}+J_{1}$ 可逆．
+
+从而
+\begin{align*}
+&\begin{vmatrix}A+\begin{pmatrix}J_{1} & 0\\ 0 & 1\end{pmatrix}\end{vmatrix}
+-\begin{vmatrix}A+\begin{pmatrix}J_{1} & 0\\ 0 & -1\end{pmatrix}\end{vmatrix}\\
+={}&\begin{vmatrix}A_{1}+J_{1} & \beta\\ \alpha & a_{nn}+1\end{vmatrix}
+-\begin{vmatrix}A_{1}+J_{1} & \beta\\ \alpha & a_{nn}-1\end{vmatrix}\\
+={}&\begin{vmatrix}A_{1}+J_{1} & \beta-\beta\\ \alpha & (a_{nn}+1)-(a_{nn}-1)\end{vmatrix}\\
+={}&2\abs{A_{1}+J_{1}}\ne 0.
+\end{align*}
+这表明上式最左边的两个行列式中至少有一个非零．
+
+令
+\[
+J=\begin{pmatrix}J_{1} & 0\\ 0 & 1\end{pmatrix}\quad\text{若}\quad
+\begin{vmatrix}A+\begin{pmatrix}J_{1} & 0\\ 0 & 1\end{pmatrix}\end{vmatrix}\ne 0,
+\]
+或者
+\[
+J=\begin{pmatrix}J_{1} & 0\\ 0 & -1\end{pmatrix}\quad\text{若}\quad
+\begin{vmatrix}A+\begin{pmatrix}J_{1} & 0\\ 0 & -1\end{pmatrix}\end{vmatrix}\ne 0,
+\]
+则 $J$ 为主对角线上元素为 $1$ 或 $-1$ 的 $n$ 阶对角矩阵且 $\abs{A+J}\ne 0$，即 $A+J$ 可逆，所以结论对 $n$ 阶矩阵成立．
+
+由归纳法原理，结论对任意方阵成立．
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $f(x)=x^{n}(1-x)^{n}$，
+\[
+F(x)=f(x)-f''(x)+f^{(4)}(x)-\cdots+(-1)^{n}f^{(2n)}(x).
+\]
+计算并化简 $\dfrac{\mathrm{d}}{\mathrm{d}x}\bigl(F'(x)\sin x-F(x)\cos x\bigr)$．
+\begin{solution}
+\begin{align*}
+\frac{\dd}{\dd x}\bigl(F'(x)\sin x-F(x)\cos x\bigr)
+&=F''(x)\sin x+F'(x)\cos x-F'(x)\cos x+F(x)\sin x\\
+&=\bigl(F''(x)+F(x)\bigr)\sin x\\
+&=\bigl(f(x)+(-1)^{n}f^{(2n+2)}(x)\bigr)\sin x\\
+&=f(x)\sin x=x^{n}(1-x)^{n}\sin x.
+\end{align*}
+\end{solution}
+
+\answerproblem{六、}{20}
+设非负函数 $f$ 在 $[0,+\infty)$ 上连续可微，无穷积分 $\displaystyle\int_{0}^{+\infty}f(x)\dd x$ 收敛，且存在 $[0,+\infty)$ 上的非负函数 $g$，使得
+\[
+f'(x)\le g(x),\qquad x\ge 0. \tag{1}
+\]
+分别就下列三种情形，证明 $\displaystyle\lim_{x\to+\infty}f(x)=0$．
+\begin{enumerate}[label=(\roman*)]
+  \item $\displaystyle\int_{0}^{+\infty}g(x)\dd x$ 收敛．
+  \item $g(x)=C>0$，其中 $C$ 为常数．
+  \item $g(x)=Cf^{p}(x)$，其中 $C>0$，$p>0$ 为常数．
+\end{enumerate}
+\begin{solution}
+\textbf{法 1}．(i) 由条件 (1)，
+\[
+f(x)\le f(y)+\int_{y}^{x}g(x)\dd x\le f(y)+\int_{y}^{+\infty}g(x)\dd x,\qquad 0\le y<x.
+\]
+所以 $f$ 在 $[0,+\infty)$ 上有界．于是
+\[
+\varlimsup_{x\to+\infty}f(x)\le f(y)+\int_{y}^{+\infty}g(x)\dd x,\qquad 0\le y<+\infty
+\]
+进而由无穷积分 $\int_{0}^{+\infty}g(x)\dd x$ 收敛，得到
+\[
+\varlimsup_{x\to+\infty}f(x)\le\varliminf_{x\to+\infty}f(x)
+\]
+故 $\lim\limits_{x\to+\infty}f(x)=A$ 存在，又无穷积分 $\int_{0}^{+\infty}f(x)\dd x$ 收敛，从而 $A=0$．
+
+(ii) 我们用反证法证明结论．
+
+假设结论不成立，那么存在正数 $a$ 和正数数列 $\{x_{n}\}$，使得 $\lim\limits_{n\to+\infty}x_{n}=+\infty$，$f(x_{n})\ge a$，$n=1,2,\cdots$．显然不妨设
+\begin{equation*}
+x_{n}>\frac{a}{2C},\qquad n=1,2,\cdots. \tag{2}
+\end{equation*}
+在区间 $\bigl[x_{n}-\frac{a}{2C},x_{n}\bigr]$ 上对不等式 (1) 从 $x$ 积分到 $x_{n}$，利用 (2) 得到
+\[
+f(x_{n})-f(x)\le C(x_{n}-x)\ \Rightarrow\ a-f(x)\le C(x_{n}-x)\le C\cdot\frac{a}{2C}=\frac{a}{2}.
+\]
+我们有
+\[
+f(x)\ge\frac{a}{2},\qquad x_{n}-\frac{a}{2C}\le x\le x_{n},\ n=1,2,\cdots
+\]
+从而
+\[
+\int_{x_{n}-\frac{a}{2C}}^{x_{n}}f(x)\dd x\ge\frac{a}{2}\cdot\frac{a}{2C}=\frac{a^{2}}{4C},\qquad n=0,1,2,\cdots.
+\]
+此与 $\int_{0}^{+\infty}f(x)\dd x$ 收敛的 Cauchy 准则矛盾，证毕．
+
+(iii) 假设结论不成立，那么存在正数 $a$ 和正数数列 $\{x_{n}\}$，使得 $\lim\limits_{n\to+\infty}x_{n}=+\infty$，$f(x_{n})\ge a$，$n=1,2,\cdots$．显然不妨设
+\begin{equation*}
+x_{n}>b=\frac{a}{2a^{p-1}C},\qquad n=1,2,\cdots. \tag{3}
+\end{equation*}
+现在证明 $f$ 在区间 $[x_{n}-b,x_{n}]$ 上的最小值 $m_{n}$ 大于一个正常数．
+
+设 $t_{n}\in[x_{n}-b,x_{n}]$，$f(t_{n})=m_{n}$．我们分两种情况来讨论．
+
+1. $m_{n}=a$，则有 $f(x)\ge a$，$x\in[x_{n}-b,x_{n}]$．
+
+2. $m_{n}<a$，因为 $f(x_{n})\ge a$，所以 $t_{n}<x_{n}$．记 $T_{n}=\sup\{t;f(x)<a,\ x\in[t_{n},t)\}$，那么，由 $f$ 的连续性知道，$t_{n}<T_{n}\le x_{n}$，$f(T_{n})=a$．
+
+在 $t_{n}$ 和 $T_{n}$ 处应用不等式 (1)，利用 (3)，得到
+\[
+a-m_{n}=f(T_{n})-f(t_{n})\le C\int_{t_{n}}^{T_{n}}f^{p}(x)\dd x\le Ca^{p}(T_{n}-t_{n})\le Ca^{p}b=\frac{a}{2}.
+\]
+即
+\[
+\frac{a}{2}\le m_{n}\le f(x),\qquad x\in[x_{n}-b,x_{n}].
+\]
+综合两种情况，我们总有
+\[
+f(x)\ge\frac{a}{2},\quad x\in[x_{n}-b,x_{n}].
+\]
+于是
+\[
+\int_{x_{n}-b}^{x_{n}}f(x)\dd x\ge\frac{ab}{2}=\frac{a}{4C}>0,
+\]
+此与 $\int_{0}^{+\infty}f(x)\dd x$ 收敛的 Cauchy 准则矛盾，证毕．
+
+\textbf{法 2}．我们对三种情形作统一处理．设 $g(x)=Cf^{p}(x)+h(x)$，其中 $C\ge 0$，$p\ge 0$ 为常数（$0^{0}$ 理解为 $1$），$h$ 非负且 $\int_{0}^{+\infty}h(x)\dd x$ 收敛．
+
+任取 $m\ge 16C+2$，由 Cauchy 准则，存在 $N=N_{m}\ge 1$ 使得当 $n\ge N$ 时，
+\[
+\int_{\frac{n}{m^{2}}}^{\frac{n+1}{m^{2}}}\bigl(f(x)+h(x)\bigr)\dd x<\frac{1}{4m^{3}}.
+\]
+因此，结合 $f$ 非负，对于任何 $n\ge N$，有 $\xi_{n}\in\bigl[\frac{n}{m^{2}},\frac{n+1}{m^{2}}\bigr]$ 使得 $f(\xi_{n})<\frac{1}{4m}$．
+
+我们断言当 $x>\frac{N+1}{m^{2}}$ 时，$f(x)\le\frac{1}{m}$．
+
+否则，有 $\eta_{1}>\frac{N+1}{m^{2}}$，使得 $f(\eta_{1})>\frac{1}{m}$．我们有 $k\ge N$ 使得 $\xi_{k}<\eta_{1}<\xi_{k}+\frac{2}{m^{2}}$．
+
+进一步，设 $\eta_{2}$ 为 $f-\frac{1}{m}$ 在 $[\xi_{k},\eta_{1}]$ 中最小的零点，$\eta_{3}$ 为 $f-\frac{1}{2m}$ 在 $[\xi_{k},\eta_{2}]$ 中最大的零点．则在 $[\eta_{3},\eta_{2}]$ 上 $\frac{1}{2m}\le f\le\frac{1}{m}<1$．从而
+\begin{align*}
+\frac{1}{2m}&=f(\eta_{2})-f(\eta_{3})=\int_{\eta_{3}}^{\eta_{2}}f'(t)\dd t\\
+&\le\int_{\eta_{3}}^{\eta_{2}}\bigl(Cf^{p}(t)+h(t)\bigr)\dd t\le\int_{\eta_{3}}^{\eta_{2}}\bigl(C+h(t)\bigr)\dd t\\
+&\le\frac{2C}{m^{2}}+\frac{1}{2m^{3}}\le\frac{1}{4m}.
+\end{align*}
+矛盾．
+
+因此，当 $x>\frac{N+1}{m}$ 时，$f(x)\le\frac{1}{m}$．由此即得 $\lim\limits_{x\to+\infty}f(x)=0$．
+\end{solution}

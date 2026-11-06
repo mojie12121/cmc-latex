@@ -1,0 +1,192 @@
+\answerpaper{非数学 B 类}
+
+\answerproblem{一、}{30}
+填空题（每小题 6 分）：
+\begin{enumerate}[label=(\arabic*)]
+  \item 已知函数 $y=x^2\ee^{\sin x}$，则 $y''(0)=\underline{\hspace{3.5em}}$．
+  \item 设平面过原点与点 $(6,-3,2)$，且与平面 $4x-y+2z-8=0$ 垂直，则此平面方程为 $\underline{\hspace{3.5em}}$．
+  \item 设 $f(x)$ 连续，且 $f(x)+f(-x)=2$．求
+  \[
+  \int_{-1}^{1}\left(f(x)+x^2\ln\left(x+\sqrt{x^2+1}\right)\right)\dd x=\underline{\hspace{3.5em}}.
+  \]
+  \item 设函数 $f(u,v)$ 具有一阶连续偏导数，$f(2,0)=3$，$f'_u(2,0)=5$，又设 $z=z(x,y)$ 是由方程 $xz=f(2x-y,xyz)$ 确定的隐函数，则 $\displaystyle \left.\frac{\partial z}{\partial x}\right|_{\substack{x=1\\y=0}}=\underline{\hspace{3.5em}}$．
+  \item 积分 $\displaystyle \int_1^{+\infty}\frac{\ln x}{(1+x)^2}\dd x=\underline{\hspace{3.5em}}$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 易得结果为 $2$．
+
+\textbf{(2)} 易得此平面方程为 $2x+2y-3z=0$．
+
+注：答案不唯一，系数差个倍数都对，例如：$-2x-2y+3z=0$ 或 $x+y-\frac{3}{2}z=0$ 也对．
+
+\textbf{(3)} 因为 $y=\ln\left(x+\sqrt{x^2+1}\right)$ 是奇函数，故
+\[
+\int_{-1}^{1}x^2\ln\left(x+\sqrt{x^2+1}\right)\dd x=0,
+\]
+所以原积分化为：
+\[
+\int_{-1}^{1}f(x)\dd x=\int_{0}^{1}\bigl(f(x)+f(-x)\bigr)\dd x=2.
+\]
+
+\textbf{(4)} 对方程两边关于 $x$ 求偏导数，得
+\[
+z+x\frac{\partial z}{\partial x}=2f'_u+yf'_v\left(z+x\frac{\partial z}{\partial x}\right).
+\]
+由此解得
+\[
+\frac{\partial z}{\partial x}=\frac{1}{x}\left(\frac{2f'_u}{1-yf'_v}-z\right).
+\]
+注意到 $x=1,\,y=0$ 时，$z=f(2,0)=3$，$f'_u(2,0)=5$，所以
+\[
+\left.\frac{\partial z}{\partial x}\right|_{\substack{x=1\\y=0}}=2f'_u(2,0)-3=7.
+\]
+
+\textbf{(5)} 利用分部积分，得
+\begin{align*}
+\int_1^{+\infty}\frac{\ln x}{(1+x)^2}\dd x
+&=\int_1^{+\infty}\ln x\dd\left(-\frac{1}{1+x}\right)
+=-\frac{\ln x}{1+x}\Big|_1^{+\infty}+\int_1^{+\infty}\frac{\dd x}{x(1+x)}\\
+&=\int_1^{+\infty}\frac{\dd x}{x(1+x)}=\int_1^{+\infty}\left(\frac{1}{x}-\frac{1}{x+1}\right)\dd x\\
+&=\ln\frac{x}{x+1}\Big|_1^{+\infty}=\ln 2.
+\end{align*}
+\end{solution}
+
+\answerproblem{二、}{14}
+设 $a,b$ 为常数，函数 $f(x,y)=ax^2+by^2+1$ 在点 $(4,3)$ 处的所有方向导数中，沿方向 $\mathbf{l}=-4\mathbf{i}-3\mathbf{j}$ 的方向导数最大，最大值为 10．
+\begin{enumerate}
+  \item 求 $a,b$ 的值；
+  \item 求曲面 $z=f(x,y)$ 被平面 $z=0$ 所截下的有限部分的面积．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 函数 $f(x,y)=ax^2+by^2+1$ 在点 $(4,3)$ 处的梯度为
+\[
+\mathbf{grad}\,f\big|_{(4,3)}=\{2ax,2by\}\big|_{(4,3)}=\{8a,6b\}.
+\]
+根据题设可知
+\[
+\begin{cases}
+\dfrac{8a}{-4}=\dfrac{6b}{-3}>0,\\[2mm]
+\sqrt{(8a)^2+(6b)^2}=10.
+\end{cases}
+\]
+解得 $a=b=-1$．
+
+\textbf{(2)} 曲面方程为 $z=1-x^2-y^2$，曲面在 $xOy$ 平面上的投影区域为
+\[
+D=\{(x,y)\mid x^2+y^2\le 1\},
+\]
+故所求面积为
+\begin{align*}
+A&=\iint_D\sqrt{1+(-2x)^2+(-2y)^2}\dd x\dd y=\iint_D\sqrt{1+4x^2+4y^2}\dd x\dd y\\
+&=\int_0^{2\pi}\dd\theta\int_0^1\sqrt{1+4r^2}\cdot r\dd r=\frac{\pi}{4}\int_0^1\sqrt{1+4r^2}\dd(1+4r^2)\\
+&=\frac{\pi}{6}\left(5\sqrt{5}-1\right).
+\end{align*}
+\end{solution}
+
+\answerproblem{三、}{14}
+求由方程 $2x^2+2y^2+z^2+8xz-z+8=0$ 所确定的函数 $z=z(x,y)$ 的极值．
+\begin{solution}
+对所给方程两边分别关于 $x$ 和 $y$ 求偏导，得：
+\begin{align*}
+4x+2z\frac{\partial z}{\partial x}+8z+8x\frac{\partial z}{\partial x}-\frac{\partial z}{\partial x}&=0,\\
+4y+2z\frac{\partial z}{\partial y}+8x\frac{\partial z}{\partial y}-\frac{\partial z}{\partial y}&=0.
+\end{align*}
+解之得
+\[
+\frac{\partial z}{\partial x}=-\frac{4x+8z}{2z+8x-1},\qquad
+\frac{\partial z}{\partial y}=-\frac{4y}{2z+8x-1}.
+\]
+令 $\frac{\partial z}{\partial x}=\frac{\partial z}{\partial y}=0$，得到 $x=-2z,\ y=0$，代入原方程得 $7z^2+z-8=0$．
+
+解该方程得 $z_1=1,\ z_2=-\frac{8}{7}$，于是得到驻点 $(-2,0)$ 和 $\left(\frac{16}{7},0\right)$．
+
+继续求导可得
+\[
+z_{xx}=-\frac{4+2z_x^2+16z_x}{2z+8x-1},\qquad
+z_{xy}=-\frac{2z_xz_y}{2z+8x-1},\qquad
+z_{zz}=-\frac{4+2z_y^2}{2z+8x-1}.
+\]
+在点 $(-2,0)$ 处，$A=z_{xx}=\frac{4}{15}$，$B=z_{xy}=0$，$C=z_{zz}=\frac{4}{15}$；在点 $\left(\frac{16}{7},0\right)$ 处，$A=z_{xx}=-\frac{4}{15}$，$B=z_{xy}=0$，$C=z_{zz}=-\frac{4}{15}$．在这两个点都有 $B^2-AC<0$，从而函数 $z=z(x,y)$ 在 $(-2,0)$ 处取得极小值 $z=1$，在 $\left(\frac{16}{7},0\right)$ 处取得极大值 $z=-\frac{8}{7}$．
+\end{solution}
+
+\answerproblem{四、}{14}
+求微分方程 $y'x\ln x\sin y+(1-x\cos y)\cos y=0$ 的通解．
+\begin{solution}
+将原方程变形为
+\[
+y'\sin y+\frac{1}{x\ln x}\cos y=\frac{1}{\ln x}\cos^2 y. \tag{1}
+\]
+令 $z=\cos y$，则上述方程可化为 $n=2$ 的 Bernoulli 方程
+\[
+z'-\frac{1}{x\ln x}z=-\frac{1}{\ln x}z^2.
+\]
+令 $u=z^{-1}$，原方程可进一步化为非齐次线性方程
+\[
+u'+\frac{1}{x\ln x}u=\frac{1}{\ln x}.
+\]
+利用公式，得上述方程的通解为
+\[
+u=\ee^{-\int\frac{\dd x}{x\ln x}}\left(\int\frac{1}{\ln x}\ee^{\int\frac{\dd x}{x\ln x}}\dd x+C\right)=\frac{1}{\ln x}(x+C).
+\]
+将其中的变量换回原变量：$u=z^{-1}=\frac{1}{\cos y}$，得所求通解为
+\[
+\frac{1}{\cos y}=\frac{1}{\ln x}(x+C).
+\]
+\end{solution}
+
+\answerproblem{五、}{14}
+\begin{enumerate}
+  \item 设函数 $f(x)=\sin^2 x\sin 2x$，讨论 $f(x)$ 在区间 $(0,\pi)$ 的单调性；
+  \item 判断级数 $\displaystyle \sum_{n=1}^{\infty}a_n$ 的收敛性，其中 $a_n=\sin^2 x\sin^2 2x\cdots\sin^2 2^n x,\ x\in(-\infty,+\infty)$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} $f'(x)=2\sin^2x\left(3-4\sin^2x\right)=-8\sin^2x\left(\sin x-\frac{\sqrt{3}}{2}\right)\left(\sin x+\frac{\sqrt{3}}{2}\right)$．
+
+令 $f'(x)=0$，可得两个根 $x_1=\frac{\pi}{3},\ x_2=\frac{2\pi}{3}$．
+
+容易证明函数 $f(x)$ 在 $\left(0,\frac{\pi}{3}\right)\cup\left(\frac{2\pi}{3},\pi\right)$ 上单调增加，在 $\left(\frac{\pi}{3},\frac{2\pi}{3}\right)$ 上单调减少．
+
+\textbf{(2)} 由于 $f(x)$ 的周期为 $\pi$，$f(0)=f(\pi)=0$，$f(x)$ 在 $[0,\pi]$ 上的最大值和最小值分别为 $f\left(\frac{\pi}{3}\right)=\frac{3\sqrt{3}}{8}$ 和 $f\left(\frac{2\pi}{3}\right)=-\frac{3\sqrt{3}}{8}$．故 $\abs{f(x)}\le\frac{3\sqrt{3}}{8}$．
+
+最后，由
+\[
+a_n^{3/2}=\abs{\sin x}\cdot\abs{f(x)f(2x)\cdots f(2^{n-1}x)}\cdot\abs{\sin^2 2^n x}\le\left(\frac{3\sqrt{3}}{8}\right)^n,
+\]
+知 $a_n\le\left(\left(\frac{3\sqrt{3}}{8}\right)^{2/3}\right)^n=\left(\frac{3}{4}\right)^n$．从而级数 $\displaystyle \sum_{n=1}^{\infty}a_n$ 收敛．
+\end{solution}
+
+\answerproblem{六、}{14}
+设 $f(x)$ 在 $[a,b]$ 上有连续的导数，记
+\[
+A=\frac{1}{b-a}\int_a^b f(x)\dd x.
+\]
+试证明：
+\[
+\int_a^b\abs{f(x)-A}^2\dd x\le\frac{(a-b)^2}{2}\int_a^b\abs{f'(x)}^2\dd x.
+\]
+\begin{solution}
+根据积分中值定理，存在 $c\in[a,b]$，使得 $A=\frac{1}{b-a}\int_a^b f(x)\dd x=f(c)$．
+
+先后利用 Newton-Leibniz 公式与 Cauchy 积分不等式，得
+\begin{align*}
+\abs{f(x)-A}^2&=\abs{f(x)-f(c)}^2=\left(\int_c^x f'(t)\dd t\right)^2\\
+&\le\left|\int_c^x 1^2\dd t\int_c^x\abs{f'(t)}^2\dd t\right|\le\abs{x-c}\int_a^b\abs{f'(t)}^2\dd t.
+\end{align*}
+所以
+\[
+\int_a^b\abs{f(x)-A}^2\dd x\le\int_a^b\abs{x-c}\dd x\int_a^b\abs{f'(t)}^2\dd t.
+\]
+易知
+\begin{align*}
+\int_a^b\abs{x-c}\dd x&=\int_a^c\abs{x-c}\dd x+\int_c^b\abs{x-c}\dd x=\int_a^c(c-x)\dd x+\int_c^b(x-c)\dd x\\
+&=\frac{1}{2}(a-c)^2+\frac{1}{2}(b-c)^2=\frac{1}{2}\left[(a-c)^2+(b-c)^2\right].
+\end{align*}
+令 $g(t)=(a-t)^2+(b-t)^2$，易知 $g(t)$ 在 $[a,b]$ 上的最大值为 $(a-b)^2$．所以
+\[
+\int_a^b\abs{x-c}\dd x\le\frac{(a-b)^2}{2},
+\]
+这就证明了
+\[
+\int_a^b\abs{f(x)-A}^2\dd x\le\frac{(a-b)^2}{2}\int_a^b\abs{f'(x)}^2\dd x.
+\]
+\end{solution}

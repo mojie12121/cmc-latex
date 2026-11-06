@@ -1,0 +1,118 @@
+\answerpaper{非数学 B 类}
+
+\answerproblem{一、}{30}
+填空题：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\lim\limits_{x\to\infty}\left(\dfrac{x+3}{x+2}\right)^{2x-1}=$ \underline{\hspace{6em}}。
+  \item 设 $z=f(x^2-y^2,xy)$，且 $f(u,v)$ 有连续的二阶偏导数，则 $\dfrac{\partial^2 z}{\partial x\partial y}=$ \underline{\hspace{6em}}。
+  \item 设曲线 $y=\ln(1+ax)+1$ 与曲线 $y=2xy^3+b$ 在 $(0,1)$ 处相切，则 $a+b=$ \underline{\hspace{6em}}。
+  \item 设函数 $y=y(x)$ 由方程 $y=1+\arctan(xy)$ 所确定，则 $y'(0)=$ \underline{\hspace{6em}}。
+  \item 计算 $\displaystyle\int_0^1 \dd x\int_x^{\sqrt{x}}\frac{\cos y}{y}\dd y=$ \underline{\hspace{6em}}。
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} $\lim\limits_{x\to\infty}\left(1+\dfrac{1}{x+2}\right)^{2(x+2)-5}=\ee^2$。
+
+\textbf{(2)}
+\begin{align*}
+z_x &= 2x f_1 + y f_2,\\
+z_{xy} &= 2x\left(f_{11}(-2y) + x f_{12}\right) + f_2 + y\left(f_{21}(-2y) + x f_{22}\right)\\
+&= f_2 - 4xy f_{11} + 2(x^2 - y^2) f_{12} + xy f_{22}.
+\end{align*}
+
+\textbf{(3)} 易得 $b=1$，$a=2$，故 $a+b=3$。
+
+\textbf{(4)} 易得 $y'(x)=\dfrac{xy'+y}{1+x^2y^2}$。当 $x=0$ 时，$y'(0)=1$。
+
+\textbf{(5)} 交换积分顺序，得
+\[ \int_0^1 \dd x\int_x^{\sqrt{x}}\frac{\cos y}{y}\dd y=\int_0^1 \dd y\int_{y^2}^{y}\frac{\cos y}{y}\dd x=\int_0^1(1-y)\cos y\dd y=1-\cos 1. \]
+\end{solution}
+
+\answerproblem{二、}{14}
+设曲线 $y=3ax^2+2bx+\ln c$ 经过 $(0,0)$ 点，且当 $0\le x\le 1$ 时 $y\ge 0$。设该曲线与直线 $x=1$，$x$ 轴所围图形的平面图形 $D$ 的面积为 $1$。试求常数 $a,b,c$ 的值，使得 $D$ 绕 $x$ 轴一周后，所得旋转体的体积最小。
+
+\begin{solution}
+由于曲线 $y=3ax^2+2bx+\ln c$ 经过 $(0,0)$ 点，故 $\ln c=0$，$c=1$。$D$ 的面积
+\[ A=\int_0^1(3ax^2+2bx)\dd x=a+b=1. \]
+$D$ 绕 $x$ 轴一周所得到的旋转体体积
+\begin{align*}
+V &= \pi\int_0^1(3ax^2+2bx)^2\dd x\\
+&= \pi\left(\frac{9}{5}a^2+3ab+\frac{4}{3}b^2\right)\\
+&= \pi\left(\frac{2}{15}a^2+\frac{1}{3}a+\frac{4}{3}\right).
+\end{align*}
+\[ V'(a)=\pi\left(\frac{4}{15}a+\frac{1}{3}\right). \]
+不难得到，当 $a=-\dfrac{5}{4}$ 时，旋转体得体积最小，此时，$b=\dfrac{9}{4}$，$c=1$。
+
+注：推导最小值点时，用其他办法如配方也可以。
+\end{solution}
+
+\answerproblem{三、}{14}
+解方程
+\[ (x^2+y^2+3)\frac{\dd y}{\dd x}=2x\left(2y-\frac{x^2}{y}\right). \]
+
+\begin{solution}
+原方程变形为
+\[ \frac{y\dd y}{x\dd x}=\frac{2(2y^2-x^2)}{x^2+y^2+3}. \]
+令 $u=x^2$，$v=y^2$，则原方程化为
+\[ \frac{\dd v}{\dd u}=\frac{2(2v-u)}{u+v+3}. \]
+解方程 $2v-u=0$，$u+v+3=0$，得到 $u=-2$，$v=-1$，再令 $U=u+2$，$V=v+1$，上述方程化为
+\[ \frac{\dd V}{\dd U}=\frac{2(2V-U)}{U+V}. \]
+作变量替换 $W=\dfrac{V}{U}$ 得到
+\[ U\frac{\dd W}{\dd U}=-\frac{W^2-3W+2}{W+1}. \]
+这是分离变量方程，解之得 $U(W-2)^3=C(W-1)^2$，回代得
+\[ (y^2-2x^2-3)^3=C(y^2-x^2-1)^2. \]
+\end{solution}
+
+\answerproblem{四、}{14}
+求幂级数 $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}x^{2n}}{n(2n-1)}$ 的收敛域及和函数。
+
+\begin{solution}
+因为 $\lim\limits_{n\to\infty}\sqrt[n]{\dfrac{1}{n(2n-1)}}=1$，所以收敛半径为 $1$。
+
+当 $x=\pm1$ 时，$\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n(2n-1)}$ 绝对收敛，故收敛域为 $[-1,1]$。
+
+记该幂级数的和函数为 $S(x)$，则在 $(-1,1)$ 上，
+\[ \frac{1}{2}S''(x)=\sum_{n=1}^{\infty}(-1)^{n-1}x^{2n-2}=\frac{1}{1+x^2}. \]
+\[ S'(x)=2\int_0^x\frac{1}{1+s^2}\dd s=2\arctan x,\quad x\in(-1,1). \]
+\[ S(x)=2\int_0^x\arctan s\dd s=2x\arctan x-\ln(1+x^2),\quad x\in(-1,1). \]
+由于 $S(x)$ 在收敛域上连续，所以
+\[ S(x)=2\int_0^x\arctan s\dd s=2x\arctan x-\ln(1+x^2),\quad x\in[-1,1]. \]
+\end{solution}
+
+\answerproblem{五、}{14}
+设 $f(x)$ 在 $[0,1]$ 上可导且 $f(0)>0$，$f(1)>0$，$\displaystyle\int_0^1 f(x)\dd x=0$。证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $f(x)$ 在 $[0,1]$ 上至少有两个零点；
+  \item 在 $(0,1)$ 内至少存在一点 $\xi$，使得 $f'(\xi)+3f^3(\xi)=0$。
+\end{enumerate}
+
+\begin{solution}
+\textbf{证明. (1)} 首先我在 $(0,1)$ 上至少存在一点 $x_0$ 使得 $f(x_0)<0$。否则若对于任意的 $x\in[0,1]$，$f(x)\ge 0$。$f(x)$ 连续且不恒为零，故 $\int_0^1 f(x)\dd x>0$。与题设矛盾。
+
+其次，因为 $f(x)$ 连续，在区间 $[0,x_0]$ 和 $[x_0,1]$ 上分别应用零点定理知，存在 $\xi_1\in(0,x_0)$，$\xi_2\in(x_0,1)$ 使得 $f(\xi_1)=0$，$f(\xi_2)=0$。
+
+\textbf{(2)} 令 $F(x)=f(x)\ee^{\int_0^x 3f^2(s)\dd s}$，则 $F$ 在 $[0,1]$ 上连续，$(0,1)$ 上可导且 $F(\xi_1)=F(\xi_2)=0$。由罗尔定理，存在 $\xi\in(\xi_1,\xi_2)\subset(0,1)$ 使得 $F'(\xi)=0$。
+
+又 $F'(x)=\left(f'(x)+3f^3(x)\right)\ee^{\int_0^x 3f^2(s)\dd s}$，所以 $f'(\xi)+3f^3(\xi)=0$。
+\end{solution}
+
+\answerproblem{六、}{14}
+设 $f(x)$ 在 $[0,1]$ 上有连续的导数且 $f(0)=0$。求证：
+\[ \int_0^1 f^2(x)\dd x\le 4\int_0^1(1-x)^2|f'(x)|^2\dd x, \]
+并求使上式成为等式的 $f(x)$。
+
+\begin{solution}
+由分部积分法
+\begin{align*}
+\int_0^1 f^2(x)\dd x &= (x-1)f^2(x)\Big|_0^1-\int_0^1(x-1)2f(x)f'(x)\dd x\\
+&= 2\int_0^1(1-x)f'(x)\cdot f(x)\dd x.
+\end{align*}
+由 Cauchy 积分不等式，有
+\[ \int_0^1(1-x)f'(x)\cdot f(x)\dd x\le\left(\int_0^1(1-x)^2(f'(x))^2\dd x\right)^{\frac{1}{2}}\left(\int_0^1 f^2(x)\dd x\right)^{\frac{1}{2}}. \]
+于是
+\[ \int_0^1 f^2(x)\dd x\le 4\int_0^1(1-x)^2|f'(x)|^2\dd x. \]
+等式成立时应有常数 $c$ 使得 $(1-x)f'(x)=cf(x)$。因此当 $x\in(0,1)$ 时，有
+\[ \left((1-x)^cf(x)\right)'=(1-x)^{c-1}\left((1-x)f'(x)-cf(x)\right)=0. \]
+因而存在常数 $d$ 使得 $f(x)=d(1-x)^{-c}$（$0<x<1$）。
+
+当 $x\to0$ 时，$f(x)\to0$，故 $d=0$。于是 $f=0$。所以使得题中不等式成为等式的函数是 $f(x)=0$。
+\end{solution}

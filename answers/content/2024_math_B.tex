@@ -1,0 +1,336 @@
+\answerpaper{数学 B 类}
+
+\answerproblem{一、}{15}
+已知单叶双曲面
+\begin{align*}
+S:\ x^2+y^2-z^2=1. \tag{1}
+\end{align*}
+\begin{enumerate}[label=(\arabic*)]
+  \item 求 $S$ 上经过 $M_0(1,-1,1)$ 点的两条不同族的直母线方程；
+  \item 求 $S$ 上相互垂直的直母线交点的轨迹.
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 由方程 (1) 可得
+\begin{align*}
+(x+z)(x-z)=(1+y)(1-y). \tag{2}
+\end{align*}
+由 (2) 可设所求直母线为
+\begin{align*}
+L_1:\ \begin{cases}
+  u(x+z)=v(1+y),\\
+  v(x-z)=u(1-y),
+\end{cases}
+\qquad
+L_2:\ \begin{cases}
+  \lambda(x+z)=\mu(1-y),\\
+  \mu(x-z)=\lambda(1+y),
+\end{cases} \tag{3}
+\end{align*}
+其中，实数 $u,v$ 不全为零；实数 $\mu,\lambda$ 不全为零.
+
+将 $M_0(1,-1,1)$ 代入 (3)，可得 $u=0$，以及 $\mu=\lambda\ne0$，从而得到
+\begin{align*}
+L_1:\ \begin{cases}
+  1+y=0,\\
+  x-z=0,
+\end{cases}
+\qquad
+L_2:\ \begin{cases}
+  x+z=1-y,\\
+  x-z=1+y.
+\end{cases} \tag{4}
+\end{align*}
+（即 $L_1:\ x=\dfrac{y+1}{0}=z$，$L_2:\ \dfrac{x-1}{0}=y=-z$）
+
+\textbf{(2)} 因为过单叶双曲面上任意一点，有且仅有两条不同直母线通过它. 不妨设这两条直母线分别为 $L_1,L_2$，那么它们的方向向量分别为
+\[
+  \mathbf{s}_1=(v^2-u^2,\ 2uv,\ u^2+v^2)
+\]
+和
+\[
+  \mathbf{s}_2=(-\mu^2+\lambda^2,\ 2\lambda\mu,\ -\lambda^2-\mu^2).
+\]
+由题设 $\mathbf{s}_1$ 与 $\mathbf{s}_2$ 正交，则有 $\mathbf{s}_1\cdot\mathbf{s}_2=0$，于是可得
+\begin{align*}
+(v^2-u^2)(\lambda^2-\mu^2)+4uv\lambda\mu-(u^2+v^2)(\lambda^2+\mu^2)=0. \tag{5}
+\end{align*}
+设这两直母线相交于点 $P(X,Y,Z)$，则
+\begin{align*}
+X^2+Y^2-Z^2=1. \tag{6}
+\end{align*}
+情形 1：若 $1+Y\ne0$，有
+\begin{align*}
+\begin{cases}
+  u=1+Y,\\
+  v=X+Z,\\
+  \lambda=X-Z,\\
+  \mu=1+Y.
+\end{cases} \tag{7}
+\end{align*}
+结合 (5)、(6) 和 (7) 得
+\begin{align*}
+(1+Y)^2Z^2=0. \tag{8}
+\end{align*}
+因为 $1+Y\ne0$，由 (8) 可得 $Z=0$. 再由 (6) 可得 $P(X,Y,Z)$ 的轨迹为
+\[
+  X^2+Y^2=1,\quad Z=0.
+\]
+情形 2：若 $1+Y=0$，则 $1-Y\ne0$，于是
+\[
+  \begin{cases}
+    u=X-Z,\\
+    v=1-Y,\\
+    \lambda=1-Y,\\
+    \mu=X+Z.
+  \end{cases}
+\]
+与上面的讨论类似可得 $Z=0$，因此所得轨迹为
+\[
+  X^2+Y^2=1,\quad Z=0.
+\]
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $s\ge0$，
+\[
+  \varphi(s)=\int_0^{+\infty}\frac{\ln(1+sx^2)}{x(1+x^2)}\dd x.
+\]
+求 $\varphi(1)$ 和 $\varphi(2)$.
+\begin{solution}
+我们有 $\lim\limits_{x\to0^+}\dfrac{\ln(1+x)}{\sqrt{x}}=0$，$\lim\limits_{x\to+\infty}\dfrac{\ln(1+x)}{\sqrt{x}}=0$. 因此，有常数 $C>0$，使得
+\[
+  \ln(1+x)\le C\sqrt{x},\qquad \forall x>0.
+\]
+从而，
+\[
+  \frac{\ln(1+sx^2)}{x(1+x^2)}\le C\frac{\sqrt{s}}{1+x^2},\qquad \forall x>0,\ s\ge0.
+\]
+因此，广义积分 $\displaystyle\int_0^{+\infty}\frac{\ln(1+sx^2)}{x(1+x^2)}\dd x$ 关于 $s\in[0,+\infty)$ 内闭一致收敛. 进而 $\varphi$ 在 $[0,+\infty)$ 上连续.
+
+另一方面，由
+\[
+  \frac{x}{(1+x^2)(1+sx^2)}\le\frac{1}{2\sqrt{s}(1+x^2)},\qquad \forall x>0,\ s>0
+\]
+可得，积分 $\displaystyle\int_0^{+\infty}\frac{\ln(1+sx^2)}{x(1+x^2)}\dd x$ 形式求导后得到的积分 $\displaystyle\int_0^{+\infty}\frac{x}{(1+x^2)(1+sx^2)}\dd x$ 关于 $s\in(0,+\infty)$ 内闭一致收敛. 因此，$\varphi$ 在 $(0,+\infty)$ 内连续可导且
+\begin{align*}
+\varphi'(s)&=\int_0^{+\infty}\frac{x}{(1+x^2)(1+sx^2)}\dd x\\
+&=\frac{1}{1-s}\int_0^{+\infty}\left(\frac{x}{1+x^2}-\frac{sx}{1+sx^2}\right)\dd x\\
+&=\frac{1}{2(1-s)}\ln\frac{1+x^2}{1+sx^2}\Big|_{x=0}^{+\infty}=-\frac{\ln s}{2(1-s)}.
+\end{align*}
+（上式当 $s=1$ 时理解为相应的极限，或不妨只考虑 $s\ne1$ 的情形）
+
+结合 $\varphi(0)=0$，得到
+\begin{align*}
+\varphi(1)&=-\int_0^1\frac{\ln s}{2(1-s)}\dd s=-\int_0^1\frac{\ln(1-s)}{2s}\dd s\\
+&=-\lim_{\varepsilon\to0^+}\int_0^{1-\varepsilon}\frac{\ln(1-s)}{2s}\dd s=\lim_{\varepsilon\to0^+}\int_0^{1-\varepsilon}\sum_{n=1}^{\infty}\frac{s^{n-1}}{2n}\dd s\\
+&=\lim_{\varepsilon\to0^+}\sum_{n=1}^{\infty}\int_0^{1-\varepsilon}\frac{s^{n-1}}{2n}\dd s=\lim_{\varepsilon\to0^+}\sum_{n=1}^{\infty}\frac{(1-\varepsilon)^n}{2n^2}\\
+&=\sum_{n=1}^{\infty}\frac{1}{2n^2}=\frac{\pi^2}{12}.
+\end{align*}
+同理，
+\begin{align*}
+\varphi(2)&=-\int_0^2\frac{\ln s}{2(1-s)}\dd s=-\int_{-1}^1\frac{\ln(1-s)}{2s}\dd s\\
+&=-\lim_{\varepsilon\to0^+}\int_{-(1-\varepsilon)}^{1-\varepsilon}\frac{\ln(1-s)}{2s}\dd s=\lim_{\varepsilon\to0^+}\int_{-(1-\varepsilon)}^{1-\varepsilon}\sum_{n=1}^{\infty}\frac{s^{n-1}}{2n}\dd s\\
+&=\lim_{\varepsilon\to0^+}\sum_{n=1}^{\infty}\int_{-(1-\varepsilon)}^{1-\varepsilon}\frac{s^{n-1}}{2n}\dd s=\lim_{\varepsilon\to0^+}\sum_{n=0}^{\infty}\frac{(1-\varepsilon)^{2n+1}}{(2n+1)^2}\\
+&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}=\frac{\pi^2}{8}.
+\end{align*}
+
+\textbf{注.} 计算中有多种其它方法，例如，可利用
+\begin{align*}
+\int_0^1\frac{\ln(1+s)}{s}\dd s&=\int_0^1\frac{\ln(1-s^2)-\ln(1-s)}{s}\dd s\\
+&=\int_0^1\frac{\ln(1-s)}{2s}\dd s-\int_0^1\frac{\ln(1-s)}{s}\dd s=-\int_0^1\frac{\ln(1-s)}{2s}\dd s;
+\end{align*}
+\begin{align*}
+\int_0^1\frac{\ln(1-s)}{s}\dd s&=\lim_{\beta\to1^-}\lim_{\alpha\to0^+}\int_0^1\frac{(1-s)^\alpha\ln(1-s)}{s^\beta}\dd s\\
+&=\lim_{\beta\to1^-}\lim_{\alpha\to0^+}\frac{\dd}{\dd\alpha}\int_0^1\frac{(1-s)^\alpha}{s^\beta}\dd s.
+\end{align*}
+\end{solution}
+
+\answerproblem{三、}{20}
+设
+\[
+  A=\begin{pmatrix}
+    a_{11} & a_{12} & a_{13}\\
+    a_{21} & a_{22} & a_{23}\\
+    a_{31} & a_{32} & a_{33}
+  \end{pmatrix}
+\]
+为实数域 $\R$ 上的 $3\times3$ 不可逆方阵. 若 $A$ 的伴随矩阵 $A^*$ 为
+\[
+  A^*=\begin{pmatrix}
+    a_{11}^2 & a_{12}^2 & a_{13}^2\\
+    a_{21}^2 & a_{22}^2 & a_{23}^2\\
+    a_{31}^2 & a_{32}^2 & a_{33}^2
+  \end{pmatrix},
+\]
+求 $A$.
+\begin{solution}
+\textbf{(1)} 由矩阵 $A$ 不可逆知 $\rank(A^*)=0$ 或 $1$.
+
+\textbf{(2)} 若 $\rank(A^*)=0$，则显然有 $A^*=0$，进而 $A=0$.
+
+\textbf{(3)} 若 $\rank(A^*)=1$，则 $A^*$ 的任何 $2$ 阶子式皆为 $0$. 特别地有
+\[
+  \begin{vmatrix}
+    a_{11}^2 & a_{12}^2\\
+    a_{21}^2 & a_{22}^2
+  \end{vmatrix}=0,\qquad
+  \begin{vmatrix}
+    a_{21}^2 & a_{22}^2\\
+    a_{31}^2 & a_{32}^2
+  \end{vmatrix}=0,\qquad
+  \begin{vmatrix}
+    a_{11}^2 & a_{12}^2\\
+    a_{31}^2 & a_{32}^2
+  \end{vmatrix}=0.
+\]
+于是得到
+\[
+  \begin{cases}
+    a_{11}a_{22}=\pm a_{12}a_{21},\\
+    a_{21}a_{32}=\pm a_{22}a_{31},\\
+    a_{12}a_{31}=\pm a_{11}a_{32}.
+  \end{cases}
+\]
+如果上面三个等式中有某个等式的正号成立，不妨设 $a_{11}a_{22}=a_{12}a_{21}$，于是 $A$ 有子式
+\[
+  \begin{vmatrix}
+    a_{11} & a_{12}\\
+    a_{21} & a_{22}
+  \end{vmatrix}=0,
+\]
+它是矩阵 $A$ 中元素 $a_{33}$ 的代数余子式，由伴随矩阵 $A^*$ 的定义得到 $a_{33}^2=0$，即 $a_{33}=0$. 如果上面三个等式中每个等式出现的都是负号，则将该三个等式的左右两边分别相乘得
+\[
+  a_{11}a_{22}a_{21}a_{32}a_{12}a_{31}=-a_{11}a_{22}a_{21}a_{32}a_{12}a_{31},
+\]
+从而 $a_{11},a_{12},a_{21},a_{22},a_{31},a_{32}$ 中至少有一个为 $0$. 总之 $A^*$ 至少有一个元素是 $0$.
+
+不妨设 $a_{11}^2=0$. 若 $A^*$ 的第一列不全为 $0$，则由 $\rank(A^*)=1$ 知 $A^*$ 的第二列和第三列皆可由 $A^*$ 的第一列线性表出，故 $A^*$ 的第一行元素全部为 $0$. 从而 $A^*$ 有一整行元素全为 $0$ 或有一整列元素全为 $0$. 相应地，$A$ 也有一整行元素全为 $0$ 或有一整列元素全为 $0$. 不妨设 $A$ 的第一行元素全为 $0$，此时 $A$ 的其它元素的代数余子式全为 $0$，故 $a_{22}^2=a_{23}^2=a_{32}^2=a_{33}^2=0$. 这表明在矩阵 $A$ 中有 $a_{22}=a_{23}=a_{32}=a_{33}=0$，所以矩阵 $A$ 的元素 $a_{12}$ 和 $a_{13}$ 的代数余子式都是 $0$，由 $A^*$ 的定义得到 $a_{21}^2=a_{31}^2=0$，这导致 $A^*=0$，与 $\rank(A^*)=1$ 矛盾. 故我们总有 $A=0$.
+\end{solution}
+
+\answerproblem{四、}{15}
+设 $f(x)$ 为实数域 $\R$ 上没有零点的实连续函数. 若 $f(2023)+f(2024)=2025$，证明：对任意 $x_1,x_2,\cdots,x_n\in\R$，均有矩阵
+\[
+  A=\begin{pmatrix}
+    1+f(x_1) & f(x_2) & \cdots & f(x_n)\\
+    f(x_1) & 1+f(x_2) & \cdots & f(x_n)\\
+    \vdots & \vdots & \ddots & \vdots\\
+    f(x_1) & f(x_2) & \cdots & 1+f(x_n)
+  \end{pmatrix}
+\]
+为可逆矩阵.
+\begin{solution}
+\textbf{法 I.} \textbf{(1)} 由 $f(x)$ 在 $\R$ 上没有零点且连续可得 $f(x)$ 恒正或恒负，又由 $f(2023)+f(2024)=2025$ 知 $f(x)$ 恒正.
+
+\textbf{(2)} 计算矩阵 $A$ 的行列式有
+\begin{align*}
+\abs{A}&=\begin{vmatrix}
+  E-\begin{pmatrix}-1\\-1\\\vdots\\-1\end{pmatrix}\bigl(f(x_1)\ \ f(x_2)\ \ \cdots\ \ f(x_n)\bigr)
+\end{vmatrix}\\
+&=\begin{vmatrix}
+  1-\bigl(f(x_1)\ \ f(x_2)\ \ \cdots\ \ f(x_n)\bigr)\begin{pmatrix}-1\\-1\\\vdots\\-1\end{pmatrix}
+\end{vmatrix}\\
+&=1+f(x_1)+f(x_2)+\cdots+f(x_n),
+\end{align*}
+注意到由 (1) 知 $f(x)$ 恒正，故 $\abs{A}=1+f(x_1)+f(x_2)+\cdots+f(x_n)>0$，所以 $A$ 可逆.
+
+\textbf{法 II.} \textbf{(1)} 由 $f(x)$ 在 $\R$ 上没有零点且连续可得 $f(x)$ 恒正或恒负，又由 $f(2023)+f(2024)=2025$ 知 $f(x)$ 恒正.
+
+\textbf{(2)} 设 $\alpha=(1,1,\cdots,1)^T$，$\beta=(f(x_1),f(x_2),\cdots,f(x_n))$，则 $A=E+\alpha\beta$，其中 $E$ 为 $n$ 阶单位矩阵. 由于 $\alpha\beta$ 与 $\beta\alpha=f(x_1)+f(x_2)+\cdots+f(x_n)$ 有相同的非零特征值，由 $f(x)$ 恒正得到 $f(x_1)+f(x_2)+\cdots+f(x_n)>0$，所以 $\alpha\beta$ 的特征值为 $f(x_1)+f(x_2)+\cdots+f(x_n)$（一重）和 $0$（$n-1$ 重）. 所以 $A$ 的特征值为 $1+f(x_1)+f(x_2)+\cdots+f(x_n)$（一重）和 $1$（$n-1$ 重），它们均不为 $0$，所以 $A$ 可逆.
+
+\textbf{法 III.} \textbf{(1)} 由 $f(x)$ 在 $\R$ 上没有零点且连续可得 $f(x)$ 恒正或恒负，又由 $f(2023)+f(2024)=2025$ 知 $f(x)$ 恒正.
+
+\textbf{(2)} 反证，若 $A$ 不可逆，则 $A$ 有 $0$ 作为其特征值. 现设 $v=(a_1,a_2,\cdots,a_n)^T\ne0$ 为 $A$ 关于 $0$ 的一个特征向量. 于是有
+\[
+  \begin{pmatrix}
+    f(x_1) & f(x_2) & \cdots & f(x_n)\\
+    f(x_1) & f(x_2) & \cdots & f(x_n)\\
+    \vdots & \vdots & \ddots & \vdots\\
+    f(x_1) & f(x_2) & \cdots & f(x_n)
+  \end{pmatrix}
+  \begin{pmatrix}
+    a_1\\a_2\\\vdots\\a_n
+  \end{pmatrix}
+  =-\begin{pmatrix}
+    a_1\\a_2\\\vdots\\a_n
+  \end{pmatrix},
+\]
+故
+\[
+  a_1f(x_1)+a_2f(x_2)+\cdots+a_nf(x_n)=-a_1=-a_2=\cdots=-a_n.
+\]
+结果 $a_1=a_2=\cdots=a_n$.
+
+令 $a=a_1$，则有 $a\ne0$. 再次由 $Av=0$ 得
+\[
+  (1+f(x_1))a+(f(x_2)+\cdots+f(x_n))a=0,
+\]
+进而
+\[
+  1+f(x_1)+\cdots+f(x_n)=0.
+\]
+与 (1) 中所证 $f(x)$ 恒正矛盾，所以 $A$ 可逆.
+\end{solution}
+
+\answerproblem{五、}{15}
+对于 $n\ge2$，记
+\[
+  E_n=\{k\in\N\mid 1\le k^2\le n\},
+\]
+\[
+  F_n=\{\sqrt{k}\mid 1\le k\le n,\ k\in\N,\ \sqrt{k}\notin\N\}.
+\]
+令 $A_n,B_n$ 依次为 $E_n,F_n$ 中所有元素之和. 计算极限 $\lim\limits_{n\to+\infty}\dfrac{A_n}{n^{\frac{3}{2}}}$ 和 $\lim\limits_{n\to+\infty}\dfrac{B_n}{n^{\frac{3}{2}}}$ 并说明理由，其中 $\N$ 为自然数集.
+\begin{solution}
+易见 $E_n$ 中元素个数和每个元素的值均不超过 $[\sqrt{n}]\le\sqrt{n}$. 因此，$0\le A_n\le n$. 从而
+\[
+  \lim_{n\to+\infty}\frac{A_n}{n^{\frac{3}{2}}}=0.
+\]
+进一步，易见
+\begin{align*}
+E_n&=\{\sqrt{k}\mid 1\le k\le n,\ k\in\N,\ \sqrt{k}\in\N\}\\
+&=\{\sqrt{k}\mid 1\le k\le n,\ k\in\N\}\setminus F_n.
+\end{align*}
+因此，结合 Stolz 公式，得到
+\begin{align*}
+\lim_{n\to+\infty}\frac{B_n}{n^{\frac{3}{2}}}&=\lim_{n\to+\infty}\frac{\sum\limits_{k=1}^{n}\sqrt{k}-A_n}{n^{\frac{3}{2}}}=\lim_{n\to+\infty}\frac{\sum\limits_{k=1}^{n}\sqrt{k}}{n^{\frac{3}{2}}}\\
+&=\lim_{n\to+\infty}\frac{\sqrt{n}}{n^{\frac{3}{2}}-(n-1)^{\frac{3}{2}}}=\lim_{n\to+\infty}\frac{n^{-1}}{1-(1-n^{-1})^{\frac{3}{2}}}=\frac{2}{3}.
+\end{align*}
+这也可以利用定积分得到
+\[
+  \lim_{n\to+\infty}\frac{B_n}{n^{\frac{3}{2}}}=\lim_{n\to+\infty}\frac{\sum\limits_{k=1}^{n}\sqrt{k}}{n^{\frac{3}{2}}}=\int_0^1\sqrt{x}\dd x=\frac{2}{3}.
+\]
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $\alpha>0$ 是常数. 又设 $\{x_n\}$ 和 $\{y_n\}$ 为正数列且满足 $x_1=2024$，$y_1=20251109$，$x_{n+1}+x_{n+1}^{1+\alpha}=x_n$，$y_{n+1}+2^{-\alpha}y_{n+1}^{1+\alpha}\le y_n\ (n\ge1)$.
+\begin{enumerate}[label=(\arabic*)]
+  \item 证明 $\{nx_n^{\alpha}\}$ 收敛并求极限.
+  \item 证明：$\varlimsup\limits_{n\to+\infty}ny_n^{\alpha}\le\dfrac{2^{\alpha}}{\alpha}$.
+\end{enumerate}
+\begin{solution}
+令 $f(x)=x+x^{1+\alpha}\ (x\ge0)$. 则 $f$ 在 $[0,+\infty)$ 上严格单增，取值于 $[0,+\infty)$.
+
+\textbf{(1)} 由 $f$ 的上述性质易见 $x_{n+1}$ 是 $f(x)=x_n$ 的唯一解，且 $x_{n+1}<x_n\ (n\ge1)$. 因此，$\{x_n\}$ 收敛于某个 $\bar{x}\ge0$.
+
+进一步，有 $\bar{x}+\bar{x}^{1+\alpha}=\bar{x}$. 从而 $\bar{x}=0$. 即 $\lim\limits_{n\to+\infty}x_n=0$.
+
+从而，由 Stolz 公式，可得
+\begin{align*}
+\lim_{n\to+\infty}nx_n^{\alpha}&=\lim_{n\to+\infty}\frac{n}{x_n^{-\alpha}}=\lim_{n\to+\infty}\frac{1}{x_{n+1}^{-\alpha}-x_n^{-\alpha}}=\lim_{n\to+\infty}\frac{1}{x_{n+1}^{-\alpha}-\left(x_{n+1}+x_{n+1}^{1+\alpha}\right)^{-\alpha}}\\
+&=\lim_{x\to0^+}\frac{1}{x^{-\alpha}-(x+x^{1+\alpha})^{-\alpha}}=\lim_{x\to0^+}\frac{x^{\alpha}}{1-(1+x^{\alpha})^{-\alpha}}=\frac{1}{\alpha}.
+\end{align*}
+
+\textbf{(2)} 令 $y_n=2Y_n\ (n\ge1)$. 则 $\{Y_n\}$ 为正数列且满足 $Y_1=1012500$，$f(Y_{n+1})\le Y_n\ (n\ge1)$.
+
+\textbf{法 I.} 令 $X_1=Y_1$，$f(X_{n+1})=X_n\ (n\ge1)$. 则归纳可证 $Y_n\le X_n\ (n\ge1)$. 而从 (1) 的证明可见，同样有 $\lim\limits_{n\to+\infty}\dfrac{n}{X_n^{-\alpha}}=\dfrac{1}{\alpha}$. 因此，
+\begin{align*}
+\varlimsup_{n\to+\infty}ny_n^{\alpha}=\varlimsup_{n\to+\infty}2^{\alpha}nY_n^{\alpha}\le\lim_{n\to+\infty}2^{\alpha}nX_n^{\alpha}=\frac{2^{\alpha}}{\alpha}.
+\end{align*}
+
+\textbf{法 II.} 类似 (1) 可证 $\{Y_n\}$ 严格单调减趋于零. 从而推广 Stolz 定理，可得
+\begin{align*}
+\varlimsup_{n\to+\infty}\frac{n}{y_n^{-\alpha}}&=2^{\alpha}\varlimsup_{n\to+\infty}\frac{n}{Y_n^{-\alpha}}\le2^{\alpha}\varlimsup_{n\to+\infty}\frac{1}{Y_{n+1}^{-\alpha}-Y_n^{-\alpha}}\\
+&\le2^{\alpha}\varlimsup_{n\to+\infty}\frac{1}{Y_{n+1}^{-\alpha}-\left(Y_{n+1}+Y_{n+1}^{1+\alpha}\right)^{-\alpha}}=2^{\alpha}\lim_{x\to0^+}\frac{1}{x^{-\alpha}-(x+x^{1+\alpha})^{-\alpha}}\\
+&=2^{\alpha}\lim_{x\to0^+}\frac{x^{\alpha}}{1-(1+x^{\alpha})^{-\alpha}}=\frac{2^{\alpha}}{\alpha}.
+\end{align*}
+\end{solution}

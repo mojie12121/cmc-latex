@@ -1,0 +1,197 @@
+\answerpaper{非数学 A 类}
+
+\answerproblem{一、}{30}
+填空题：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle\int_0^1 \ln(1+x^2)\dd x=$ \underline{\hspace{6em}}。
+  \item 设 $D: x^2+y^2\le r^2$，其中 $r>0$。则
+  \[ \lim_{r\to 0^+}\frac{\iint_D (\ee^{x^2+y^2}-1)\dd x\dd y}{r^4}=\underline{\hspace{6em}}. \]
+  \item 已知函数 $z=f(xy,\ee^{x+y})$，且 $f(x,y)$ 具有二阶连续偏导数。则
+  \[ \frac{\partial^2 z}{\partial x\partial y}=\underline{\hspace{10em}}. \]
+  \item 直线 $L:\dfrac{x-1}{1}=\dfrac{y}{1}=\dfrac{z-1}{-1}$ 在平面 $\pi: x-y+2z-1=0$ 上的投影直线 $L_0$ 的单位方向向量为 \underline{\hspace{6em}}。
+  \item 设 $L$ 为圆周 $x^2+y^2=9$，取逆时针方向，则第二型曲线积分
+  \[ \int_L \frac{-y}{4x^2+y^2}\dd x+\frac{x}{4x^2+y^2}\dd y=\underline{\hspace{6em}}. \]
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 因为
+\[ \int \ln(1+x^2)\dd x=x\ln(1+x^2)-\int\frac{2x^2}{1+x^2}\dd x=x\ln(1+x^2)-2x+2\arctan x+C, \]
+故原式等于 $\ln 2-2+\dfrac{\pi}{2}$。
+
+\textbf{(2)} 利用极坐标变换 $x=\rho\cos\theta$，$y=\rho\sin\theta$，则
+\[ \iint_D (\ee^{x^2+y^2}-1)\dd x\dd y=2\pi\int_0^r(\ee^{\rho^2}-1)\rho\dd\rho=\pi(\ee^{r^2}-1-r^2). \]
+注意，$r\to0^+$ 时，$\ee^{r^2}-1-r^2=\dfrac{r^4}{2}+o(r^4)$，故原式 $=\dfrac{\pi}{2}$。
+
+\textbf{(3)}
+\begin{align*}
+z_x &= yf_1+\ee^{x+y}f_2,\\
+z_{xy} &= (xf_{11}+\ee^{x+y}f_{12})y+f_1+(xf_{21}+\ee^{x+y}f_{22})\ee^{x+y}+\ee^{x+y}f_2\\
+&= xyf_{11}+(x+y)\ee^{x+y}f_{12}+\ee^{2(x+y)}f_{22}+f_1+\ee^{x+y}f_2.
+\end{align*}
+
+\textbf{(4)} 直线 $L$ 的一般式方程为
+\[ \begin{cases} x-y-1=0,\\ y+z-1=0. \end{cases} \]
+这样，过 $L$ 的平面束方程为
+\[ x-y-1+\lambda(y+z-1)=0, \]
+即
+\[ x+(\lambda-1)y+\lambda z-1-\lambda=0, \]
+其中 $\lambda$ 为参数。平面的法向量为 $(1,\lambda-1,\lambda)$。
+
+此法向量与平面 $\pi$ 的法向量垂直当且仅当 $(1,\lambda-1,\lambda)\cdot(1,-1,2)=0$，即 $\lambda=-2$。从而，过 $L$ 且与平面 $\pi$ 垂直的平面为 $x-3y-2z+1=0$。于是，投影直线 $L_0$ 的方程为
+\[ \begin{cases} x-3y-2z+1=0,\\ x-y+2z-1=0. \end{cases} \]
+由此，$L_0$ 的方向向量为 $(-4,-2,1)$。故单位方向向量为
+\[ \pm\left(-\frac{4}{\sqrt{21}},-\frac{2}{\sqrt{21}},\frac{1}{\sqrt{21}}\right). \]
+注：单位方向向量有两个，得到一个即可。
+
+\textbf{(5)} 记
+\[ P=\frac{-y}{4x^2+y^2},\qquad Q=\frac{x}{4x^2+y^2},\qquad L_1: 4x^2+y^2=4, \]
+取顺时针方向。在 $L$ 与 $L_1$ 所围成的环状区域内，$P,Q$ 都是连续可微的且 $Q_x-P_y\equiv0$。根据 Green 公式，
+\[ \int_{L+L_1}P\dd x+Q\dd y=0. \]
+故
+\[ \int_L P\dd x+Q\dd y=\int_{-L_1}P\dd x+Q\dd y=\frac{1}{4}\int_{-L_1}-y\dd x+x\dd y. \]
+再由 Green 公式，
+\[ \frac{1}{4}\int_{-L_1}-y\dd x+x\dd y=\frac{1}{4}\iint_D 2\dd x\dd y=\frac{1}{2}\sigma(D)=\pi, \]
+其中 $D: 4x^2+y^2\le4$，$\sigma(D)=2\pi$ 为 $D$ 的面积。
+\end{solution}
+
+\answerproblem{二、}{14}
+求微分方程 $(x^3-y^2)\dd x+(x^2y+xy)\dd y=0$ 的通解。
+
+\begin{solution}
+\textbf{解法1.} 设 $u=y^2$，则原方程化为
+\[ \frac{\dd u}{\dd x}=\frac{2u}{x(1+x)}-\frac{2x^2}{x+1}. \]
+这个线性方程的通解为
+\[ \left(\frac{1+x}{x}\right)^2u+(1+x)^2=C. \]
+即
+\[ \left(\frac{1+x}{x}\right)^2y^2+(1+x)^2=C. \]
+
+\textbf{解法2.} 原方程可化为
+\[ x\dd x+y\dd y+y\frac{x\dd y-y\dd x}{x^2}=0, \]
+即
+\[ \frac{1}{2}\dd(x^2+y^2)+y\dd\left(\frac{y}{x}\right)=0. \]
+两边同时除以 $\sqrt{x^2+y^2}$，得
+\[ \frac{1}{2}\frac{\dd(x^2+y^2)}{\sqrt{x^2+y^2}}+\frac{1}{\sqrt{1+(y/x)^2}}\cdot\frac{y}{x}\cdot\dd\left(\frac{y}{x}\right)=0, \]
+即
+\[ \dd\left(\sqrt{x^2+y^2}\right)+\dd\left(\sqrt{1+\left(\frac{y}{x}\right)^2}\right)=0. \]
+故
+\[ \sqrt{x^2+y^2}+\frac{\sqrt{x^2+y^2}}{x}=C. \]
+即
+\[ (1+x)\sqrt{x^2+y^2}=Cx. \]
+
+\textbf{解法3.} 将原方程化为 $x\dd x+y\dd y+y\dfrac{x\dd y-y\dd x}{x^2}=0$，即
+\[ \frac{1}{2}\dd(x^2+y^2)+y\dd\left(\frac{y}{x}\right)=0. \]
+令 $x=r\cos\theta$，$y=r\sin\theta$，则 $r=\sqrt{x^2+y^2}$，$\tan\theta=\dfrac{y}{x}$，方程化为
+\[ \frac{1}{2}\dd r^2+r\sin\theta\dd\tan\theta=0, \]
+\[ \dd r+\sec\theta\tan\theta\dd\theta=0. \]
+积分得，$r+\sec\theta=C$。
+
+换回原变量，得原方程的通解为
+\[ \sqrt{x^2+y^2}+\frac{\sqrt{x^2+y^2}}{x}=C. \]
+\end{solution}
+
+\answerproblem{三、}{14}
+设函数
+\[ f(x)=\begin{cases}\dfrac{1}{\ln(1+x)}-\dfrac{1}{x}, & 0<x\le1,\\[6pt] k, & x=0. \end{cases} \]
+\begin{enumerate}
+  \item 求常数 $k$ 的值，使得 $f(x)$ 在区间 $[0,1]$ 上连续；
+  \item 对 (1) 中 $k$ 的值，求函数 $f(x)$ 的最小值 $\lambda$ 与最大值 $\mu$。
+\end{enumerate}
+\begin{solution}
+\textbf{(1)}
+\begin{align*}
+\lim_{x\to0^+}f(x) &= \lim_{x\to0^+}\frac{x-\ln(1+x)}{x\ln(1+x)}=\lim_{x\to0^+}\frac{x-\ln(1+x)}{x^2}\\
+&= \lim_{x\to0^+}\frac{1-\dfrac{1}{1+x}}{2x}=\lim_{x\to0^+}\frac{1}{2(1+x)}=\frac{1}{2}.
+\end{align*}
+令 $k=\dfrac{1}{2}$，则 $\lim\limits_{x\to0^+}f(x)=f(0)=\dfrac{1}{2}$。所以 $f(x)$ 在 $[0,1]$ 上连续。
+
+\textbf{(2)} 易知，$f(x)$ 在 $(0,1)$ 内可导，且
+\[ f'(x)=-\frac{1}{(1+x)\ln^2(1+x)}+\frac{1}{x^2}=\frac{g(x)}{x^2(1+x)\ln^2(1+x)}, \]
+其中
+\[ g(x)=(1+x)\ln^2(1+x)-x^2. \]
+因为 $g'(x)=\ln^2(1+x)+2\ln(1+x)-2x$，且
+\[ g''(x)=\frac{2\ln(1+x)}{1+x}+\frac{2}{1+x}-2=\frac{2\ln(1+x)-2x}{1+x}<0\quad(0<x\le1), \]
+所以 $g'(x)$ 在 $[0,1]$ 上单调递减，故当 $0<x\le1$ 时，$g'(x)<g'(0)=0$。这又推出 $g(x)$ 在 $[0,1]$ 上单调递减，故当 $0<x\le1$ 时，$g(x)<g(0)=0$。从而 $f'(x)<0$（$0<x\le1$），又可推出 $f(x)$ 在 $[0,1]$ 上单调递减。因此，
+\[ \min_{0\le x\le1}f(x)=f(1)=\frac{1}{\ln2}-1,\qquad \max_{0\le x\le1}f(x)=f(0)=\frac{1}{2}. \]
+于是，函数 $f(x)$ 的最小值 $\lambda=\dfrac{1}{\ln2}-1$，最大值 $\mu=\dfrac{1}{2}$。
+\end{solution}
+
+\answerproblem{四、}{14}
+求曲面积分
+\[ I=\iint_S(x^2-x)\dd y\dd z+(y^2-y)\dd z\dd x+(z^2-z)\dd x\dd y, \]
+其中 $S$ 是上半球面 $x^2+y^2+z^2=R^2$（$z\ge0$）的上侧。
+
+\begin{solution}
+\textbf{解法1.} 记 $\Sigma=\{(x,y,z)\mid z=0,\ x^2+y^2\le R^2\}$，取下侧。由 Gauss 公式知
+\[ \iint_{S+\Sigma}(x^2-x)\dd y\dd z+(y^2-y)\dd z\dd x+(z^2-z)\dd x\dd y=\iiint_\Omega(2x+2y+2z-3)\dd x\dd y\dd z, \]
+其中，$\Omega=\{(x,y,z)\mid z\ge0,\ x^2+y^2+z^2\le R^2\}$。
+
+由于，
+\[ \iint_\Sigma(x^2-x)\dd y\dd z+(y^2-y)\dd z\dd x+(z^2-z)\dd x\dd y=0. \]
+所以，
+\[ I=\iiint_\Omega(2x+2y+2z-3)\dd x\dd y\dd z. \]
+由对称性，
+\[ I=\iiint_\Omega(2z-3)\dd x\dd y\dd z. \]
+用球坐标变换 $x=r\cos\theta\sin\varphi$，$y=r\sin\theta\sin\varphi$，$z=r\cos\varphi$，得
+\[ I=\int_0^{2\pi}\dd\theta\int_0^{\pi/2}\dd\varphi\int_0^R(2r\cos\varphi-3)r^2\sin\varphi\dd r=2\pi\left(\frac{R^4}{4}-R^3\right). \]
+注：最后一步直接利用直角坐标计算也可以。
+
+\textbf{解法2.} $S$ 的参数方程为
+\[ x=R\cos\theta\sin\varphi,\qquad y=R\sin\theta\sin\varphi,\qquad z=R\cos\varphi,\qquad \left(0\le\varphi\le\frac{\pi}{2},\ 0\le\theta\le2\pi\right). \]
+曲面 $S$ 上的点 $(x,y,z)$ 处的单位法向为 $\dfrac{(x,y,z)}{R}$。故，
+\begin{align*}
+I &= \iint_S(x^2-x,\,y^2-y,\,z^2-z)\cdot\frac{(x,y,z)}{R}\dd S\\
+&= \frac{1}{R}\iint_S\left[x^3+y^3+z^3-(x^2+y^2+z^2)\right]\dd S\\
+&= \frac{1}{R}\iint_S\left[x^3+y^3+z^3-R^2\right]\dd S.
+\end{align*}
+由对称性可知
+\[ \iint_S x^3\dd S=\iint_S y^3\dd S=0. \]
+故，
+\begin{align*}
+I &= \frac{1}{R}\iint_S z^3\dd S-R\iint_S\dd S=\frac{1}{R}\iint_S z^3\dd S-2\pi R^3\\
+&= \frac{1}{R}\iint_{\substack{0\le\varphi\le\pi/2\\ 0\le\theta\le2\pi}}(R\cos\varphi)^3R^2\sin\varphi\dd\varphi\dd\theta-2\pi R^3\\
+&= 2\pi R^4\int_0^{\pi/2}\cos^3\varphi\sin\varphi\dd\varphi-2\pi R^3\\
+&= 2\pi R^4\cdot\frac{1}{4}-2\pi R^3\\
+&= \frac{\pi R^4}{2}-2\pi R^3.
+\end{align*}
+\end{solution}
+
+\answerproblem{五、}{14}
+设 $f(x)$ 是 $(-\infty,+\infty)$ 上具有连续导数的非负函数，且存在 $M>0$ 使得对任意的 $x,y\in(-\infty,+\infty)$，有 $|f'(x)-f'(y)|\le M|x-y|$。证明：对于任意实数 $x$，恒有 $(f'(x))^2\le2Mf(x)$。
+
+\begin{solution}
+\textbf{证明.} 任取 $x\in(-\infty,+\infty)$，对任意 $h\in(-\infty,+\infty)$，且 $h\ne0$，恒有
+\begin{align*}
+0\le f(x+h) &= f(x)+\int_0^h f'(x+t)\dd t\\
+&= f(x)+\int_0^h\left(f'(x+t)-f'(x)\right)\dd t+f'(x)h.
+\end{align*}
+取 $h$ 使得 $hf'(x)\le0$，则
+\[ -f'(x)h\le f(x)+\int_0^h\left(f'(x+t)-f'(x)\right)\dd t\le f(x)+M\frac{h^2}{2}. \]
+\[ |f'(x)|\le\frac{f(x)}{|h|}+M\frac{|h|}{2}. \]
+取 $|h|=\sqrt{\dfrac{2f(x)}{M}}$，即得所证不等式 $(f'(x))^2\le2Mf(x)$。
+\end{solution}
+
+\answerproblem{六、}{14}
+证明：级数 $\displaystyle\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n^2+k^2}$ 收敛，其中 $[x]$ 表示不超过 $x$ 的最大整数。
+
+\begin{solution}
+\textbf{证明.} 对于任意固定的 $n$ 和 $N$，有
+\[ \sum_{k=1}^{N}\frac{1}{k^2+n^2}\le\sum_{k=1}^{N}\int_{k-1}^{k}\frac{1}{y^2+n^2}\dd y=\int_0^N\frac{1}{y^2+n^2}\dd y=\frac{1}{n}\arctan\frac{N}{n}. \]
+\[ \sum_{k=1}^{N}\frac{1}{k^2+n^2}\ge\sum_{k=1}^{N}\int_{k}^{k+1}\frac{1}{y^2+n^2}\dd y=\int_1^{N+1}\frac{1}{y^2+n^2}\dd y=\frac{1}{n}\left(\arctan\frac{N+1}{n}-\arctan\frac{1}{n}\right). \]
+\[ \left|\sum_{k=1}^{N}\frac{1}{k^2+n^2}-\frac{\pi}{2n}\right|\le\frac{\pi}{2n}-\frac{1}{n}\left(\arctan\frac{N+1}{n}-\arctan\frac{1}{n}\right). \]
+令 $N\to\infty$，即有
+\[ \left|\sum_{k=1}^{\infty}\frac{1}{k^2+n^2}-\frac{\pi}{2n}\right|\le\frac{1}{n}\arctan\frac{1}{n}. \]
+注意到
+\[ \sum_{n=1}^{\infty}\left|\sum_{k=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n^2+k^2}-\frac{\pi}{2}\frac{(-1)^{[\sqrt{n}]}}{n}\right|=\sum_{n=1}^{\infty}\left|\sum_{k=1}^{\infty}\frac{1}{n^2+k^2}-\frac{\pi}{2n}\right|\le\sum_{n=1}^{\infty}\frac{1}{n}\arctan\frac{1}{n}<+\infty. \]
+即 $\displaystyle\sum_{n=1}^{\infty}\left(\sum_{k=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n^2+k^2}-\frac{\pi}{2}\frac{(-1)^{[\sqrt{n}]}}{n}\right)$ 绝对收敛，从而收敛。由此，级数 $\displaystyle\sum_{n=1}^{\infty}\sum_{k=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n^2+k^2}$ 与级数 $\displaystyle\sum_{n=1}^{\infty}\frac{\pi}{2}\frac{(-1)^{[\sqrt{n}]}}{n}$ 同敛散。以下只需证级数 $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n}$ 收敛。
+
+记 $S_n$ 为级数 $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n}$ 的前 $n$ 项部分和，则有
+\[ S_{n^2}=\sum_{m=1}^{n-1}\sum_{k=m^2}^{(m+1)^2-1}\frac{(-1)^{[\sqrt{k}]}}{k}+\frac{(-1)^n}{n^2}=\sum_{m=1}^{n-1}(-1)^mC_m+\frac{(-1)^n}{n^2}, \]
+其中
+\[ C_m=\sum_{k=m^2}^{(m+1)^2-1}\frac{1}{k}. \]
+由 $C_m<m\cdot\dfrac{1}{m^2}+(m+1)\cdot\dfrac{1}{m^2+m}=\dfrac{2}{m}$ 知，$C_m\to0$，$m\to\infty$。
+
+此外，$C_m>(m+1)\cdot\dfrac{1}{m^2+m}+m\cdot\dfrac{1}{m^2+2m}>\dfrac{2}{m+1}>C_{m+1}$，从而 $C_m$ 单调递减，级数 $\displaystyle\sum_{m=1}^{\infty}(-1)^mC_m$ 收敛，$S_{n^2}$ 收敛。
+
+对于其它的 $N$，存在 $n$ 使得
+\[ n^2\le N<(n+1)^2,\qquad |S_N-S_{n^2}|\le C_n<\frac{2}{n}\to0,\quad N\to\infty. \]
+故级数 $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{[\sqrt{n}]}}{n}$ 收敛，证毕。
+\end{solution}
