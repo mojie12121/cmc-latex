@@ -1,0 +1,51 @@
+\paper{数学 B 类}
+
+\begin{problems}
+
+\item[一、]（本题 15 分）三角形三条中线的交点称为三角形的重心．在四面体 $ABCD$ 中，记 $\overrightarrow{e_1}:=\overrightarrow{AB}$，$\overrightarrow{e_2}:=\overrightarrow{AC}$，$\overrightarrow{e_3}:=\overrightarrow{AD}$，并设 $O_1,O_2$ 和 $O_3$ 分别为 $\triangle BCD$，$\triangle ACD$ 和 $\triangle ABD$ 的重心．
+\begin{enumerate}[label=(\arabic*)]
+  \item 在坐标系 $\{A,\overrightarrow{e_1},\overrightarrow{e_2},\overrightarrow{e_3}\}$ 下，求 $O_1$ 点的坐标 $(x,y,z)$，其中 $\overrightarrow{AO_1}=x\overrightarrow{e_1}+y\overrightarrow{e_2}+z\overrightarrow{e_3}$；
+  \item 证明三直线 $AO_1$，$BO_2$ 及 $CO_3$ 相交于一点 $P$；
+  \item 在坐标系 $\{A,\overrightarrow{e_1},\overrightarrow{e_2},\overrightarrow{e_3}\}$ 下，求 (2) 中交点 $P$ 的坐标．
+\end{enumerate}
+
+\item[二、]（本题 15 分）设 $N\geqslant 1$，$\mathcal{S}$ 是包含 $N$ 个整数的集合，满足如下的加性唯一性条件：
+
+若 $n_k\in\mathcal{S}\ (1\leqslant k\leqslant 4)$ 且 $n_1+n_2=n_3+n_4$，则必有 $n_1=n_3$ 或 $n_1=n_4$．
+
+令 $f(x):=\sum\limits_{n\in\mathcal{S}}\ee^{2\pi\ii nx}$．
+\begin{enumerate}[label=(\arabic*)]
+  \item 计算 $\displaystyle\int_0^1|f(x)|^2\dd x$，$\displaystyle\int_0^1|f(x)|^4\dd x$．
+  \item 证明：$\displaystyle\int_0^1|f(x)|\dd x\geqslant\frac{1}{2\sqrt{N}}$．
+\end{enumerate}
+
+\item[三、]（本题 20 分）设 $m,n$ 为大于 2 的整数，$a_1,\cdots,a_{m+1}$ 为任意 $m+1$ 个有理数，$\mathbb{Q}^{n\times n}$ 为有理数域上 $n$ 阶方阵全体．证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\mathbb{Q}^{n\times n}$ 中存在 $m$ 个元素 $B_1,\cdots,B_m$ 使得行列式 $|B_j|=j\ (j=1,\cdots,m)$ 成立．
+  \item $\mathbb{Q}^{n\times n}$ 中存在 $m$ 个元素 $A_1,\cdots,A_m$ 使得下列两条同时成立：
+  \begin{enumerate}[label=(\roman*)]
+    \item $|A_j|=a_j\ (j=1,\cdots,m)$；
+    \item $|A_1-A_2-\cdots-A_m|=a_{m+1}$．
+  \end{enumerate}
+\end{enumerate}
+
+\item[四、]（本题 15 分）设 $A$ 为 $n$ 阶方阵，其主对角线上的元素皆为 3，其余位置上的元素不是 2 就是 2029．证明：$\rank A=n$ 或 $n-1$．
+
+\item[五、]（本题 15 分）设 $k$ 为正整数．
+\begin{enumerate}[label=(\arabic*)]
+  \item 证明：对任何 $k\geqslant 1$，方程 $x^{3k+1}+x^2-6x+1=0$ 在 $\bigl(0,\frac{1}{2}\bigr)$ 内有唯一根 $x_k$；
+  \item 证明：点列 $\{x_k\}$ 严格单减；
+  \item 求极限 $\lim\limits_{k\to+\infty}x_k$．
+\end{enumerate}
+
+\item[六、]（本题 20 分）设 $f\in C^1[0,1]$ 满足
+\[
+  f(x)\ln^2 x+xf'(x)\leqslant 0,\qquad \forall x\in(0,1).
+\]
+证明下列结论之一成立：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle\int_0^1 f(t)\dd t<\int_0^x f(t)\dd t\leqslant 0\ (\forall x\in(0,1))$；
+  \item $f(x)=0\ (\forall x\in[0,1])$．
+\end{enumerate}
+
+\end{problems}

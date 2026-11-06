@@ -1,0 +1,16 @@
+# LaTeX 中间文件
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.xdv
+
+# 临时文件
+*.bak
+*.tmp
+~*

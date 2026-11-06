@@ -1,0 +1,61 @@
+\paper{数学 A 类}
+
+\begin{problems}
+
+\item[一、]（本题 15 分）记三维欧氏空间中不共面的四点 $A,B,C,D$ 生成的四面体为 $ABCD$．在四面体 $ABCD$ 内部取一点 $O$，设四面体 $OBCD$ 的体积为 $V_A$，四面体 $OACD$ 的体积为 $V_B$，四面体 $OABD$ 的体积为 $V_C$，四面体 $OABC$ 的体积为 $V_D$．（图略：四面体 $ABCD$，内部一点 $O$ 与四个顶点分别用虚线相连）
+\begin{enumerate}[label=(\arabic*)]
+  \item 求证：$\Bigl(\overrightarrow{OA}\cdot\bigl(\overrightarrow{OC}\times\overrightarrow{OD}\bigr)\Bigr)\Bigl(\overrightarrow{OB}\cdot\bigl(\overrightarrow{OC}\times\overrightarrow{OD}\bigr)\Bigr)<0$；
+  \item 求证：$V_A\overrightarrow{OA}+V_B\overrightarrow{OB}+V_C\overrightarrow{OC}+V_D\overrightarrow{OD}=\vec{0}$．
+\end{enumerate}
+
+\item[二、]（本题 15 分）设 $N\geqslant 1$，$\mathcal{S}$ 是包含 $N$ 个整数的集合，满足如下的加性唯一性条件：
+
+若 $n_k\in\mathcal{S}\ (1\leqslant k\leqslant 4)$ 且 $n_1+n_2=n_3+n_4$，则必有 $n_1=n_3$ 或 $n_1=n_4$．
+
+令 $f(x):=\sum\limits_{n\in\mathcal{S}}\ee^{2\pi\ii nx}$．
+\begin{enumerate}[label=(\arabic*)]
+  \item 计算 $\displaystyle\int_0^1|f(x)|^2\dd x$，$\displaystyle\int_0^1|f(x)|^4\dd x$．
+  \item 证明：$\displaystyle\int_0^1|f(x)|\dd x\geqslant\frac{1}{2\sqrt{N}}$．
+\end{enumerate}
+
+\item[三、]（本题 20 分）设 $m,n$ 为大于 2 的整数，$a_1,\cdots,a_{m+1}$ 为任意 $m+1$ 个有理数，$\mathbb{Q}^{n\times n}$ 为有理数域上 $n$ 阶方阵全体．证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\mathbb{Q}^{n\times n}$ 中存在 $m$ 个元素 $B_1,\cdots,B_m$ 使得行列式 $|B_j|=j\ (j=1,\cdots,m)$ 成立．
+  \item $\mathbb{Q}^{n\times n}$ 中存在 $m$ 个元素 $A_1,\cdots,A_m$ 使得下列两条同时成立：
+  \begin{enumerate}[label=(\roman*)]
+    \item $|A_j|=a_j\ (j=1,\cdots,m)$；
+    \item $|A_1-A_2-\cdots-A_m|=a_{m+1}$．
+  \end{enumerate}
+\end{enumerate}
+
+\item[四、]（本题 15 分）设 $K$ 为数域，$\mathcal{A}:V\to V$ 是 $n$ 维 $K$-向量空间 $V$ 上的线性算子（线性变换），$\mu_{\mathcal{A}}(x)$，$\chi_{\mathcal{A}}(x)\in K[x]$ 分别是 $\mathcal{A}$ 的极小多项式和特征多项式．证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item 存在 $\alpha\in V$ 使 $\mu_{\mathcal{A}}(x)=\mu_{\mathcal{A},\alpha}(x)$，其中 $\mu_{\mathcal{A},\alpha}(x)$ 是集合
+  \[
+    \{\,f(x)\in K[x]\mid f(\mathcal{A})(\alpha)=0\,\}
+  \]
+  中首项系数为 1，次数最小的多项式；
+  \item $K[\mathcal{A}]\cdot\alpha:=\{\,f(\mathcal{A})(\alpha)\mid \forall f(x)\in K[x]\,\}$ 是 $\deg\mu_{\mathcal{A},\alpha}(x)$ 维 $\mathcal{A}$-不变子空间；
+  \item 设 $\mathcal{B}:V\to V$ 是任意线性算子．若 $\mu_{\mathcal{A}}(x)=\chi_{\mathcal{A}}(x)$，则
+  \[
+    \mathcal{A}\cdot\mathcal{B}=\mathcal{B}\cdot\mathcal{A}
+    \iff \text{存在}\ f(x)\in K[x]\ \text{使}\ \mathcal{B}=f(\mathcal{A}).
+  \]
+\end{enumerate}
+
+\item[五、]（本题 15 分）设 $f\in C[0,1]\cap C^2(0,1)$，$\sup\limits_{x\in(0,1)}f''(x)=2$．证明：存在唯一的二次多项式 $P(x)=x^2+bx+c$，使得 $P(0)-f(0)=P(1)-f(1)=0$，且下列结论之一成立：
+\begin{enumerate}[label=(\arabic*)]
+  \item $f(x)>P(x)\ (\forall x\in(0,1))$；
+  \item $f(x)=P(x)\ (\forall x\in[0,1])$．
+\end{enumerate}
+
+\item[六、]（本题 20 分）设 $\mathcal{A}$ 为正整数集 $\mathbb{Z}_+$ 的子集，$\lim\limits_{n\to+\infty}\frac{S_n(0,1)}{n}$ 存在，记为 $p$，其中对于 $0\leqslant a\leqslant b\leqslant 1$，$S_n(a,b)$ 表示集合 $\{\,k\in\mathcal{A}\mid an\leqslant k\leqslant bn\,\}$ 的元素个数．
+\begin{enumerate}[label=(\arabic*)]
+  \item 若 $0<a<b<1$，证明极限 $\lim\limits_{n\to+\infty}\frac{S_n(a,b)}{n}$ 存在并求其值．
+  \item 若 $f$ 在 $[0,1]$ 上 \textbf{Riemann} 可积，证明：
+  \[
+    \lim_{n\to+\infty}\frac{1}{n}\sum_{k\leqslant n,\ k\in\mathcal{A}}f\Bigl(\frac{k}{n}\Bigr)=p\int_0^1 f(x)\dd x.
+  \]
+\end{enumerate}
+
+\end{problems}
