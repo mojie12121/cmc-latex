@@ -15,16 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build exercise book
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: main.tex
           latexmk_use_xelatex: true
 
       - name: Build answer book
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: main.tex
           working_directory: answers
@@ -36,7 +36,7 @@ jobs:
           mv answers/main.pdf "全国大学生数学竞赛初赛近十年答案汇编.pdf"
 
       - name: Upload PDFs
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cmc-latex-pdfs
           path: |
