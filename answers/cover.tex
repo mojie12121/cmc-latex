@@ -1,44 +1,52 @@
 \begin{titlepage}
 \thispagestyle{empty}
 \begin{tikzpicture}[remember picture, overlay]
-  % 背景
-  \fill[cmcblue] (current page.south west) rectangle (current page.north east);
-  % 装饰线
-  \draw[cmcgold, line width=1.2pt]
-    ([xshift=2.2cm,yshift=3.0cm]current page.south west) --
-    ([xshift=2.2cm,yshift=-3.0cm]current page.north west);
-  \draw[cmcgold, line width=0.5pt]
-    ([xshift=2.35cm,yshift=3.0cm]current page.south west) --
-    ([xshift=2.35cm,yshift=-3.0cm]current page.north west);
-  % 右上角装饰
-  \draw[cmcgold, line width=0.8pt]
-    ([xshift=-2.2cm,yshift=2.4cm]current page.north east) --
-    ([xshift=-7.8cm,yshift=2.4cm]current page.north east);
+  % 浅色背景与外框
+  \fill[white] (current page.south west) rectangle (current page.north east);
+  \draw[cmcblack, line width=0.5pt]
+    ([xshift=1.5cm,yshift=1.5cm]current page.south west) rectangle
+    ([xshift=-1.5cm,yshift=-1.5cm]current page.north east);
+  \draw[cmcline, line width=0.3pt]
+    ([xshift=1.65cm,yshift=1.65cm]current page.south west) rectangle
+    ([xshift=-1.65cm,yshift=-1.65cm]current page.north east);
 \end{tikzpicture}
 
-\vspace*{1.6cm}
-\begin{flushright}
-  {\color{cmcgold}\small\bfseries 中国大学生数学竞赛（CMC）}
-\end{flushright}
+\vspace*{0.15cm}
+\noindent
+\begin{minipage}[b]{0.65\linewidth}
+  {\color{cmcgray}\small\bfseries 中国大学生数学竞赛（CMC）}\\[3pt]
+  {\color{cmcmidgray}\scriptsize CHINESE MATHEMATICS COMPETITIONS}
+\end{minipage}%
+\begin{minipage}[b]{0.35\linewidth}
+  \raggedleft
+  \setlength{\fboxrule}{0.5pt}\setlength{\fboxsep}{5pt}%
+  \fbox{\color{cmcblack}\small 答案册}
+\end{minipage}
 
-\vspace{2.4cm}
-\begin{flushright}
-  {\color{white}\fontsize{34pt}{44pt}\selectfont\bfseries 全国大学生}\\[8pt]
-  {\color{white}\fontsize{34pt}{44pt}\selectfont\bfseries 数学竞赛}\\[20pt]
-  {\color{cmcgold}\fontsize{20pt}{26pt}\selectfont 初赛近十年答案汇编}
-\end{flushright}
+\vspace{3.6cm}
+\begin{flushleft}
+  {\color{cmcblack}\fontsize{36pt}{44pt}\selectfont\bfseries 全国大学生}\\[4pt]
+  {\color{cmcblack}\fontsize{36pt}{44pt}\selectfont\bfseries 数学竞赛}\\[18pt]
+  {\color{cmcgray}\fontsize{19pt}{24pt}\selectfont 初赛近十年答案汇编}\\[6pt]
+  {\color{cmcmidgray}\small 参考答案与详细解答}
+\end{flushleft}
+\vspace{0.8cm}
+{\color{cmcblack}\rule{\linewidth}{1pt}}
 
 \vfill
-\begin{flushright}
-  {\color{white}\fontsize{52pt}{60pt}\selectfont\bfseries 2016\,—\,2025}\\[12pt]
-  {\color{cmcgold}\large 第八届 \ \ —\ \ 第十七届}
-\end{flushright}
-\vspace*{1.2cm}
+{\color{cmcgray}\small 考试范围}\\[5pt]
+{\color{cmcblack}\large 数学类\ \ ·\ \ 数学 A/B 类\ \ ·\ \ 非数学类\ \ ·\ \ 非数学 A/B 类}
+\vspace{1.2cm}
 
-\vspace{2.0cm}
-\begin{flushleft}
-  {\color{white}\small
-  数学类 \quad ·\quad 数学 A/B 类 \quad ·\quad 非数学类 \quad ·\quad 非数学 A/B 类}
-\end{flushleft}
+\noindent
+\begin{minipage}[t]{0.40\textwidth}
+  {\color{cmcgray}\small 届次}\\[3pt]
+  {\color{cmcblack}\large 第八届 — 第十七届}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.55\textwidth}
+  \raggedleft
+  {\color{cmcblack}\fontsize{24pt}{30pt}\selectfont\bfseries 2016—2025}
+\end{minipage}
+\vspace*{1.3cm}
 \end{titlepage}
 \clearpage

@@ -9,10 +9,16 @@
 \fancyhead[L]{\small\color{cmcgray}全国大学生数学竞赛初赛近十年答案汇编}
 
 % ---------- 答案册专用命令 ----------
-% 每份试卷的小节标题
+% 每份试卷的小节标题：年份 + 类别，每份试卷另起一页
 \newcommand{\answerpaper}[1]{%
-  \needspace{18\baselineskip}%
-  \section{#1}%
+  \ifcmcfirstpaper
+    \global\cmcfirstpaperfalse
+  \else
+    \newpage
+  \fi
+  \phantomsection
+  \section*{\cmcyear\quad #1}%
+  \addcontentsline{toc}{section}{\texorpdfstring{\cmcyear\quad #1}{\cmcyear\ #1}}%
 }
 
 % 题目与分值，后接题目正文

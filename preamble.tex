@@ -13,25 +13,27 @@
   headheight=22pt,
 }
 
-% ---------- 颜色 ----------
-\definecolor{cmcblue}{HTML}{1F3A5F}
-\definecolor{cmcgold}{HTML}{B08D57}
-\definecolor{cmcgray}{HTML}{5A6472}
-\definecolor{cmclight}{HTML}{F3F5F8}
+% ---------- 颜色（黑白/浅色学术风格） ----------
+\definecolor{cmcblack}{HTML}{111111}
+\definecolor{cmcgray}{HTML}{4F4F4F}
+\definecolor{cmcmidgray}{HTML}{8A8A8A}
+\definecolor{cmcline}{HTML}{C9C9C9}
 
 % ---------- 章节标题 ----------
+\setcounter{secnumdepth}{0}
 \titleformat{\chapter}[display]
-  {\normalfont\bfseries\color{cmcblue}}
-  {\filleft\fontsize{14pt}{18pt}\selectfont 第\,\thechapter\,部分}
-  {8pt}
-  {\filleft\fontsize{30pt}{36pt}\selectfont}
-\titlespacing*{\chapter}{0pt}{-10pt}{28pt}
+  {\normalfont\bfseries\color{cmcblack}}
+  {\filleft\fontsize{10pt}{12pt}\selectfont 第\chinese{chapter}部分}
+  {6pt}
+  {\filleft\fontsize{26pt}{32pt}\selectfont}
+  [{\vspace{10pt}\color{cmcline}\rule{\linewidth}{0.5pt}}]
+\titlespacing*{\chapter}{0pt}{-14pt}{26pt}
 
 \titleformat{\section}[hang]
-  {\normalfont\Large\bfseries\color{cmcblue}}
-  {\thesection}{0.8em}{}
-  [\vspace{-0.35em}{\color{cmcgold}\rule{\linewidth}{0.8pt}}]
-\titlespacing*{\section}{0pt}{1.2em}{0.7em}
+  {\normalfont\large\bfseries\color{cmcblack}}
+  {}{0pt}{}
+  [{\vspace{-0.45em}\color{cmcline}\rule{\linewidth}{0.4pt}}]
+\titlespacing*{\section}{0pt}{0.9em}{0.8em}
 
 % ---------- 页眉页脚 ----------
 \pagestyle{fancy}
@@ -40,7 +42,7 @@
 \fancyhead[R]{\small\color{cmcgray}\nouppercase{\leftmark}}
 \fancyfoot[C]{\small\color{cmcgray}\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{cmcgold}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{cmcline}\leaders\hrule height \headrulewidth\hfill}}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyfoot[C]{\small\color{cmcgray}\thepage}%
@@ -51,11 +53,12 @@
 % 每份试卷的考试信息
 \newcommand{\papermeta}{%
   \begin{center}
+    \small\color{cmcgray}
     \begin{tabular}{@{}l@{\quad}l@{\quad}l@{}}
-      \textbf{考试形式：}闭卷 & \textbf{考试时间：}150 分钟 & \textbf{满分：}100 分
+      \textbf{考试形式}：闭卷 & \textbf{考试时间}：150 分钟 & \textbf{满分}：100 分
     \end{tabular}
   \end{center}
-  \vspace{0.2em}
+  \vspace{0.1em}
 }
 
 % 题目列表：一、二、……
@@ -97,14 +100,24 @@
 \DeclareMathOperator{\Span}{span}
 \DeclareMathOperator{\sgn}{sgn}
 
-% 年份章标题
+% 年份章标题与当前年份
+\newif\ifcmcfirstpaper
+\newcommand{\cmcyear}{}
 \newcommand{\yearchapter}[2]{%
+  \gdef\cmcyear{#1}%
   \chapter{#1 年 · #2}%
+  \global\cmcfirstpapertrue
 }
 
-% 试卷小节标题（带考试信息）
+% 试卷小节标题：年份 + 类别，每份试卷另起一页
 \newcommand{\paper}[1]{%
-  \needspace{9\baselineskip}%
-  \section{#1}%
+  \ifcmcfirstpaper
+    \global\cmcfirstpaperfalse
+  \else
+    \newpage
+  \fi
+  \phantomsection
+  \section*{\cmcyear\quad #1}%
+  \addcontentsline{toc}{section}{\texorpdfstring{\cmcyear\quad #1}{\cmcyear\ #1}}%
   \papermeta
 }
