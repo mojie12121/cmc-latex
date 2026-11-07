@@ -71,6 +71,10 @@ latexmk -xelatex -jobname="全国大学生数学竞赛初赛近十年试题汇�
 cd answers && latexmk -xelatex -jobname="全国大学生数学竞赛初赛近十年答案汇编" main.tex
 ```
 
+## 自动构建
+
+仓库配置了 GitHub Actions：向 `main` 推送或提交 PR 时，会自动使用 XeLaTeX 编译试题册和答案册。编译完成后，可在对应运行记录的 Artifacts 中下载 `cmc-latex-pdfs`。
+
 ## 资料来源
 
 - 大学生数学竞赛网（中国数学会初赛试题与参考答案）：<https://www.cmathc.org.cn/shiti/>

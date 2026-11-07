@@ -1,0 +1,45 @@
+name: Build PDFs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build exercise book
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          latexmk_use_xelatex: true
+
+      - name: Build answer book
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: answers
+          latexmk_use_xelatex: true
+
+      - name: Rename PDFs
+        run: |
+          mv main.pdf "全国大学生数学竞赛初赛近十年试题汇编.pdf"
+          mv answers/main.pdf "全国大学生数学竞赛初赛近十年答案汇编.pdf"
+
+      - name: Upload PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: cmc-latex-pdfs
+          path: |
+            全国大学生数学竞赛初赛近十年试题汇编.pdf
+            answers/全国大学生数学竞赛初赛近十年答案汇编.pdf
+          if-no-files-found: error
