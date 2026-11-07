@@ -1,0 +1,270 @@
+\answerpaper{数学类}
+
+\answerproblem{一、}{15}
+在空间直角坐标系中，设单叶双曲面 $\Gamma$ 的方程为 $x^2+y^2-z^2=1$．设 $P$ 为空间中的平面，它交 $\Gamma$ 于一抛物线 $C$．求该平面 $P$ 的法线与 $z$-轴的夹角．
+
+\begin{solution}
+设平面 $P$ 上的抛物线 $C$ 的顶点为 $X_0=(x_0,y_0,z_0)$．取平面 $P$ 上 $X_0$ 处相互正交的两单位向量 $\alpha=(\alpha_1,\alpha_2,\alpha_3)$ 和 $\beta=(\beta_1,\beta_2,\beta_3)$，使得 $\beta$ 是抛物线 $C$ 在平面 $P$ 上的对称轴方向，则抛物线的参数方程为
+\[
+  X(t)=X_0+t\alpha+\lambda t^2\beta,\qquad t\in\R .
+\]
+$\lambda$ 为不等于 $0$ 的常数．
+
+记 $X(t)=(x(t),y(t),z(t))$，则
+\[
+  x(t)=x_0+\alpha_1t+\lambda\beta_1t^2,\quad
+  y(t)=y_0+\alpha_2t+\lambda\beta_2t^2,\quad
+  z(t)=z_0+\alpha_3t+\lambda\beta_3t^2 .
+\]
+因为 $X(t)$ 落在单叶双曲面 $\Gamma$ 上，代入方程 $x^2+y^2-z^2=1$，得到对任意 $t$ 要满足的方程
+\[
+  \lambda^2\bigl(\beta_1^2+\beta_2^2-\beta_3^2\bigr)t^4
+  +2\lambda(\alpha_1\beta_1+\alpha_2\beta_2-\alpha_3\beta_3)t^3
+  +A_1t^2+A_2t+A_3=0,
+\]
+其中 $A_1,A_2,A_3$ 是与 $X_0,\alpha,\beta$ 相关的常数．于是得到
+\[
+  \beta_1^2+\beta_2^2-\beta_3^2=0,\qquad
+  \alpha_1\beta_1+\alpha_2\beta_2-\alpha_3\beta_3=0 .
+\]
+因为 $\{\alpha,\beta\}$ 是平面 $P$ 上正交的两单位向量，则有
+\[
+  \alpha_1^2+\alpha_2^2+\alpha_3^2=1,\quad
+  \beta_1^2+\beta_2^2+\beta_3^2=1,\quad
+  \alpha_1\beta_1+\alpha_2\beta_2+\alpha_3\beta_3=0 .
+\]
+于是得到
+\[
+  \beta_1^2+\beta_2^2=\beta_3^2=\frac12,\quad
+  \alpha_1\beta_1+\alpha_2\beta_2=0,\quad
+  \alpha_3=0,\quad
+  \alpha_1^2+\alpha_2^2=1,
+\]
+\[
+  \alpha=(\alpha_1,\alpha_2,0),\qquad
+  \beta=\Bigl(-\frac{\varepsilon}{\sqrt2}\alpha_2,\ \frac{\varepsilon}{\sqrt2}\alpha_1,\ \beta_3\Bigr),\qquad
+  \varepsilon=\pm1 .
+\]
+于是得到平面 $P$ 的法向量为
+\[
+  n=\alpha\times\beta=\Bigl(A,\ B,\ \frac{\varepsilon}{\sqrt2}\Bigr),
+\]
+它与 $z$-轴方向 $e=(0,0,1)$ 的夹角 $\theta$ 满足 $\cos\theta=n\cdot e=\pm\dfrac{1}{\sqrt2}$，所以夹角为 $\dfrac{\pi}{4}$ 或 $\dfrac{3\pi}{4}$．
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $\{a_n\}$ 是递增数列，$a_1>1$．求证：级数 $\sum_{n=1}^{\infty}\dfrac{a_{n+1}-a_n}{a_n\ln a_{n+1}}$ 收敛的充分必要条件是 $\{a_n\}$ 有界．又问级数通项分母中的 $a_n$ 是否可以换成 $a_{n+1}$？
+
+\begin{solution}
+充分性：若 $\{a_n\}$ 有界，则可设 $a_n\le M$．
+\[
+  \sum_{n=1}^{m}\frac{a_{n+1}-a_n}{a_n\ln a_{n+1}}
+  \le\sum_{n=1}^{m}\frac{a_{n+1}-a_n}{a_1\ln a_1}
+  =\frac{a_{m+1}-a_1}{a_1\ln a_1}
+  \le\frac{M}{a_1\ln a_1},
+\]
+由此可知 $\sum_{n=1}^{\infty}\dfrac{a_{n+1}-a_n}{a_n\ln a_{n+1}}$ 收敛．
+
+必要性：设 $\sum_{n=1}^{\infty}\dfrac{a_{n+1}-a_n}{a_n\ln a_{n+1}}$ 收敛．由于
+\[
+  \ln(a_{n+1})-\ln(a_n)=\ln\Bigl(1+\frac{a_{n+1}-a_n}{a_n}\Bigr)\le\frac{a_{n+1}-a_n}{a_n},
+\]
+所以
+\[
+  \frac{b_{n+1}-b_n}{b_{n+1}}\le\frac{a_{n+1}-a_n}{a_n\ln a_{n+1}},
+\]
+其中 $b_n=\ln a_n$．因此，级数 $\sum_{n=0}^{\infty}\dfrac{b_{n+1}-b_n}{b_{n+1}}$ 收敛．
+
+由 Cauchy 收敛准则，存在自然数 $m$，使得对一切自然数 $p$，有
+\[
+  \frac12>\sum_{n=m}^{m+p}\frac{b_{n+1}-b_n}{b_{n+1}}
+  \ge\sum_{n=m}^{m+p}\frac{b_{n+1}-b_n}{b_{m+p+1}}
+  =\frac{b_{m+p+1}-b_m}{b_{m+p+1}}
+  =1-\frac{b_m}{b_{m+p+1}} .
+\]
+由此可知 $\{b_n\}$ 有界，因为 $p$ 是任意的，因而 $\{a_n\}$ 有界．
+
+题中级数的分母 $a_n$ 不能换成 $a_{n+1}$．例如：$a_n=e^{n^2}$ 无界，但 $\sum_{n=1}^{\infty}\dfrac{a_{n+1}-a_n}{a_{n+1}\ln a_{n+1}}$ 收敛．
+\end{solution}
+
+\answerproblem{三、}{15}
+设 $\Gamma=\{W_1,W_2,\cdots,W_r\}$ 为 $r$ 个各不相同的可逆的 $n$ 阶复方阵构成的集合．若该集合关于矩阵乘法封闭（即 $\forall M,N\in\Gamma$，有 $MN\in\Gamma$）．证明：$\sum_{i=1}^{r}W_i=0$ 当且仅当 $\sum_{i=1}^{r}\tr(W_i)=0$，其中 $\tr(W_i)$ 表示 $W_i$ 的迹．
+
+\begin{solution}
+必要性：由迹的性质直接得．
+
+充分性：首先，对于可逆矩阵 $W\in\Gamma$，有 $WW_1,\cdots,WW_r$ 各不相同．故有
+\[
+  W\Gamma\equiv\{WW_1,WW_2,\cdots,WW_r\}=\{W_1,W_2,\cdots,W_r\},
+\]
+即 $W\Gamma=\Gamma$，$\forall W\in\Gamma$．
+
+记 $S=\sum_{i=1}^{r}W_i$，则 $WS=S$，$\forall W\in\Gamma$．进而 $S^2=rS$，即 $S^2-rS=0$．若 $\lambda$ 为 $S$ 的特征值，则 $\lambda^2-r\lambda=0$，即 $\lambda=0$ 或 $r$．
+
+结合条件 $\sum_{i=1}^{r}\tr(W_i)=0$ 知，$S$ 的特征值只能为 $0$．因此有 $S-rI$ 可逆（例如取 $S$ 的约当分解就可以直接看出）．
+
+再次注意到 $S(S-rI)=S^2-rS=0$，此时右乘 $(S-rI)^{-1}$，即得 $S=0$．证毕．
+\end{solution}
+
+\answerproblem{四、}{20}
+给定非零实数 $a$ 及实 $n$ 阶反对称矩阵 $A$（即 $A$ 的转置 $A^T$ 等于 $-A$）．记矩阵有序对集合 $T$ 为：$T=\bigl\{(X,Y)\mid X\in\R^{n\times n},\ Y\in\R^{n\times n},\ XY=aI+A\bigr\}$，其中 $I$ 为 $n$ 阶单位阵，$\R^{n\times n}$ 为所有实 $n$ 阶方阵构成的集合．证明：任取 $T$ 中的两元：$(X,Y)$ 和 $(M,N)$，必有 $XN+Y^TM^T\ne 0$．
+
+\begin{solution}
+反证：若 $XN+Y^TM^T=0$，则 $N^TX^T+MY=0$．
+
+另外，由 $(X,Y)\in T$ 得 $XY+(XY)^T=2aI$，即 $XY+Y^TX^T=2aI$．类似有 $MN+N^TM^T=2aI$．因此
+\[
+  \begin{pmatrix}X&Y^T\\ M&N^T\end{pmatrix}
+  \begin{pmatrix}Y&N\\ X^T&M^T\end{pmatrix}
+  =2a\begin{pmatrix}I&0\\ 0&I\end{pmatrix}.
+\]
+进而
+\[
+  \frac{1}{2a}\begin{pmatrix}Y&N\\ X^T&M^T\end{pmatrix}
+  \begin{pmatrix}X&Y^T\\ M&N^T\end{pmatrix}
+  =\begin{pmatrix}I&0\\ 0&I\end{pmatrix},
+\]
+得 $YY^T+NN^T=0$，所以 $Y=0$，$N=0$．
+
+导致 $XY=0$，与 $XY=aI+A\ne 0$ 矛盾．证毕．
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $f(x)=\arctan x$，$A$ 为常数．若 $B=\lim_{n\to\infty}\Biggl(\sum_{k=1}^{n}f\Bigl(\dfrac{k}{n}\Bigr)-An\Biggr)$ 存在，求 $A$，$B$．
+
+\begin{solution}
+\textbf{思路一}\quad 由定积分的定义，有
+\begin{align*}
+  A&=\lim_{n\to\infty}\frac1n\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)=\int_0^1 f(x)\dd x\\
+   &=x\arctan x\Big|_0^1-\int_0^1\frac{x}{1+x^2}\dd x=\frac{\pi}{4}-\frac{\ln 2}{2}.
+\end{align*}
+
+对于 $x\in\Bigl(\dfrac{k-1}{n},\dfrac{k}{n}\Bigr)$，$(1\le k\le n)$，由中值定理，存在 $\xi_{n,k}\in\Bigl(\dfrac{k-1}{n},\dfrac{k}{n}\Bigr)$ 使得
+\[
+  f(x)=f\Bigl(\frac{k}{n}\Bigr)+f'\Bigl(\frac{k}{n}\Bigr)\Bigl(x-\frac{k}{n}\Bigr)
+  +\frac{f''(\xi_{n,k})}{2}\Bigl(x-\frac{k}{n}\Bigr)^2 .
+\]
+于是
+\begin{align*}
+  &\left|\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)-nA
+  +\sum_{k=1}^{n}\int_{\frac{k-1}{n}}^{\frac{k}{n}}f'\Bigl(\frac{k}{n}\Bigr)\Bigl(x-\frac{k}{n}\Bigr)\dd x\right|\\
+  &\quad=\left|\sum_{k=1}^{n}\int_{\frac{k-1}{n}}^{\frac{k}{n}}
+  \left[f\Bigl(\frac{k}{n}\Bigr)+f'\Bigl(\frac{k}{n}\Bigr)\Bigl(x-\frac{k}{n}\Bigr)-f(x)\right]\dd x\right|\\
+  &\quad\le M\sum_{k=1}^{n}n\int_{\frac{k-1}{n}}^{\frac{k}{n}}\Bigl(x-\frac{k}{n}\Bigr)^2\dd x=\frac{M}{3n},
+\end{align*}
+其中 $M=\frac12\max\limits_{x\in[0,1]}\abs{f''(x)}$．因此，
+\begin{align*}
+  \lim_{n\to\infty}\Biggl(\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)-An\Biggr)
+  &=-\lim_{n\to\infty}\sum_{k=1}^{n}n\int_{\frac{k-1}{n}}^{\frac{k}{n}}f'\Bigl(\frac{k}{n}\Bigr)\Bigl(x-\frac{k}{n}\Bigr)\dd x\\
+  &=\lim_{n\to\infty}\frac{1}{2n}\sum_{k=1}^{n}f'\Bigl(\frac{k}{n}\Bigr)
+  =\frac12\int_0^1 f'(x)\dd x=\frac{\pi}{8}.
+\end{align*}
+
+\textbf{思路二}\quad 由定积分的定义，有
+\begin{align*}
+  A&=\lim_{n\to\infty}\frac1n\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)=\int_0^1 f(x)\dd x\\
+   &=x\arctan x\Big|_0^1-\int_0^1\frac{x}{1+x^2}\dd x=\frac{\pi}{4}-\frac{\ln 2}{2}.
+\end{align*}
+
+对于 $x\in\Bigl(\dfrac{k-1}{n},\dfrac{k}{n}\Bigr)$，$(1\le k\le n)$，由中值定理，存在 $\xi_{n,k}\in\Bigl(\dfrac{k-1}{n},\dfrac{k}{n}\Bigr)$ 使得
+\[
+  f\Bigl(\frac{k}{n}\Bigr)=f(x)+f'(x)\Bigl(\frac{k}{n}-x\Bigr)
+  +\frac{f''(\xi_{n,k})}{2}\Bigl(\frac{k}{n}-x\Bigr)^2 .
+\]
+于是
+\begin{align*}
+  &\left|\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)-nA
+  -\sum_{k=1}^{n}n\int_{\frac{k-1}{n}}^{\frac{k}{n}}f'(x)\Bigl(\frac{k}{n}-x\Bigr)\dd x\right|\\
+  &\quad=\left|\sum_{k=1}^{n}\int_{\frac{k-1}{n}}^{\frac{k}{n}}
+  \left[f\Bigl(\frac{k}{n}\Bigr)-f(x)-f'(x)\Bigl(\frac{k}{n}-x\Bigr)\right]\dd x\right|\\
+  &\quad\le M\sum_{k=1}^{n}n\int_{\frac{k-1}{n}}^{\frac{k}{n}}\Bigl(\frac{k}{n}-x\Bigr)^2\dd x=\frac{M}{3n},
+\end{align*}
+其中 $M=\frac12\max\limits_{x\in[0,1]}\abs{f''(x)}$．因此，
+\begin{align*}
+  \lim_{n\to\infty}\Biggl(\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)-An\Biggr)
+  &=\lim_{n\to\infty}\sum_{k=1}^{n}n\int_{\frac{k-1}{n}}^{\frac{k}{n}}f'(x)\Bigl(\frac{k}{n}-x\Bigr)\dd x\\
+  &=\lim_{n\to\infty}\sum_{k=1}^{n}nf'(\eta_{n,k})\int_{\frac{k-1}{n}}^{\frac{k}{n}}\Bigl(\frac{k}{n}-x\Bigr)\dd x\\
+  &=\lim_{n\to\infty}\frac{1}{2n}\sum_{k=1}^{n}f'(\eta_{n,k})
+  =\frac12\int_0^1 f'(x)\dd x=\frac{\pi}{8},
+\end{align*}
+其中 $\eta_{n,k}\in\Bigl(\dfrac{k-1}{n},\dfrac{k}{n}\Bigr)$．
+
+\textbf{思路三}\quad 由定积分的定义，有
+\begin{align*}
+  A&=\lim_{n\to\infty}\frac1n\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)=\int_0^1 f(x)\dd x\\
+   &=x\arctan x\Big|_0^1-\int_0^1\frac{x}{1+x^2}\dd x=\frac{\pi}{4}-\frac{\ln 2}{2}.
+\end{align*}
+
+对于 $x\in\Bigl(\dfrac{k-1/2}{n},\dfrac{k+1/2}{n}\Bigr)$，$(1\le k\le n)$，由中值定理，存在
+\[
+  \xi_{n,k}\in\Bigl(\frac{k-1/2}{n},\frac{k+1/2}{n}\Bigr)
+\]
+使得 $f(x)=f\Bigl(\dfrac{k}{n}\Bigr)+f'\Bigl(\dfrac{k}{n}\Bigr)\Bigl(x-\dfrac{k}{n}\Bigr)
++\dfrac{f''(\xi_{n,k})}{2}\Bigl(x-\dfrac{k}{n}\Bigr)^2$．于是
+\begin{align*}
+  &\left|\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)-nA
+  -n\int_1^{1+\frac{1}{2n}}f(x)\dd x+n\int_0^{\frac{1}{2n}}f(x)\dd x\right|\\
+  &\quad=\left|\sum_{k=1}^{n}n\int_{\frac{k-\frac12}{n}}^{\frac{k+\frac12}{n}}
+  \left[f\Bigl(\frac{k}{n}\Bigr)-f(x)+f'\Bigl(\frac{k}{n}\Bigr)\Bigl(\frac{k}{n}-x\Bigr)\right]\dd x\right|\\
+  &\quad\le M\sum_{k=1}^{n}n\int_{\frac{k-1}{n}}^{\frac{k}{n}}\Bigl(\frac{k}{n}-x\Bigr)^2\dd x=\frac{M}{3n},
+\end{align*}
+其中 $M=\frac12\max\limits_{x\in[0,1]}\abs{f''(x)}$．因此
+\begin{align*}
+  \lim_{n\to\infty}\Biggl(\sum_{k=1}^{n}f\Bigl(\frac{k}{n}\Bigr)-An\Biggr)
+  &=\lim_{n\to\infty}n\int_1^{1+\frac{1}{2n}}f(x)\dd x
+  -\lim_{n\to\infty}n\int_0^{\frac{1}{2n}}f(x)\dd x\\
+  &=\frac{f(1)}{2}-\frac{f(0)}{2}=\frac{\pi}{8}.
+\end{align*}
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $f(x)=1-x^2+x^3\ (x\in[0,1])$，计算以下极限并说明理由：
+\[
+  \lim_{n\to\infty}\frac{\displaystyle\int_0^1 f^n(x)\ln(x+2)\dd x}{\displaystyle\int_0^1 f^n(x)\dd x}.
+\]
+
+\begin{solution}
+容易知道 $f(x)$ 连续，注意到 $f(x)=1-x^2(1-x)$，于是有
+\[
+  0<f(x)<1=f(0)=f(1),\qquad \forall x\in(0,1).
+\]
+任取 $\delta\in\Bigl(0,\dfrac12\Bigr)$，有 $\eta=\eta_\delta\in(0,\delta)$ 使得
+\[
+  m_\eta\equiv\min_{x\in[0,\eta]}f(x)>M_\delta\equiv\max_{x\in[\delta,1-\delta]}f(x).
+\]
+于是当 $n\ge\dfrac{1}{\delta^2}$ 时，
+\begin{align*}
+  0\le\frac{\int_\delta^1 f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}
+  &=\frac{\int_{1-\delta}^1 f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}
+   +\frac{\int_\delta^{1-\delta}f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}\\
+  &=\frac{\int_0^\delta\bigl(1-x(1-x)^2\bigr)^n\dd x}{\int_0^\delta\bigl(1-x^2(1-x)\bigr)^n\dd x}
+   +\frac{\int_\delta^{1-\delta}f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}\\
+  &\le\frac{\int_0^\delta\Bigl(1-\dfrac{x}{4}\Bigr)^n\dd x}{\int_0^\delta(1-x^2)^n\dd x}
+   +\frac{\int_\delta^{1-\delta}f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}\\
+  &\le\frac{\int_0^\delta\Bigl(1-\dfrac{x}{4}\Bigr)^n\dd x}
+          {\int_0^{\frac{1}{\sqrt n}}\Bigl(1-\dfrac{x}{\sqrt n}\Bigr)^n\dd x}
+   +\frac{(1-2\delta)M_\delta^n}{\eta m_\eta^n}\\
+  &=\frac{\dfrac{4}{n+1}\left(1-\left(1-\dfrac{\delta}{4}\right)^{n+1}\right)}
+          {\dfrac{\sqrt n}{n+1}\left(1-\left(1-\dfrac1n\right)^{n+1}\right)}
+   +\frac{(1-\delta)}{\eta}\left(\frac{M_\delta}{m_\eta^n}\right)^{n},
+\end{align*}
+从而 $\lim_{n\to\infty}\dfrac{\int_\delta^1 f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}=0$．
+
+对于 $\varepsilon\in\Bigl(0,\ln\dfrac54\Bigr)$，取 $\delta=2(\ee^\varepsilon-1)$，则 $\delta\in\Bigl(0,\dfrac12\Bigr)$，$\ln\dfrac{2+\delta}{2}=\varepsilon$．
+
+另一方面，由前述结论，存在 $N\ge 1$ 使得当 $n\ge N$ 时，有 $\dfrac{\int_\delta^1 f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}\le\varepsilon$．
+
+从而又有
+\begin{align*}
+  \left|\frac{\int_0^1 f^n(x)\ln(x+2)\dd x}{\int_0^1 f^n(x)\dd x}-\ln 2\right|
+  &=\frac{\int_0^1 f^n(x)\ln\dfrac{x+2}{2}\dd x}{\int_0^1 f^n(x)\dd x}\\
+  &\le\frac{\int_0^\delta f^n(x)\ln\dfrac{x+2}{2}\dd x}{\int_0^\delta f^n(x)\dd x}
+   +\frac{\int_\delta^1 f^n(x)\ln\dfrac{x+2}{2}\dd x}{\int_0^\delta f^n(x)\dd x}\\
+  &\le\ln\frac{\delta+2}{2}
+   +\frac{\ln 2\int_\delta^1 f^n(x)\dd x}{\int_0^\delta f^n(x)\dd x}\le\varepsilon(1+\ln 2).
+\end{align*}
+因此
+\[
+  \lim_{n\to\infty}\frac{\int_0^1 f^n(x)\ln(x+2)\dd x}{\int_0^1 f^n(x)\dd x}=\ln 2 .
+\]
+\end{solution}

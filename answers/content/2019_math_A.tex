@@ -1,0 +1,255 @@
+\answerpaper{数学 A 类}
+
+\answerproblem{一、}{15}
+空间中有两个圆球面 $B_1$ 和 $B_2$，$B_2$ 包含在 $B_1$ 所围球体的内部，两球面之间的闭区域为 $D$．设 $B$ 是含在 $D$ 中的一个圆球，它与球面 $B_1$ 和 $B_2$ 均相切．问：
+\begin{enumerate}[label=(\roman*)]
+  \item（4 分）$B$ 的球心轨迹构成的曲面 $S$ 是何种曲面；
+  \item（2 分）$B_1$ 的球心和 $B_2$ 的球心是曲面 $S$ 的何种点．
+\end{enumerate}
+证明你的论断（9 分）．
+
+\begin{solution}
+$B$ 的球心轨迹构成的曲面 $S$ 为旋转椭球面；$B_1$ 和 $B_2$ 的球心为 $S$ 的两个焦点．
+
+设 $B_1$ 的球心为 $O_1$，半径为 $R_1$，$B_2$ 的球心为 $O_2$，半径为 $R_2$．设 $B$ 是含在 $D$ 中的一个球，球心在 $P$ 点，半径为 $r$，它与球 $B_1$ 和 $B_2$ 均相切．因为 $B$ 与 $B_1$ 内切，所以 $PO_1=R_1-r$．因为 $B$ 与 $B_2$ 外切，所以 $PO_2=R_2+r$．于是有
+\[
+  PO_1+PO_2=R_1+R_2
+\]
+总是常数．
+
+设 $\ell$ 是过球心 $O_1$ 和 $O_2$ 的直线．因为 $B_1$ 和 $B_2$ 在以 $\ell$ 为不动轴的空间旋转下不变，故区域 $D$ 也在以 $\ell$ 为不动轴的空间旋转下不变．$B$ 在以 $\ell$ 为不动轴的空间旋转下保持与 $B_1$ 和 $B_2$ 均相切，它的球心 $P$ 在以 $\ell$ 为不动轴的空间旋转下是一个圆周．在每个过直线 $\ell$ 的平面 $\Sigma$ 上，由于 $PO_1+PO_2=R_1+R_2$ 总是常数，$B$ 的球心轨迹 $P$ 在平面 $\Sigma$ 上是一个椭圆．故 $B$ 的球心轨迹构成的曲面 $S$ 为旋转椭球，旋转轴为过 $O_1$ 和 $O_2$ 的直线，并且两球心 $O_1$ 和 $O_2$ 为旋转椭球的两个焦点．
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $\alpha>0$，$f(x)$ 在 $[0,1]$ 上非负，有二阶导函数，$f(0)=0$，且在 $[0,1]$ 上不恒为零．求证：存在 $\xi\in(0,1)$ 使得
+\[
+  \xi f''(\xi)+(\alpha+1)f'(\xi)>\alpha f(\xi).
+\]
+
+\begin{solution}
+（反证法）若结论不对，则对一切 $x\in[0,1]$ 有
+\[
+  xf''(x)+(\alpha+1)f'(x)\le\alpha f(x).
+\]
+这说明函数 $xf'(x)+\alpha f(x)-\alpha\int_0^x f(u)\dd u$ 的导数非正，因而单调递减，但它在 $0$ 取 $0$，故，
+\[
+  xf'(x)+\alpha f(x)\le\alpha\int_0^x f(u)\dd u,\qquad x\in[0,1].
+\]
+因而
+\[
+  x^{\alpha}f'(x)+\alpha x^{\alpha-1}f(x)\le\alpha x^{\alpha-1}\int_0^x f(u)\dd u,\qquad x\in[0,1].
+\]
+将上式在 $[0,x]$ 上积分，可得
+\begin{align*}
+  x^{\alpha}f(x)&\le\alpha\int_0^x t^{\alpha-1}\left(\int_0^t f(u)\dd u\right)\dd t\\
+  &\le\alpha\int_0^x t^{\alpha-1}\left(\int_0^x f(u)\dd u\right)\dd t\\
+  &=x^{\alpha}\int_0^x f(u)\dd u.
+\end{align*}
+故，
+\[
+  f(x)\le\int_0^x f(u)\dd u.
+\]
+记 $g(x)=\int_0^x f(u)\dd u$，则从上式可得 $g'(x)\le g(x)$．因此
+\[
+  (\ee^{-x}g(x))'\le0.
+\]
+这说明 $\ee^{-x}g(x)$ 在 $[0,1]$ 上递减．注意到 $g(0)=0$，可得 $g(x)\le0$．但从 $f(x)$ 非负可知 $g(x)\ge0$．故 $g(x)\equiv0$．从而 $f(x)\equiv0$．这与 $f(x)$ 不恒为零矛盾！
+\end{solution}
+
+\answerproblem{三、}{15}
+设 $A$ 为 $n$ 阶复方阵，$p(x)$ 为 $I-\bar A A$ 的特征多项式，其中 $\bar A$ 表 $A$ 的共轭矩阵．证明：$p(x)$ 必为实系数多项式．
+
+\begin{solution}
+记
+\[
+  p(t)=\det\bigl(tI-(I-A\bar A)\bigr)=\det\bigl((t-1)I+A\bar A\bigr)
+\]
+为 $I-A\bar A$ 的特征多项式．对任何实数 $t$，有
+\begin{equation}
+  \overline{p(t)}=\overline{\det\bigl((t-1)I+A\bar A\bigr)}=\det\bigl((t-1)I+\bar A A\bigr).\tag{$*$}
+\end{equation}
+
+对任何两个方阵 $A$ 和 $B$，有 $\det(sI+AB)=\det(sI+BA)$，证明如下：取可逆矩阵序列 $B_n$ 使得 $B_n\to B$（例如，对充分大的 $n$ 取 $B_n=B+\frac1n I$），则
+\[
+  \det(sI+AB_n)=\det(sB_n^{-1}+A)\det B_n=\det B_n\det(sB_n^{-1}+A)=\det(sI+B_nA).
+\]
+令 $n\to\infty$，得到公式 $\det(sI+AB)=\det(sI+BA)$．用 $B=\bar A$ 代入公式，则有
+\[
+  \overline{p(t)}=\det\bigl((t-1)I+\bar A A\bigr)=\det\bigl((t-1)I+A\bar A\bigr)=p(t)
+\]
+对所有的实数 $t$ 成立，故 $p(t)$ 的系数都是实数．
+
+注：也可通过利用分块矩阵初等变换求\ $\begin{pmatrix}I&B\\A&sI\end{pmatrix}$ 的行列式来证明公式 $\det(sI-AB)=\det(sI-BA)$．具体地：
+\[
+  \forall s\ne0,\quad
+  \begin{pmatrix}I&0\\-A&I\end{pmatrix}
+  \begin{pmatrix}I&B\\A&sI\end{pmatrix}
+  =\begin{pmatrix}I&B\\0&sI-AB\end{pmatrix},
+\]
+\[
+  \begin{pmatrix}I&B\\A&sI\end{pmatrix}
+  \begin{pmatrix}I&0\\-A/s&I\end{pmatrix}
+  =\begin{pmatrix}I-BA/s&B\\0&sI\end{pmatrix}.
+\]
+对上两矩阵等式两边取行列式即得 $\det(sI-AB)=\det(sI-BA)$ 对一切非零的实数均成立．从而多项式 $\det(sI-AB)-\det(sI-BA)\equiv0$，因为多项式 $\det(sI-AB)-\det(sI-BA)$ 至多是 $n$ 次多项式．获证．
+\end{solution}
+
+\answerproblem{四、}{20}
+已知 $f_1$ 为实 $n$ 元正定二次型．令
+\[
+  V=\left\{f\mid f\ \text{为实}\ n\ \text{元二次型，满足：对任何实数}\ k\ \text{有}\ kf+f_1\ \text{属于恒号二次型}\right\},
+\]
+这里恒号二次型为 $0$ 二次型、正定二次型及负定二次型的总称．证明：$V$ 按照通常的二次型加法和数乘构成一个实向量空间，并求这个向量空间的维数．
+
+\begin{solution}
+\textbf{证法 1}：设 $f\in V$，$f$ 与 $f_1$ 所对应的二次型矩阵分别为 $A$ 和 $B$．由 $B$ 正定可推得
+\[
+  \exists P\ \text{可逆，使得}\quad
+  B=PP^{T},\qquad
+  A=P\begin{pmatrix}
+    \lambda_1 & & \\
+     & \ddots & \\
+     & & \lambda_n
+  \end{pmatrix}P^{T}.
+\]
+由条件：对任何实数 $k$ 有 $kf+f_1$ 属于恒号二次型可推得 $\lambda_1=\cdots=\lambda_n$．
+
+事实上，若 $\lambda_1\ne\lambda_2$，则由式子
+\[
+  kf+f_1=(z_1,\dots,z_n)P
+  \begin{pmatrix}
+    k\lambda_1+1 & & \\
+     & \ddots & \\
+     & & k\lambda_n+1
+  \end{pmatrix}
+  P^{T}\begin{pmatrix}z_1\\\vdots\\z_n\end{pmatrix}
+\]
+知，总可取某实数 $q$，使得 $(q\lambda_1+1)(q\lambda_2+1)<0$．从而可取两点：$(z_1,\dots,z_n)P=(0,1,0,\dots,0)$ 及 $(z_1,\dots,z_n)P=(1,0,0,\dots,0)$，$qf+f_1$ 在该两点取值异号，矛盾．
+
+到此，我们实际上得到 $V=\{kf_1\mid k\in\R\}$．
+
+直接可知，$V$ 按照通常的二次型加法和数乘构成一个实向量空间，并这个向量空间的维数是 $1$．证毕．
+
+\textbf{证法 2}：首先，$V\ne0$，因为 $0\in V$，且对任何实数 $k$ 有 $kf_1\in V$．
+
+其次，对任意非零 $f\in V$，若存在 $k\in\R$，使得 $kf+f_1\equiv0$，则由 $f_1$ 的正定性，可知 $k\ne0$，从而 $f=-\frac1k f_1$；若对任意的 $k\in\R$，$kf+f_1\not\equiv0$，则由条件知，$kf+f_1$ 要么为正定二次型，要么为负定二次型．断言：$f$ 和 $f_1$ 必线性相关．
+
+用反证法．若 $f$ 和 $f_1$ 线性无关，则由 $f_1$ 正定知，存在点 $P_1$ 使得 $f_1(P_1)>0$．此时考察二次型 $g=f_1(P_1)f-f(P_1)f_1$，由 $f$ 和 $f_1$ 线性无关知 $g\not\equiv0$（因为 $\{f_1(P_1),-f(P_1)\}$ 是一组不全为零的数），故存在 $P_2$ 使得
+\begin{equation}
+  0\ne g(P_2)=f_1(P_1)f(P_2)-f(P_1)f_1(P_2).\tag{$*$}
+\end{equation}
+此时有
+(i) $P_2\ne(0,\dots,0)$，$f_1(P_2)>0$；
+
+(ii) $f(P_2)$，$f(P_1)$ 不同时为零．
+
+先考虑 $f(P_1)\ne0$ 的情形，由 $(*)$ 式有
+\[
+  \frac{f_1(P_1)}{-f(P_1)}f(P_2)+f_1(P_2)=\frac{g(P_2)}{-f(P_1)}\ne0.
+\]
+令 $k=\frac{f_1(P_1)}{-f(P_1)}$，由 $kf+f_1$ 恒号可知：当 $\frac{g(P_2)}{-f(P_1)}>0$ 时，$\frac{f_1(P_1)}{-f(P_1)}f(P_1)+f_1(P_1)>0$，明显上述不等式左边为零，矛盾．
+
+当 $\frac{g(P_2)}{-f(P_1)}<0$ 时，得 $\frac{f_1(P_1)}{-f(P_1)}f(P_1)+f_1(P_1)<0$，不等式左边为零，矛盾．
+
+接下来考虑 $f(P_2)\ne0$ 的情形．同样由 $(*)$ 式有
+\[
+  -\frac{f_1(P_2)}{f(P_2)}f(P_1)+f_1(P_1)=\frac{g(P_2)}{-f(P_2)}\ne0.
+\]
+令 $k=-\frac{f_1(P_2)}{f(P_2)}$，类似地，由 $kf+f_1$ 恒号可得矛盾．断言获证．
+
+现在，$f$ 与 $f_1$ 线性相关，故存在一组不全为 $0$ 的数 $\lambda_1,\mu$，使得 $\lambda_1f_1+\mu f=0$．若 $\lambda_1=0$，则 $\mu\ne0$，因此有 $f=-\frac{\lambda_1}{\mu}f_1$．若 $\lambda_1\ne0$，则由 $\lambda_1f_1\ne0$ 知 $\mu\ne0$，因此仍然有 $f=-\frac{\lambda_1}{\mu}f_1$．
+
+到此，我们实际上得到 $V=\{kf_1\mid k\in\R\}$．
+
+最后直接可知，$V$ 按照通常的二次型加法和数乘构成一个实向量空间，并这个向量空间的维数是 $1$．
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $\delta>0$，$\alpha\in(0,1)$，实数列 $\{x_n\}$ 满足
+\[
+  x_{n+1}=x_n\left(1-\frac{h_n}{n^{\alpha}}\right)+\frac{1}{n^{\alpha+\delta}},\qquad n\ge1,
+\]
+其中 $\{h_n\}$ 有正的上下界．证明：$\{n^{\delta}x_n\}$ 有界．
+
+\begin{solution}
+记 $c:=\inf\limits_{n\ge1}h_n$．
+
+由题设可知存在 $N\ge1$ 使得当 $n\ge N$ 时，成立
+\[
+  |x_{n+1}|\le\left(1-\frac{c}{n^{\alpha}}\right)|x_n|+\frac{1}{n^{\alpha+\delta}}
+\]
+以及
+\[
+  \frac{\delta}{n}\le\frac{c}{2n^{\alpha}}.
+\]
+取 $C:=\max\left(N^{\delta}|x_N|,\frac2c\right)$．我们来证明对于 $n\ge N$ 成立 $|x_n|\le\frac{C}{n^{\delta}}$．首先，由 $C$ 的定义知当 $n=N$ 时，有 $|x_n|\le\frac{C}{n^{\delta}}$．进一步，若对某个 $n\ge N$ 成立 $|x_n|\le\frac{C}{n^{\delta}}$，则
+\begin{align*}
+  |x_{n+1}|-\frac{C}{(n+1)^{\delta}}
+  &\le\left(1-\frac{c}{n^{\alpha}}\right)\frac{C}{n^{\delta}}+\frac{1}{n^{\alpha+\delta}}-\frac{C}{(n+1)^{\delta}}\\
+  &=C\left(\frac{1}{n^{\delta}}-\frac{1}{(n+1)^{\delta}}\right)-\frac{Cc-1}{n^{\alpha+\delta}}\\
+  &\le\frac{C\delta}{n^{1+\delta}}-\frac{Cc-1}{n^{\alpha+\delta}}
+   \le\frac{Cc}{2n^{\alpha+\delta}}-\frac{Cc-1}{n^{\alpha+\delta}}
+   =-\frac{Cc-2}{2n^{\alpha+\delta}}\le0.
+\end{align*}
+因此，由数学归纳法得到当 $n\ge N$ 时，总成立 $|x_n|\le\frac{C}{n^{\delta}}$．因此，$\{n^{\delta}x_n\}$ 有界．
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $f(x)=\dfrac{1}{1+\ee^{x}}$．
+\begin{enumerate}[label=(\roman*)]
+  \item 证明 $f(x)$ 是 $[0,+\infty)$ 上的凸函数．进一步，证明当 $x,y\ge0$ 时成立 $f(x)+f(y)\le f(0)+f(x+y)$．
+  \item 设 $n\ge3$，试确定集合 $E\equiv\left\{\sum\limits_{k=1}^{n}f(x_k)\ \middle|\ \sum\limits_{k=1}^{n}x_k=0,\ x_1,\dots,x_n\in\R\right\}$．
+\end{enumerate}
+
+\begin{solution}
+\textbf{(i)} 我们有
+\[
+  f'(x)=-\frac{\ee^{x}}{(1+\ee^{x})^{2}},\qquad
+  f''(x)=\frac{\ee^{x}(\ee^{x}-1)}{(1+\ee^{x})^{3}}.
+\]
+当 $x\ge0$ 时，成立 $f''(x)\ge0$．所以 $f(x)$ 是 $[0,+\infty)$ 上的凸函数．
+
+从而 $f'(x)$ 在 $[0,+\infty)$ 上单调增加，因此对于 $x,y\ge0$，有
+\[
+  f(x+y)-f(x)-f(y)+f(0)=\int_0^y\bigl(f'(t+x)-f'(t)\bigr)\dd t\ge0.
+\]
+
+\textbf{(ii)} 由连续性，易见 $E$ 是一个区间．
+
+我们有 $f(x)+f(-x)=1$．
+
+下设 $x_1+x_2+\cdots+x_n=0$．
+
+若 $x_1=x_2=\cdots=x_n=0$，则 $\sum\limits_{j=1}^{n}f(x_j)=\frac n2$．
+
+若 $x_1,x_2,\dots,x_n$ 不全为零，设其中负数的个数为 $k$，非负数的个数为 $m$，则 $m+k=n$，$1\le k\le n-1$．
+
+不妨设 $x_1,\dots,x_m\ge0$，$x_{m+1},\dots,x_n<0$．记 $y_1=-x_{m+1}$，$y_2=-x_{m+2}$，$\dots$，$y_k=-x_n$，$x=x_1+\dots+x_m=y_1+\dots+y_k$，则由 (i) 易得
+\[
+  f(y_1)+f(y_2)+\cdots+f(y_k)\le(k-1)f(0)+f(x).
+\]
+注意到 $mf\left(\frac xm\right)-f(x)$ 在 $[0,+\infty)$ 上严格单减，我们有
+\begin{align*}
+  \sum_{j=1}^{n}f(x_j)
+  &=\sum_{j=1}^{m}f(x_j)+k-\sum_{j=1}^{k}f(y_j)\\
+  &\ge mf\left(\frac xm\right)+k-\bigl((k-1)f(0)+f(x)\bigr)\\
+  &>\lim_{u\to+\infty}\left[mf\left(\frac um\right)+k-\bigl((k-1)f(0)+f(u)\bigr)\right]\\
+  &=\frac{k+1}{2}\ge1.
+\end{align*}
+这表明 $\inf E\ge1$ 而 $1\notin E$．
+
+另一方面，取 $u>0$，$x_1=x_2=\cdots=x_{n-1}=\frac{u}{n-1}$，$x_n=-u$，则
+\[
+  \lim_{u\to+\infty}\sum_{j=1}^{n}f(x_j)
+  =\lim_{u\to+\infty}\left((n-1)f\left(\frac{u}{n-1}\right)+1-f(u)\right)=1.
+\]
+因此，$\inf E=1$．
+
+另一方面，由 $f(-x)=1-f(x)$ 可得
+\[
+  E=\{n-z\mid z\in E\}.
+\]
+因此，$\sup E=n-1$，且 $n-1\notin E$．
+
+所以 $E$ 为开区间 $(1,n-1)$．
+\end{solution}

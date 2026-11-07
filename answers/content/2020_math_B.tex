@@ -1,0 +1,259 @@
+\answerpaper{数学 B 类}
+
+\answerproblem{一、}{15}
+已知椭球面
+\[
+  \Sigma_{0}:\ \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1,\qquad a>b,
+\]
+的外切柱面 $\Sigma_{\epsilon}$（$\epsilon=1$ 或 $-1$）平行于已知直线
+\[
+  l_{\epsilon}:\ \frac{x-2}{0}=\frac{y-1}{\epsilon\sqrt{a^{2}-b^{2}}}=\frac{z-3}{c}.
+\]
+试求与 $\Sigma_{\epsilon}$ 交于一个圆周的平面的法方向．注：本题中的外切柱面指的是每一条直母线均与已知椭球面相切的柱面．
+\begin{solution}
+设 $l$ 是柱面的任意一条直母线，则由假设，$l$ 与已知椭球面 $\Sigma_{0}$ 相切于一点 $M_{1}(x_{1},y_{1},z_{1})$．因为 $l$ 平行于已知直线 $l_{\epsilon}$，所以 $l$ 的标准方程和参数方程分别是
+\begin{gather*}
+  \frac{x-x_{1}}{0}=\frac{y-y_{1}}{\epsilon\sqrt{a^{2}-b^{2}}}=\frac{z-z_{1}}{c},\\
+  x=x_{1},\qquad y=y_{1}+\epsilon t\sqrt{a^{2}-b^{2}},\qquad z=z_{1}+ct.
+\end{gather*}
+把 $l$ 的参数方程代入曲面 $\Sigma_{0}$ 的方程并化简得
+\begin{equation}
+  t^{2}\Bigl(\frac{a^{2}-b^{2}}{b^{2}}+1\Bigr)+2t\Bigl(\epsilon\frac{\sqrt{a^{2}-b^{2}}}{b^{2}}y_{1}+\frac{1}{c}z_{1}\Bigr)
+  +\frac{x_{1}^{2}}{a^{2}}+\frac{y_{1}^{2}}{b^{2}}+\frac{z_{1}^{2}}{c^{2}}-1=0, \tag{1}
+\end{equation}
+其中首项系数 $\dfrac{a^{2}-b^{2}}{a^{2}}+1>0$．
+
+因为点 $M_{1}$ 在 $\Sigma_{0}$ 上，所以
+\[
+  \frac{x_{1}^{2}}{a^{2}}+\frac{y_{1}^{2}}{b^{2}}+\frac{z_{1}^{2}}{c^{2}}-1=0.
+\]
+又因为 $l$ 与 $\Sigma_{0}$ 在 $M_{1}$ 点相切，所以 $t=0$ 是二次方程 (1) 的重根．因此，
+\[
+  \epsilon\frac{\sqrt{a^{2}-b^{2}}}{b^{2}}y_{1}+\frac{1}{c}z_{1}=0,\qquad\text{即}\qquad
+  \epsilon c\sqrt{a^{2}-b^{2}}y_{1}+b^{2}z_{1}=0.
+\]
+此式与
+\[
+  \frac{y-y_{1}}{\epsilon\sqrt{a^{2}-b^{2}}}=\frac{z-z_{1}}{c},\qquad\text{即}\qquad
+  \epsilon cy_{1}-\sqrt{a^{2}-b^{2}}z_{1}=\epsilon cy-\sqrt{a^{2}-b^{2}}z
+\]
+联立解出
+\[
+  y_{1}=\frac{b^{2}}{ca^{2}}\bigl(cy-\epsilon\sqrt{a^{2}-b^{2}}z\bigr),\qquad
+  z_{1}=-\epsilon\frac{\sqrt{a^{2}-b^{2}}}{a^{2}}\bigl(cy-\epsilon\sqrt{a^{2}-b^{2}}z\bigr).
+\]
+再把 $x_{1}=x$ 和上面的两式代入 $\Sigma_{0}$ 的方程，得到外切柱面 $\Sigma_{\epsilon}$ 的方程为
+\[
+  \frac{x^{2}}{a^{2}}+\frac{b^{2}\bigl(cy-\epsilon\sqrt{a^{2}-b^{2}}z\bigr)^{2}}{a^{4}c^{2}}
+  +\frac{(a^{2}-b^{2})\bigl(cy-\epsilon\sqrt{a^{2}-b^{2}}z\bigr)^{2}}{a^{4}c^{2}}=1.
+\]
+如果令 $z=0$，上式化为
+\[
+  \frac{x^{2}}{a^{2}}+\frac{b^{2}y^{2}}{a^{4}}+\frac{(a^{2}-b^{2})y^{2}}{a^{4}}=1,\qquad\text{即}\qquad x^{2}+y^{2}=a^{2}.
+\]
+所以柱面 $\Sigma_{\epsilon}$ 与 $xOy$ 坐标面相交于圆周
+\[
+  \begin{cases}
+    x^{2}+y^{2}=a^{2}\\
+    z=0
+  \end{cases}.
+\]
+由于与二次柱面 $\Sigma_{\epsilon}$ 的交线为圆周的所有平面都是平行的，故知所求的法方向唯一且为 $xOy$ 平面的法方向，方向数为 $0,0,1$．
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $f(x)$ 在 $[0,1]$ 上连续，且 $1\le f(x)\le 3$，证明：
+\[
+  1\le\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{\dd x}{f(x)}\le\frac{4}{3}.
+\]
+\begin{solution}
+由 Schwarz 不等式，
+\[
+  1=\Bigl(\int_{0}^{1}\sqrt{f(x)}\frac{1}{\sqrt{f(x)}}\dd x\Bigr)^{2}
+  \le\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{\dd x}{f(x)}.
+\]
+又由于 $(f(x)-1)(f(x)-3)\le 0$，故有 $\dfrac{(f(x)-1)(f(x)-3)}{f(x)}\le 0$，即 $\displaystyle\int_{0}^{1}\Bigl(f(x)+\frac{3}{f(x)}\Bigr)\dd x\le 4$．
+
+由 $4ab\le(a+b)^{2}$ 知
+\[
+  \int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{3}{f(x)}\dd x
+  \le\frac{\Bigl(\displaystyle\int_{0}^{1}f(x)\dd x+\int_{0}^{1}\frac{3}{f(x)}\dd x\Bigr)^{2}}{4}\le 4.
+\]
+于是 $1\le\displaystyle\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{\dd x}{f(x)}\le\dfrac{4}{3}$．
+\end{solution}
+
+\answerproblem{三、}{15}
+设 $A$ 为 $n$ 阶复方阵，$p(x)$ 为 $A$ 的特征多项式．又设 $g(x)$ 为 $m$ 次复系数多项式，$m\ge 1$．证明：$g(A)$ 可逆当且仅当 $p(x)$ 与 $g(x)$ 互素．
+\begin{solution}
+取 $A$ 的 Jordan 分解：$A=P\begin{pmatrix}J_{1}&&\\&\ddots&\\&&J_{s}\end{pmatrix}P^{-1}$，其中
+\[
+  J_{i}=\begin{pmatrix}
+    \lambda_{i} & 1 & & \\
+    & \ddots & \ddots & \\
+    & & \ddots & 1\\
+    & & & \lambda_{i}
+  \end{pmatrix}
+\]
+为 Jordan 块．结果，
+\begin{equation}
+  g(A)=P\begin{pmatrix}g(J_{1})&&\\&\ddots&\\&&g(J_{s})\end{pmatrix}P^{-1}
+  =P\begin{pmatrix}g(\lambda_{1})&*&*\\&\ddots&*\\&&g(\lambda_{s})\end{pmatrix}P^{-1}. \tag{$*$}
+\end{equation}
+($\Leftarrow$) $p(x)$ 与 $g(x)$ 互素，于是 $p(x)$ 与 $g(x)$ 没有公共根．注意到 $\lambda_{1},\dots,\lambda_{s}$ 为 $A$ 的所有互不相同的特征根．故有 $g(\lambda_{1}),\dots,g(\lambda_{s})$ 均不为 $0$．结果，
+\[
+  \abs{g(A)}=g(\lambda_{1})\cdots g(\lambda_{s})\ne 0,
+\]
+$g(A)$ 可逆，得证．
+
+($\Rightarrow$) $g(A)$ 可逆，从而 $\abs{g(A)}\ne 0$．由 $\abs{g(A)}=g(\lambda_{1})\cdots g(\lambda_{s})$ 知：$g(\lambda_{1}),\dots,g(\lambda_{s})$ 均不为 $0$，故 $p(x)$ 与 $g(x)$ 没有公共根．当然 $p(x)$ 与 $g(x)$ 互素，否则导致 $p(x)$ 与 $g(x)$ 有公共根，矛盾．
+\end{solution}
+
+\answerproblem{四、}{20}
+设 $\sigma$ 为 $n$ 维复向量空间 $\C^{n}$ 的一个线性变换．$1$ 表示恒等变换．证明以下两条等价：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\sigma=k1$，$k\in\C$；
+  \item 存在 $\sigma$ 的 $n+1$ 个特征向量：$v_{1},\dots,v_{n+1}$，这 $n+1$ 个向量中任何 $n$ 个向量均线性无关．
+\end{enumerate}
+\begin{solution}
+$(1)\Rightarrow(2)$．取
+\[
+  v_{1}=e_{1}=\begin{pmatrix}1\\0\\\vdots\\0\end{pmatrix},\quad\dots,\quad
+  v_{n}=e_{n}=\begin{pmatrix}0\\0\\\vdots\\1\end{pmatrix},\quad
+  v_{n+1}=e_{1}+\dots+e_{n}=\begin{pmatrix}1\\1\\\vdots\\1\end{pmatrix}.
+\]
+则易知，$v_{1},\dots,v_{n+1}$ 均是 $\sigma$ 的特征向量．进一步，该组向量中任何 $n$ 个向量必线性无关．事实上，不妨设这 $n$ 个向量为：$v_{1},\dots,v_{i-1},v_{i+1},\dots,v_{n+1}$．于是
+\begin{align*}
+  &a_{1}v_{1}+\dots+a_{i-1}v_{i-1}+a_{i+1}v_{i+1}+\dots+a_{n+1}v_{n+1}=0\\
+  \Leftrightarrow\quad
+  &(a_{1}+a_{n+1})e_{1}+\dots+(a_{i-1}+a_{n+1})e_{i-1}+a_{n+1}e_{i}\\
+  &\qquad +(a_{i+1}+a_{n+1})e_{i+1}+\dots+(a_{n}+a_{n+1})e_{n}=0.
+\end{align*}
+结果，$a_{n+1}=0$，进而 $a_{1}=\dots=a_{n+1}=0$．如所需．
+
+$(2)\Rightarrow(1)$．记 $\lambda_{1},\dots,\lambda_{n+1}$ 分别为相应于 $v_{1},\dots,v_{n+1}$ 的 $\sigma$ 的特征值，其和为 $s$，即 $s=\lambda_{1}+\dots+\lambda_{n+1}$．由条件知 $v_{1},\dots,v_{i-1},v_{i+1},\dots,v_{n+1}$ 线性无关，因此它可充当 $\C^{n}$ 的基．$\sigma$ 在此组基下的表示阵为 $A$：
+\[
+  \sigma(v_{1},\dots,v_{i-1},v_{i+1},\dots,v_{n+1})=(v_{1},\dots,v_{i-1},v_{i+1},\dots,v_{n+1})A
+\]
+结果 $\tr A=s-\lambda_{i}$．
+
+又取 $v_{1},\dots,v_{j-1},v_{j+1},\dots,v_{n+1}$，$\sigma$ 在此组基下的表示阵为 $B$：
+\[
+  \sigma(v_{1},\dots,v_{j-1},v_{j+1},\dots,v_{n+1})=(v_{1},\dots,v_{j-1},v_{j+1},\dots,v_{n+1})B
+\]
+结果 $\tr B=s-\lambda_{j}$．注意到 $A$ 与 $B$ 相似，因为他们是同一线性变换在不同基下的表示阵．故 $s-\lambda_{i}=s-\lambda_{j}$，$\lambda_{i}=\lambda_{j}$．即
+\[
+  \sigma=k1,\quad k=\lambda_{1}.\qquad\text{证毕.}
+\]
+\end{solution}
+
+\answerproblem{五、}{15}
+计算广义积分 $\displaystyle\int_{1}^{+\infty}\frac{(x)}{x^{3}}\dd x$，这里 $(x)$ 表示 $x$ 的小数部分（例如：当 $n$ 为正整数且 $x\in[n,n+1)$ 时，$(x)=x-n$）．
+\begin{solution}
+对于任意正整数 $\ell>2$，我们有
+\begin{align*}
+  \int_{1}^{\ell}\frac{(x)}{x^{3}}\dd x
+  &=\sum_{n=1}^{\ell-1}\int_{n}^{n+1}\frac{x-n}{x^{3}}\dd x
+  =\sum_{n=1}^{\ell-1}\Bigl(\int_{n}^{n+1}x^{-2}\dd x-n\int_{n}^{n+1}x^{-3}\dd x\Bigr)\\
+  &=\sum_{n=1}^{\ell-1}\frac{1}{n(n+1)}-\frac{1}{2}\sum_{n=1}^{\ell-1}\frac{2n+1}{n(n+1)^{2}}\\
+  &=\sum_{n=1}^{\ell-1}\frac{1}{n(n+1)}-\frac{1}{2}\sum_{n=1}^{\ell-1}\Bigl(\frac{2}{n(n+1)}-\frac{1}{n(n+1)^{2}}\Bigr)\\
+  &=\frac{1}{2}\sum_{n=1}^{\ell-1}\frac{1}{n(n+1)^{2}}
+  =\frac{1}{2}\sum_{n=1}^{\ell-1}\Bigl(\frac{1}{n(n+1)}-\frac{1}{(n+1)^{2}}\Bigr)\\
+  &=\frac{1}{2}\Bigl(1-\frac{1}{\ell}\Bigr)-\frac{1}{2}\sum_{n=2}^{\ell}\frac{1}{n^{2}}.
+\end{align*}
+对于 $y\in[\ell,\ell+1)$，我们有
+\[
+  \frac{1}{2}\Bigl(1-\frac{1}{\ell}\Bigr)-\frac{1}{2}\sum_{n=2}^{\ell}\frac{1}{n^{2}}
+  =\int_{1}^{\ell}\frac{(x)}{x^{3}}\dd x
+  \le\int_{1}^{y}\frac{(x)}{x^{3}}\dd x
+  \le\int_{1}^{\ell+1}\frac{(x)}{x^{3}}\dd x
+  =\frac{1}{2}\Bigl(1-\frac{1}{\ell+1}\Bigr)-\frac{1}{2}\sum_{n=2}^{\ell+1}\frac{1}{n^{2}}.
+\]
+于是得到
+\[
+  \int_{1}^{+\infty}\frac{(x)}{x^{3}}\dd x=\frac{1}{2}-\frac{1}{2}\sum_{n=2}^{\infty}\frac{1}{n^{2}}=1-\frac{\pi^{2}}{12}.
+\]
+\end{solution}
+
+\answerproblem{六、}{20}
+设函数 $f(x)$ 在 $[0,1]$ 上连续，满足对任意 $x\in[0,1]$
+\[
+  \int_{x^{2}}^{x}f(t)\dd t\ge\frac{x^{2}-x^{4}}{2}.
+\]
+证明：$\displaystyle\int_{0}^{1}f^{2}(x)\dd x\ge\frac{1}{10}$．
+\begin{solution}
+\textbf{证明一：}注意到
+\[
+  \int_{0}^{1}\dd x\int_{x^{2}}^{x}f(t)\dd t
+  =\int_{0}^{1}\dd t\int_{t}^{\sqrt{t}}f(t)\dd x
+  =\int_{0}^{1}(\sqrt{t}-t)f(t)\dd t
+\]
+于是，我们有
+\[
+  \int_{0}^{1}(\sqrt{t}-t)f(t)\dd t=\int_{0}^{1}\dd x\int_{x^{2}}^{x}f(t)\dd t
+  \ge\int_{0}^{1}\frac{x^{2}-x^{4}}{2}\dd x=\frac{1}{15}.
+\]
+因为
+\[
+  0\le\int_{0}^{1}\bigl(f(t)-(\sqrt{t}-t)\bigr)^{2}\dd t
+  =\int_{0}^{1}f^{2}(t)\dd t-2\int_{0}^{1}(\sqrt{t}-t)f(t)\dd t+\int_{0}^{1}(\sqrt{t}-t)^{2}\dd t
+\]
+所以
+\[
+  \int_{0}^{1}f^{2}(t)\dd t\ge 2\int_{0}^{1}(\sqrt{t}-t)f(t)\dd t-\int_{0}^{1}(\sqrt{t}-t)^{2}\dd t
+  \ge\frac{2}{15}-\frac{1}{30}=\frac{1}{10}.
+\]
+
+\textbf{证明二：}注意到
+\[
+  \int_{0}^{1}\dd x\int_{x^{2}}^{x}f(t)\dd t
+  =\int_{0}^{1}\dd t\int_{t}^{\sqrt{t}}f(t)\dd x
+  =\int_{0}^{1}(\sqrt{t}-t)f(t)\dd t
+\]
+于是，我们有
+\[
+  \int_{0}^{1}(\sqrt{t}-t)f(t)\dd t=\int_{0}^{1}\dd x\int_{x^{2}}^{x}f(t)\dd t
+  \ge\int_{0}^{1}\frac{x^{2}-x^{4}}{2}\dd x=\frac{1}{15}.
+\]
+因为对任意 $\beta\in(0,+\infty)$
+\[
+  0\le\int_{0}^{1}\bigl(\beta f(t)-(\sqrt{t}-t)\bigr)^{2}\dd t
+  =\beta^{2}\int_{0}^{1}f^{2}(t)\dd t-2\beta\int_{0}^{1}(\sqrt{t}-t)f(t)\dd t+\int_{0}^{1}(\sqrt{t}-t)^{2}\dd t
+\]
+所以
+\begin{align*}
+  \int_{0}^{1}f^{2}(t)\dd t
+  &\ge\frac{2}{\beta}\int_{0}^{1}(\sqrt{t}-t)f(t)\dd t-\frac{1}{\beta^{2}}\int_{0}^{1}(\sqrt{t}-t)^{2}\dd t
+  \ge\frac{2}{15\beta}-\frac{1}{30\beta^{2}}\\
+  &=\frac{1}{30}\biggl(4\cdot\frac{1}{\beta}-\Bigl(\frac{1}{\beta}\Bigr)^{2}\biggr).
+\end{align*}
+容易得到当 $\beta\in[1/3,1]$ 时，有
+\[
+  \int_{0}^{1}f^{2}(t)\dd t\ge\frac{1}{30}\biggl(4\cdot\frac{1}{\beta}-\Bigl(\frac{1}{\beta}\Bigr)^{2}\biggr)\ge\frac{1}{10}.
+\]
+特别地，当 $\beta=1/2$ 时
+\[
+  \int_{0}^{1}f^{2}(t)\dd t\ge\frac{1}{30}\bigl(4\cdot 2-2^{2}\bigr)=\frac{2}{15}>\frac{1}{10}.
+\]
+
+\textbf{证明三：}因为对任意 $0<\beta<1$，任意正整数 $n$，我们有
+\[
+  \int_{\beta^{2n}}^{\beta}f(t)\dd t=\sum_{k=1}^{n}\int_{\beta^{2k}}^{\beta^{2k-1}}f(t)\dd t
+  \ge\sum_{k=1}^{n}\frac{\beta^{2k}-\beta^{2k+1}}{2}=\frac{1}{2}\bigl(\beta^{2}-\beta^{2n+1}\bigr).
+\]
+于是
+\[
+  \int_{0}^{\beta}f(t)\dd t=\lim_{n\to\infty}\int_{\beta^{2n}}^{\beta}f(t)\dd t\ge\frac{\beta^{2}}{2}.
+\]
+从而我们有
+\[
+  \int_{0}^{1}f(t)\dd t=\lim_{\beta\to1^{-}}\int_{0}^{\beta}f(t)\dd t\ge\lim_{\beta\to1^{-}}\frac{\beta^{2}}{2}=\frac{1}{2}.
+\]
+最后，由柯西-希瓦尔茨不等式可得
+\[
+  \frac{1}{2}\le\int_{0}^{1}f(t)\dd t\le\Bigl(\int_{0}^{1}1^{2}\dd t\Bigr)^{1/2}\cdot\Bigl(\int_{0}^{1}f^{2}(t)\dd t\Bigr)^{1/2},
+\]
+于是，
+\[
+  \int_{0}^{1}f^{2}(x)\dd x\ge\frac{1}{4}>\frac{1}{10}.
+\]
+\end{solution}

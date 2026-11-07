@@ -1,0 +1,348 @@
+\answerpaper{数学 B 类}
+
+\answerproblem{一、}{15}
+设 $L_1$ 和 $L_2$ 是空间中的两条不垂直的异面直线，点 $B$ 是它们公垂线段的中点. 点 $A_1$ 和 $A_2$ 分别在 $L_1$ 和 $L_2$ 上滑动，使得 $A_1B\perp A_2B$. 证明：直线 $A_1A_2$ 的轨迹是单叶双曲面.
+\begin{solution}
+取公垂线为 $z$ 轴，$B$ 为原点. 取 $x$ 轴使得 $L_1$ 与 $L_2$ 与之夹角相同. 此时我们有
+\begin{align*}
+L_1:\ \begin{cases}
+  ax+y=0,\\
+  z=c,
+\end{cases}
+\qquad
+L_2:\ \begin{cases}
+  ax-y=0,\\
+  z=-c,
+\end{cases}
+\end{align*}
+其中 $c>0$. 由于 $L_1$ 与 $L_2$ 不垂直，$a\ne\pm1$.
+
+设点 $A_1$ 的坐标为 $(x_1,y_1,c)$，$A_2$ 的坐标 $(x_2,y_2,-c)$，则
+\begin{align*}
+ax_1+y_1=0,\qquad ax_2-y_2=0. \tag{1}
+\end{align*}
+由 $A_1B\perp A_2B$ 得
+\begin{align*}
+x_1x_2+y_1y_2-c^2=0. \tag{2}
+\end{align*}
+任取 $A_1A_2$ 上的点 $M(x,y,z)$，有
+\begin{align*}
+\frac{x-x_2}{x_1-x_2}=\frac{y-y_2}{y_1-y_2}=\frac{z+c}{2c}. \tag{3}
+\end{align*}
+消去 $x_1,x_2,y_1,y_2$：令 $\dfrac{z+c}{2c}=k$，由 (1)、(3) 得
+\begin{align*}
+x=kx_1-(k-1)x_2;\qquad y=-akx_1-a(k-1)x_2.
+\end{align*}
+由 (1)、(2)，$x_1x_2=\dfrac{c^2}{1-a^2}$. 又 $k(k-1)=\dfrac{z^2-c^2}{4c^2}$，从而
+\begin{align*}
+a^2(1-a^2)x^2-(1-a^2)y^2+a^2z^2=a^2c^2,
+\end{align*}
+所以轨迹是单叶双曲面.
+\end{solution}
+
+\answerproblem{二、}{10}
+计算
+\[
+  \int_0^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}.
+\]
+\begin{solution}
+我们有
+\begin{align*}
+\int_0^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}
+&=\int_0^1\frac{\dd x}{(1+x^2)(1+x^{2019})}+\int_1^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}
+\end{align*}
+对上式右端的第二个积分做变换 $x=\dfrac{1}{t}$，得到
+\begin{align*}
+\int_1^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}=\int_0^1\frac{t^{2019}}{(1+t^2)(1+t^{2019})}\dd t.
+\end{align*}
+于是
+\begin{align*}
+\int_0^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}
+&=\int_0^1\frac{\dd x}{(1+x^2)(1+x^{2019})}+\int_1^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}\\
+&=\int_0^1\frac{\dd x}{(1+x^2)(1+x^{2019})}+\int_0^1\frac{t^{2019}}{(1+t^2)(1+t^{2019})}\dd t\\
+&=\int_0^1\frac{\dd x}{1+x^2}=\arctan x\Big|_0^1=\frac{\pi}{4}.
+\end{align*}
+\end{solution}
+
+\answerproblem{三、}{15}
+设数列 $\{x_n\}$ 满足
+\[
+  x_1>0,\qquad x_{n+1}=\ln(1+x_n),\qquad n=1,2,\cdots.
+\]
+证明：$\{x_n\}$ 收敛并求其极限.
+\begin{solution}
+由于 $x_1>0$，所以 $x_2=\ln(1+x_1)$. 由数学归纳法，$x_n>0$，$n=1,2,\cdots$.
+
+\begin{align*}
+x_{n+1}-x_n&=\ln(1+x_n)-x_n=\frac{1}{1+\xi_n}x_n-x_n=\left(\frac{1}{1+\xi_n}-1\right)x_n\\
+&=-\frac{\xi_n}{1+\xi_n}x_n<0,
+\end{align*}
+这里 $\xi_n\in(0,x_n)$. 所以数列 $\{x_n\}$ 单调减少.
+
+应用单调有界定理，$\{x_n\}$ 收敛.
+
+设 $\lim\limits_{n\to\infty}x_n=a\ge0$. 由 $x_{n+1}=\ln(1+x_n)$，知 $a=\ln(1+a)$.
+
+令 $f(x)=x-\ln(1+x)$，$f'(x)=1-\dfrac{1}{1+x}>0$，$x\in(0,+\infty)$，$f(0)=0$. 从而 $x=0$ 是 $f(x)$ 在 $[0,+\infty)$ 上的唯一零点，所以 $\lim\limits_{n\to\infty}x_n=0$.
+\end{solution}
+
+\answerproblem{四、}{15}
+设 $\{\varepsilon_1,\cdots,\varepsilon_n\}$ 是 $n$ 维实线性空间 $V$ 的一组基，令 $\varepsilon_1+\varepsilon_2+\cdots+\varepsilon_n+\varepsilon_{n+1}=0$. 证明：
+\begin{enumerate}
+  \item 对 $i=1,2,\cdots,n+1$，$\{\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1}\}$ 都构成 $V$ 的基；
+  \item $\forall\alpha\in V$，在 (1) 中的 $n+1$ 组基中，必存在一组基使 $\alpha$ 在此基下的坐标分量均非负；
+  \item 若 $\alpha=a_1\varepsilon_1+a_2\varepsilon_2+\cdots+a_n\varepsilon_n$，且 $\abs{a_i}\ (i=1,2,\cdots,n)$ 互不相同，则在 (1) 中的 $n+1$ 组基中，满足 (2) 中非负坐标表示的基是唯一的.
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 若 $i=n+1$，显然有 $\varepsilon_1,\cdots,\varepsilon_n$ 是 $V$ 的一组基. 若 $1\le i\le n$，令
+\begin{align*}
+k_1\varepsilon_1+k_2\varepsilon_2+\cdots+k_{i-1}\varepsilon_{i-1}+k_{i+1}\varepsilon_{i+1}+\cdots+k_n\varepsilon_n+k_{n+1}\varepsilon_{n+1}=0.
+\end{align*}
+由于 $\varepsilon_1+\varepsilon_2+\cdots+\varepsilon_n+\varepsilon_{n+1}=0$，所以有
+\begin{align*}
+k_{n+1}(\varepsilon_1+\varepsilon_2+\cdots+\varepsilon_n+\varepsilon_{n+1})=0.
+\end{align*}
+两式相减得
+\begin{align*}
+&(k_1-k_{n+1})\varepsilon_1+\cdots+(k_{i-1}-k_{n+1})\varepsilon_{i-1}-k_{n+1}\varepsilon_i\\
+&\quad+(k_{i+1}-k_{n+1})\varepsilon_{i+1}+\cdots+(k_n-k_{n+1})\varepsilon_n=0.
+\end{align*}
+由于 $\varepsilon_1,\cdots,\varepsilon_n$ 线性无关，故得
+\begin{align*}
+k_1-k_{n+1}=\cdots=k_{i-1}-k_{n+1}=-k_{n+1}=k_{i+1}-k_{n+1}=\cdots=k_n-k_{n+1}=0,
+\end{align*}
+从而有
+\begin{align*}
+k_1=k_2=\cdots=k_{i-1}=k_{i+1}=\cdots=k_n=k_{n+1}=0.
+\end{align*}
+因此可得 $\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1}$ 线性无关，于是 (1) 得证.
+
+\textbf{(2)} 由于
+\begin{align*}
+(\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_i,\varepsilon_{i+1},\cdots,\varepsilon_n)=(\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1})A,
+\end{align*}
+这里
+\[
+  A=\begin{pmatrix}
+    1 &        &        & -1     &        &        \\
+      & \ddots &        & \vdots &        &        \\
+      &        & 1      & -1     &        &        \\
+      &        &        & -1     & 1      &        \\
+      &        &        & -1     &        & \ddots \\
+      &        &        & \vdots &        & 1\\
+      &        &        & -1     &        &
+  \end{pmatrix}
+\]
+为两组基之间的过渡矩阵.
+
+$\forall\alpha\in V$，设 $\alpha=a_1\varepsilon_1+a_2\varepsilon_2+\cdots+a_n\varepsilon_n$，若 $a_1,a_2,\cdots,a_n\ge0$，则结论正确，否则令 $a_i$ 是负坐标中绝对值最大者，那么
+\begin{align*}
+\alpha&=(\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n)
+\begin{pmatrix}
+  a_1\\a_2\\\vdots\\a_n
+\end{pmatrix}
+=(\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1})A
+\begin{pmatrix}
+  a_1\\a_2\\\vdots\\a_n
+\end{pmatrix}\\
+&=(\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1})
+\begin{pmatrix}
+  a_1-a_i\\
+  \vdots\\
+  a_{i-1}-a_i\\
+  a_{i+1}-a_i\\
+  \vdots\\
+  a_n-a_i\\
+  -a_i
+\end{pmatrix}
+\end{align*}
+于是 $\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1}$ 即为所求的一组基.
+
+\textbf{(3)} 设 $\alpha=a_1\varepsilon_1+a_2\varepsilon_2+\cdots+a_n\varepsilon_n$，且 $\abs{a_i}\ (i=1,2,\cdots,n)$ 互不相同. 设 $a_i$ 是负坐标中绝对值最大者，除了基 $\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1}$ 之外，可以证明 $\alpha$ 无论在哪一组基下的坐标都有负的分量. 事实上，对任意的 $k\ne i$ 都有
+\begin{align*}
+\alpha=(\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n)
+\begin{pmatrix}
+  a_1\\a_2\\\vdots\\a_n
+\end{pmatrix}
+=(\varepsilon_1,\cdots,\varepsilon_{k-1},\varepsilon_{k+1},\cdots,\varepsilon_{n+1})
+\begin{pmatrix}
+  a_1-a_k\\
+  \vdots\\
+  a_i-a_k\\
+  \vdots\\
+  a_n-a_k\\
+  -a_k
+\end{pmatrix}
+\end{align*}
+其中 $a_i-a_k<0$，于是知满足 (2) 中非负坐标表示的基是唯一的.
+\end{solution}
+
+\answerproblem{五、}{20}
+设 $A$ 是数域 $F$ 上的 $n$ 阶矩阵，若 $A^2=I_n$（$I_n$ 表示单位矩阵），则称 $A$ 为对合矩阵. 试证：
+\begin{enumerate}
+  \item 若 $A$ 是 $n$ 阶对合矩阵，则
+  \[
+    \rank(I_n+A)+\rank(I_n-A)=n;
+  \]
+  \item $n$ 阶对合矩阵 $A$ 一定可以对角化，其相似对角形为
+  \[
+    \begin{pmatrix}
+      I_r & 0\\
+      0 & -I_{n-r}
+    \end{pmatrix},
+  \]
+  其中 $r=\rank(I_n+A)$；
+  \item 若 $A,B$ 均是 $n$ 阶对合矩阵，且 $AB=BA$，则存在可逆矩阵 $P$，使得 $P^{-1}AP$ 和 $P^{-1}BP$ 同时为对角矩阵.
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 因为 $A^2=I_n$，故有 $I_n-A^2=0$，即 $(I_n+A)(I_n-A)=0$，于是
+\begin{align*}
+\rank(I_n+A)+\rank(I_n-A)\le n.
+\end{align*}
+又因为 $(I_n+A)+(I_n-A)=2I_n$，所以
+\begin{align*}
+\rank(I_n+A)+\rank(I_n-A)\ge\rank(2I_n)=n.
+\end{align*}
+从而得
+\begin{align*}
+\rank(I_n+A)+\rank(I_n-A)=n.
+\end{align*}
+
+\textbf{(2)} 先证 $A$ 的特征值为 $1$ 或 $-1$. 设 $\lambda$ 为 $A$ 的任一特征值，则存在非零向量 $\alpha$，使得 $A\alpha=\lambda\alpha$，由 $A^2=I_n$ 可得
+\begin{align*}
+\alpha=A^2\alpha=A(A\alpha)=A(\lambda\alpha)=\lambda^2\alpha.
+\end{align*}
+由 $\alpha\ne0$，可得 $\lambda^2-1=0$，所以有 $\lambda=1$ 或 $\lambda=-1$.
+
+下证对合矩阵一定可以对角化. 因为 $A^2=I_n$，故 $x^2-1=(x+1)(x-1)$ 为 $A$ 的零化多项式，所以 $A$ 的最小多项式一定为数域 $F$ 上互素的一次因式的乘积，从而可知对合矩阵 $A$ 一定可以对角化.
+
+又因为对合矩阵 $A$ 的特征值为 $1$ 或 $-1$. 由 (1) 知特征值 $\lambda=1$ 的几何重数 $r=\rank(I_n+A)$，$\lambda=-1$ 的几何重数为 $n-r=\rank(I_n-A)$，所以其相似对角形为
+\begin{align*}
+\begin{pmatrix}
+  I_r & 0\\
+  0 & -I_{n-r}
+\end{pmatrix}.
+\end{align*}
+
+可对角化另一证明思路：
+
+[对应于特征值 $\lambda=1$，有 $n-\rank(I_n-A)$ 个线性无关的特征向量，对应于特征值 $\lambda=-1$，有 $n-\rank(-I_n-A)$ 个线性无关的特征向量，由 (1) 知，$A$ 共有 $n-\rank(I_n-A)+n-\rank(-I_n-A)=n$ 个线性无关的特征向量，从而 $A$ 一定可以对角化，其相似对角形为 $\begin{pmatrix} I_r & 0\\ 0 & -I_{n-r}\end{pmatrix}$.（参照上面证明给分）]
+
+\textbf{(3)} 由于 $A$ 为对合矩阵，故存在可逆矩阵 $G$，使得
+\begin{align*}
+G^{-1}AG=\begin{pmatrix}
+  I_r & 0\\
+  0 & -I_{n-r}
+\end{pmatrix}.
+\end{align*}
+又由 $AB=BA$，则有
+\begin{align*}
+(G^{-1}AG)(G^{-1}BG)=(G^{-1}BG)(G^{-1}AG).
+\end{align*}
+所以 $G^{-1}BG=\begin{pmatrix} B_{11} & 0\\ 0 & B_{22}\end{pmatrix}$ 为一个准对角矩阵.
+
+由于 $B^2=I_n$ 为对合矩阵，故 $B_{11}^2=I_r$，$B_{22}^2=I_{n-r}$ 也是对合矩阵. 由 (2)，存在可逆矩阵 $G_1,G_2$，使得
+\begin{align*}
+G_1^{-1}B_{11}G_1=\begin{pmatrix}
+  I_s & 0\\
+  0 & -I_{r-s}
+\end{pmatrix},
+\qquad
+G_2^{-1}B_{22}G_2=\begin{pmatrix}
+  I_t & 0\\
+  0 & -I_{n-r-t}
+\end{pmatrix}
+\end{align*}
+为对角矩阵. 令 $P=G\begin{pmatrix} G_1 & 0\\ 0 & G_2\end{pmatrix}$，则有 $P$ 可逆，且有 $P^{-1}AP$，$P^{-1}BP$ 同时为对角矩阵.
+\end{solution}
+
+\answerproblem{六、}{15}
+设函数 $f(x)$ 为闭区间 $[a,b]$ 上的连续凹函数，满足 $f(a)=0$，$f(b)>0$ 且 $f(x)$ 在 $x=a$ 处存在非零的右导数. 对 $n\ge 2$，记
+\[
+  S_n=\left\{\sum_{k=1}^{n}kx_k:\ \sum_{k=1}^{n}kf(x_k)=f(b),\ x_k\in[a,b]\right\}.
+\]
+\begin{enumerate}
+  \item 证明：对 $\forall\alpha\in(0,f(b))$，存在唯一 $x\in(a,b)$ 使得 $f(x)=\alpha$；
+  \item 求 $\lim\limits_{n\to\infty}(\sup S_n-\inf S_n)$.
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 因为函数 $f(x)$ 在 $[a,b]$ 上连续，于是对 $\forall\alpha\in(0,f(b))$ 在 $(a,b)$ 内至少存在一个点 $\xi$ 使得 $f(\xi)=\alpha$.
+
+下面证明满足上述要求的点是唯一的. 假设 $\xi,\eta\in(a,b)$，满足 $\xi<\eta$ 及 $f(\xi)=f(\eta)=\alpha$. 则点 $(\eta,f(\eta))=(\eta,\alpha)$ 落在端点为 $(\xi,f(\xi))=(\xi,\alpha)$、$(b,f(b))$ 的线段的下方，这与函数的凹性矛盾.
+
+\textbf{(2)} 我们记
+\[
+  T_n=\left\{(x_1,x_2,\cdots,x_n):\ \sum_{k=1}^{n}kf(x_k)=f(b),\ x_k\in[a,b]\right\},\qquad n\ge 2.
+\]
+现对 $\forall(x_1,\cdots,x_n)\in T_n$，由函数的凹性有
+\begin{align*}
+\frac{2f(b)}{n(n+1)}=\frac{\sum\limits_{k=1}^{n}kf(x_k)}{1+2+\cdots+n}\le f\left(\frac{x_1+2x_2+\cdots+nx_n}{1+2+\cdots+n}\right).
+\end{align*}
+于是
+\begin{align*}
+\frac{x_1+2x_2+\cdots+nx_n}{1+2+\cdots+n}\ge f^{-1}\left(\frac{2f(b)}{n(n+1)}\right),
+\end{align*}
+即
+\begin{align*}
+\sum_{k=1}^{n}kx_k\ge\frac{n(n+1)}{2}f^{-1}\left(\frac{2f(b)}{n(n+1)}\right).
+\end{align*}
+上面不等式当 $x_1=x_2=\cdots=x_n=f^{-1}\left(\dfrac{2f(b)}{n(n+1)}\right)\in[a,b]$ 时等号成立. 而
+\[
+  (x_1,x_2,\cdots,x_n)=\left(f^{-1}\left(\frac{2f(b)}{n(n+1)}\right),f^{-1}\left(\frac{2f(b)}{n(n+1)}\right),\cdots,f^{-1}\left(\frac{2f(b)}{n(n+1)}\right)\right)\in T_n.
+\]
+于是
+\begin{align*}
+\inf S_n=\frac{n(n+1)}{2}f^{-1}\left(\frac{2f(b)}{n(n+1)}\right).
+\end{align*}
+另一方面，连接点 $(a,f(a))$ 与点 $(b,f(b))$ 的直线段落在曲线 $y=f(x)$ 的下方. 故有对任意 $x\in[a,b]$
+\begin{align*}
+\frac{f(b)}{b-a}(x-a)\le f(x),
+\end{align*}
+即
+\begin{align*}
+x\le\frac{b-a}{f(b)}f(x)+a.
+\end{align*}
+于是
+\begin{align*}
+\sum_{k=1}^{n}kx_k&\le\frac{b-a}{f(b)}\sum_{k=1}^{n}kf(x_k)+\frac{n(n+1)}{2}a\\
+&=b-a+\frac{n(n+1)}{2}a.
+\end{align*}
+注意，上式的等号当 $x_1=b$，$x_2=x_3=\cdots=x_n=a$ 时达到. 而 $(x_1,x_2,\cdots,x_n)=(b,a,a,\cdots,a)\in T_n$，故有
+\begin{align*}
+\sup S_n=b-a+\frac{n(n+1)}{2}a.
+\end{align*}
+于是
+\begin{align*}
+\lim_{n\to\infty}(\sup S_n-\inf S_n)&=b-a+\lim_{n\to\infty}\frac{n(n+1)}{2}\left(a-f^{-1}\left(\frac{2f(b)}{n(n+1)}\right)\right)\\
+&=b-a+f(b)\lim_{n\to\infty}\frac{a-f^{-1}\left(\dfrac{2f(b)}{n(n+1)}\right)}{\dfrac{2f(b)}{n(n+1)}}\\
+&=b-a+f(b)\lim_{x\to0^+}\frac{a-f^{-1}(x)}{x}=b-a+f(b)\lim_{t\to a^+}\frac{a-t}{f(t)}\\
+&=b-a-\frac{f(b)}{f'(a)}.
+\end{align*}
+\end{solution}
+
+\answerproblem{七、}{10}
+设正项级数 $\sum\limits_{n=1}^{\infty}\dfrac{1}{a_n}$ 收敛. 证明：级数 $\sum\limits_{n=1}^{\infty}\dfrac{n^2a_n}{S_n^2}$ 收敛，其中 $S_n=\sum\limits_{k=1}^{n}a_k$.
+\begin{solution}
+记 $S_0=0$，$\sigma=\sum\limits_{n=1}^{\infty}\dfrac{1}{a_n}$. 则
+\begin{align*}
+\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}&=\sum_{n=1}^{N}\frac{n^2}{S_n^2}(S_n-S_{n-1})=\frac{1}{a_1}+\sum_{n=2}^{N}\frac{n^2}{S_n^2}(S_n-S_{n-1})\\
+&\le\frac{1}{a_1}+\sum_{n=2}^{N}\frac{n^2}{S_nS_{n-1}}(S_n-S_{n-1})=\frac{1}{a_1}+\sum_{n=2}^{N}\frac{n^2}{S_{n-1}}-\sum_{n=2}^{N}\frac{n^2}{S_n}\\
+&=\frac{1}{a_1}+\sum_{n=1}^{N-1}\frac{(n+1)^2}{S_n}-\sum_{n=2}^{N}\frac{n^2}{S_n}\le\frac{5}{a_1}+2\sum_{n=2}^{N}\frac{n}{S_n}+\sum_{n=2}^{N}\frac{1}{S_n}. \tag{1}
+\end{align*}
+由 Cauchy 不等式
+\begin{align*}
+\sum_{n=2}^{N}\frac{n}{S_n}\le\sum_{n=2}^{N}\frac{n}{S_n}\sqrt{a_n}\frac{1}{\sqrt{a_n}}\le\left(\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}\right)^{1/2}\cdot\left(\sum_{n=1}^{N}\frac{1}{a_n}\right)^{1/2}.
+\end{align*}
+则由 (1)
+\begin{align*}
+\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}\le\frac{5}{a_1}+2\left(\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}\right)^{1/2}\cdot\sqrt{\sigma}+\sigma,
+\end{align*}
+从而得到
+\begin{align*}
+\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}-2\left(\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}\right)^{1/2}\cdot\sqrt{\sigma}+\sigma\le\frac{5}{a_1}+2\sigma,
+\end{align*}
+\begin{align*}
+\left(\sum_{n=1}^{N}\frac{n^2a_n}{S_n^2}\right)^{1/2}\le\sqrt{\sigma}+\sqrt{2\sigma+5/a_1}.
+\end{align*}
+于是级数 $\sum\limits_{n=1}^{\infty}\dfrac{n^2a_n}{S_n^2}$ 收敛.
+\end{solution}

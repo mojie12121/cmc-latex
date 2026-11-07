@@ -1,0 +1,270 @@
+\answerpaper{非数学类}
+
+\answerproblem{一、}{30}
+填空题：
+\begin{enumerate}[label=(\arabic*)]
+  \item 若 $f(x)$ 在点 $x=a$ 处可导，且 $f(a)\neq 0$，则 $\displaystyle \lim_{n\to+\infty}\left[\frac{f(a+1/n)}{f(a)}\right]^{n}=\underline{\hspace{4em}}$．
+  \item 若 $f(1)=0$，$f'(1)$ 存在，则极限 $\displaystyle I=\lim_{x\to 0}\frac{f(\sin^2x+\cos x)\tan 3x}{\left(\ee^{x^2}-1\right)\sin x}=\underline{\hspace{4em}}$．
+  \item 设 $f(x)$ 有连续导数，且 $f(1)=2$．记 $z=f(\ee^xy^2)$，若 $\displaystyle \frac{\partial z}{\partial x}=z$，$f(x)$ 在 $x>0$ 的表达式为 $\underline{\hspace{6em}}$．
+  \item 设 $f(x)=\ee^x\sin 2x$，则 $f^{(4)}(0)=\underline{\hspace{6em}}$．
+  \item 曲面 $z=\frac{x^2}{2}+y^2$ 平行于平面 $2x+2y-z=0$ 的切平面方程为 $\underline{\hspace{8em}}$．
+\end{enumerate}
+\begin{solution}
+  \textbf{(1)} 由于
+  \[
+    \lim_{x\to+\infty}\left(\frac{f\left(a+\frac{1}{x}\right)}{f(a)}\right)^{x}
+    =\lim_{x\to 0^+}\left(\frac{f(a+x)}{f(a)}\right)^{\frac{1}{x}},
+  \]
+  由已知条件：$f(x)$ 在点 $x=a$ 处可导，且 $f(a)\neq 0$，由带皮亚诺余项的泰勒公式，有
+  \[
+    f(x)=f(a)+f'(a)(x-a)+o(x-a),
+  \]
+  可得 $f(a+x)=f(a)+f'(a)x+o(x)$，将其代入极限式，则有
+  \begin{align*}
+    \lim_{x\to 0^+}\left(\frac{f(a+x)}{f(a)}\right)^{\frac{1}{x}}
+    &=\lim_{x\to 0^+}\left(\frac{f(a)+f'(a)x+o(x)}{f(a)}\right)^{\frac{1}{x}}
+     =\lim_{x\to 0^+}\left[1+\left(\frac{f'(a)}{f(a)}x+o(x)\right)\right]^{\frac{1}{x}}\\
+    &=\lim_{x\to 0^+}\left\{\left[1+\left(\frac{f'(a)}{f(a)}x+o(x)\right)\right]^{\frac{1}{\frac{f'(a)}{f(a)}x+o(x)}}\right\}^{\frac{1}{x}\left[\frac{f'(a)}{f(a)}x+o(x)\right]}\\
+    &=\ee^{\lim\limits_{x\to 0^+}\frac{f'(a)}{f(a)}\left[1+\frac{o(x)}{x}\right]}
+     =\ee^{\frac{f'(a)}{f(a)}}.
+  \end{align*}
+
+  \textbf{(2)}
+  \begin{align*}
+    I&=\lim_{x\to 0}\frac{f(\sin^2x+\cos x)\cdot 3x}{x^2\cdot x}=3\lim_{x\to 0}\frac{f(\sin^2x+\cos x)}{x^2}\\
+    &=3\lim_{x\to 0}\frac{f(\sin^2x+\cos x)-f(1)}{\sin^2x+\cos x-1}\cdot\frac{\sin^2x+\cos x-1}{x^2}\\
+    &=3f'(1)\cdot\lim_{x\to 0}\frac{\sin^2x+\cos x-1}{x^2}
+     =3f'(1)\cdot\lim_{x\to 0}\left(\frac{\sin^2x}{x^2}+\frac{\cos x-1}{x^2}\right)\\
+    &=3f'(1)\cdot\left(1-\frac{1}{2}\right)=\frac{3}{2}f'(1).
+  \end{align*}
+
+  \textbf{(3)} 由题设，得
+  \[
+    \frac{\partial z}{\partial x}=f'(\ee^xy^2)\ee^xy^2=f(\ee^xy^2).
+  \]
+  令 $u=\ee^xy^2$，得到当 $u>0$，有 $f'(u)u=f(u)$，即
+  \[
+    \frac{f'(u)}{f(u)}=\frac{1}{u}\ \Rightarrow\ \left(\ln f(u)\right)'=\left(\ln u\right)'.
+  \]
+  所以有 $\ln f(u)=\ln u+C_1$，$f(u)=Cu$．再由初值条件 $f(1)=2$，可得 $C=2$，即 $f(u)=2u$．所以当 $x>0$ 时，有 $f(x)=2x$．
+
+  \textbf{(4)} 由带皮亚诺余项的麦克劳林公式，有
+  \[
+    f(x)=\left[1+x+\frac{1}{2!}x^2+\frac{1}{3!}x^3+o(x^3)\right]\cdot\left[2x-\frac{1}{3!}(2x)^3+o(x^4)\right],
+  \]
+  所以 $f(x)$ 展开式的 4 次项为
+  \[
+    -\frac{1}{3!}(2x)^3\cdot x+\frac{2}{3!}x^4=-x^4,
+  \]
+  即有
+  \[
+    \frac{f^{(4)}(0)}{4!}=-1,
+  \]
+  故 $f^{(4)}(0)=-24$．
+
+  \textbf{(5)} 移项，曲面的一般式方程为
+  \[
+    F(x,y,z)=\frac{x^2}{2}+y^2-z=0,
+  \]
+  有
+  \[
+    \vec{n}(x,y,z)=\left(F_x',F_y',F_z'\right)=(x,2y,-1).
+  \]
+  \[
+    \vec{n}(x,y,z)\parallel\vec{n}_1\ \Rightarrow\ (x,2y,-1)\parallel(2,2,-1),
+  \]
+  可得
+  \[
+    \frac{x}{2}=\frac{2y}{2}=\frac{-1}{-1},
+  \]
+  由此可得 $x=2$，$y=1$，将它代入到曲面方程，可得 $z=3$，即曲面上点 $(2,1,3)$ 处切平面与已知平面平行，所以由平面的点法式方程可得切平面方程为
+  \[
+    2(x-2)+2(y-1)-(z-3)=0,
+  \]
+  即 $2x+2y-z=3$．
+\end{solution}
+
+\answerproblem{二、}{14}
+设 $f(x)$ 在 $[0,1]$ 上可导，$f(0)=0$，且当 $x\in(0,1)$，$0<f'(x)<1$．试证：当 $a\in(0,1)$ 时，有
+\[
+  \left(\int_0^a f(x)\dd x\right)^2>\int_0^a f^3(x)\dd x.
+\]
+\begin{solution}
+  不等式的证明转换为证明不等式
+  \[
+    \left(\int_0^a f(x)\dd x\right)^2-\int_0^a f^3(x)\dd x>0.
+  \]
+  于是对函数
+  \[
+    F(x)=\left(\int_0^x f(t)\dd t\right)^2-\int_0^x f^3(t)\dd t
+  \]
+  求导，
+  \[
+    F'(x)=2f(x)\int_0^x f(t)\dd t-f^3(x)=f(x)\left(2\int_0^x f(t)\dd t-f^2(x)\right).
+  \]
+  已知条件 $f(0)=0$，可得 $F'(0)=0$，并且由 $0<f'(x)<1$，所以函数 $f(x)$ 在 $(0,1)$ 内单调增加，即 $f(x)>0$，所以只要证明
+  \[
+    g(x)=2\int_0^x f(t)\dd t-f^2(x)>0.
+  \]
+  又 $g(0)=0$，所以只要证明 $g'(x)>0$，于是有
+  \[
+    g'(x)=2f(x)-2f(x)f'(x)=2f(x)\left[1-f'(x)\right]>0.
+  \]
+  所以 $g(x)$ 单调增加，所以 $g(x)>0$，$x>0$．所以也就有 $g(x)=2\int_0^x f(t)\dd t-f^2(x)>0$，即 $F'(x)>0$，可得 $F(x)>0$，因此
+  \[
+    F(x)=\left(\int_0^x f(t)\dd t\right)^2-\int_0^x f^3(t)\dd t
+  \]
+  单调增加，所以 $F(a)>F(0)=0$，即有
+  \[
+    F(a)=\left(\int_0^a f(t)\dd t\right)^2-\int_0^a f^3(t)\dd t>0
+    \ \Rightarrow\ \left(\int_0^a f(t)\dd t\right)^2>\int_0^a f^3(t)\dd t.
+  \]
+\end{solution}
+
+\answerproblem{三、}{14}
+某物体所在的空间区域为 $\Omega$：$x^2+y^2+2z^2\le x+y+2z$，密度函数为 $x^2+y^2+z^2$，求质量
+\[
+  M=\iiint_\Omega \left(x^2+y^2+z^2\right)\dd x\dd y\dd z.
+\]
+\begin{solution}
+  令
+  \[
+    u=x-\frac{1}{2},\qquad v=y-\frac{1}{2},\qquad w=\sqrt{2}\left(z-\frac{1}{2}\right),
+  \]
+  即
+  \[
+    x=u+\frac{1}{2},\qquad y=v+\frac{1}{2},\qquad z=\frac{w}{\sqrt{2}}+\frac{1}{2},
+  \]
+  则椭球面转换为变量为 $u,v,w$ 的单位球域，即 $\Omega_{uvw}:u^2+v^2+w^2\le 1$．则由三重积分的换元法公式，即
+  \[
+    M=\iiint_\Omega \left(x^2+y^2+z^2\right)\dd x\dd y\dd z
+     =\iiint_{\Omega_{uvw}}F(u,v,w)\left|\frac{\partial(x,y,z)}{\partial(u,v,w)}\right|\dd u\dd v\dd w,
+  \]
+  \begin{align*}
+    F(u,v,w)&=\left(u+\frac{1}{2}\right)^2+\left(v+\frac{1}{2}\right)^2+\left(\frac{w}{\sqrt{2}}+\frac{1}{2}\right)^2\\
+    &=u^2+u+v^2+v+\frac{w^2}{2}+\frac{w}{\sqrt{2}}+\frac{3}{4},
+  \end{align*}
+  \[
+    \left|\frac{\partial(x,y,z)}{\partial(u,v,w)}\right|
+    =\begin{vmatrix}
+      \dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v} & \dfrac{\partial x}{\partial w}\\[2ex]
+      \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v} & \dfrac{\partial y}{\partial w}\\[2ex]
+      \dfrac{\partial z}{\partial u} & \dfrac{\partial z}{\partial v} & \dfrac{\partial z}{\partial w}
+    \end{vmatrix}
+    =\begin{vmatrix}
+      1 & 0 & 0\\
+      0 & 1 & 0\\
+      0 & 0 & \dfrac{1}{\sqrt{2}}
+    \end{vmatrix}
+    =\frac{1}{\sqrt{2}}.
+  \]
+  所以原积分就等于
+  \[
+    M=\iiint_{\Omega_{uvw}}\left(u^2+u+v^2+v+\frac{w^2}{2}+\frac{w}{\sqrt{2}}+\frac{3}{4}\right)\frac{1}{\sqrt{2}}\dd u\dd v\dd w.
+  \]
+  由于单元圆域 $\Omega_{uvw}:u^2+v^2+w^2\le 1$ 关于三个坐标面对称，所以积分也就等于
+  \[
+    M=\frac{1}{\sqrt{2}}\iiint_{\Omega_{uvw}}\left(u^2+v^2+\frac{w^2}{2}\right)\dd u\dd v\dd w
+     +\frac{3}{4\sqrt{2}}\iiint_{\Omega_{uvw}}\dd u\dd v\dd w,
+  \]
+  其中
+  \[
+    \frac{3}{4\sqrt{2}}\iiint_{\Omega_{uvw}}\dd u\dd v\dd w=\frac{3}{4\sqrt{2}}\cdot\frac{4\pi}{3}=\frac{\pi}{\sqrt{2}}.
+  \]
+  由于积分区域具有轮换对称性，所以有
+  \[
+    \iiint_{\Omega_{uvw}}u^2\dd u\dd v\dd w=\iiint_{\Omega_{uvw}}v^2\dd u\dd v\dd w=\iiint_{\Omega_{uvw}}w^2\dd u\dd v\dd w,
+  \]
+  \begin{align*}
+    \iiint_{\Omega_{uvw}}\left(u^2+v^2+\frac{w^2}{2}\right)\dd u\dd v\dd w
+    &=\frac{5}{2}\iiint_{\Omega_{uvw}}u^2\dd u\dd v\dd w\\
+    &=\frac{5}{6}\iiint_{\Omega_{uvw}}\left(u^2+v^2+w^2\right)\dd u\dd v\dd w.
+  \end{align*}
+  所以
+  \begin{align*}
+    \frac{1}{\sqrt{2}}\iiint_{\Omega_{uvw}}\left(u^2+v^2+\frac{w^2}{2}\right)\dd u\dd v\dd w
+    &=\frac{5}{6\sqrt{2}}\iiint_{\Omega_{uvw}}\left(u^2+v^2+w^2\right)\dd u\dd v\dd w\\
+    &=\frac{5}{6\sqrt{2}}\int_0^{2\pi}\dd\theta\int_0^{\pi}\dd\varphi\int_0^1 r^2\cdot r^2\sin\varphi\dd r\\
+    &=\frac{5}{6\sqrt{2}}\cdot 2\pi\cdot\left[-\cos\varphi\right]_0^{\pi}\cdot\left[\frac{r^5}{5}\right]_0^1\\
+    &=\frac{5\pi}{3\sqrt{2}}\cdot 2\cdot\frac{1}{5}=\frac{\sqrt{2}\pi}{3}.
+  \end{align*}
+  所以最终的结果为
+  \[
+    M=\frac{\sqrt{2}\pi}{3}+\frac{\pi}{\sqrt{2}}=\frac{\sqrt{2}\pi}{3}+\frac{\sqrt{2}\pi}{2}=\frac{5\sqrt{2}\pi}{6}.
+  \]
+\end{solution}
+
+\answerproblem{四、}{14}
+设函数 $f(x)$ 在闭区间 $[0,1]$ 上具有连续导数，$f(0)=0$，$f(1)=1$．证明：
+\[
+  \lim_{n\to\infty}n\left(\int_0^1 f(x)\dd x-\frac{1}{n}\sum_{k=1}^n f\left(\frac{k}{n}\right)\right)=-\frac{1}{2}.
+\]
+\begin{solution}
+  将区间 $[0,1]$ $n$ 等份，分点 $x_k=\frac{k}{n}$，则 $\Delta x_k=\frac{1}{n}$，且
+  \begin{align*}
+    &\lim_{n\to\infty}n\left(\int_0^1 f(x)\dd x-\frac{1}{n}\sum_{k=1}^n f\left(\frac{k}{n}\right)\right)\\
+    &\quad=\lim_{n\to\infty}n\left(\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\dd x-\sum_{k=1}^n f(x_k)\Delta x_k\right)\\
+    &\quad=\lim_{n\to\infty}n\left(\sum_{k=1}^n\int_{x_{k-1}}^{x_k}\left[f(x)-f(x_k)\right]\dd x\right)
+     =\lim_{n\to\infty}n\left(\sum_{k=1}^n\int_{x_{k-1}}^{x_k}\frac{f(x)-f(x_k)}{x-x_k}(x-x_k)\dd x\right)\\
+    &\quad=\lim_{n\to\infty}n\left(\sum_{k=1}^n\frac{f(\xi_k)-f(x_k)}{\xi_k-x_k}\int_{x_{k-1}}^{x_k}(x-x_k)\dd x\right),\qquad \xi_k\in(x_{k-1},x_k)\\
+    &\quad=\lim_{n\to\infty}n\left(\sum_{k=1}^n f'(\eta_k)\int_{x_{k-1}}^{x_k}(x-x_k)\dd x\right)
+     =\lim_{n\to\infty}n\left(\sum_{k=1}^n f'(\eta_k)\left[-\frac{1}{2}(x_k-x_{k-1})^2\right]\right)\\
+    &\quad=-\frac{1}{2}\lim_{n\to\infty}\left(\sum_{k=1}^n f'(\eta_k)(x_k-x_{k-1})\right)
+     =-\frac{1}{2}\int_0^1 f'(x)\dd x=-\frac{1}{2}.
+  \end{align*}
+\end{solution}
+
+\answerproblem{五、}{14}
+设函数 $f(x)$ 在区间 $[0,1]$ 上连续，且 $\displaystyle I=\int_0^1 f(x)\dd x\neq 0$．证明：在 $(0,1)$ 内存在不同的两点 $x_1,x_2$，使得
+\[
+  \frac{1}{f(x_1)}+\frac{1}{f(x_2)}=\frac{2}{I}.
+\]
+\begin{solution}
+  设
+  \[
+    F(x)=\frac{1}{I}\int_0^x f(t)\dd t,
+  \]
+  则 $F(0)=0$，$F(1)=1$．由介值定理，存在 $\xi\in(0,1)$，使得 $F(\xi)=\frac{1}{2}$．在两个子区间 $(0,\xi)$，$(\xi,1)$ 上分别应用拉格朗日中值定理：
+  \[
+    F'(x_1)=\frac{f(x_1)}{I}=\frac{F(\xi)-F(0)}{\xi-0}=\frac{1/2}{\xi},\qquad x_1\in(0,\xi),
+  \]
+  \[
+    F'(x_2)=\frac{f(x_2)}{I}=\frac{F(1)-F(\xi)}{1-\xi}=\frac{1/2}{1-\xi},\qquad x_2\in(\xi,1),
+  \]
+  \[
+    \frac{I}{f(x_1)}+\frac{I}{f(x_2)}=\frac{1}{F'(x_1)}+\frac{1}{F'(x_2)}=\frac{\xi}{1/2}+\frac{1-\xi}{1/2}=2.
+  \]
+\end{solution}
+
+\answerproblem{六、}{14}
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上可导，且 $f(x)=f(x+2)=f(x+\sqrt{3})$，用傅里叶（Fourier）级数理论证明 $f(x)$ 为常数．
+\begin{solution}
+  由 $f(x)=f(x+2)=f(x+\sqrt{3})$ 可知，$f$ 是以 $2,\sqrt{3}$ 为周期的函数，所以它的傅里叶系数为
+  \[
+    a_n=\int_{-1}^{1}f(x)\cos n\pi x\dd x,\qquad b_n=\int_{-1}^{1}f(x)\sin n\pi x\dd x.
+  \]
+  由于 $f(x)=f(x+\sqrt{3})$，所以
+  \begin{align*}
+    a_n&=\int_{-1}^{1}f(x)\cos n\pi x\dd x=\int_{-1}^{1}f(x+\sqrt{3})\cos n\pi x\dd x\\
+    &=\int_{-1+\sqrt{3}}^{1+\sqrt{3}}f(t)\cos n\pi\left(t-\sqrt{3}\right)\dd t\\
+    &=\int_{-1+\sqrt{3}}^{1+\sqrt{3}}f(t)\left[\cos n\pi t\cos\sqrt{3}n\pi+\sin n\pi t\sin\sqrt{3}n\pi\right]\dd t\\
+    &=\cos\sqrt{3}n\pi\int_{-1+\sqrt{3}}^{1+\sqrt{3}}f(t)\cos n\pi t\dd t+\sin\sqrt{3}n\pi\int_{-1+\sqrt{3}}^{1+\sqrt{3}}f(t)\sin n\pi t\dd t\\
+    &=\cos\sqrt{3}n\pi\int_{-1}^{1}f(t)\cos n\pi t\dd t+\sin\sqrt{3}n\pi\int_{-1}^{1}f(t)\sin n\pi t\dd t,
+  \end{align*}
+  所以 $a_n=a_n\cos\sqrt{3}n\pi+b_n\sin\sqrt{3}n\pi$；同理可得
+  \[
+    b_n=b_n\cos\sqrt{3}n\pi-a_n\sin\sqrt{3}n\pi.
+  \]
+  联立，有
+  \[
+    \begin{cases}
+      a_n=a_n\cos\sqrt{3}n\pi+b_n\sin\sqrt{3}n\pi\\
+      b_n=b_n\cos\sqrt{3}n\pi-a_n\sin\sqrt{3}n\pi
+    \end{cases}
+  \]
+  得 $a_n=b_n=0\ (n=1,2,\cdots)$．而 $f$ 可导，其 Fourier 级数处处收敛于 $f(x)$，所以有
+  \[
+    f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)=\frac{a_0}{2},
+  \]
+  其中 $a_0=\int_{-1}^{1}f(x)\dd x$ 为常数．
+\end{solution}

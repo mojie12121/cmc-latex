@@ -1,0 +1,393 @@
+\answerpaper{数学 A 类}
+
+\answerproblem{一、}{15}
+设不全为零的 $a,b,c\in\R$，求直线
+\[
+  \frac{x-1}{a}=\frac{y-1}{b}=\frac{z-1}{c}
+\]
+绕 $z$ 轴旋转所得的旋转曲面方程．
+
+\begin{solution}
+设点 $M_1(0,0,0)$，方向 $\vec s_1=(0,0,1)$，则 $z$ 轴为直线 $L_1$：
+\[
+  \frac{x}{0}=\frac{y}{0}=\frac{z}{1}.
+\]
+直线 $L_2$
+\[
+  \frac{x-1}{a}=\frac{y-1}{b}=\frac{z-1}{c}
+\]
+过点 $M_2(1,1,1)$，方向为 $\vec s_2=(a,b,c)$．$\vec s_1,\vec s_2,\overrightarrow{M_1M_2}$ 的混合积为
+\[
+  \bigl(\vec s_1,\vec s_2,\overrightarrow{M_1M_2}\bigr)=a-b.
+\]
+
+\textbf{(1)} 当 $a=b$ 时，$L_2$ 与 $L_1$ 共面．分以下三种情况讨论．
+
+1) 当 $\vec s_1\cdot\vec s_2=0$，即 $c=0$ 时，$L_2$ 与 $L_1$ 垂直，此时所得的旋转面是 $z=1$ 的平面．
+
+当 $\vec s_1\cdot\vec s_2\ne 0$，即 $c\ne 0$ 时，$L_2$ 与 $L_1$ 平行或者相交于一点，于是有以下两种情形．
+
+2) 当 $L_2$ 平行于 $L_1$ 时，所得的旋转曲面是一个柱面 $x^2+y^2=2$．
+
+3) 当 $L_1$ 与 $L_2$ 相交于一点时，所得的旋转面为一个圆锥面，顶点为它们的交点 $\bigl(0,0,\frac{a-c}{a}\bigr)$ 的锥面方程
+\[
+  x^2+y^2-\frac{2a^2}{c^2}\Bigl(z-\frac{a-c}{a}\Bigr)^2=0.
+\]
+
+\textbf{(2)} 当 $a\ne b$ 时，即 $L_2$ 与 $L_1$ 不共面时，首先考虑 $L_2$ 与 $L_1$ 不垂直时的情形．设 $M_0(x_0,y_0,z_0)$ 为 $L_2$ 上的任意一点，$M(x,y,z)$ 为过 $M_0$ 的旋转曲面上的纬圆上的任意一点，则有
+\[
+  \begin{cases}
+    \overrightarrow{M_0M}\cdot\vec s_1=0,\\[2pt]
+    \bigl|\overrightarrow{M_1M_0}\bigr|=\bigl|\overrightarrow{M_1M}\bigr|,\\[2pt]
+    \dfrac{x_0-1}{a}=\dfrac{y_0-1}{b}=\dfrac{z_0-1}{c}.
+  \end{cases}
+\]
+由此得到
+\[
+  \begin{cases}
+    z-z_0=0,\\
+    x^2+y^2+z^2=x_0^2+y_0^2+z_0^2,\\
+    x_0=1+at,\\
+    y_0=1+bt,\\
+    z_0=1+ct,
+  \end{cases}
+\]
+其中 $t\in\R$ 为参数．因 $L_1$ 与 $L_2$ 不垂直，由 $\vec s_1\cdot\vec s_2=c\ne 0$，得到 $t=\dfrac{z_0-1}{c}=\dfrac{z-1}{c}$，以及
+\begin{align*}
+  x^2+y^2&=x_0^2+y_0^2\\
+  &=\Bigl[1+\frac{a}{c}(z-1)\Bigr]^2+\Bigl[1+\frac{b}{c}(z-1)\Bigr]^2\\
+  &=Az^2+2Bz+C,
+\end{align*}
+其中
+\[
+  A=\frac{a^2+b^2}{c^2},\qquad
+  B=\frac{a(c-a)+b(c-b)}{c^2},\qquad
+  C=\frac{(c-a)^2+(c-b)^2}{c^2}.
+\]
+经计算可得
+\[
+  AC-B^2=\frac{(a-b)^2}{c^2}>0.
+\]
+注意到 $A>0$，以及
+\begin{align*}
+  x^2+y^2&=Az^2+2Bz+C\\
+  &=A\Bigl(z+\frac{B}{A}\Bigr)^2+\frac{AC-B^2}{A},
+\end{align*}
+得到
+\[
+  \frac{A}{AC-B^2}(x^2+y^2)-\frac{A^2}{AC-B^2}\Bigl(z+\frac{B}{A}\Bigr)^2=1.
+\]
+它是旋转单叶双曲面．
+
+当 $L_1$ 与 $L_2$ 为异面直线而且垂直时，$c=0$．所得旋转曲面是一个挖去一个圆盘（半径为 $L_1$ 与 $L_2$ 之间的距离 $\dfrac{|a-b|}{\sqrt{a^2+b^2}}$）的平面．
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $B\subset\R^n\ (n\ge 2)$ 是单位开球，函数 $u,v$ 在 $\overline{B}$ 上连续，在 $B$ 内二阶连续可导，满足
+\[
+  \begin{cases}
+    -\Delta u-(1-u^2-v^2)u=0, & x\in B,\\
+    -\Delta v-(1-u^2-v^2)v=0, & x\in B,\\
+    u(x)=v(x)=0, & x\in\partial B,
+  \end{cases}
+\]
+其中 $x=(x_1,x_2,\cdots,x_n)$，$\Delta u=\dfrac{\partial^2u}{\partial x_1^2}+\dfrac{\partial^2u}{\partial x_2^2}+\cdots+\dfrac{\partial^2u}{\partial x_n^2}$，$\partial B$ 表示 $B$ 的边界．证明：$u^2(x)+v^2(x)\le 1$（$\forall x\in\overline{B}$）．
+
+\begin{solution}
+记 $w=w(x)=u^2(x)+v^2(x)$，则 $w$ 满足问题
+\[
+  \begin{cases}
+    -\Delta w-2(1-w)w=-2\bigl(|\nabla u|^2+|\nabla v|^2\bigr), & x\in B,\\[2pt]
+    w(x)=0, & x\in\partial B.
+  \end{cases}\tag{1}
+\]
+显然，$w(x)\in C^2(B)\cap C(\overline{B})$．所以，$w(x)$ 必然在 $\overline{B}$ 上达到最大值．设最大值点为 $x_1$．
+
+若 $x_1\in B$，则 $\nabla w(x_1)=0$，$-\Delta w(x_1)\ge 0$．于是由（1）得到，在 $x_1$ 处，
+\[
+  0\le-\Delta w\le 2(1-w)w-2\bigl(|\nabla u|^2+|\nabla v|^2\bigr)\le 2(1-w)w.
+\]
+$w(x_1)\ge 0$，故上式表明 $w(x_1)\le 1$．
+
+若 $x_1\in\partial B$，则由（1），$w(x_1)=0$．
+
+综合之，恒有 $0\le w\le 1$，$x\in\overline{B}$．
+\end{solution}
+
+\answerproblem{三、}{15}
+设
+\[
+  f(x)=x^{2021}+a_{2020}x^{2020}+a_{2019}x^{2019}+\cdots+a_2x^2+a_1x+a_0
+\]
+为整系数多项式，$a_0\ne 0$．设对任意 $0\le k\le 2020$ 有 $|a_k|\le 40$，证明：$f(x)=0$ 的根不可能全为实数．
+
+\begin{solution}
+设 $f(x)=0$ 的 $2021$ 个根分别为 $x_1,x_2,\cdots,x_{2021}$．由于 $a_0\ne 0$，所以 $x_i\ne 0$，$1\le i\le 2021$．若 $x_1,x_2,\cdots,x_{2021}$ 都是实数，由 Cauchy 不等式有
+\[
+  \Bigl(\sum_{i=1}^{2021}x_i^2\Bigr)\Bigl(\sum_{i=1}^{2021}\frac{1}{x_i^2}\Bigr)
+  \ge\Bigl(\sum_{i=1}^{2021}x_i\cdot\frac{1}{x_i}\Bigr)^2=2021^2.
+\]
+由 Vieta 定理，
+\[
+  \sum_{i=1}^{2021}x_i=-a_{2020},\qquad
+  \sum_{1\le i<j\le 2021}x_ix_j=a_{2019},
+\]
+由此得到
+\[
+  \sum_{i=1}^{2021}x_i^2=\Bigl(\sum_{i=1}^{2021}x_i\Bigr)^2-2\sum_{1\le i<j\le 2021}x_ix_j=a_{2020}^2-2a_{2019}.
+\]
+注意到 $\dfrac{1}{x_1},\dfrac{1}{x_2},\cdots,\dfrac{1}{x_{2021}}$ 是多项式
+\[
+  g(x)=x^{2021}f\Bigl(\frac{1}{x}\Bigr)
+  =a_0x^{2021}+a_1x^{2020}+a_2x^{2019}+\cdots+a_{2019}x^2+a_{2020}x+1
+\]
+的根．继续由 Vieta 定理，
+\[
+  \sum_{i=1}^{2021}\frac{1}{x_i}=-\frac{a_1}{a_0},\qquad
+  \sum_{1\le i<j\le 2021}\frac{1}{x_i}\cdot\frac{1}{x_j}=\frac{a_2}{a_0},
+\]
+所以
+\[
+  \sum_{i=1}^{2021}\frac{1}{x_i^2}
+  =\Bigl(\sum_{i=1}^{2021}\frac{1}{x_i}\Bigr)^2-2\sum_{1\le i<j\le 2021}\frac{1}{x_i}\cdot\frac{1}{x_j}
+  =\frac{a_1^2}{a_0^2}-\frac{2a_2}{a_0}.
+\]
+因为对任意 $0\le k\le 2020$ 有 $|a_k|\le 40$，又 $a_0$ 为非零整数，故 $|a_0|\ge 1$，所以
+\[
+  \Bigl(\sum_{i=1}^{2021}x_i^2\Bigr)\Bigl(\sum_{i=1}^{2021}\frac{1}{x_i^2}\Bigr)
+  =\bigl(a_{2020}^2-2a_{2019}\bigr)\Bigl(\frac{a_1^2}{a_0^2}-\frac{2a_2}{a_0}\Bigr)
+  \le(40^2+2\cdot 40)(40^2+2\cdot 40)=1680^2,
+\]
+矛盾．证毕．
+\end{solution}
+
+\answerproblem{四、}{20}
+设 $P$ 为对称酉矩阵，证明：存在可逆复矩阵 $Q$ 使得 $P=\overline{Q}Q^{-1}$．
+
+\begin{solution}
+设 $P$ 为 $n$ 阶矩阵．因为 $P$ 为酉矩阵，自然为正规矩阵，所以存在酉矩阵 $U$ 使得 $U^{-1}PU=D$ 为对角阵．
+
+设
+\[
+  D=\diag(\alpha_1,\alpha_2,\cdots,\alpha_n),
+\]
+并设 $\beta_1,\beta_2,\cdots,\beta_n$ 为复数满足 $\beta_i^2=\alpha_i$，$1\le i\le n$，令
+\[
+  E=\diag(\beta_1,\beta_2,\cdots,\beta_n).
+\]
+由 Lagrange 插值公式知存在复系数多项式 $f(x)$ 使得 $f(\alpha_i)=\beta_i$，$1\le i\le n$，从而
+\[
+  E=\diag\bigl(f(\alpha_1),f(\alpha_2),\cdots,f(\alpha_n)\bigr)=f(D),
+\]
+且
+\[
+  E^2=\diag(\beta_1^2,\beta_2^2,\cdots,\beta_n^2)=\diag(\alpha_1,\alpha_2,\cdots,\alpha_n)=D.
+\]
+现在 $D^T=D$，$P^T=P$，$U^T=\overline{U}^{-1}$，所以
+\[
+  D=D^T=(U^{-1}PU)^T=U^TP^T(U^{-1})^T
+  =\overline{U}^{-1}P\overline{U}=\overline{U}^{-1}UDU^{-1}\overline{U},
+\]
+从而 $U^{-1}\overline{U}$ 与 $D$ 可交换．又 $E=f(D)$，所以 $E$ 也与 $U^{-1}\overline{U}$ 可交换，即 $EU^{-1}\overline{U}=U^{-1}\overline{U}E$，或写为
+\[
+  UEU^{-1}=\overline{U}E\overline{U}^{-1}.
+\]
+由于 $P$ 为酉矩阵，即 $\overline{P}^TP=I$，这里 $I$ 为单位矩阵，再由 $U$ 也是酉矩阵得到
+\[
+  \overline{D}D=\overline{D}^TD=\overline{U^{-1}PU}^TU^{-1}PU
+  =\overline{U}^T\overline{P}^T(\overline{U}^{-1})^TU^{-1}PU=\overline{U}^TU=I.
+\]
+所以对任意 $1\le i\le n$，$\overline{\alpha}_i\alpha_i=1$，即复数 $\alpha_i$ 的模为 $1$，从而复数 $\beta_i$ 的模也是 $1$，故 $\overline{\beta}_i=\beta_i^{-1}$，由此得到 $\overline{E}=E^{-1}$．令 $Q=U\overline{E}U^{-1}$，则显然 $Q$ 可逆且有
+\[
+  \overline{Q}=\overline{U}\overline{\overline{E}}\overline{U}^{-1}
+  =\overline{U}E\overline{U}^{-1}=UEU^{-1},
+\]
+又
+\[
+  Q^{-1}=U\overline{E}^{-1}U^{-1}=UEU^{-1},
+\]
+所以
+\[
+  \overline{Q}Q^{-1}=(UEU^{-1})^2=UE^2U^{-1}=UDU^{-1}=P.
+\]
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $\alpha>1$，证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle\int_0^{+\infty}\dd x\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd t=\int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd x$；
+  \item 计算 $\displaystyle\int_0^{+\infty}\sin x^3\dd x\cdot\int_0^{+\infty}\sin x^{\frac{3}{2}}\dd x$．
+\end{enumerate}
+
+\begin{solution}
+\textbf{(1)} 证明：对于 $s>0$ 以及 $0\le a<b\le+\infty$，我们有
+\begin{align*}
+  \int_a^b\ee^{-sx}\sin x\dd x
+  &=\operatorname{Im}\int_a^b\ee^{-(s-\ii)x}\dd x
+   =\operatorname{Im}\frac{\ee^{-(s-\ii)a}-\ee^{-(s-\ii)b}}{s-\ii}\\
+  &=\frac{s\ee^{-sa}\sin a-s\ee^{-sb}\sin b+\ee^{-sa}\cos a-\ee^{-sb}\cos b}{s^2+1}.\tag{1}
+\end{align*}
+由（1），
+\[
+  \int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd x=\int_0^{+\infty}\frac{1}{t^{2\alpha}+1}\dd t
+\]
+收敛．
+
+任取 $A>\varepsilon>0$，由 Weierstrass 判别法，$\displaystyle\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd t$ 关于 $x\in[\varepsilon,A]$ 一致收敛，因此，结合（1），
+\begin{align*}
+  &\Bigl|\int_\varepsilon^A\dd x\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd t
+    -\int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd x\Bigr|\\
+  &\quad=\Bigl|\int_0^{+\infty}\dd t\int_\varepsilon^A\ee^{-t^\alpha x}\sin x\dd x
+    -\int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd x\Bigr|\\
+  &\quad\le\Bigl|\int_0^{+\infty}\Bigl(\Bigl|\int_A^{+\infty}\ee^{-t^\alpha x}\sin x\dd x\Bigr|
+    +\Bigl|\int_0^{\varepsilon}\ee^{-t^\alpha x}\sin x\dd x\Bigr|\Bigr)\dd t\Bigr|\\
+  &\quad\le\Bigl|\int_0^{+\infty}\frac{|t^\alpha\ee^{-t^\alpha A}\sin A+\ee^{-t^\alpha A}\cos A|
+    +|-t^\alpha\ee^{-t^\alpha\varepsilon}\sin\varepsilon+1-\ee^{-t^\alpha\varepsilon}\cos\varepsilon|}
+    {t^{2\alpha}+1}\dd t\Bigr|\\
+  &\quad\le\Bigl|\int_0^{+\infty}\bigl(\ee^{-t^\alpha A}+|\sin\varepsilon|
+    +|1-\ee^{-t^\alpha\varepsilon}\cos\varepsilon|\bigr)\frac{t^\alpha+1}{t^{2\alpha}+1}\dd t\Bigr|.
+\end{align*}
+利用一致收敛性，或控制收敛定理，得到
+\[
+  \int_0^{+\infty}\dd x\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd t
+  =\int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd x.
+\]
+
+\textbf{(2)} 对于 $\alpha>1$，以及 $x>0$，有
+\[
+  \int_0^{+\infty}\ee^{-t^\alpha x}\dd t
+  =\frac{1}{\alpha}x^{-\frac{1}{\alpha}}\int_0^{+\infty}s^{\frac{1}{\alpha}-1}\ee^{-s}\dd s
+  =\frac{1}{\alpha}x^{-\frac{1}{\alpha}}\Gamma\Bigl(\frac{1}{\alpha}\Bigr).
+\]
+以及
+\begin{align*}
+  \int_0^{+\infty}\frac{1}{t^\alpha+1}\dd t
+  &=\frac{1}{\alpha}\int_0^1s\Bigl(\frac{1}{s}-1\Bigr)^{\frac{1}{\alpha}-1}\frac{1}{s^2}\dd s\\
+  &=\frac{1}{\alpha}B\Bigl(1-\frac{1}{\alpha},\frac{1}{\alpha}\Bigr)
+   =\frac{\pi}{\alpha\sin\bigl(\frac{\pi}{\alpha}\bigr)}.
+\end{align*}
+从而
+\begin{align*}
+  \int_0^{+\infty}\sin x^\alpha\dd x
+  &=\frac{1}{\alpha}\int_0^{+\infty}x^{\frac{1-\alpha}{\alpha}}\sin x\dd x\\
+  &=\frac{1}{(\alpha-1)\Gamma\bigl(1-\frac{1}{\alpha}\bigr)}
+    \int_0^{+\infty}\dd x\int_0^{+\infty}\ee^{-t^{\frac{\alpha}{\alpha-1}}x}\sin x\dd t\\
+  &=\frac{1}{(\alpha-1)\Gamma\bigl(1-\frac{1}{\alpha}\bigr)}
+    \int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^{\frac{\alpha}{\alpha-1}}x}\sin x\dd x\\
+  &=\frac{1}{(\alpha-1)\Gamma\bigl(1-\frac{1}{\alpha}\bigr)}
+    \int_0^{+\infty}\frac{1}{t^{\frac{2\alpha}{\alpha-1}}+1}\dd t\\
+  &=\frac{\pi}{2\alpha\Gamma\bigl(1-\frac{1}{\alpha}\bigr)\sin\frac{(\alpha-1)\pi}{2\alpha}}
+   =\frac{1}{\alpha}\Gamma\Bigl(\frac{1}{\alpha}\Bigr)\sin\frac{\pi}{2\alpha}.
+\end{align*}
+最后得到
+\[
+  \int_0^{+\infty}\sin x^3\dd x\cdot\int_0^{+\infty}\sin x^{\frac{3}{2}}\dd x
+  =\frac{1}{3}\Gamma\Bigl(\frac{1}{3}\Bigr)\sin\frac{\pi}{6}
+  \cdot\frac{2}{3}\Gamma\Bigl(\frac{2}{3}\Bigr)\sin\frac{\pi}{3}=\frac{\pi}{9}.
+\]
+
+\textbf{注：}可以利用第二型曲线积分计算，对于 $\alpha>1$，在以 $0$ 为顶点的锥形区域
+\[
+  D:=\bigl\{\,r\ee^{\ii\theta}\bigm| r>0,\ \theta\in(0,\beta)\,\bigr\}
+\]
+内，定义 $\operatorname{Ln}z$ 如下：
+\[
+  \operatorname{Ln}\bigl(r\ee^{\ii\theta}\bigr)=\ln r+\ii\theta,\qquad \forall r\ee^{\ii\theta}\in D,
+\]
+其中 $\beta=\dfrac{\pi}{2\alpha}$．则易见 $\operatorname{Ln}z$ 可以连续地把定义域延伸到 $D$ 的边界．又易见，在 $D$ 内成立 $\operatorname{Ln}z$ 在 $D$ 内解析．
+
+令 $z^\alpha:=\ee^{\alpha\operatorname{Ln}z}$，$(z\in\overline{D})$，则 $\ee^{\ii z^\alpha}$ 在 $D$ 内解析在 $\overline{D}$ 上连续．任取 $R>0$，考虑 $D_R:=B_R(0)\cap D$，则 $\displaystyle\int_{\partial D_R}\ee^{\ii z^\alpha}\dd z=0$．由此即得
+\begin{align*}
+  \int_0^R\ee^{\ii x^\alpha}\dd x
+  &=\int_0^R\ee^{\ii r^\alpha\ee^{\ii\alpha\beta}}\ee^{\ii\beta}\dd r
+    -\int_0^\beta\ee^{\ii R^\alpha\ee^{\ii\alpha\theta}}\ii R\ee^{\ii\theta}\dd\theta\\
+  &=\ee^{\ii\beta}\int_0^R\ee^{-r^\alpha\sin(\alpha\beta)}\ee^{\ii r^\alpha\cos(\alpha\beta)}\dd r
+    -\ii\int_0^\beta R\ee^{-R^\alpha\sin(\alpha\theta)}\ee^{\ii R^\alpha\cos(\alpha\theta)}\ee^{\ii\theta}\dd\theta\\
+  &=\ee^{\frac{\pi\ii}{2\alpha}}\int_0^R\ee^{-r^\alpha}\dd r
+    -\ii\int_0^{\frac{\pi}{2\alpha}}R\ee^{-R^\alpha\sin(\alpha\theta)}\ee^{\ii R^\alpha\cos(\alpha\theta)}\ee^{\ii\theta}\dd\theta.
+\end{align*}
+易见有常数 $C>0$ 使得
+\begin{align*}
+  &\Bigl|\ii\int_0^{\frac{\pi}{2\alpha}}R\ee^{-R^\alpha\sin(\alpha\theta)}
+    \ee^{\ii R^\alpha\cos(\alpha\theta)}\ee^{\ii\theta}\dd\theta\Bigr|\\
+  &\quad\le\Bigl|\int_0^{\frac{\pi}{2\alpha}}R\ee^{-R^\alpha\sin(\alpha\theta)}\dd\theta\Bigr|
+   \le\Bigl|\int_0^{\frac{\pi}{2\alpha}}R\ee^{-CR^\alpha\theta}\dd\theta\Bigr|
+   \le\frac{1}{CR^{\alpha-1}}.
+\end{align*}
+于是，可得
+\[
+  \int_0^{+\infty}\ee^{\ii x^\alpha}\dd x
+  =\ee^{\frac{\ii\pi}{2\alpha}}\int_0^{+\infty}\ee^{-r^\alpha}\dd r
+  =\frac{1}{\alpha}\Gamma\Bigl(\frac{1}{\alpha}\Bigr)\ee^{\frac{\ii\pi}{2\alpha}}.
+\]
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $f,g$ 为 $\R$ 上的非负连续可微函数，满足：$\forall x\in\R$，成立 $f'(x)\ge 6+f(x)-f^2(x)$，$g'(x)\le 6+g(x)-g^2(x)$．证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\forall\varepsilon\in(0,1)$ 以及 $x\in\R$，存在 $\xi\in(-\infty,x)$ 使得 $f(\xi)\ge 3-\varepsilon$；
+  \item $\forall x\in\R$，成立 $f(x)\ge 3$；
+  \item $\forall x\in\R$，存在 $\eta\in(-\infty,x)$ 使得 $g(\eta)\le 3$；
+  \item $\forall x\in\R$，成立 $g(x)\le 3$．
+\end{enumerate}
+
+\begin{solution}
+\textbf{(1)} 任取 $\varepsilon\in(0,1)$ 以及 $x\in\R$，若结论不真，则 $f(t)\le 3-\varepsilon$（$\forall t\le x$）．因此，
+\[
+  f'(t)\ge 6+f(t)-f^2(t)=(3-f(t))(2+f(t))\ge 2\varepsilon,\qquad \forall t\le x.
+\]
+于是
+\[
+  f(x)-f(t)\ge 2\varepsilon(x-t),\qquad \forall t\le x.
+\]
+从而 $\lim\limits_{t\to-\infty}f(t)=-\infty$．与 $f$ 非负矛盾．
+
+因此，存在 $\xi<x$ 使得 $f(\xi)\ge 3-\varepsilon$．
+
+\textbf{(2)} 任取 $x\in\R$，由连续性，我们只要证明对任何 $\varepsilon\in(0,1)$，成立 $f(x)\ge 3-\varepsilon$．由（1），存在 $\xi<x$ 使得 $f(\xi)\ge 3-\varepsilon$．令 $h(t)=f(t)-(3-\varepsilon)$，我们有
+\[
+  h'(t)=f'(t)\ge(3-f(t))(2+f(t))\ge-(2+f(t))h(t),\qquad \forall t\in\R.
+\]
+记 $F(t)=\displaystyle\int_0^t(2+f(s))\dd s$，则
+\[
+  \bigl(\ee^{F(t)}h(t)\bigr)'=\ee^{F(t)}\bigl[h'(t)+(2+f(t))h(t)\bigr]\ge 0,\qquad \forall t\in\R.
+\]
+因此，
+\[
+  \ee^{F(x)}h(x)\ge\ee^{F(\xi)}h(\xi)\ge 0.
+\]
+因此，$h(x)\ge 0$．即 $f(x)\ge 3-\varepsilon$．
+
+\textbf{(3)} 任取 $x\in\R$，若结论不真，则 $g(t)>3$（$\forall t<x$）．因此，
+\[
+  g'(t)\le 6+g(t)-g^2(t)=-(g(t)-3)^2-5(g(t)-3)\le-(g(t)-3)^2,\qquad \forall t<x.
+\]
+于是
+\[
+  \frac{g'(t)}{(g(t)-3)^2}\le -1,\qquad \forall t\le x.
+\]
+不等式两边在 $[t,x]$ 上积分，得到
+\[
+  \frac{1}{g(t)-3}-\frac{1}{g(x)-3}\le t-x,\qquad \forall t<x.
+\]
+进而
+\[
+  -\frac{1}{g(x)-3}\le t-x,\qquad \forall t<x.
+\]
+在上式令 $t\to-\infty$ 即得矛盾．因此，存在 $\eta\in(-\infty,x)$ 使得 $g(\eta)\le 3$．
+
+\textbf{(4)} 任取 $x\in\R$，由（3），存在 $\eta\in(-\infty,x)$ 使得 $g(\eta)\le 3$．我们有
+\[
+  (g(t)-3)'\le-(g(t)-3)(2+g(t)),\qquad \forall t\in\R.
+\]
+因此，
+\[
+  \bigl(\ee^{G(t)}(g(t)-3)\bigr)'
+  =\ee^{G(t)}\bigl[(g(t)-3)'+(2+g(t))(g(t)-3)\bigr]\le 0,\qquad \forall t\in\R,
+\]
+其中 $G(t)=\displaystyle\int_0^t(2+g(s))\dd s$．从而
+\[
+  \ee^{G(x)}(g(x)-3)\le\ee^{G(\eta)}(g(\eta)-3)\le 0.
+\]
+因此，$g(x)\le 3$．
+\end{solution}

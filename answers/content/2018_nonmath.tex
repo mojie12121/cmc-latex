@@ -1,0 +1,267 @@
+\answerpaper{非数学类}
+
+\answerproblem{一、}{24}
+填空题（共 4 小题，每小题 6 分）：
+\begin{enumerate}[label=(\arabic*)]
+  \item 设 $\alpha\in(0,1)$，则 $\displaystyle\lim_{n\to+\infty}\left[(n+1)^{\alpha}-n^{\alpha}\right]=\underline{\qquad\qquad}$．
+  \item 若曲线 $y=y(x)$ 由 $\begin{cases}x=t+\cos t,\\ \ee^{y}+ty+\sin t=1\end{cases}$ 确定，则此曲线在 $t=0$ 对应点处的切线方程为 $\underline{\qquad\qquad}$．
+  \item $\displaystyle\int\frac{\ln\left(x+\sqrt{1+x^{2}}\right)}{\left(1+x^{2}\right)^{3/2}}\dd x=\underline{\qquad\qquad}$．
+  \item $\displaystyle\lim_{x\to 0}\frac{1-\cos x\sqrt{\cos 2x}\sqrt[3]{\cos 3x}}{x^{2}}=\underline{\qquad\qquad}$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)}【思路一】因为 $\left(1+\dfrac{1}{n}\right)^{\alpha}<1+\dfrac{1}{n}$，所以
+\begin{align*}
+0<(n+1)^{\alpha}-n^{\alpha}
+&=n^{\alpha}\left[\left(1+\frac{1}{n}\right)^{\alpha}-1\right]\\
+&<n^{\alpha}\left(1+\frac{1}{n}-1\right)=\frac{1}{n^{1-\alpha}}\to 0\quad(n\to\infty)
+\end{align*}
+所以由夹逼准则可得 $\displaystyle\lim_{n\to+\infty}\left[(n+1)^{\alpha}-n^{\alpha}\right]=0$．
+
+【思路二】
+\begin{align*}
+\lim_{n\to+\infty}\left[(n+1)^{\alpha}-n^{\alpha}\right]
+&=\lim_{x\to 0^{+}}\frac{(1+x)^{\alpha}-1}{x^{\alpha}}\\
+&=\lim_{x\to 0^{+}}\frac{\alpha x}{x^{\alpha}}=\alpha\lim_{x\to 0^{+}}x^{1-\alpha}=0.
+\end{align*}
+
+\textbf{(2)}当 $t=0$ 时，$x=1$ 且 $\ee^{y}=1$，即 $y=0$，即求点 $(1,0)$ 处曲线 $y=y(x)$ 的切线方程．在方程组两端对 $t$ 求导，得
+\[
+\begin{cases}
+x'(t)=1-\sin t,\\
+\ee^{y}\cdot y'(t)+y+ty'(t)+\cos t=0,
+\end{cases}
+\]
+将 $t=0$，$y=0$ 代入方程，得 $x'(0)=1$，$y'(0)=-1$，所以
+\[
+\left.\frac{\dd y}{\dd x}\right|_{x=1}=\frac{y'(0)}{x'(0)}=-1,
+\]
+所以切线方程为 $y-0=(-1)(x-1)$，即 $y=-x+1$．
+
+\textbf{(3)}【思路一】典型三角代换结构 $\sqrt{1+x^{2}}$，令 $x=\tan t$，$\dd x=\sec^{2}t\dd t$，所以
+\begin{align*}
+F(x)&=\int\frac{\ln\left(x+\sqrt{1+x^{2}}\right)}{\left(1+x^{2}\right)^{3/2}}\dd x=\int\frac{\ln(\sec t+\tan t)}{\sec t}\dd t\\
+&=\int\ln(\sec t+\tan t)\dd(\sin t)=\sin t\ln(\sec t+\tan t)-\int\frac{\sin t}{\cos t}\dd t\\
+&=\sin t\ln(\sec t+\tan t)+\ln|\cos t|+C
+\end{align*}
+由于 $\tan t=\dfrac{x}{1}$，所以 $\cos t=\dfrac{1}{\sqrt{1+x^{2}}}$，$\sin t=\dfrac{x}{\sqrt{1+x^{2}}}$，$\sec t=\sqrt{1+x^{2}}$，代入得原积分为
+\[
+F(x)=\frac{x}{\sqrt{1+x^{2}}}\ln\left(\sqrt{1+x^{2}}+x\right)+\ln\frac{1}{\sqrt{1+x^{2}}}+C
+\]
+或
+\[
+\frac{x}{\sqrt{1+x^{2}}}\ln\left(\sqrt{1+x^{2}}+x\right)-\frac{1}{2}\ln\left(1+x^{2}\right)+C.
+\]
+
+【思路二】
+\begin{align*}
+F(x)&=\int\ln\left(x+\sqrt{1+x^{2}}\right)\dd\frac{x}{\sqrt{1+x^{2}}}\\
+&=\frac{x}{\sqrt{1+x^{2}}}\ln\left(x+\sqrt{1+x^{2}}\right)-\int\frac{x}{x^{2}+1}\dd x\\
+&=\frac{x}{\sqrt{1+x^{2}}}\ln\left(x+\sqrt{1+x^{2}}\right)-\frac{1}{2}\ln\left(x^{2}+1\right)+C.
+\end{align*}
+
+\textbf{(4)}【思路一】令 $A$ 表示所求极限，则
+\begin{align*}
+A&=\lim_{x\to 0}\frac{1-\cos x\sqrt{\cos 2x}\sqrt[3]{\cos 3x}}{x^{2}}\\
+&=\lim_{x\to 0}\frac{1-\cos x+\cos x\left(1-\sqrt{\cos 2x}\sqrt[3]{\cos 3x}\right)}{x^{2}}\\
+&=\frac{1}{2}+\lim_{x\to 0}\frac{1-\sqrt{\cos 2x}\sqrt[3]{\cos 3x}}{x^{2}}\\
+&=\frac{1}{2}+\lim_{x\to 0}\frac{1-\sqrt{\cos 2x}+\sqrt{\cos 2x}\left(1-\sqrt[3]{\cos 3x}\right)}{x^{2}}\\
+&=\frac{1}{2}+\lim_{x\to 0}\left[\frac{1-\sqrt{(\cos 2x-1)+1}}{x^{2}}+\frac{1-\sqrt[3]{(\cos 3x-1)+1}}{x^{2}}\right]\\
+&=\frac{1}{2}+\lim_{x\to 0}\frac{1-\cos 2x}{2x^{2}}+\lim_{x\to 0}\frac{1-\cos 3x}{3x^{2}}\\
+&=\frac{1}{2}+1+\frac{3}{2}=3.
+\end{align*}
+
+【思路二】带皮亚诺余项的麦克劳林公式，有
+\[
+\cos x=1-\frac{x^{2}}{2}+o\left(x^{2}\right),\quad
+(\cos 2x)^{\frac{1}{2}}=1-x^{2}+o\left(x^{2}\right),\quad
+(\cos 3x)^{\frac{1}{3}}=1-\frac{3x^{2}}{2}+o\left(x^{2}\right),
+\]
+所以 $\cos x(\cos 2x)^{\frac{1}{2}}(\cos 3x)^{\frac{1}{3}}=1-3x^{2}+o\left(x^{2}\right)$，代入得
+\[
+A=\lim_{x\to 0}\frac{3x^{2}+o\left(x^{2}\right)}{x^{2}}=3.
+\]
+\end{solution}
+
+\answerproblem{二、}{8}
+设函数 $f(t)$ 在 $t\ne 0$ 时一阶连续可导，且 $f(1)=0$，求函数 $f\left(x^{2}-y^{2}\right)$，使得曲线积分
+\[
+\int_{L}y\left[2-f\left(x^{2}-y^{2}\right)\right]\dd x+xf\left(x^{2}-y^{2}\right)\dd y
+\]
+与路径无关，其中 $L$ 为任一不与直线 $y=\pm x$ 相交的分段光滑曲线．
+\begin{solution}
+令 $P(x,y)=y\left[2-f\left(x^{2}-y^{2}\right)\right]$，$Q(x,y)=xf\left(x^{2}-y^{2}\right)$，于是
+\begin{align*}
+\frac{\partial P(x,y)}{\partial y}
+&=2-f\left(x^{2}-y^{2}\right)+y\left[-f'\left(x^{2}-y^{2}\right)(-2y)\right]\\
+&=2-f\left(x^{2}-y^{2}\right)+2y^{2}f'\left(x^{2}-y^{2}\right),\\
+\frac{\partial Q(x,y)}{\partial x}
+&=f\left(x^{2}-y^{2}\right)+2x^{2}f'\left(x^{2}-y^{2}\right).
+\end{align*}
+由积分与路径无关的条件 $\dfrac{\partial P(x,y)}{\partial y}=\dfrac{\partial Q(x,y)}{\partial x}$，代入结果整理得
+\[
+\left(x^{2}-y^{2}\right)f'\left(x^{2}-y^{2}\right)+f\left(x^{2}-y^{2}\right)-1=0.
+\]
+令 $x^{2}-y^{2}=u$，即 $uf'(u)+f(u)-1=0$，分离变量得
+\[
+\frac{\dd f(u)}{1-f(u)}=\frac{1}{u}\dd u,
+\]
+由分离变量法，两端积分，得 $\dfrac{1}{1-f(u)}=C_{1}u$，即 $f(u)=1+\dfrac{C}{u}$，由 $f(1)=0$，得 $C=-1$，即
+\[
+f\left(x^{2}-y^{2}\right)=1-\frac{1}{x^{2}-y^{2}}.
+\]
+\textbf{【注】}其中微分方程 $uf'(u)+f(u)-1=0$ 的通解可以通过改写微分方程为 $\left[uf(u)\right]'=1$，得到通解为 $uf(u)=u+C$．
+\end{solution}
+
+\answerproblem{三、}{14}
+设 $f(x)$ 在区间 $[0,1]$ 上连续，且 $1\le f(x)\le 3$．证明：
+\[
+1\le\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{1}{f(x)}\dd x\le\frac{4}{3}.
+\]
+\begin{solution}
+由柯西不等式，得
+\[
+\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{1}{f(x)}\dd x
+\ge\left[\int_{0}^{1}\sqrt{f(x)}\sqrt{\frac{1}{f(x)}}\dd x\right]^{2}=1.
+\]
+又由于 $\left[f(x)-1\right]\left[f(x)-3\right]\le 0$，则 $\dfrac{\left[f(x)-1\right]\left[f(x)-3\right]}{f(x)}\le 0$，即
+\[
+f(x)+\frac{3}{f(x)}\le 4,
+\]
+所以 $\displaystyle\int_{0}^{1}\left[f(x)+\frac{3}{f(x)}\right]\dd x\le 4$．由于
+\[
+\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{3}{f(x)}\dd x
+\le\frac{1}{4}\left[\int_{0}^{1}f(x)\dd x+\int_{0}^{1}\frac{3}{f(x)}\dd x\right]^{2}\le 4,
+\]
+所以
+\[
+1\le\int_{0}^{1}f(x)\dd x\int_{0}^{1}\frac{1}{f(x)}\dd x\le\frac{4}{3}.
+\]
+\end{solution}
+
+\answerproblem{四、}{12}
+计算三重积分 $\displaystyle\iiint_{(V)}\left(x^{2}+y^{2}\right)\dd V$，其中 $(V)$ 是由
+\[
+x^{2}+y^{2}+(z-2)^{2}\ge 4,\quad x^{2}+y^{2}+(z-1)^{2}\le 9
+\]
+及 $z\ge 0$ 所围成的空间图形．
+\begin{solution}
+画图（关键），考虑区域的特殊性，采用容易计算的整体减去容易计算的部分来完成计算，从而分成三个部分来讨论：
+
+第一部分：整个大球 $(V_{1})$ 的积分：采用球坐标换元，令
+\[
+x=r\sin\varphi\cos\theta,\quad y=r\sin\varphi\sin\theta,\quad z=1+r\cos\varphi,
+\]
+$0\le r\le 3$，$0\le\varphi\le\pi$，$0\le\theta\le 2\pi$．于是有
+\[
+\iiint_{(V_{1})}\left(x^{2}+y^{2}\right)\dd V
+=\int_{0}^{2\pi}\dd\theta\int_{0}^{\pi}\dd\varphi\int_{0}^{3}r^{2}\sin^{2}\varphi\cdot r^{2}\sin\varphi\dd r
+=\frac{648\pi}{5}.
+\]
+
+第二部分：小球 $(V_{2})$ 的积分：采用球坐标换元，令
+\[
+x=r\sin\varphi\cos\theta,\quad y=r\sin\varphi\sin\theta,\quad z=2+r\cos\varphi,
+\]
+$0\le r\le 2$，$0\le\varphi\le\pi$，$0\le\theta\le 2\pi$．于是有
+\[
+\iiint_{(V_{2})}\left(x^{2}+y^{2}\right)\dd V
+=\int_{0}^{2\pi}\dd\theta\int_{0}^{\pi}\dd\varphi\int_{0}^{2}r^{2}\sin^{2}\varphi\cdot r^{2}\sin\varphi\dd r
+=\frac{256\pi}{15}.
+\]
+
+第三部分：大球 $z=0$ 下部分的积分 $(V_{3})$，采用柱坐标：
+\[
+x=r\cos\theta,\quad y=r\sin\theta,\quad 1-\sqrt{9-r^{2}}\le z\le 0,
+\]
+$0\le r\le 2\sqrt{2}$，$0\le\theta\le 2\pi$．于是有
+\[
+\iiint_{(V_{3})}\left(x^{2}+y^{2}\right)\dd V
+=\int_{0}^{2\pi}\dd\theta\int_{0}^{2\sqrt{2}}r\dd r\int_{1-\sqrt{9-r^{2}}}^{0}r^{2}\dd z
+=\frac{136\pi}{5}.
+\]
+所以最终的积分为
+\begin{align*}
+\iiint_{(V)}\left(x^{2}+y^{2}\right)\dd V
+&=\iiint_{(V_{1})}-\iiint_{(V_{2})}-\iiint_{(V_{3})}\\
+&=\frac{648}{5}\pi-\frac{256}{15}\pi-\frac{136}{5}\pi=\frac{256}{3}\pi.
+\end{align*}
+\end{solution}
+
+\answerproblem{五、}{14}
+设 $f(x,y)$ 在区域 $D$ 内可微，且 $\sqrt{\left(\dfrac{\partial f}{\partial x}\right)^{2}+\left(\dfrac{\partial f}{\partial y}\right)^{2}}\le M$，$A(x_{1},y_{1})$，$B(x_{2},y_{2})$ 是 $D$ 内两点，线段 $AB$ 包含在 $D$ 内．证明：
+\[
+\left|f(x_{1},y_{1})-f(x_{2},y_{2})\right|\le M\,|AB|,
+\]
+其中 $|AB|$ 表示线段 $AB$ 的长度．
+\begin{solution}
+作辅助函数 $\varphi(t)=f\left[x_{1}+t(x_{2}-x_{1}),y_{1}+t(y_{2}-y_{1})\right]$，显然函数 $\varphi(t)$ 在 $[0,1]$ 上可导．根据拉格朗日中值定理，存在 $c\in(0,1)$，使得
+\[
+\varphi(1)-\varphi(0)=\varphi'(c)
+=\frac{\partial f(u,v)}{\partial u}(x_{2}-x_{1})+\frac{\partial f(u,v)}{\partial v}(y_{2}-y_{1}).
+\]
+所以
+\begin{align*}
+\left|\varphi(1)-\varphi(0)\right|
+&=\left|f(x_{1},y_{1})-f(x_{2},y_{2})\right|\\
+&=\left|\frac{\partial f(u,v)}{\partial u}(x_{2}-x_{1})+\frac{\partial f(u,v)}{\partial v}(y_{2}-y_{1})\right|\\
+&\le\sqrt{\left(\frac{\partial f(u,v)}{\partial u}\right)^{2}+\left(\frac{\partial f(u,v)}{\partial v}\right)^{2}}
+\sqrt{(x_{2}-x_{1})^{2}+(y_{2}-y_{1})^{2}}\le M\,|AB|.
+\end{align*}
+\end{solution}
+
+\answerproblem{六、}{14}
+证明：对于连续函数 $f(x)>0$，有
+\[
+\ln\int_{0}^{1}f(x)\dd x\ge\int_{0}^{1}\ln f(x)\dd x.
+\]
+\begin{solution}
+由于 $f(x)$ 在 $[0,1]$ 上连续，所以
+\[
+\int_{0}^{1}f(x)\dd x=\lim_{n\to+\infty}\frac{1}{n}\sum_{k=1}^{n}f(x_{k}),\quad
+x_{k}\in\left[\frac{k-1}{n},\frac{k}{n}\right].
+\]
+由算术几何不等式 $\left[f(x_{1})f(x_{2})\cdots f(x_{n})\right]^{\frac{1}{n}}\le\dfrac{1}{n}\sum\limits_{k=1}^{n}f(x_{k})$．于是有
+\[
+\frac{1}{n}\sum_{k=1}^{n}\ln f(x_{k})\le\ln\left[\frac{1}{n}\sum_{k=1}^{n}f(x_{k})\right].
+\]
+根据 $\ln x$ 的连续性，两边取极限，得
+\[
+\lim_{n\to+\infty}\frac{1}{n}\sum_{k=1}^{n}\ln f(x_{k})
+\le\lim_{n\to+\infty}\ln\left[\frac{1}{n}\sum_{k=1}^{n}f(x_{k})\right],
+\]
+即
+\[
+\ln\int_{0}^{1}f(x)\dd x\ge\int_{0}^{1}\ln f(x)\dd x.
+\]
+\end{solution}
+
+\answerproblem{七、}{14}
+已知 $\{a_{k}\}$，$\{b_{k}\}$ 是正数数列，且 $b_{k+1}-b_{k}\ge\delta>0$，$k=1,2,\cdots$，$\delta$ 为一常数．证明：若级数 $\displaystyle\sum_{k=1}^{+\infty}a_{k}$ 收敛，则级数
+\[
+\sum_{k=1}^{+\infty}\frac{k\sqrt[k]{\left(a_{1}a_{2}\cdots a_{k}\right)\left(b_{1}b_{2}\cdots b_{k}\right)}}{b_{k+1}b_{k}}
+\]
+收敛．
+\begin{solution}
+令 $S_{k}=\sum\limits_{i=1}^{k}a_{i}b_{i}$，$a_{k}b_{k}=S_{k}-S_{k-1}$，
+\[
+S_{0}=0,\quad a_{k}=\frac{S_{k}-S_{k-1}}{b_{k}},\quad k=1,2,\cdots
+\]
+\begin{align*}
+\sum_{k=1}^{N}a_{k}
+&=\sum_{k=1}^{N}\frac{S_{k}-S_{k-1}}{b_{k}}
+=\sum_{k=1}^{N-1}\left(\frac{S_{k}}{b_{k}}-\frac{S_{k}}{b_{k+1}}\right)+\frac{S_{N}}{b_{N}}\\
+&=\sum_{k=1}^{N-1}\frac{b_{k+1}-b_{k}}{b_{k}b_{k+1}}S_{k}+\frac{S_{N}}{b_{N}}
+\ge\sum_{k=1}^{N-1}\frac{\delta}{b_{k}b_{k+1}}S_{k},
+\end{align*}
+所以 $\displaystyle\sum_{k=1}^{+\infty}\frac{S_{k}}{b_{k}b_{k+1}}$ 收敛．由不等式
+\[
+\sqrt[k]{\left(a_{1}a_{2}\cdots a_{k}\right)\left(b_{1}b_{2}\cdots b_{k}\right)}
+\le\frac{a_{1}b_{1}+a_{2}b_{2}+\cdots+a_{k}b_{k}}{k}=\frac{S_{k}}{k},
+\]
+可知
+\[
+\sum_{k=1}^{+\infty}\frac{k\sqrt[k]{\left(a_{1}a_{2}\cdots a_{k}\right)\left(b_{1}b_{2}\cdots b_{k}\right)}}{b_{k+1}b_{k}}
+\le\sum_{k=1}^{+\infty}\frac{S_{k}}{b_{k}b_{k+1}},
+\]
+故原级数收敛．
+\end{solution}

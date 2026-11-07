@@ -1,0 +1,387 @@
+\answerpaper{非数学类}
+
+\answerproblem{一、}{42}
+填空题：
+\begin{enumerate}[label=(\arabic*)]
+  \item 已知可导函数 $f(x)$ 满足 $\displaystyle f(x)\cos x+2\int_0^x f(t)\sin t\dd t=x+1$，则 $f(x)=\underline{\hspace{3.5em}}$．
+  \item 极限 $\displaystyle \lim_{n\to\infty}\sin^2\left(\pi\sqrt{n^2+n}\right)=\underline{\hspace{3.5em}}$．
+  \item 设 $w=f(u,v)$ 具有二阶连续偏导数，且 $u=x-cy$，$v=x+cy$，其中 $c$ 为非零常数，则 $\displaystyle w_{xx}-\frac{1}{c^2}w_{yy}=\underline{\hspace{3.5em}}$．
+  \item 设 $f(x)$ 具有二阶连续导数，且 $f(0)=f'(0)=0$，$f''(0)=6$，则 $\displaystyle \lim_{x\to 0}\frac{f(\sin^2 x)}{x^4}=\underline{\hspace{3.5em}}$．
+  \item 不定积分 $\displaystyle I=\int\frac{\ee^{-\sin x}\sin 2x}{(1-\sin x)^2}\dd x=\underline{\hspace{3.5em}}$．
+  \item 记曲面 $z^2=x^2+y^2$ 和 $z=\sqrt{4-x^2-y^2}$ 围成的空间区域为 $V$，则三重积分
+  \[
+    \iiint_V z\dd x\dd y\dd z=\underline{\hspace{10em}}.
+  \]
+\end{enumerate}
+\begin{solution}
+  \textbf{(1)} 首先令 $x=0$，则由等式可得 $f(0)=1$；对等式两端求导数，则有
+  \begin{align*}
+    f'(x)\cos x-f(x)\sin x+2f(x)\sin x&=1\\
+    \Rightarrow\quad f'(x)\cos x+f(x)\sin x&=1\\
+    \Rightarrow\quad f'(x)+f(x)\tan x&=\sec x.
+  \end{align*}
+  这是一个非齐次的一阶线性微分方程，由计算公式可得
+  \begin{align*}
+    f(x)&=\ee^{-\int\tan x\dd x}\left(\int\sec x\,\ee^{\int\tan x\dd x}\dd x+C\right)\\
+    &=\ee^{\ln\cos x}\left(\int\frac{1}{\cos x}\ee^{-\ln\cos x}\dd x+C\right)\\
+    &=\cos x\left(\int\frac{1}{\cos^2 x}\dd x+C\right)\\
+    &=\cos x(\tan x+C)=\sin x+C\cos x.
+  \end{align*}
+  代入初值 $f(0)=1$，得 $C=1$，所以 $f(x)=\cos x+\sin x$．只要求出满足条件的 $f(x)$ 即可，并没有求出所有满足条件的函数．只要满足条件的 $f(x)$ 都为所求的函数．
+
+  \textbf{(2)} 与第五届第一题差不多，基本思路应该一致，并且由于有平方，所以直接由正弦函数公式
+  \[
+    \sin(n\pi+x)=\pm\sin x\Rightarrow\sin^2(n\pi+x)=\sin^2 x,
+  \]
+  \[
+    \Rightarrow\sin^2(x-n\pi)=\sin^2 x,\quad n\in\Z
+  \]
+  于是有
+  \begin{align*}
+    \sin^2\left(\pi\sqrt{n^2+n}\right)
+    &=\sin^2\left(\pi\sqrt{n^2+n}-n\pi\right)\\
+    &=\sin^2\left[\pi\left(\sqrt{n^2+n}-n\right)\right]
+     =\sin^2\frac{n\pi}{\sqrt{n^2+n}+n}.
+  \end{align*}
+  所以
+  \begin{align*}
+    \lim_{n\to\infty}\sin^2\left(\pi\sqrt{n^2+n}\right)
+    &=\lim_{n\to\infty}\sin^2\frac{n\pi}{\sqrt{n^2+n}+n}\\
+    &=\lim_{n\to\infty}\sin^2\frac{\pi}{2}=1.
+  \end{align*}
+
+  \textbf{(3)} 这样类型的问题在各阶试题中都有，并且在最后发布第三届解题试题时特别强调，多元复合函数求导的重要性；而且这里的复合结构是已知的，所以直接由复合关系求导．于是有
+  \[
+    w_x=f_u'+f_v',\qquad w_y=-cf_u'+cf_v';
+  \]
+  由于这两个偏导数仍然具有与原函数相同的复合结构，所以对上面的导函数继续求导，则有
+  \begin{align*}
+    w_{xx}&=\bigl(f_u'\bigr)'_x+\bigl(f_v'\bigr)'_x
+    =f_{uu}''+f_{uv}''+f_{vu}''+f_{vv}''=f_{uu}''+2f_{uv}''+f_{vv}'',\\
+    w_{yy}&=-c\bigl(f_u'\bigr)'_y+c\bigl(f_v'\bigr)'_y\\
+    &=-c\bigl[-cf_{uu}''+cf_{uv}''\bigr]+c\bigl[-cf_{vu}''+cf_{vv}''\bigr]\\
+    &=c^2\bigl[f_{uu}''-f_{uv}''-f_{vu}''+f_{vv}''\bigr]
+    =c^2\bigl[f_{uu}''-2f_{uv}''+f_{vv}''\bigr].
+  \end{align*}
+  所以
+  \begin{align*}
+    w_{xx}-\frac{1}{c^2}w_{yy}
+    &=f_{uu}''+2f_{uv}''+f_{vv}''-\frac{1}{c^2}\cdot c^2
+      \bigl(f_{uu}''-2f_{uv}''+f_{vv}''\bigr)\\
+    &=f_{uu}''+2f_{uv}''+f_{vv}''-\bigl(f_{uu}''-2f_{uv}''+f_{vv}''\bigr)
+    =4f_{uv}''.
+  \end{align*}
+
+  \textbf{(4)} \textbf{【解法一】} 在有泰勒公式应用于解题的竞赛题解析中，特别强调了泰勒公式的两种类型适用的问题类型．这里是求极限，并且是求自变量趋于 $0$ 的极限；毫无疑问，就是用带皮亚诺余项的泰勒公式，并且由于函数具有二阶连续导数，所以可以在 $0$ 点展开为二阶带皮亚诺余项的泰勒公式，即有
+  \begin{align*}
+    f(x)&=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+o(x^2)\\
+    &=3x^2+o(x^2).
+  \end{align*}
+  由此可得 $f(\sin^2 x)=3\sin^4 x+o(\sin^4 x)$，所以将其代入可得极限为
+  \[
+    \lim_{x\to 0}\frac{f(\sin^2 x)}{x^4}
+    =\lim_{x\to 0}\frac{3\sin^4 x+o(\sin^4 x)}{x^4}=3.
+  \]
+  \textbf{【解法二】} 洛必达法则．
+
+  \textbf{(5)}
+  \[
+    I=\int\frac{\ee^{-\sin x}\sin 2x}{(1-\sin x)^2}\dd x
+    =\int\frac{\ee^{-\sin x}\cdot 2\sin x}{(1-\sin x)^2}\dd(\sin x),
+  \]
+  令 $\sin x=t$，则有
+  \[
+    I=2\int\frac{t\ee^{-t}}{(1-t)^2}\dd t.
+  \]
+  又
+  \begin{align*}
+    \int\frac{t\ee^{-t}}{(1-t)^2}\dd t
+    &=-\int\frac{\ee^{-t}(1-t)-\ee^{-t}}{(1-t)^2}\dd t\\
+    &=-\int\frac{\ee^{-t}}{1-t}\dd t+\int\frac{\ee^{-t}}{(1-t)^2}\dd t,\\
+    -\int\frac{\ee^{-t}}{1-t}\dd t
+    &=\int\frac{1}{1-t}\dd\ee^{-t}
+    =\frac{\ee^{-t}}{1-t}-\int\ee^{-t}\dd\left(\frac{1}{1-t}\right)\\
+    &=\frac{\ee^{-t}}{1-t}-\int\frac{\ee^{-t}}{(1-t)^2}\dd t.
+  \end{align*}
+  代入上式可得
+  \[
+    \int\frac{t\ee^{-t}}{(1-t)^2}\dd t=\frac{\ee^{-t}}{1-t}+C,
+  \]
+  由于 $\sin x=t$，所以
+  \[
+    I=\int\frac{\ee^{-\sin x}\sin 2x}{(1-\sin x)^2}\dd x
+    =\frac{2\ee^{-\sin x}}{1-\sin x}+C.
+  \]
+
+  \textbf{(6)} \textbf{【参考解答一】} 由两个方程，可得边界线方程为 $x^2+y^2=2$，这个题目由于被积函数的结构，只包含一个变量 $z$，而且用平行于 $xOy$ 的平面截取立体区域，截面都为圆，所以考虑先二后一的截面法计算要简单．以 $z=\sqrt{2}$ 作为分割面，将区域分割成上下两部分，则有
+  \[
+    \iiint_V z\dd x\dd y\dd z
+    =\iiint_{\Omega_{\text{上}}}z\dd x\dd y\dd z
+    +\iiint_{\Omega_{\text{下}}}z\dd x\dd y\dd z,
+  \]
+  其中上下积分区域可以描述为
+  \[
+    \Omega_{\text{上}}:\ \sqrt{2}\le z\le 2,\quad x^2+y^2\le 4-z^2;
+  \]
+  \[
+    \Omega_{\text{下}}:\ 0\le z\le\sqrt{2},\quad x^2+y^2\le z^2.
+  \]
+  所以有
+  \begin{align*}
+    \iiint_{\Omega_{\text{上}}}z\dd x\dd y\dd z
+    &=\int_{\sqrt{2}}^2 z\dd z\iint_{D(z)}\dd x\dd y\\
+    &=\int_{\sqrt{2}}^2 z\left[\pi(4-z^2)\right]\dd z
+     =\int_{\sqrt{2}}^2\left(4\pi z-\pi z^3\right)\dd z\\
+    &=\left[2\pi z^2-\frac{\pi z^4}{4}\right]_{\sqrt{2}}^2=\pi,\\
+    \iiint_{\Omega_{\text{下}}}z\dd x\dd y\dd z
+    &=\int_0^{\sqrt{2}} z\dd z\iint_{D(z)}\dd x\dd y\\
+    &=\int_0^{\sqrt{2}}\pi z^3\dd z
+     =\left[\frac{\pi z^4}{4}\right]_0^{\sqrt{2}}=\pi.
+  \end{align*}
+  所以
+  \[
+    \iiint_V z\dd x\dd y\dd z
+    =\iiint_{\Omega_{\text{上}}}z\dd x\dd y\dd z
+    +\iiint_{\Omega_{\text{下}}}z\dd x\dd y\dd z=2\pi.
+  \]
+
+  \textbf{【参考解答二】} 使用球面坐标
+  \begin{align*}
+    I&=\iiint_V z\dd x\dd y\dd z\\
+    &=\int_0^{2\pi}\dd\theta\int_0^{\pi/4}\dd\varphi\int_0^2
+      \rho\cos\varphi\cdot\rho^2\sin\varphi\dd\rho\\
+    &=2\pi\cdot\frac{1}{2}\left.\sin^2\varphi\right|_0^{\pi/4}
+      \cdot\frac{1}{4}\left.\rho^4\right|_0^2=2\pi.
+  \end{align*}
+\end{solution}
+
+\answerproblem{二、}{14}
+设二元函数 $f(x,y)$ 在平面上有连续的二阶偏导数，对任意角度 $\alpha$，定义一元函数 $g_\alpha(t)=f(t\cos\alpha,t\sin\alpha)$，若对任何 $\alpha$ 都有 $\displaystyle \frac{\dd g_\alpha(0)}{\dd t}=0$ 且 $\displaystyle \frac{\dd^2 g_\alpha(0)}{\dd t^2}>0$，证明：$f(0,0)$ 是 $f(x,y)$ 的极小值．
+\begin{solution}
+  根据基于二元函数极值判定极小值的充分条件，如果函数在 $(0,0)$ 点取到极小值，第一步，判定梯度向量为零向量，即
+  \[
+    \nabla f(0,0)=\bigl(f_x'(0,0),f_y'(0,0)\bigr)=\vec{0};
+  \]
+  第二步：判定黑塞矩阵为正定矩阵，对于存在二阶连续偏导数的函数，即由三个偏导数构成的矩阵
+  \[
+    \begin{pmatrix}
+      f_{xx}''&f_{xy}''\\
+      f_{yx}''&f_{yy}''
+    \end{pmatrix}_{(0,0)}
+    =\begin{pmatrix}
+      f_{xx}''&f_{xy}''\\
+      f_{xy}''&f_{yy}''
+    \end{pmatrix}_{(0,0)}
+  \]
+  为正定矩阵．
+
+  如果符合这样两个前提条件，则可以判定函数 $f(x,y)$ 在原点 $(0,0)$ 取到极小值，即 $f(0,0)$ 是 $f(x,y)$ 的极小值．
+
+  下面，就依据已知条件我们来验证这样两个条件是满足的．两个步骤中需要二元函数的一阶、二阶偏导数，而已知条件是计算函数 $g_\alpha(t)$ 关于 $t$ 的导数，下面就来计算一下，是否会出现需要的描述形式．
+
+  根据已知条件，对函数 $g_\alpha(t)$ 关于 $t$ 求导数，其实又是一个复合函数求导数，令 $x=t\cos\alpha$，$y=t\sin\alpha$，则有
+  \begin{align*}
+    g_\alpha'(t)&=f_x'(t\cos\alpha,t\sin\alpha)\cdot\cos\alpha
+      +f_y'(t\cos\alpha,t\sin\alpha)\cdot\sin\alpha\\
+    \Rightarrow\quad g_\alpha'(0)&=f_x'(0,0)\cos\alpha+f_y'(0,0)\sin\alpha
+      =\bigl[f_x'(0,0),f_y'(0,0)\bigr]\binom{\cos\alpha}{\sin\alpha}=0.
+  \end{align*}
+  要求对于任意的任何 $\alpha$ 都有 $\displaystyle \frac{\dd g_\alpha(0)}{\dd t}=0$，则必定有
+  \[
+    \bigl[f_x'(0,0),f_y'(0,0)\bigr]=0
+    \Rightarrow f_x'(0,0)=0,\quad f_y'(0,0)=0.
+  \]
+  因此 $(0,0)$ 是二元函数 $f(x,y)$ 的驻点．
+
+  根据已知条件，继续求二阶导数，则有
+  \begin{align*}
+    g_\alpha''(t)&=\bigl(f_x'\bigr)'_t\cdot\cos\alpha
+      +\bigl(f_y'\bigr)'_t\cdot\sin\alpha\\
+    &=\cos\alpha\bigl[f_{xx}''\cos\alpha+f_{xy}''\sin\alpha\bigr]
+      +\sin\alpha\bigl[f_{yx}''\cos\alpha+f_{yy}''\sin\alpha\bigr]\\
+    &=\begin{pmatrix}\cos\alpha,\sin\alpha\end{pmatrix}
+      \begin{pmatrix}
+        f_{xx}''\cos\alpha+f_{xy}''\sin\alpha\\
+        f_{yx}''\cos\alpha+f_{yy}''\sin\alpha
+      \end{pmatrix}\\
+    &=\begin{pmatrix}\cos\alpha,\sin\alpha\end{pmatrix}
+      \begin{pmatrix}
+        f_{xx}''&f_{xy}''\\
+        f_{yx}''&f_{yy}''
+      \end{pmatrix}
+      \begin{pmatrix}\cos\alpha\\ \sin\alpha\end{pmatrix}.
+  \end{align*}
+  则由 $\displaystyle \frac{\dd^2 g_\alpha(0)}{\dd t^2}>0$，有
+  \[
+    \begin{pmatrix}\cos\alpha,\sin\alpha\end{pmatrix}
+    \begin{pmatrix}
+      f_{xx}''(0,0)&f_{xy}''(0,0)\\
+      f_{xy}''(0,0)&f_{yy}''(0,0)
+    \end{pmatrix}
+    \begin{pmatrix}\cos\alpha\\ \sin\alpha\end{pmatrix}>0.
+  \]
+  由 $\alpha$ 的任意性，并且向量 $(\cos\alpha,\sin\alpha)$ 为非零向量，由此可知这是一个正定二次型，并且矩阵为实对称矩阵，所以矩阵为正定矩阵．矩阵正定，所以驻点为极小值点．
+\end{solution}
+
+\answerproblem{三、}{14}
+设曲线 $\Gamma$ 为曲线 $x^2+y^2+z^2=1$，$x+z=1$，$x\ge 0$，$y\ge 0$，$z\ge 0$ 上从点 $A(1,0,0)$ 到点 $B(0,0,1)$ 的一段．求曲线积分
+\[
+  I=\int_\Gamma y\dd x+z\dd y+x\dd z.
+\]
+\begin{solution}
+  \textbf{【参考解答一】} 对于曲线积分，尤其是开放曲线的曲线积分，最开始应该考虑的积分计算的直接法，即写出曲线的参数方程来计算曲线积分．用两个方程消去 $z$，即由 $x+z=1$，$z=1-x$ 代入球面方程，则有
+  \begin{align*}
+    x^2+y^2+(1-x)^2=1&\Rightarrow 2x^2-2x+y^2=0\\
+    &\Rightarrow 2\left(x-\frac{1}{2}\right)^2+y^2=\frac{1}{2}
+     \Rightarrow 4\left(x-\frac{1}{2}\right)^2+2y^2=1\\
+    &\Rightarrow x=\frac{1}{2}+\frac{1}{2}\cos t,\quad
+     y=\frac{\sqrt{2}}{2}\sin t,\\
+    &\Rightarrow z=1-x=\frac{1}{2}-\frac{1}{2}\cos t,\quad t:0\to\pi.
+  \end{align*}
+  将它代入积分表达式，则有
+  \begin{align*}
+    I&=\int_0^\pi\left[
+      \frac{\sqrt{2}}{2}\sin t\left(-\frac{1}{2}\sin t\right)
+      +\left(\frac{1}{2}-\frac{1}{2}\cos t\right)\left(\frac{\sqrt{2}}{2}\cos t\right)
+      +\left(\frac{1}{2}+\frac{1}{2}\cos t\right)\left(\frac{1}{2}\sin t\right)
+      \right]\dd t\\
+    &=\int_0^\pi\left[
+      -\frac{\sqrt{2}}{4}\sin^2 t
+      +\left(\frac{\sqrt{2}}{4}\cos t-\frac{\sqrt{2}}{4}\cos^2 t\right)
+      +\left(\frac{1}{4}\sin t+\frac{1}{4}\cos t\sin t\right)
+      \right]\dd t\\
+    &=\int_0^\pi\left[
+      -\frac{\sqrt{2}}{4}+\frac{\sqrt{2}}{4}\cos t
+      +\frac{1}{4}\sin t+\frac{1}{4}\cos t\sin t
+      \right]\dd t\\
+    &=-\frac{\pi\sqrt{2}}{4}+\frac{1}{4}\bigl[-\cos t\bigr]_0^\pi
+     =\frac{1}{2}-\frac{\pi\sqrt{2}}{4}.
+  \end{align*}
+
+  \textbf{【参考解答二】} 记 $\Gamma_1$ 为从 $B$ 到 $A$ 的直线段，则
+  \[
+    x=t,\quad y=0,\quad z=1-t,\quad 0\le t\le 1,
+  \]
+  \[
+    \int_{\Gamma_1}y\dd x+z\dd y+x\dd z=\int_0^1 t\dd(1-t)=-\frac{1}{2}.
+  \]
+  设 $\Gamma$ 和 $\Gamma_1$ 围成的平面区域 $\Sigma$，方向按右手法则．由 Stokes 公式得到
+  \[
+    \left(\int_\Gamma+\int_{\Gamma_1}\right)y\dd x+z\dd y+x\dd z
+    =\iint_\Sigma\begin{vmatrix}
+      \dd y\dd z&\dd z\dd x&\dd x\dd y\\[2pt]
+      \dfrac{\partial}{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial}{\partial z}\\[2pt]
+      y&z&x
+    \end{vmatrix}
+    =-\iint_\Sigma \dd y\dd z+\dd z\dd x+\dd x\dd y.
+  \]
+  右边三个积分都是 $\Sigma$ 在各个坐标面上的投影面积，而 $\Sigma$ 在 $zx$ 面上投影面积为零．故
+  \[
+    I+\int_{\Gamma_1}=-\iint_\Sigma \dd y\dd z+\dd x\dd y.
+  \]
+  曲线 $\Gamma$ 在 $xy$ 面上投影的方程为
+  \[
+    \frac{(x-1/2)^2}{(1/2)^2}+\frac{y^2}{(1/\sqrt{2})^2}=1.
+  \]
+  又该投影（半个椭圆）的面积得知 $\displaystyle \iint_\Sigma \dd x\dd y=\frac{\pi}{4\sqrt{2}}$．同理，$\displaystyle \iint_\Sigma \dd y\dd z=\frac{\pi}{4\sqrt{2}}$．这样就有
+  \[
+    I=\frac{1}{2}-\frac{\pi}{2\sqrt{2}}.
+  \]
+\end{solution}
+
+\answerproblem{四、}{15}
+设函数 $f(x)>0$ 且在实轴上连续，若对任意实数 $t$，有
+\[
+  \int_{-\infty}^{+\infty}\ee^{-|t-x|}f(x)\dd x\le 1.
+\]
+证明：$\forall a,b$，$a<b$，有 $\displaystyle \int_a^b f(x)\dd x\le\frac{b-a+2}{2}$．
+\begin{solution}
+  这个竞赛题是考研竞赛数学公众号每日一题栏目中发布的第 62 个题目，完全一模一样的．下面我们也来讨论一下，思路是怎样的．
+
+  根据题目的条件，函数 $f(x)>0$，而且自然常数为底的函数也是大于 $0$ 的，所以，可以知道已知积分中的被积函数 $\ee^{-|t-x|}f(x)>0$，并且积分区间越大，积分值越大，所以由原积分
+  \[
+    \int_{-\infty}^{+\infty}\ee^{-|t-x|}f(x)\dd x\le 1,
+  \]
+  当然也就可以得到 $\forall\,a,b\ (a<b)$，
+  \[
+    \int_a^b\ee^{-|t-x|}f(x)\dd x\le 1.
+  \]
+  右边要出现 $b-a$ 的表达式，于是由积分的保序性，两边同时关于 $t$ 变量在 $[a,b]$ 积分，可得
+  \[
+    \int_a^b\left[\int_a^b\ee^{-|t-x|}f(x)\dd x\right]\dd t\le b-a.
+  \]
+  左边就是一个先对 $x$ 后对 $t$ 积分的二重积分的累次积分表达式，对于它的操作，好像就积分而言不能执行什么有效的处理．但是，看到二重积分的累次积分表达式，可以尝试性的考虑交换积分次序，即先对 $t$ 求积分，再对 $x$ 积分，于是左边的累次积分也就等于
+  \[
+    \int_a^b\int_a^b\ee^{-|t-x|}f(x)\dd x\dd t
+    =\int_a^b f(x)\left[\int_a^b\ee^{-|t-x|}\dd t\right]\dd x.
+  \]
+  里面对 $t$ 积分，应该就是属于可以计算的了．只要考虑将绝对值去掉就可以了．由于在积分中对 $x$ 在 $[a,b]$ 区间上积分，所以 $x$ 夹在 $a$，$b$ 之间，因此以 $x$ 作为区间的分割点，则有
+  \begin{align*}
+    \int_a^b\ee^{-|t-x|}\dd t
+    &=\int_a^x\ee^{t-x}\dd t+\int_x^b\ee^{x-t}\dd t\\
+    &=\bigl[\ee^{t-x}\bigr]_a^x+\bigl[-\ee^{x-t}\bigr]_x^b
+     =1-\ee^{a-x}-\ee^{x-b}+1=2-\ee^{a-x}-\ee^{x-b}.
+  \end{align*}
+  所以上面的不等式等价于
+  \[
+    \int_a^b f(x)\bigl(2-\ee^{a-x}-\ee^{x-b}\bigr)\dd x\le b-a.
+  \]
+  将左边拆开，则有
+  \begin{align*}
+    \int_a^b f(x)\bigl(2-\ee^{a-x}-\ee^{x-b}\bigr)\dd x
+    &=2\int_a^b f(x)\dd x-\int_a^b f(x)\ee^{a-x}\dd x
+      -\int_a^b f(x)\ee^{x-b}\dd x\\
+    &\le b-a.
+  \end{align*}
+  即
+  \[
+    \int_a^b f(x)\dd x\le\frac{b-a}{2}
+    +\frac{1}{2}\int_a^b f(x)\ee^{a-x}\dd x
+    +\frac{1}{2}\int_a^b f(x)\ee^{x-b}\dd x.
+  \]
+  这样，再由已知条件，并且有 $t$ 的任意性，可以将右边的两个积分改写成
+  \[
+    \int_a^b\ee^{a-x}f(x)\dd x=\int_a^b\ee^{-|x-a|}f(x)\dd x
+    \le\int_{-\infty}^{+\infty}\ee^{-|x-a|}f(x)\dd x\le 1.
+  \]
+  因为 $x$ 属于 $(-\infty,+\infty)$ 都有积分小于等于 $1$，所以同理可得
+  \[
+    \int_a^b\ee^{x-b}f(x)\dd x\le 1.
+  \]
+  所以
+  \[
+    \int_a^b f(x)\dd x\le\frac{b-a}{2}+1.
+  \]
+  这就是这个竞赛题的解题过程．
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $\{a_n\}$ 为一个数列，$p$ 为固定的正整数，若
+\[
+  \lim_{n\to\infty}(a_{n+p}-a_n)=\lambda.
+\]
+证明：
+\[
+  \lim_{n\to\infty}\frac{a_n}{n}=\frac{\lambda}{p}.
+\]
+\begin{solution}
+  对于 $i=0,1,\dots,p-1$，记
+  \[
+    A_n^{(i)}=a_{(n+1)p+i}-a_{np+i}.
+  \]
+  由题设 $\displaystyle \lim_{n\to\infty}A_n^{(i)}=\lambda$，从而
+  \[
+    \lim_{n\to\infty}\frac{A_1^{(i)}+A_2^{(i)}+\cdots+A_n^{(i)}}{n}=\lambda.
+  \]
+  而 $A_1^{(i)}+A_2^{(i)}+\cdots+A_n^{(i)}=a_{(n+1)p+i}-a_{p+i}$．由题设知
+  \begin{align*}
+    \lim_{n\to\infty}\frac{a_{(n+1)p+i}}{(n+1)p+i}
+    &=\lim_{n\to\infty}\frac{a_{(n+1)p+i}}{n}\cdot\frac{n}{(n+1)p+i}\\
+    &=\frac{\lambda}{p}.
+  \end{align*}
+  对正整数 $m$，设 $m=np+i$，其中 $i=0,1,\dots,p-1$，从而可以把正整数依照 $i$ 分为 $p$ 个子列类．考虑任何这样的子列，下面极限
+  \[
+    \lim_{n\to\infty}\frac{a_{(n+1)p+i}}{(n+1)p+i}=\frac{\lambda}{p},
+  \]
+  故 $\displaystyle \lim_{n\to\infty}\frac{a_m}{m}=\frac{\lambda}{p}$．
+\end{solution}

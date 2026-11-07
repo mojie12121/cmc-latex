@@ -1,0 +1,195 @@
+\answerpaper{数学类}
+
+\answerproblem{一、}{15}
+在空间直角坐标系中，设马鞍面 $S$ 的方程为 $x^{2}-y^{2}=2z$．设 $\sigma$ 为平面 $z=\alpha x+\beta y+\gamma$，其中 $\alpha,\beta,\gamma$ 为给定常数．求马鞍面 $S$ 上点 $P$ 的坐标，使得过 $P$ 且落在马鞍面 $S$ 上的直线均平行于平面 $\sigma$．
+
+\begin{solution}
+设所求 $P$ 点坐标为 $P=(a,b,c)$，满足 $a^{2}-b^{2}=2c$，则过点 $P$ 的直线可以表示为
+\[
+  \ell=\ell(t)=(a,b,c)+t(u,v,w),\quad u^{2}+v^{2}+w^{2}\ne 0,\ t\in\R.
+\]
+直线 $\ell(t)$ 落在马鞍面 $S$ 上，得到
+\[
+  (u^{2}-v^{2})t^{2}+2(au-bv-w)t=0,\quad t\in\R,
+\]
+\[
+  au-bv=w,\quad u^{2}-v^{2}=0.
+\]
+于是有 $v=\varepsilon u$，$w=(a-\varepsilon b)u$，$\varepsilon=\pm 1$．于是，过点 $P$ 恰有两条直线落在马鞍面 $S$ 上，为
+\begin{align*}
+  \ell_{1}&=\ell_{1}(t)=(a,b,c)+tu(1,1,a-b),\\
+  \ell_{2}&=\ell_{2}(t)=(a,b,c)+tu(1,-1,a+b).
+\end{align*}
+这两条直线的方向向量 $(1,1,a-b)$，$(1,-1,a+b)$ 均平行于平面 $\sigma$，而平面 $\sigma$ 的法向量为 $(\alpha,\beta,-1)$．于是得到 $\alpha+\beta=a-b$，$\alpha-\beta=a+b$，由此得
+\[
+  a=\alpha,\quad b=-\beta,\quad c=\frac{1}{2}\bigl(\alpha^{2}-\beta^{2}\bigr).
+\]
+所以所求 $P$ 点的坐标为 $P=\Bigl(\alpha,-\beta,\dfrac{1}{2}\bigl(\alpha^{2}-\beta^{2}\bigr)\Bigr)$．
+\end{solution}
+
+\answerproblem{二、}{15}
+$A=\bigl(a_{ij}\bigr)_{n\times n}$ 为 $n$ 阶实方阵，满足
+\begin{enumerate}
+  \item $a_{11}=a_{22}=\cdots=a_{nn}=a>0$；
+  \item 对每个 $i\ (i=1,2,\cdots,n)$，有 $\displaystyle\sum_{j=1}^{n}\abs{a_{ij}}+\sum_{j=1}^{n}\abs{a_{ji}}<4a$．
+\end{enumerate}
+求 $f(x_{1},\cdots,x_{n})=(x_{1},\cdots,x_{n})A\begin{pmatrix}x_{1}\\ \vdots\\ x_{n}\end{pmatrix}$ 的规范形．
+
+\begin{solution}
+\[
+  f=(x_{1},\cdots,x_{n})\frac{A+A^{T}}{2}\begin{pmatrix}x_{1}\\ \vdots\\ x_{n}\end{pmatrix}.
+\]
+令 $B=(b_{ij})=\dfrac{A+A^{T}}{2}$，则 $B$ 为实对称矩阵且
+\[
+  b_{11}=b_{22}=\cdots=b_{nn}=a,\quad
+  \sum_{j=1}^{n}\abs{b_{ij}}=\sum_{j=1}^{n}\abs{\frac{a_{ij}}{2}+\frac{a_{ji}}{2}}<2a,
+\]
+结果 $b_{ii}>\sum\limits_{j\ne i}\abs{b_{ij}}$．
+
+若 $\lambda$ 为 $B$ 的特征值，$\alpha=\begin{pmatrix}x_{1}\\ \vdots\\ x_{n}\end{pmatrix}$ 为关于 $\lambda$ 的非零特征向量，记
+\[
+  \abs{x_{i}}=\max_{1\le j\le n}\abs{x_{j}}>0.
+\]
+由于 $B\alpha=\lambda\alpha$，
+\[
+  \lambda=\frac{\sum\limits_{j=1}^{n}b_{ij}x_{j}}{x_{i}}\ge a-\sum_{j\ne i}\abs{b_{ij}}>0.
+\]
+所以 $B$ 为正定矩阵，$f$ 的规范形为 $y_{1}^{2}+\cdots+y_{n}^{2}$．
+\end{solution}
+
+\answerproblem{三、}{20}
+元素皆为整数的矩阵称为整矩阵．设 $n$ 阶方阵 $A,B$ 皆为整矩阵．
+\begin{enumerate}
+  \item 证明以下两条等价：i) $A$ 可逆且 $A^{-1}$ 仍为整矩阵；ii) $A$ 的行列式的绝对值为 $1$；
+  \item 若又知 $A,A-2B,A-4B,\cdots,A-2nB,A-2(n+1)B$，$A-2(n+n)B$ 皆可逆，且它们的逆矩阵皆为整矩阵．证明：$A+B$ 可逆．
+\end{enumerate}
+
+\begin{solution}
+1) $i)\Rightarrow ii)$．由 $AA^{-1}=I$ 知 $\abs{A}\cdot\abs{A^{-1}}=1$．注意到 $\abs{A}$，$\abs{A^{-1}}$ 均为整数．所以 $A$ 的行列式的绝对值为 $1$．
+
+$ii)\Rightarrow i)$：由 $AA^{*}=\abs{A}I$ 可知 $A^{-1}=A^{*}/\abs{A}$ 即可知 i) 成立．
+
+2) 考虑多项式 $p(x)=\abs{A-xB}^{2}$，则由已知条件得 $p(0),p(2),p(4),\cdots,p(4n)$ 的值皆为 $1$．结果多项式 $q(x)=p(x)-1$ 有超过 $2n$ 个零点，从而得出 $q(x)\equiv 0$，即 $p(x)\equiv 1$．特别地，$p(-1)=\abs{A+B}^{2}=1$，所以 $A+B$ 可逆．
+\end{solution}
+
+\answerproblem{四、}{15}
+设 $f(x)$ 在 $[0,1]$ 上连续可微，在 $x=0$ 处有任意阶导数，
+\[
+  f^{(n)}(0)=0\quad(\forall n\ge 0),
+\]
+且存在常数 $C>0$ 使得
+\[
+  \abs{xf'(x)}\le C\abs{f(x)},\quad \forall x\in[0,1].
+\]
+证明：(1) $\lim\limits_{x\to 0^{+}}\dfrac{f(x)}{x^{n}}=0\ (\forall n\ge 0)$；(2) 在 $[0,1]$ 上成立 $f(x)\equiv 0$．
+
+\begin{solution}
+(1) 由假设，对任何 $m\ge 0$，$f(x)$ 的零点附近有 $m+1$ 阶导数，从而 $f^{(m)}(x)$ 在 $x=0$ 连续，因此，
+\[
+  \lim_{x\to 0^{+}}\frac{f(x)}{x^{0}}=f(0)=0.
+\]
+对于 $n\ge 1$，利用洛必达法则，
+\[
+  \lim_{x\to 0^{+}}\frac{f(x)}{x^{n}}
+  =\lim_{x\to 0^{+}}\frac{f'(x)}{nx^{n-1}}
+  =\cdots=\lim_{x\to 0^{+}}\frac{f^{(n)}(x)}{n!}=0.
+\]
+(2) $xf(x)f'(x)\le x\abs{f(x)}\abs{f'(x)}\le C\abs{f(x)}^{2}$，$\forall x\in[0,1]$，从而
+\[
+  \left(\frac{f^{2}(x)}{x^{2C}}\right)'
+  =\frac{2\bigl(xf(x)f'(x)-Cf^{2}(x)\bigr)}{x^{2C+1}}\le 0,
+  \quad \forall x\in(0,1].
+\]
+因此 $\dfrac{f^{2}(x)}{x^{2C}}$ 在 $(0,1]$ 上单调减少，从而
+\[
+  \frac{f^{2}(x)}{x^{2C}}\le \left(\frac{f(t)}{t^{C}}\right)^{2},
+  \quad \forall\, 0<t<x\le 1.
+\]
+所以
+\[
+  \frac{f^{2}(x)}{x^{2C}}\le \lim_{t\to 0^{+}}\left(\frac{f(t)}{t^{C}}\right)^{2}=0,
+  \quad \forall x\in(0,1].
+\]
+因此 $f(x)\equiv 0$．
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $\{a_{n}\},\{b_{n}\}$ 是两个数列，$a_{n}>0\ (n\ge 0)$，$\sum\limits_{n=1}^{\infty}b_{n}$ 绝对收敛，且
+\[
+  \frac{a_{n}}{a_{n+1}}\le 1+\frac{1}{n}+\frac{1}{n\ln n}+b_{n},\quad n\ge 2.
+\]
+求证：(1) $\dfrac{a_{n}}{a_{n+1}}<\dfrac{n+1}{n}\cdot\dfrac{\ln(n+1)}{\ln n}+b_{n}\ (n\ge 2)$；(2) $\sum\limits_{n=1}^{\infty}a_{n}$ 发散．
+
+\begin{solution}
+(1) 因为 $\ln\Bigl(1+\dfrac{1}{n}\Bigr)>\dfrac{1}{n+1}\ (n\ge 2)$，所以根据条件，有
+\begin{align*}
+  \frac{a_{n}}{a_{n+1}}
+  &\le 1+\frac{1}{n}+\frac{n+1}{n\ln n}\cdot\frac{1}{n+1}+b_{n}\\
+  &<1+\frac{1}{n}+\frac{n+1}{n\ln n}\ln\Bigl(1+\frac{1}{n}\Bigr)+b_{n}
+  =\frac{n+1}{n}\cdot\frac{\ln(n+1)}{\ln n}+b_{n}.
+\end{align*}
+
+(2)【思路一】令 $c_{n}=(n\ln n)a_{n}$，$d_{n}=\dfrac{n\ln n}{(n+1)\ln(n+1)}\abs{b_{n}}$，则有 $\dfrac{c_{n}}{c_{n+1}}<1+d_{n}$．取对数得
+\[
+  \ln c_{n}-\ln c_{n+1}<\ln(1+d_{n})\le d_{n}.
+\]
+于是 $\ln c_{2}-\ln c_{n}<\sum\limits_{k=2}^{n-1}d_{k}$，$(n\ge 3)$．由于 $0\le d_{n}<\abs{b_{n}}$，从 $\sum\limits_{n=1}^{\infty}b_{n}$ 绝对收敛，可知 $\sum\limits_{n=1}^{\infty}d_{n}$ 收敛，所以，由上式可知存在常数 $c$，使得
+\[
+  c\le \ln c_{n},\quad n\ge 3,
+\]
+即 $a_{n}\ge \dfrac{\ee^{c}}{n\ln n}$，$n\ge 3$．所以 $\sum\limits_{n=1}^{\infty}a_{n}$ 发散．
+
+(2)【思路二】由条件可得
+\[
+  \ln\frac{a_{n}}{a_{n+1}}
+  \le \ln\Bigl(1+\frac{1}{n}+\frac{1}{n\ln n}+\abs{b_{n}}\Bigr)
+  \le \frac{1}{n}+\frac{1}{n\ln n}+\abs{b_{n}}.
+\]
+从 $3$ 到 $n$ 求和，然后利用积分的性质可知存在常数 $C>0$，使得
+\[
+  \ln\frac{a_{3}}{a_{n+1}}
+  \le \sum_{k=3}^{n}\Bigl(\frac{1}{k}+\frac{1}{k\ln k}+\abs{b_{k}}\Bigr)
+  \le C+\ln n+\ln\ln n.
+\]
+于是 $a_{n+1}\ge \dfrac{a_{3}\ee^{C}}{n\ln n}$．所以 $\sum\limits_{n=1}^{\infty}a_{n}$ 发散．
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $f:\R\to(0,+\infty)$ 是一可微函数，且对所有 $x,y\in\R$，有
+\[
+  \abs{f'(x)-f'(y)}\le \abs{x-y}^{\alpha},
+\]
+其中 $\alpha\in(0,1)$ 是常数．
+
+求证：对所有 $x\in\R$，有
+\[
+  \abs{f'(x)}^{\frac{\alpha+1}{\alpha}}<\frac{\alpha+1}{\alpha}f(x).
+\]
+
+\begin{solution}
+对固定的 $x\in\R$，若 $f'(x)=0$，则成立．若 $f'(x)<0$，则
+\[
+  h=\bigl(-f'(x)\bigr)^{\frac{1}{\alpha}}>0.
+\]
+根据牛顿莱布尼茨公式和条件，得
+\begin{align*}
+  0<f(x+h)&=f(x)+\int_{x}^{x+h}f'(t)\dd t\\
+  &=f(x)+\int_{x}^{x+h}\bigl(f'(t)-f'(x)\bigr)\dd t+f'(x)h\\
+  &\le f(x)+\int_{x}^{x+h}(t-x)^{\alpha}\dd t+f'(x)h
+  =f(x)+\frac{1}{\alpha+1}h^{\alpha+1}+f'(x)h.
+\end{align*}
+故 $\dfrac{1}{\alpha+1}h^{\alpha+1}+f'(x)h+f(x)>0$．将 $h=\bigl(-f'(x)\bigr)^{\frac{1}{\alpha}}$ 代入，得
+\[
+  \abs{f'(x)}^{\frac{\alpha+1}{\alpha}}<\frac{\alpha+1}{\alpha}f(x).
+\]
+若 $f'(x)>0$，记 $h=\bigl(f'(x)\bigr)^{\frac{1}{\alpha}}$．根据牛顿莱布尼茨公式和条件，得
+\begin{align*}
+  0<f(x-h)&=-\int_{x-h}^{x}f'(t)\dd t+f(x)\\
+  &=\int_{x-h}^{x}\bigl(f'(x)-f'(t)\bigr)\dd t-f'(x)h+f(x)\\
+  &\le \int_{x-h}^{x}(x-t)^{\alpha}\dd t-f'(x)h+f(x)\\
+  &=\frac{1}{\alpha+1}h^{\alpha+1}-f'(x)h+f(x).
+\end{align*}
+将 $h=\bigl(f'(x)\bigr)^{\frac{1}{\alpha}}$ 代入上式仍得 $\bigl(f'(x)\bigr)^{\frac{\alpha+1}{\alpha}}<\dfrac{\alpha+1}{\alpha}f(x)$．
+
+总之，始终有 $\abs{f'(x)}^{\frac{\alpha+1}{\alpha}}<\dfrac{\alpha+1}{\alpha}f(x)$．证毕．
+\end{solution}

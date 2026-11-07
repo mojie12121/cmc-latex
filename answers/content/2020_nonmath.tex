@@ -1,0 +1,336 @@
+\answerpaper{非数学类}
+
+\answerproblem{一、}{30}
+填空题（每小题 6 分）：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim_{x\to 0}\frac{(x-\sin x)\ee^{-x^2}}{\sqrt{1-x^3}-1}=\underline{\hspace{6em}}$．
+  \item 设函数 $f(x)=(x+1)^n\ee^{-x^2}$，则 $f^{(n)}(-1)=\underline{\hspace{6em}}$．
+  \item 设 $y=f(x)$ 是由方程
+  \[
+    \arctan\frac{x}{y}=\ln\sqrt{x^2+y^2}-\frac{1}{2}\ln 2+\frac{\pi}{4}
+  \]
+  确定的隐函数，且满足 $f(1)=1$，则曲线 $y=f(x)$ 在点 $(1,1)$ 处的切线方程为 $\underline{\hspace{4em}}$．
+  \item 已知 $\displaystyle \int_0^{+\infty}\frac{\sin x}{x}\dd x=\frac{\pi}{2}$，则
+  \[
+    \int_0^{+\infty}\int_0^{+\infty}\frac{\sin x\sin(x+y)}{x(x+y)}\dd x\dd y=\underline{\hspace{8em}}.
+  \]
+  \item 设 $f(x)$，$g(x)$ 在 $x=0$ 的某一邻域 $U$ 内有定义，对任意 $x\in U$，$f(x)\neq g(x)$，且 $\displaystyle \lim_{x\to 0}f(x)=\lim_{x\to 0}g(x)=a>0$，则
+  \[
+    \lim_{x\to 0}\frac{[f(x)]^{g(x)}-[g(x)]^{g(x)}}{f(x)-g(x)}=\underline{\hspace{8em}}.
+  \]
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 利用等价无穷小：当 $x\to 0$ 时，有
+\[
+  \sqrt{1-x^3}-1\sim-\frac{1}{2}x^3,
+\]
+所以
+\begin{align*}
+\lim_{x\to0}\frac{(x-\sin x)\ee^{-x^2}}{\sqrt{1-x^3}-1}
+&=-2\lim_{x\to0}\frac{x-\sin x}{x^3}\\
+&=-2\lim_{x\to0}\frac{1-\cos x}{3x^2}
+=-\frac{1}{3}.
+\end{align*}
+
+\textbf{(2)} 利用莱布尼兹求导法则，得
+\[
+  f^{(n)}(x)=n!\ee^{-x^2}+\sum_{k=0}^{n-1}C_n^k[(x+1)^n]^{(k)}(\ee^{-x^2})^{(n-k)},
+\]
+所以
+\[
+  f^{(n)}(-1)=\frac{n!}{\ee}.
+\]
+
+\textbf{(3)} 对所给方程两端关于 $x$ 求导，得
+\[
+  \frac{\dfrac{y-xy'}{y^2}}{1+\left(\dfrac{x}{y}\right)^2}
+  =\frac{x+yy'}{x^2+y^2},
+\]
+即 $(x+y)y'=y-x$，所以 $f'(1)=0$，曲线 $y=f(x)$ 在点 $(1,1)$ 处的切线方程为 $y=1$．
+
+\textbf{(4)} 令 $u=x+y$，得
+\begin{align*}
+I&=\int_0^{+\infty}\frac{\sin x}{x}\dd x\int_0^{+\infty}\frac{\sin(x+y)}{x+y}\dd y
+=\int_0^{+\infty}\frac{\sin x}{x}\dd x\int_x^{+\infty}\frac{\sin u}{u}\dd u\\
+&=\int_0^{+\infty}\frac{\sin x}{x}\dd x\left(\int_0^{+\infty}\frac{\sin u}{u}\dd u-\int_0^x\frac{\sin u}{u}\dd u\right)\\
+&=\left(\int_0^{+\infty}\frac{\sin x}{x}\dd x\right)^2
+-\int_0^{+\infty}\frac{\sin x}{x}\dd x\int_0^x\frac{\sin u}{u}\dd u.
+\end{align*}
+令 $F(x)=\displaystyle\int_0^x\frac{\sin u}{u}\dd u$，则 $F'(x)=\frac{\sin x}{x}$，$\displaystyle\lim_{x\to+\infty}F(x)=\frac{\pi}{2}$，所以
+\[
+  I=\frac{\pi^2}{4}-\int_0^{+\infty}F(x)F'(x)\dd x
+  =\frac{\pi^2}{4}-\left.\frac{1}{2}[F(x)]^2\right|_0^{+\infty}
+  =\frac{\pi^2}{4}-\frac{1}{2}\left(\frac{\pi}{2}\right)^2
+  =\frac{\pi^2}{8}.
+\]
+
+\textbf{(5)} 根据极限的保号性，存在 $x=0$ 的一个去心邻域 $U_1$，使得 $x\in U_1$ 时 $f(x)>0$，$g(x)>0$．当 $x\to 0$ 时，有 $\ee^x-1\sim x$，$\ln(1+x)\sim x$，利用等价无穷小替换，得
+\begin{align*}
+&\lim_{x\to0}\frac{[f(x)]^{g(x)}-[g(x)]^{g(x)}}{f(x)-g(x)}\\
+&\quad=\lim_{x\to0}[g(x)]^{g(x)}
+\frac{\left(\dfrac{f(x)}{g(x)}\right)^{g(x)}-1}{f(x)-g(x)}
+=a^a\lim_{x\to0}\frac{\left(\dfrac{f(x)}{g(x)}\right)^{g(x)}-1}{f(x)-g(x)}\\
+&\quad=a^a\lim_{x\to0}\frac{\ee^{g(x)\ln\frac{f(x)}{g(x)}}-1}{f(x)-g(x)}
+=a^a\lim_{x\to0}\frac{g(x)\ln\frac{f(x)}{g(x)}}{f(x)-g(x)}\\
+&\quad=a^a\lim_{x\to0}\frac{g(x)\ln\left(1+\left(\dfrac{f(x)}{g(x)}-1\right)\right)}{f(x)-g(x)}
+=a^a\lim_{x\to0}\frac{g(x)\left(\dfrac{f(x)}{g(x)}-1\right)}{f(x)-g(x)}
+=a^a.
+\end{align*}
+\end{solution}
+
+\answerproblem{二、}{10}
+设数列 $\{a_n\}$ 满足：$a_1=1$，且
+\[
+  a_{n+1}=\frac{a_n}{(n+1)(a_n+1)},\qquad n\ge 1.
+\]
+求极限 $\displaystyle \lim_{n\to\infty}n!a_n$．
+\begin{solution}
+利用归纳法易知 $a_n>0$（$n\ge1$）．由于
+\begin{align*}
+\frac{1}{a_{n+1}}
+&=(n+1)\left(1+\frac{1}{a_n}\right)
+=(n+1)+(n+1)\frac{1}{a_n}\\
+&=(n+1)+(n+1)\left(n+n\frac{1}{a_{n-1}}\right)
+=(n+1)+(n+1)n+(n+1)n\frac{1}{a_{n-1}},
+\end{align*}
+如此递推，得
+\[
+  \frac{1}{a_{n+1}}=(n+1)!\left(\sum_{k=1}^{n}\frac{1}{k!}+\frac{1}{a_1}\right)
+  =(n+1)!\sum_{k=0}^{n}\frac{1}{k!},
+\]
+因此
+\[
+  \lim_{n\to\infty}n!a_n
+  =\frac{1}{\lim\limits_{n\to\infty}\sum\limits_{k=0}^{n-1}\frac{1}{k!}}
+  =\frac{1}{\ee}.
+\]
+\end{solution}
+
+\answerproblem{三、}{10}
+设 $f(x)$ 在 $[0,1]$ 上连续，$f(x)$ 在 $(0,1)$ 内可导，且 $f(0)=0$，$f(1)=1$．证明：
+\begin{enumerate}
+  \item 存在 $x_0\in(0,1)$ 使得 $f(x_0)=2-3x_0$；
+  \item 存在 $\xi,\eta\in(0,1)$，且 $\xi\neq\eta$，使得 $[1+f'(\xi)][1+f'(\eta)]=4$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 令 $F(x)=f(x)-2+3x$，则 $F(x)$ 在 $[0,1]$ 上连续，且 $F(0)=-2$，$F(1)=2$．根据连续函数介值定理，存在 $x_0\in(0,1)$ 使得 $F(x_0)=0$，即 $f(x_0)=2-3x_0$．
+
+\textbf{(2)} 在区间 $[0,x_0]$，$[x_0,1]$ 上利用拉格朗日中值定理，存在 $\xi,\eta\in(0,1)$，且 $\xi\neq\eta$，使得
+\[
+  \frac{f(x_0)-f(0)}{x_0-0}=f'(\xi),\qquad\text{且}\qquad
+  \frac{f(x_0)-f(1)}{x_0-1}=f'(\eta).
+\]
+所以
+\[
+  [1+f'(\xi)][1+f'(\eta)]=4.
+\]
+\end{solution}
+
+\answerproblem{四、}{12}
+已知 $z=xf\left(\dfrac{y}{x}\right)+2y\varphi\left(\dfrac{x}{y}\right)$，其中 $f$，$\varphi$ 均为二次可微函数．
+\begin{enumerate}
+  \item 求 $\dfrac{\partial z}{\partial x}$，$\dfrac{\partial^2 z}{\partial x\partial y}$；
+  \item 当 $f=\varphi$，且 $\left.\dfrac{\partial^2 z}{\partial x\partial y}\right|_{x=a}=-by^2$ 时，求 $f(y)$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)}
+\[
+  \frac{\partial z}{\partial x}=f\left(\frac{y}{x}\right)-\frac{y}{x}f'\left(\frac{y}{x}\right)+2\varphi'\left(\frac{x}{y}\right),
+\]
+\[
+  \frac{\partial^2 z}{\partial x\partial y}
+  =-\frac{y}{x^2}f''\left(\frac{y}{x}\right)-\frac{2x}{y^2}\varphi''\left(\frac{x}{y}\right).
+\]
+
+\textbf{(2)}
+\[
+  \left.\frac{\partial^2 z}{\partial x\partial y}\right|_{x=a}
+  =-\frac{y}{a^2}f''\left(\frac{y}{a}\right)-\frac{2a}{y^2}\varphi''\left(\frac{a}{y}\right)
+  =-by^2.
+\]
+因为 $f=\varphi$，所以
+\[
+  \frac{y}{a^2}f''\left(\frac{y}{a}\right)+\frac{2a}{y^2}f''\left(\frac{a}{y}\right)=by^2.
+\]
+令 $y=au$，则
+\[
+  \frac{u}{a}f''(u)+\frac{2}{au^2}f''\left(\frac{1}{u}\right)=a^2bu^2,
+  \quad\text{即}\quad
+  u^3f''(u)+2f''\left(\frac{1}{u}\right)=a^3bu^4.
+\]
+上式中以 $\dfrac{1}{u}$ 换 $u$ 得
+\[
+  2f''\left(\frac{1}{u}\right)+4u^3f''(u)=2a^3b\cdot\frac{1}{u}.
+\]
+联立二式，解得
+\[
+  -3u^3f''(u)=a^3b\left(u^4-\frac{2}{u}\right),
+\]
+所以
+\[
+  f''(u)=\frac{a^3b}{3}\left(\frac{2}{u^4}-u\right),
+\]
+从而有
+\[
+  f(u)=\frac{a^3b}{3}\left(\frac{1}{3u^2}-\frac{u^3}{6}\right)+C_1u+C_2.
+\]
+故
+\[
+  f(y)=\frac{a^3b}{3}\left(\frac{1}{3y^2}-\frac{y^3}{6}\right)+C_1y+C_2.
+\]
+\end{solution}
+
+\answerproblem{五、}{12}
+计算
+\[
+  I=\oint_{\Gamma}\left|\sqrt{3}y-x\right|\dd x-5z\dd z,
+\]
+曲线 $\Gamma:\begin{cases}x^2+y^2+z^2=8,\\ x^2+y^2=2z,\end{cases}$ 从 $z$ 轴正向往坐标原点看去取逆时针方向．
+\begin{solution}
+曲线 $\Gamma$ 也可表示为
+\[
+  \begin{cases}
+    z=2,\\
+    x^2+y^2=4,
+  \end{cases}
+\]
+所以 $\Gamma$ 的参数方程为
+\[
+  \begin{cases}
+    x=2\cos\theta,\\
+    y=2\sin\theta,\\
+    z=2,
+  \end{cases}
+\]
+参数的范围：$0\le\theta\le 2\pi$．
+
+注意到在曲线 $\Gamma$ 上 $\dd z=0$，所以
+\begin{align*}
+I&=-\int_0^{2\pi}|2\sqrt{3}\sin\theta-2\cos\theta|\,2\sin\theta\dd\theta\\
+&=-8\int_0^{2\pi}\left|\frac{\sqrt{3}}{2}\sin\theta-\frac{1}{2}\cos\theta\right|\sin\theta\dd\theta\\
+&=-8\int_0^{2\pi}\left|\cos\left(\theta+\frac{\pi}{3}\right)\right|\sin\theta\dd\theta\\
+&=-8\int_{\frac{\pi}{3}}^{2\pi+\frac{\pi}{3}}|\cos t|\sin\left(t-\frac{\pi}{3}\right)\dd t
+\quad\left(\text{代换：}t=\theta+\frac{\pi}{3}\right).
+\end{align*}
+根据周期函数的积分性质，得
+\[
+  I=-8\int_{-\pi}^{\pi}|\cos t|\sin\left(t-\frac{\pi}{3}\right)\dd t
+  =-4\int_{-\pi}^{\pi}|\cos t|(\sin t-\sqrt{3}\cos t)\dd t
+  =8\sqrt{3}\int_0^{\pi}|\cos t|\cos t\dd t.
+\]
+令 $u=t-\dfrac{\pi}{2}$，则
+\[
+  I=-8\sqrt{3}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}|\sin u|\sin u\dd u=0.
+\]
+\end{solution}
+
+\answerproblem{六、}{12}
+证明
+\[
+  f(n)=\sum_{m=1}^{n}\int_0^m\cos\frac{2\pi n[x+1]}{m}\dd x
+\]
+等于 $n$ 的所有因子（包括 $1$ 和 $n$ 本身）之和，其中 $[x+1]$ 表示不超过 $x+1$ 的最大整数，并计算 $f(2021)$．
+\begin{solution}
+\begin{align*}
+\int_0^m\cos\frac{2\pi n[x+1]}{m}\dd x
+&=\sum_{k=1}^{m}\int_{k-1}^{k}\cos\frac{2\pi n[x+1]}{m}\dd x\\
+&=\sum_{k=1}^{m}\int_{k-1}^{k}\cos\frac{2\pi nk}{m}\dd x
+=\sum_{k=1}^{m}\cos\left(k\cdot\frac{2\pi n}{m}\right).
+\end{align*}
+如果 $m$ 是 $n$ 的因子，那么
+\[
+  \int_0^m\cos\frac{2\pi n[x+1]}{m}\dd x=m;
+\]
+否则，根据三角恒等式
+\[
+  \sum_{k=1}^{m}\cos kt=\cos\left(\frac{m+1}{2}t\right)\cdot\frac{\sin\dfrac{mt}{2}}{\sin\dfrac{t}{2}},
+\]
+有
+\[
+  \int_0^m\cos\frac{2\pi n[x+1]}{m}\dd x
+  =\cos\left(\frac{m+1}{2}\cdot\frac{2\pi n}{m}\right)\cdot
+  \frac{\sin\left(\dfrac{m}{2}\cdot\dfrac{2\pi n}{m}\right)}{\sin\dfrac{2\pi n}{2m}}
+  =0,
+\]
+因此得证．由此可得
+\[
+  f(2021)=1+43+47+2021=2112.
+\]
+\end{solution}
+
+\answerproblem{七、}{14}
+设
+\[
+  u_n=\int_0^1\frac{\dd t}{(1+t^4)^n}\quad(n\ge 1).
+\]
+\begin{enumerate}
+  \item 证明数列 $\{u_n\}$ 收敛，并求极限 $\displaystyle \lim_{n\to\infty}u_n$；
+  \item 证明级数 $\displaystyle \sum_{n=1}^{\infty}(-1)^nu_n$ 条件收敛；
+  \item 证明当 $p\ge 1$ 时级数 $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{n^p}$ 收敛，并求级数 $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{n}$ 的和．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)} 对任意 $\varepsilon>0$，取 $0<a<\dfrac{\varepsilon}{2}$，将积分区间分成两段，得
+\[
+  u_n=\int_0^1\frac{\dd t}{(1+t^4)^n}
+  =\int_0^a\frac{\dd t}{(1+t^4)^n}+\int_a^1\frac{\dd t}{(1+t^4)^n}.
+\]
+因为
+\[
+  \int_a^1\frac{\dd t}{(1+t^4)^n}
+  \le\frac{1-a}{(1+a^4)^n}<\frac{1}{(1+a^4)^n}\to0\quad(n\to\infty),
+\]
+所以存在正整数 $N$，当 $n>N$ 时，$\displaystyle\int_a^1\frac{\dd t}{(1+t^4)^n}<\frac{\varepsilon}{2}$，从而
+\[
+  0\le u_n<a+\int_a^1\frac{\dd t}{(1+t^4)^n}<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon,
+\]
+所以 $\displaystyle\lim_{n\to\infty}u_n=0$．
+
+\textbf{(2)} 显然
+\[
+  0<u_{n+1}=\int_0^1\frac{\dd t}{(1+t^4)^{n+1}}
+  \le\int_0^1\frac{\dd t}{(1+t^4)^n}=u_n,
+\]
+即 $u_n$ 单调递减，又 $\displaystyle\lim_{n\to\infty}u_n=0$，故由莱布尼兹判别法知，$\displaystyle\sum_{n=1}^{\infty}(-1)^nu_n$ 收敛．
+
+另一方面，当 $n\ge2$ 时，有
+\[
+  u_n=\int_0^1\frac{\dd t}{(1+t^4)^n}
+  \ge\int_0^1\frac{\dd t}{(1+t)^n}
+  =\frac{1}{n-1}\left(1-2^{1-n}\right),
+\]
+由于 $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n-1}$ 发散，$\displaystyle\sum_{n=2}^{\infty}\frac{1}{n-1}\cdot\frac{1}{2^{n-1}}$ 收敛，所以
+\[
+  \sum_{n=2}^{\infty}\frac{1}{n-1}\left(1-\frac{1}{2^{n-1}}\right)
+\]
+发散，从而 $\displaystyle\sum_{n=1}^{\infty}u_n$ 发散．因此 $\displaystyle\sum_{n=1}^{\infty}(-1)^nu_n$ 条件收敛．
+
+\textbf{(3)} 先求级数 $\displaystyle\sum_{n=1}^{\infty}\frac{u_n}{n}$ 的和．因为
+\begin{align*}
+u_n&=\int_0^1\frac{\dd t}{(1+t^4)^n}
+=\left.\frac{t}{(1+t^4)^n}\right|_0^1+n\int_0^1\frac{4t^4}{(1+t^4)^{n+1}}\dd t
+=\frac{1}{2^n}+4n\int_0^1\frac{t^4}{(1+t^4)^{n+1}}\dd t\\
+&=\frac{1}{2^n}+4n\int_0^1\frac{1+t^4-1}{(1+t^4)^{n+1}}\dd t
+=\frac{1}{2^n}+4n(u_n-u_{n+1}),
+\end{align*}
+所以
+\[
+  \sum_{n=1}^{\infty}\frac{u_n}{n}
+  =\sum_{n=1}^{\infty}\frac{1}{n2^n}+4\sum_{n=1}^{\infty}(u_n-u_{n+1})
+  =\sum_{n=1}^{\infty}\frac{1}{n2^n}+4u_1.
+\]
+利用展开式
+\[
+  \ln(1+x)=\sum_{n=1}^{\infty}(-1)^{n-1}\frac{x^n}{n},
+\]
+取 $x=-\dfrac{1}{2}$，得 $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n2^n}=\ln 2$．而
+\[
+  u_1=\int_0^1\frac{\dd t}{1+t^4}
+  =\frac{\sqrt{2}}{8}\left[\pi+2\ln(1+\sqrt{2})\right].
+\]
+因此
+\[
+  \sum_{n=1}^{\infty}\frac{u_n}{n}
+  =\ln 2+\frac{\sqrt{2}}{2}\left[\pi+2\ln(1+\sqrt{2})\right].
+\]
+最后，当 $p\ge1$ 时，因为 $\dfrac{u_n}{n^p}\le\dfrac{u_n}{n}$，且 $\displaystyle\sum_{n=1}^{\infty}\frac{u_n}{n}$ 收敛，所以 $\displaystyle\sum_{n=1}^{\infty}\frac{u_n}{n^p}$ 收敛．
+\end{solution}

@@ -1,0 +1,38 @@
+\paper{数学 A 类}
+
+\begin{problems}
+
+\item[一、]（本题 15 分）设 $N(0,0,1)$ 是球面 $S:x^2+y^2+z^2=1$ 的北极点．$A(a_1,a_2,0)$，$B(b_1,b_2,0)$，$C(c_1,c_2,0)$ 为 $xOy$ 平面上不同的三点．设连接 $N$ 与 $A,B,C$ 的三直线依次交球面 $S$ 于点 $A_1,B_1$ 与 $C_1$．
+\begin{enumerate}
+  \item 求连接 $N$ 与 $A$ 两点的直线方程．
+  \item 求点 $A_1,B_1$ 与 $C_1$ 的坐标．
+  \item 给定点 $A(1,-1,0)$，$B(-1,1,0)$，$C(1,1,0)$，求四面体 $NA_1B_1C_1$ 的体积．
+\end{enumerate}
+
+\item[二、]（本题 15 分）求极限
+\[
+  \lim_{n\to\infty}\frac{\ln n}{\ln\bigl(1^{2020}+2^{2020}+\cdots+n^{2020}\bigr)}.
+\]
+
+\item[三、]（本题 15 分）设 $A,B$ 均为 2020 阶正交矩阵，齐次线性方程组 $Ax=Bx\ (x\in\R^{2020})$ 的解空间维数为 $3$．问：矩阵 $A,B$ 是否可能相似？证明你的结论．
+
+\item[四、]（本题 20 分）称非常值一元 $n$ 次多项式（合并同类项后）的 $n-1$ 次项（可能为 $0$）为第二项．求所有 2020 次复系数首一多项式 $f(x)$，满足对 $f(x)$ 的每个复根 $x_k$，都存在非常值复系数首一多项式 $g_k(x)$ 和 $h_k(x)$，使得 $f(x)=(x-x_k)g_k(x)h_k(x)$，且 $g_k(x)$ 与 $h_k(x)$ 的第二项系数相等．
+
+\item[五、]（本题 15 分）设 $\varphi$ 是 $\R$ 上严格单调增加的连续函数，$\psi$ 是 $\varphi$ 的反函数，实数列 $\{x_n\}$ 满足
+\[
+  x_{n+2}=\psi\Bigl(\Bigl(1-\frac{1}{\sqrt{n}}\Bigr)\varphi(x_n)+\frac{1}{\sqrt{n}}\varphi(x_{n+1})\Bigr),\qquad n\geqslant 2.
+\]
+证明 $\{x_n\}$ 收敛或举例说明 $\{x_n\}$ 有可能发散．
+
+\item[六、]（本题 20 分）对于有界区间 $[a,b]$ 的划分
+$P:a=x_0<x_1<\cdots<x_{n+1}=b$，其范数定义为 $\|P\|=\max\limits_{0\leqslant k\leqslant n}(x_{k+1}-x_k)$．现设 $[a,b]$ 上函数 $f$ 满足 Lipschitz 条件，即存在常数 $M>0$ 使得对任何 $x,y\in[a,b]$，成立 $|f(x)-f(y)|\leqslant M|x-y|$．定义
+\[
+  s(f;P)\equiv\sum_{k=0}^{n}\sqrt{|x_{k+1}-x_k|^2+|f(x_{k+1})-f(x_k)|^2}.
+\]
+若 $\lim\limits_{\|P\|\to 0^+}s(f;P)$ 存在，则称曲线 $y=f(x)$ 可求长．记 $P_n$ 为 $[a,b]$ 的 $2^n$ 等分．证明：
+\begin{enumerate}
+  \item $\lim\limits_{n\to\infty}s(f;P_n)$ 存在．
+  \item 曲线 $y=f(x)$ 可求长．
+\end{enumerate}
+
+\end{problems}

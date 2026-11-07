@@ -1,0 +1,257 @@
+\answerpaper{数学 A 类}
+
+\answerproblem{一、}{15}
+在空间直角坐标系中已知单叶双曲面 $S$ 的方程为 $x^2+y^2-z^2=1$。求过 $P=(1,1,1)$ 点落在单叶双曲面 $S$ 上的两条直线之间的夹角。
+\begin{solution}
+设过 $P$ 点直线的方向向量（单位向量）为
+\begin{equation}\tag{1}
+v=(a,b,c),\quad a^2+b^2+c^2=1,\ c>0,
+\end{equation}
+则直线的参数方程为
+\[
+(x,y,z)=(1,1,1)+(a,b,c)t,\qquad t\in\R.
+\]
+设它整体落在单叶双曲面 $S$ 上，代入 $S$ 的方程，得到
+\[
+(1+at)^2+(1+bt)^2-(1+ct)^2=1,\qquad t\in\R.
+\]
+\[
+2(a+b-c)t+(a^2+b^2-c^2)t^2=0,\qquad t\in\R.
+\]
+于是得到
+\begin{equation}\tag{2}
+a+b-c=0,\quad a^2+b^2-c^2=0.
+\end{equation}
+由方程 (1) 和 (2) 得到
+\[
+c=\frac{\sqrt2}{2},\quad a^2+b^2=\frac12,\quad a+b=\frac{\sqrt2}{2}.
+\]
+由此求得两个直线方向
+\[
+v_1=(a,b,c)=\left(\frac{\sqrt2}{2},0,\frac{\sqrt2}{2}\right),\qquad
+v_2=(a,b,c)=\left(0,\frac{\sqrt2}{2},\frac{\sqrt2}{2}\right),
+\]
+得到两条过 $P$ 且落在单叶双曲面 $S$ 上的直线
+\[
+(x,y,z)=(1,1,1)+v_1t,\qquad (x,y,z)=(1,1,1)+v_2t.
+\]
+这两条直线的夹角 $\theta$ 满足
+\[
+\cos\theta=v_1\cdot v_2=\frac12.
+\]
+故两直线夹角为 $60^\circ$（或 $120^\circ$，跟直线定向有关）。
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $\lim\limits_{n\to+\infty}\frac{a_n}{n^2}=a$，$\lim\limits_{n\to+\infty}\frac{b_n}{n^2}=b$。证明极限
+$\lim\limits_{n\to+\infty}\frac{1}{n^5}\sum\limits_{k=0}^{n}a_kb_{n-k}$
+存在并求其值。
+\begin{solution}
+对于 $n\ge1$，记 $A_n=\frac{a_n}{n^2}-a$，$B_n=\frac{b_n}{n^2}-b$。则
+$\lim\limits_{n\to+\infty}A_n=\lim\limits_{n\to+\infty}B_n=0$，从而 $\{A_n\},\{B_n\}$ 有界。记
+\[
+M=\sup_{n\ge1}\left(|A_n|+|B_n|\right)+|a|+|b|.
+\]
+由 Stolz 公式或利用定积分，我们有
+\begin{align*}
+\lim_{n\to+\infty}\frac{1}{n^5}\sum_{k=0}^{n}k^2(n-k)^2
+&=\lim_{n\to+\infty}\left(\sum_{k=0}^{n}\frac{k^2}{n^3}-2\sum_{k=0}^{n}\frac{k^3}{n^4}+\sum_{k=0}^{n}\frac{k^4}{n^5}\right)\\
+&=\frac13-\frac24+\frac15=\frac{1}{30}.
+\end{align*}
+另一方面，对于 $n\ge2$，有
+\begin{align*}
+&\left|\frac{1}{n^5}\sum_{k=0}^{n}a_kb_{n-k}-\frac{ab}{n^5}\sum_{k=1}^{n-1}k^2(n-k)^2-\frac{a_0b_n+a_nb_0}{n^5}\right|\\
+&\qquad=\left|\frac{1}{n^5}\sum_{k=1}^{n-1}k^2(n-k)^2\left(A_kB_{n-k}+bA_k+aB_{n-k}\right)\right|\\
+&\qquad\le\frac{M}{n}\sum_{k=1}^{n-1}\left(|A_k|+|B_k|\right).
+\end{align*}
+由 Stolz 公式，
+\[
+\lim_{n\to+\infty}\frac{M}{n}\sum_{k=1}^{n-1}\left(|A_k|+|B_k|\right)
+=\lim_{n\to+\infty}M\left(|A_n|+|B_n|\right)=0.
+\]
+因此，
+\[
+\lim_{n\to+\infty}\frac{1}{n^5}\sum_{k=0}^{n}a_kb_{n-k}
+=ab\lim_{n\to+\infty}\frac{1}{n^5}\sum_{k=1}^{n-1}k^2(n-k)^2=\frac{ab}{30}.
+\]
+\end{solution}
+
+\answerproblem{三、}{15}
+设 $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$，矩阵 $B$ 与 $A$ 可交换，其元素均为正整数且行列式为 $1$。证明存在正整数 $k$ 使得 $B=A^k$。
+\begin{solution}
+令
+\[
+B=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\]
+由于 $B$ 与 $A$ 可交换，可得 $c=b$，$d=a-b$。$B$ 的元素均为正整数，故 $a,b$ 为正整数且 $a>b$。再由 $\det B=1$ 得到
+\[
+a^2-ab-b^2=1.
+\]
+若 $b=1$，则由 $a^2-ab-b^2=1$ 易得 $a=2$，因此
+\[
+B=\begin{pmatrix}2&1\\1&1\end{pmatrix}=A.
+\]
+若 $b>1$，考察矩阵
+\[
+B_1=A^{-1}B=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}\begin{pmatrix}a&b\\b&a-b\end{pmatrix}
+=\begin{pmatrix}a-b&2b-a\\2b-a&2a-3b\end{pmatrix}.
+\]
+令 $a_1=a-b$，$b_1=2b-a$，则有 $2a-3b=a_1-b_1$，即
+\[
+B_1=\begin{pmatrix}a_1&b_1\\b_1&a_1-b_1\end{pmatrix}.
+\]
+显然 $a_1$ 为正整数。注意到 $a^2-ab-b^2=1$，若 $a\ge2b$，则有 $1+b^2=a^2-ab=a(a-b)\ge2b^2$，即 $b^2\le1$，矛盾，由此得到 $b_1=2b-a$ 也是正整数。显然 $a_1^2-a_1b_1-b_1^2=\det B_1=(\det A)^{-1}\det B=1$，即 $a_1(a_1-b_1)=1+b_1^2>0$，从而 $a_1>b_1$。这表明矩阵 $B_1$ 中的元素 $a_1,b_1$ 满足矩阵 $B$ 中元素 $a,b$ 所满足的条件，但是 $b_1=b-(a-b)<b$。若 $b_1>1$，则类似地矩阵
+\[
+B_2=A^{-1}B_1=(A^{-1})^2B=\begin{pmatrix}a_2&b_2\\b_2&a_2-b_2\end{pmatrix}
+\]
+中的元素 $a_2,b_2$ 也满足矩阵 $B$ 中元素 $a,b$ 所满足的条件，但是 $b_2<b_1<b$。继续进行下去，通过左乘 $A^{-1}$ 有限次，比如 $s$ 次后可以使得得到的矩阵
+\[
+B_s=(A^{-1})^sB=\begin{pmatrix}a_s&b_s\\b_s&a_s-b_s\end{pmatrix}
+\]
+中的元素 $a_s,b_s$ 满足 $a_s>b_s>0$，$a_s^2-a_sb_s-b_s^2=1$ 且 $b_s$ 为最小正整数，即 $b_s=1$。由前面的证明得到 $B_s=A$，从而 $B=A^{s+1}$，令 $k=s+1$ 即可。
+\end{solution}
+
+\answerproblem{四、}{20}
+设 $n\ge2$ 为正整数，证明多项式 $f(x)=x^n-x-1$ 在有理数域 $\Q$ 上不可约。
+\begin{solution}
+对任意多项式 $F(x)=a_mx^m+a_{m-1}x^{m-1}+\cdots+a_1x+a_0$，用 $\widetilde F(x)$ 表示 $F(x)$ 的互反多项式，即
+\[
+\widetilde F(x)=a_0x^m+a_1x^{m-1}+\cdots+a_{m-1}x+a_m=x^{\deg F}F\left(\frac1x\right).
+\]
+显然有 $\widetilde{\widetilde F}(x)=F(x)$ 且若 $F(x)=G(x)H(x)$ 为多项式 $G(x)$ 和 $H(x)$ 的乘积，则 $\widetilde F(x)=\widetilde G(x)\widetilde H(x)$ 是互反多项式 $\widetilde G(x)$ 和 $\widetilde H(x)$ 的乘积。
+
+下面证明 $f(x)=x^n-x-1$ 在有理数域 $\Q$ 上不可约。若 $n=2$，则结论显然成立。
+
+下面设 $n\ge3$。若 $f(x)$ 在 $\Q$ 上可约，由于 $f(x)$ 本原，所以存在整系数多项式 $g(x),h(x)\in\Z[x]$ 使得 $f(x)=g(x)h(x)$ 且 $1\le\deg g(x)=r<n$。这时 $\deg h(x)=n-r$。进一步地，由于 $f(x)$ 的首项系数为 $1$，常数项为 $-1$，我们可以假设 $g(x)$ 和 $h(x)$ 的首项系数均为 $1$，而它们的常数项只能是 $\pm1$。
+
+令 $k(x)=g(x)\widetilde h(x)\in\Z[x]$，即由于 $\deg\widetilde h(x)=\deg h(x)=n-r$，我们有 $\deg k(x)=n$，且
+\begin{equation}\tag{1}
+k(x)\widetilde k(x)=g(x)\widetilde h(x)\widetilde g(x)h(x)=f(x)\widetilde f(x).
+\end{equation}
+显然 $\widetilde f(x)=-x^n-x^{n-1}+1$，所以
+\[
+f(x)\widetilde f(x)=-x^{2n}-x^{2n-1}+x^{n+1}+3x^n+x^{n-1}-x-1.
+\]
+记 $k(x)=b_nx^n+b_{n-1}x^{n-1}+\cdots+b_1x+b_0$，则显然有 $b_n,b_0=\pm1$。比较 (1) 式两端 $x^n$ 的系数得到
+\[
+b_0^2+b_1^2+\cdots+b_{n-1}^2+b_n^2=3,
+\]
+所以 $b_1^2+\cdots+b_{n-1}^2=1$。由于 $b_1,\cdots,b_{n-1}$ 均为整数，所以 $b_1,\cdots,b_{n-1}$ 中恰有一个为 $\pm1$ 而其余均为 $0$，即 $k(x)$ 形如
+\[
+k(x)=b_nx^n+b_ix^i+b_0,\quad 1\le i\le n-1,
+\]
+且 $b_n,b_i,b_0=\pm1$。由此得到
+\[
+k(x)\widetilde k(x)=b_nb_0x^{2n}+b_nb_ix^{2n-i}+b_ib_0x^{n+i}+3x^n+b_nb_ix^i+b_ib_0x^{n-i}+b_nb_0.
+\]
+下面看 (1) 式中次数 $<n$ 的各项系数，常数项 $b_nb_0=-1$，由此得到 $b_0=-b_n$。又由 $n\ge3$ 有 $n>n-1>1$，所以 $n-i\ne i$。若 $n-i>i$，则有 $i=1$ 且 $b_i=b_0=-b_n$，这时
+\[
+k(x)=b_nx^n-b_nx-b_n=b_nf(x).
+\]
+若 $n-i<i$，则有 $i=n-1$ 且 $b_i=b_n=-b_0$，这时
+\[
+k(x)=b_nx^n+b_nx^{n-1}-b_n=-b_n\widetilde f(x).
+\]
+这样我们证明了 $k(x)=\pm f(x)$ 或者 $k(x)=\pm\widetilde f(x)$。
+
+若 $k(x)=\pm f(x)$，则有 $\widetilde h(x)=\pm h(x)$。故 $h(x)$ 的任一复根就是 $f(x)$ 和 $\widetilde f(x)$ 的公共根。类似地，若 $k(x)=\pm\widetilde f(x)$，则有 $\widetilde g(x)=\pm g(x)$。故 $g(x)$ 的任一复根也是 $f(x)$ 和 $\widetilde f(x)$ 的公共根。这表明不论哪种情况，$f(x)$ 和 $\widetilde f(x)$ 都有公共根。
+
+设 $\alpha$ 是 $f(x)$ 和 $\widetilde f(x)$ 的一个公共根，则有 $\alpha\ne0$，$\alpha^n=\alpha+1$ 且 $\alpha^n=-\alpha^{n-1}+1$，由此得到 $\alpha^{n-1}=-\alpha$，即 $\alpha^n=-\alpha^2$。从而 $\alpha^2+\alpha+1=0$，故 $\alpha^3=1$，所以 $\alpha^n=1,\alpha$ 或者 $\alpha^2$。若 $\alpha^n=1$，则有 $1=\alpha+1$，即 $\alpha=0$，矛盾。若 $\alpha^n=\alpha$，则有 $\alpha=\alpha+1$，矛盾。若 $\alpha^n=\alpha^2$，则有 $\alpha^2=-\alpha^2$，即 $\alpha=0$，矛盾。所以 $f(x)=x^n-x-1$ 在 $\Q$ 上不可约。
+
+注：也可以利用多项式 $f(x)$ 与 $\widetilde f(x)$ 互素来说明 $f(x)$ 和 $\widetilde f(x)$ 没有公共根。
+\end{solution}
+
+\answerproblem{五、}{15}
+设 $\lim\limits_{n\to+\infty}\beta_n=0$，函数 $f$ 在 $[-1,2]$ 上有界，在 $[0,1]$ 上 Riemann 可积。证明：
+$\lim\limits_{n\to+\infty}\frac{1}{n}\sum\limits_{k=1}^{n}f\left(\frac{k}{n}+\beta_n\right)=\int_0^1f(x)\dd x$。
+\begin{solution}
+记 $M=\sup\limits_{x\in[-1,2]}|f(x)|$，$m_n=[n|\beta_n|]+1$。则 $\lim\limits_{n\to+\infty}\frac{m_n}{n}=0$。从而存在 $N\ge1$ 使得当 $n\ge N$ 时，$2m_n\le n$。考虑 $n\ge3N+3$，我们有
+\begin{align*}
+&n\left|\int_{\frac{k}{n}+\beta_n}^{\frac{k+1}{n}+\beta_n}\left(f\left(\frac{k}{n}+\beta_n\right)-f(x)\right)\dd x\right|\\
+&\quad\le\sup_{t\in\left[\frac{k}{n}+\beta_n,\frac{k+1}{n}+\beta_n\right]}f(t)-\inf_{t\in\left[\frac{k}{n}+\beta_n,\frac{k+1}{n}+\beta_n\right]}f(t)\\
+&\quad\le\left(\sup_{t\in\left[\frac{k}{n}-|\beta_n|,\frac{k+1}{n}-|\beta_n|\right]}f(t)-\inf_{t\in\left[\frac{k}{n}-|\beta_n|,\frac{k+1}{n}-|\beta_n|\right]}f(t)\right)\\
+&\quad\qquad+\left(\sup_{t\in\left[\frac{k}{n}+|\beta_n|,\frac{k+1}{n}+|\beta_n|\right]}f(t)-\inf_{t\in\left[\frac{k}{n}+|\beta_n|,\frac{k+1}{n}+|\beta_n|\right]}f(t)\right),\qquad m_n\le k\le n-m_n.
+\end{align*}
+因此
+\begin{align*}
+&\left|\frac{1}{n}\sum_{k=1}^{n}f\left(\frac{k}{n}+\beta_n\right)-\int_0^1f(x)\dd x\right|\\
+&\quad\le\left|\frac{1}{n}\sum_{k=m_n}^{n-m_n}f\left(\frac{k}{n}+\beta_n\right)-\int_{\frac{m_n}{n}+\beta_n}^{1-\frac{m_n}{n}+\beta_n}f(x)\dd x\right|+\frac{6m_n}{n}\\
+&\quad=\left|\frac{1}{n}\sum_{k=m_n}^{n-m_n}\int_{\frac{k}{n}+\beta_n}^{\frac{k+1}{n}+\beta_n}\left(f\left(\frac{k}{n}+\beta_n\right)-f(x)\right)\dd x\right|+\frac{6m_n}{n}\\
+&\quad\le\left(U(f;P_n)-L(f;P_n)\right)+\left(U(f;Q_n)-L(f;Q_n)\right)+\frac{6m_n}{n},
+\end{align*}
+其中 $U(f,P)$ 以及 $L(f,P)$ 依次表示 $f$ 对应于 $[0,1]$ 的划分 $P$ 的 Darboux 上和与 Darboux 下和，$P_n$ 表示分点为
+\[
+\left\{\frac{k}{n}-|\beta_n|\,\middle|\,n|\beta_n|\le k\le n\right\}\cup\{a,b\}
+\]
+的划分，$Q_n$ 表示分点为
+\[
+\left\{\frac{k}{n}+|\beta_n|\,\middle|\,1\le k\le n-n|\beta_n|\right\}\cup\{a,b\}
+\]
+的划分。于是由 $f$ 在 $[0,1]$ 的可积性以及 $\lim\limits_{n\to+\infty}\frac{m_n}{n}=0$ 得到结论。
+\end{solution}
+
+\answerproblem{六、}{20}
+设 $f$ 在 $[0,+\infty)$ 的任意闭区间上 Riemann 可积。对于 $x\ge0$，定义
+\[
+F(x)=\int_0^xt^\alpha f(t+x)\dd t.
+\]
+\begin{enumerate}
+  \item 若 $\alpha\in(-1,0)$ 且 $\lim\limits_{x\to+\infty}f(x)=A$，证明：$F$ 在 $[0,+\infty)$ 上一致连续。
+  \item 若 $\alpha\in(0,1)$，$f$ 以 $T>0$ 为周期，$\int_0^3f(t)\dd t=2022$。证明：$F$ 在 $[0,+\infty)$ 上非一致连续。
+\end{enumerate}
+\begin{solution}
+（1）由题设，$f$ 有界。记 $M=\sup\limits_{x\ge0}|f(x)|$。对于 $y>x\ge0$，记 $\delta=y-x$，我们有
+\begin{align*}
+|F(y)-F(x)|
+&=\left|\int_0^{x+\delta}t^\alpha f(t+x+\delta)\dd t-\int_0^xt^\alpha f(t+x)\dd t\right|\\
+&\le2M\int_x^{x+\delta}t^\alpha\dd t+M\int_0^{\delta}t^\alpha\dd t
++\left|\int_0^xt^\alpha f(t+x+\delta)\dd t-\int_\delta^{x+\delta}t^\alpha f(t+x)\dd t\right|\\
+&\le3M\int_0^{\delta}t^\alpha\dd t+M\int_0^x\left(t^\alpha-(t+\delta)^\alpha\right)\dd t\\
+&=\frac{3M}{1+\alpha}\delta^{1+\alpha}+\frac{M}{1+\alpha}\left(x^{1+\alpha}-(x+\delta)^{1+\alpha}+\delta^{1+\alpha}\right)\\
+&\le\frac{4M}{1+\alpha}\delta^{1+\alpha}=\frac{4M}{1+\alpha}|y-x|^{1+\alpha}.
+\end{align*}
+因此，$F$ 在 $[0,+\infty)$ 上一致连续。
+
+（2）我们指出，若函数 $g$ 在 $[0,+\infty)$ 上一致连续，则 $g$ 是“线性增长”的，即存在常数 $C_1,C_2$ 使得
+\[
+|g(x)|\le C_1+C_2x,\qquad \forall x\ge0.
+\]
+具体地，有 $\delta_0>0$ 使得
+\[
+|g(x)-g(y)|\le1,\qquad \forall0\le x\le y<x+\delta_0.
+\]
+因此，对于任何 $x\ge0$，
+\[
+|g(x)|\le|g(0)|+\left[\frac{x}{\delta_0}\right]+1\le|g(0)|+1+\frac{x}{\delta_0}.
+\]
+记 $A=\frac{1}{T}\int_0^Tf(t)\dd t$，$G(x)=\int_0^x\left(f(t)-A\right)\dd t$。则 $G(T)=G(0)=0$。由此易见 $G$ 以 $T$ 为周期。从而 $G$ 有界。设 $M=\max\limits_{x\in[0,T]}|G(x)|$。
+
+若 $A\ne0$，则
+\begin{align*}
+\left|\int_0^xt^\alpha f(t+x)\dd t\right|
+&\ge\frac{|A|}{1+\alpha}x^{1+\alpha}-\left|\int_0^xt^\alpha\left(f(t+x)-A\right)\dd t\right|\\
+&=\frac{|A|}{1+\alpha}x^{1+\alpha}-\left|x^\alpha G(2x)-\alpha\int_0^xt^{\alpha-1}G(t+x)\dd t\right|\\
+&\ge\frac{|A|}{1+\alpha}x^{1+\alpha}-2Mx^\alpha,\qquad \forall x\ge0.
+\end{align*}
+因此，$F$ 在 $[0,+\infty)$ 上非线性增长，从而 $F$ 在 $[0,+\infty)$ 上非一致连续。
+
+若 $A=0$，则
+\[
+F(x)=x^\alpha G(2x)-\alpha\int_0^xt^{\alpha-1}G(t+x)\dd t,\qquad \forall x\ge0.
+\]
+由我们在（1）的证明中所证明的结果可见，只要说明 $H(x)=x^\alpha G(2x)$ 在 $[0,+\infty)$ 上非一致连续。由题设，$G(3)=2022$，而 $G(0)=0$，因此，$G$ 不恒为常数。于是对于任何 $\delta>0$，有 $s\in(0,\delta)$ 以及 $X\ge0$ 使得 $G(2X+2s)\ne G(2X)$。从而
+\begin{align*}
+&|H(X+s+nT)-H(X+nT)|\\
+&\quad=\left|(X+s+nT)^\alpha G(2X+2s+2nT)-(X+nT)^\alpha G(2X+2nT)\right|\\
+&\quad\ge\left|(X+nT)^\alpha\left(G(2X+2s+2nT)-G(2X+2nT)\right)\right|\\
+&\quad\qquad-\left|G(2X+2s+2nT)\left((X+s+nT)^\alpha-(X+nT)^\alpha\right)\right|\\
+&\quad\ge(X+nT)^\alpha\left|G(2X+2s)-G(2X)\right|-Ms^\alpha,\qquad \forall n\ge1.
+\end{align*}
+特别，
+\[
+\lim_{n\to+\infty}\left|H(X+s+nT)-H(X+nT)\right|=+\infty.
+\]
+因此，$H$ 在 $[0,+\infty)$ 上非一致连续，从而 $F$ 在 $[0,+\infty)$ 上非一致连续。
+
+注：本题证明路径多，请注意证明中出现的 $x^\alpha,x^{1+\alpha}$ 的单调性（单增还是单减），以及 $\int_0^1t^s\dd s$ 的收敛性。
+\end{solution}

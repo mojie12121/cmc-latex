@@ -1,0 +1,43 @@
+\paper{数学 A 类}
+
+\begin{problems}
+
+\item[一、]（本题 15 分）设不全为零的 $a,b,c\in\R$，求直线
+\[
+  \frac{x-1}{a}=\frac{y-1}{b}=\frac{z-1}{c}
+\]
+绕 $z$ 轴旋转所得的旋转曲面方程．
+
+\item[二、]（本题 15 分）设 $B\subset\R^n\ (n\ge 2)$ 是单位开球，函数 $u,v$ 在 $\overline{B}$ 上连续，在 $B$ 内二阶连续可导，满足
+\[
+  \begin{cases}
+    -\Delta u-(1-u^2-v^2)u=0, & x\in B,\\
+    -\Delta v-(1-u^2-v^2)v=0, & x\in B,\\
+    u(x)=v(x)=0, & x\in\partial B,
+  \end{cases}
+\]
+其中 $x=(x_1,x_2,\cdots,x_n)$，$\Delta u=\dfrac{\partial^2u}{\partial x_1^2}+\dfrac{\partial^2u}{\partial x_2^2}+\cdots+\dfrac{\partial^2u}{\partial x_n^2}$，$\partial B$ 表示 $B$ 的边界．证明：$u^2(x)+v^2(x)\le 1$（$\forall x\in\overline{B}$）．
+
+\item[三、]（本题 15 分）设
+\[
+  f(x)=x^{2021}+a_{2020}x^{2020}+a_{2019}x^{2019}+\cdots+a_2x^2+a_1x+a_0
+\]
+为整系数多项式，$a_0\ne 0$．设对任意 $0\le k\le 2020$ 有 $|a_k|\le 40$，证明：$f(x)=0$ 的根不可能全为实数．
+
+\item[四、]（本题 20 分）设 $P$ 为对称酉矩阵，证明：存在可逆复矩阵 $Q$ 使得 $P=\overline{Q}Q^{-1}$．
+
+\item[五、]（本题 15 分）设 $\alpha>1$，证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle\int_0^{+\infty}\dd x\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd t=\int_0^{+\infty}\dd t\int_0^{+\infty}\ee^{-t^\alpha x}\sin x\dd x$；
+  \item 计算 $\displaystyle\int_0^{+\infty}\sin x^3\dd x\cdot\int_0^{+\infty}\sin x^{\frac{3}{2}}\dd x$．
+\end{enumerate}
+
+\item[六、]（本题 20 分）设 $f,g$ 为 $\R$ 上的非负连续可微函数，满足：$\forall x\in\R$，成立 $f'(x)\ge 6+f(x)-f^2(x)$，$g'(x)\le 6+g(x)-g^2(x)$．证明：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\forall\varepsilon\in(0,1)$ 以及 $x\in\R$，存在 $\xi\in(-\infty,x)$ 使得 $f(\xi)\ge 3-\varepsilon$；
+  \item $\forall x\in\R$，成立 $f(x)\ge 3$；
+  \item $\forall x\in\R$，存在 $\eta\in(-\infty,x)$ 使得 $g(\eta)\le 3$；
+  \item $\forall x\in\R$，成立 $g(x)\le 3$．
+\end{enumerate}
+
+\end{problems}

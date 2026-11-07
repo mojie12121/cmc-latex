@@ -1,0 +1,200 @@
+\answerpaper{数学 B 类}
+
+\answerproblem{一、}{15}
+空间直角坐标系中两平面 $x+y+z-3=0$ 和 $x-2y-z+2=0$ 的交线为 $L$。求过点 $(1,2,3)$ 并与直线 $L$ 垂直的平面方程。
+\begin{solution}
+两平面的法向量分别为
+\[
+(1,1,1),\qquad (1,-2,-1).
+\]
+它们的交线 $L$ 的直线方向 $v$ 垂直于这两个平面的法向量，故
+\[
+v=(1,1,1)\times(1,-2,-1)=(1,2,-3).
+\]
+向量 $v$ 也是所求的与 $L$ 垂直的平面的法向量。于是，所求平面方程为
+\begin{gather*}
+(x-1)+2(y-2)-3(z-3)=0,\\
+x+2y-3z+4=0.
+\end{gather*}
+\end{solution}
+
+\answerproblem{二、}{15}
+设 $\lim\limits_{n\to+\infty}\dfrac{a_n}{n^2}=a$，$\lim\limits_{n\to+\infty}\dfrac{b_n}{n^2}=b$。证明极限 $\lim\limits_{n\to+\infty}\dfrac{1}{n^5}\sum\limits_{k=0}^{n}a_kb_{n-k}$ 存在并求其值。
+\begin{solution}
+对于 $n\geqslant 1$，记 $A_n=\dfrac{a_n}{n^2}-a$，$B_n=\dfrac{b_n}{n^2}-b$。则 $\lim\limits_{n\to+\infty}A_n=\lim\limits_{n\to+\infty}B_n=0$。从而 $\{A_n\},\{B_n\}$ 有界。记
+\[
+M=\sup_{n\geqslant 1}\left(|A_n|+|B_n|\right)+|a|+|b|.
+\]
+
+由 Stolz 公式或利用定积分，我们有
+\begin{align*}
+\lim_{n\to+\infty}\frac{1}{n^5}\sum_{k=0}^{n}k^2(n-k)^2
+&=\lim_{n\to+\infty}\left(\sum_{k=0}^{n}\frac{k^2}{n^3}-2\sum_{k=0}^{n}\frac{k^3}{n^4}+\sum_{k=0}^{n}\frac{k^4}{n^5}\right)\\
+&=\frac{1}{3}-\frac{2}{4}+\frac{1}{5}=\frac{1}{30}.
+\end{align*}
+
+另一方面，对于 $n\geqslant 2$，有
+\begin{align*}
+&\left|\frac{1}{n^5}\sum_{k=0}^{n}a_kb_{n-k}-\frac{ab}{n^5}\sum_{k=1}^{n-1}k^2(n-k)^2-\frac{a_0b_n+a_nb_0}{n^5}\right|\\
+&\quad=\left|\frac{1}{n^5}\sum_{k=1}^{n-1}k^2(n-k)^2\left(A_kB_{n-k}+bA_k+aB_{n-k}\right)\right|\\
+&\quad\leqslant\frac{M}{n}\sum_{k=1}^{n-1}\left(|A_k|+|B_k|\right).
+\end{align*}
+
+由 Stolz 公式，
+\[
+\lim_{n\to+\infty}\frac{M}{n}\sum_{k=1}^{n-1}\left(|A_k|+|B_k|\right)=\lim_{n\to+\infty}M\left(|A_n|+|B_n|\right)=0.
+\]
+
+因此，
+\[
+\lim_{n\to+\infty}\frac{1}{n^5}\sum_{k=0}^{n}a_kb_{n-k}=ab\lim_{n\to+\infty}\frac{1}{n^5}\sum_{k=1}^{n-1}k^2(n-k)^2=\frac{ab}{30}.
+\]
+\end{solution}
+
+\answerproblem{三、}{15}
+设 $A=\begin{pmatrix}2&1\\1&1\end{pmatrix}$，矩阵 $B$ 与 $A$ 可交换，其元素均为正整数且行列式为 $1$。证明存在正整数 $k$ 使得 $B=A^{k}$。
+\begin{solution}
+令
+\[
+B=\begin{pmatrix}a&b\\c&d\end{pmatrix}.
+\]
+由于 $B$ 与 $A$ 可交换，可得 $c=b$，$d=a-b$。$B$ 的元素均为正整数，故 $a,b$ 为正整数且 $a>b$。再由 $\det B=1$ 得到 $a^2-ab-b^2=1$。
+
+若 $b=1$，则由 $a^2-ab-b^2=1$ 易得 $a=2$，因此
+\[
+B=\begin{pmatrix}2&1\\1&1\end{pmatrix}=A.
+\]
+
+若 $b>1$，考察矩阵
+\[
+B_1=A^{-1}B=\begin{pmatrix}1&-1\\-1&2\end{pmatrix}\begin{pmatrix}a&b\\b&a-b\end{pmatrix}=\begin{pmatrix}a-b&2b-a\\2b-a&2a-3b\end{pmatrix}.
+\]
+令 $a_1=a-b$，$b_1=2b-a$，则有 $2a-3b=a_1-b_1$，即
+\[
+B_1=\begin{pmatrix}a_1&b_1\\b_1&a_1-b_1\end{pmatrix}.
+\]
+显然 $a_1$ 为正整数。注意到 $a^2-ab-b^2=1$，若 $a\geqslant 2b$，则有 $1+b^2=a^2-ab=a(a-b)\geqslant 2b^2$，即 $b^2\leqslant 1$，矛盾，由此得到 $b_1=2b-a$ 也是正整数。显然 $a_1^2-a_1b_1-b_1^2=\det B_1=(\det A)^{-1}\det B=1$，即 $a_1(a_1-b_1)=1+b_1^2>0$，从而 $a_1>b_1$。这表明矩阵 $B_1$ 中的元素 $a_1,b_1$ 满足矩阵 $B$ 中元素 $a,b$ 所满足的条件，但是 $b_1=b-(a-b)<b$。若 $b_1>1$，则类似地矩阵
+\[
+B_2=A^{-1}B_1=(A^{-1})^2B=\begin{pmatrix}a_2&b_2\\b_2&a_2-b_2\end{pmatrix}
+\]
+中的元素 $a_2,b_2$ 也满足矩阵 $B$ 中元素 $a,b$ 所满足的条件，但是 $b_2<b_1<b$。继续进行下去，通过左乘 $A^{-1}$ 有限次，比如 $s$ 次后可以使得得到的矩阵
+\[
+B_s=(A^{-1})^sB=\begin{pmatrix}a_s&b_s\\b_s&a_s-b_s\end{pmatrix}
+\]
+中的元素 $a_s,b_s$ 满足 $a_s>b_s>0$，$a_s^2-a_sb_s-b_s^2=1$ 且 $b_s$ 为最小正整数，即 $b_s=1$。由前面的证明得到 $B_s=A$，从而 $B=A^{s+1}$，令 $k=s+1$ 即可。
+\end{solution}
+
+\answerproblem{四、}{20}
+设
+\[
+A=\begin{pmatrix}2&0&1\\4&1&x\\4&0&5\end{pmatrix},\qquad
+B=\begin{pmatrix}\frac{8}{3}&y_1&y_2\\y_2&\frac{8}{3}&y_1\\y_1&y_2&\frac{8}{3}\end{pmatrix}
+\]
+为复数域上的两个 $3$ 阶方阵，其中 $x,y_1,y_2$ 为未知复数。若已知 $A$ 与 $B$ 有相同的 Jordan 标准型，求 $x,y_1,y_2$。
+\begin{solution}
+1) 首先令 $H=\begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}$，则有 $H^2=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix}$，$H^3=E$。于是 $B=\frac{8}{3}E+y_1H+y_2H^2$。由于 $|\lambda E-H|=\lambda^3-1$，故 $H$ 的特征值为 $1,\ee^{\ii\frac{2\pi}{3}},\ee^{\ii\frac{4\pi}{3}}$，它们各不相同，因此 $H$ 可对角化，即
+\[
+H\sim\begin{pmatrix}1&&\\&\ee^{\ii\frac{2\pi}{3}}&\\&&\ee^{\ii\frac{4\pi}{3}}\end{pmatrix}.
+\]
+结果 $B$ 也可对角化，
+\[
+B\sim\begin{pmatrix}f(1)&&\\&f(\ee^{\ii\frac{2\pi}{3}})&\\&&f(\ee^{\ii\frac{4\pi}{3}})\end{pmatrix},
+\]
+其中 $f(t)=\frac{8}{3}+y_1t+y_2t^2$。
+
+2) 现由 $A\sim B$ 可知：$A$ 可相似对角化。直接计算可知 $A$ 的特征值为 $\lambda_1=1$（$2$ 重），$\lambda_2=6$（$1$ 重）。故有 $\lambda_1=1$ 的几何重数为 $2$，即相应于 $\lambda_1=1$ 的 $A$ 的特征向量空间的维数为 $2$。由 $(A-\lambda_1E)z=0$ 知：$\rank(A-E)=1$。
+
+将 $A-E$ 进行初等行变换，将之化为行阶梯型：
+\[
+A-1E=\begin{pmatrix}2-1&0&1\\4&0&x\\4&0&4\end{pmatrix}\to\begin{pmatrix}1&0&1\\0&0&x-4\\0&0&0\end{pmatrix},
+\]
+结果，要使 $\rank(A-E)=1$ 当且仅当 $x-4=0$，从而求得 $x=4$。
+
+3) 下面求 $y_1,y_2$。现有 $A\sim\begin{pmatrix}1&&\\&1&\\&&6\end{pmatrix}$。故有 $A\sim B\iff B$ 的三个特征值为 $1,1,6$。由此得下列三种情形：
+\[
+(\mathrm{I})\ \begin{cases}f(1)=1,\\ f(\ee^{\ii\frac{2\pi}{3}})=1,\\ f(\ee^{\ii\frac{4\pi}{3}})=6;\end{cases}
+\qquad
+(\mathrm{II})\ \begin{cases}f(1)=1,\\ f(\ee^{\ii\frac{4\pi}{3}})=1,\\ f(\ee^{\ii\frac{2\pi}{3}})=6;\end{cases}
+\qquad
+(\mathrm{III})\ \begin{cases}f(1)=6,\\ f(\ee^{\ii\frac{2\pi}{3}})=1,\\ f(\ee^{\ii\frac{4\pi}{3}})=1;\end{cases}
+\]
+
+对情形 (I)，解之得
+\[
+\begin{cases}y_1=-\dfrac{5}{6}+\dfrac{5\sqrt{3}}{6}\ii,\\[4pt] y_2=-\dfrac{5}{6}-\dfrac{5\sqrt{3}}{6}\ii;\end{cases}
+\qquad
+\text{对情形 (II)，解之得}
+\qquad
+\begin{cases}y_1=-\dfrac{5}{6}-\dfrac{5\sqrt{3}}{6}\ii,\\[4pt] y_2=-\dfrac{5}{6}+\dfrac{5\sqrt{3}}{6}\ii;\end{cases}
+\]
+对情形 (III)，解之得
+\[
+\begin{cases}y_1=\dfrac{5}{3},\\[4pt] y_2=\dfrac{5}{3}.\end{cases}
+\]
+
+综上所述，本题所求的 $x,y_1,y_2$ 共有三组解：
+\[
+\text{第一组为}\quad\begin{cases}x=4,\\ y_1=-\dfrac{5}{6}+\dfrac{5\sqrt{3}}{6}\ii,\\[4pt] y_2=-\dfrac{5}{6}-\dfrac{5\sqrt{3}}{6}\ii;\end{cases}
+\qquad
+\text{第二组为}\quad\begin{cases}x=4,\\ y_1=-\dfrac{5}{6}-\dfrac{5\sqrt{3}}{6}\ii,\\[4pt] y_2=-\dfrac{5}{6}+\dfrac{5\sqrt{3}}{6}\ii;\end{cases}
+\]
+\[
+\text{第三组为}\quad\begin{cases}x=4,\\ y_1=\dfrac{5}{3},\\[4pt] y_2=\dfrac{5}{3}.\end{cases}
+\]
+\end{solution}
+
+\answerproblem{五、}{15}
+设函数 $f(x)=\dfrac{1}{1-x-x^2}$，$a_n=\dfrac{1}{n!}f^{(n)}(0)\ (n\geqslant 0)$。证明：级数 $\sum\limits_{n=0}^{\infty}\dfrac{a_{n+1}}{a_na_{n+2}}$ 收敛并求它的和。
+\begin{solution}
+我们有 $\delta>0$ 使得
+\begin{align*}
+1&=(1-x-x^2)f(x)=(1-x-x^2)\sum_{n=0}^{\infty}a_nx^n\\
+&=\sum_{n=0}^{\infty}a_nx^n-\sum_{n=0}^{\infty}a_nx^{n+1}-\sum_{n=0}^{\infty}a_nx^{n+2}\\
+&=a_0+(a_1-a_0)x+\sum_{n=0}^{\infty}(a_{n+2}-a_{n+1}-a_n)x^{n+2},\qquad \forall\,|x|<\delta.
+\end{align*}
+
+因此，$a_0=1$，$a_1=a_0$，
+\[
+a_{n+2}=a_{n+1}+a_n,\qquad \forall\,n\geqslant 0.
+\]
+从而易见 $a_n\geqslant n$ 进而 $\lim\limits_{n\to+\infty}a_n=+\infty$。
+
+另一方面，
+\[
+\frac{a_{n+1}}{a_n\cdot a_{n+2}}=\frac{a_{n+2}-a_n}{a_n\cdot a_{n+2}}=\frac{1}{a_n}-\frac{1}{a_{n+2}}.
+\]
+由此可得
+\[
+\sum_{n=0}^{m}\frac{a_{n+1}}{a_n\cdot a_{n+2}}=\frac{1}{a_0}+\frac{1}{a_1}-\frac{1}{a_{m+1}}-\frac{1}{a_{m+2}},\qquad \forall\,m\geqslant 2.
+\]
+因此，级数 $\sum\limits_{n=0}^{\infty}\dfrac{a_{n+1}}{a_n\cdot a_{n+2}}$ 收敛且和为 $\dfrac{1}{a_0}+\dfrac{1}{a_1}=2$。
+\end{solution}
+
+\answerproblem{六、}{20}
+证明：(1) 对任意 $0<a<1$，存在唯一实数 $b>1$ 满足 $a-\ln a=b-\ln b$；(2) 对于上述数对 $a,b$ 有 $ab<1$；(3) 对于上述数对 $a,b$ 有 $b+\ln a>1$。
+\begin{solution}
+设 $f(x)=x-\ln x$，它是定义在 $(0,+\infty)$ 上的连续函数。
+
+(1) 注意到 $f'(x)=1-\dfrac{1}{x}$，于是该函数在 $(0,1]$ 上严格递减，在 $[1,+\infty)$ 上严格递增，并且 $f((0,1])=f([1,+\infty))=[1,+\infty)$。于是，对任意 $0<a<1$，存在唯一实数 $b>1$ 满足 $a-\ln a=b-\ln b$。
+
+(2) 令 $h(a)=f\left(\dfrac{1}{a}\right)-f(a)\ (a\in(0,1])$。由 (1) 的讨论，我们只要证明对任何 $a\in(0,1)$ 成立 $h(a)>0$。如果证明了这一点，则当 $0<a<1$ 时有 $f\left(\dfrac{1}{a}\right)>f(a)$。因为 $f(b)=f(a)$ 并且函数 $f(x)$ 在 $[1,+\infty)$ 上严格递增，于是 $b<\dfrac{1}{a}$。
+
+具体地，我们有 $h(1)=0$，而
+\[
+\frac{\dd h}{\dd a}=\frac{\dd}{\dd a}\left(\frac{1}{a}-\ln\frac{1}{a}-a+\ln a\right)=-\frac{1}{a^2}-1+\frac{2}{a}=-\frac{(a-1)^2}{a^2}<0,\qquad 0<a<1.
+\]
+因此，对任何 $a\in(0,1)$ 成立 $h(a)>0$。
+
+(3) 类似于 (2)，令 $g(a)=f(1-\ln a)-f(a)\ (a\in(0,1])$。我们只要证明对任何 $a\in(0,1)$ 成立 $g(a)<0$，即
+\[
+1-a<\ln(1-\ln a),\qquad \forall\,a\in(0,1).
+\]
+这等价于
+\[
+1-\ee^{-x}<\ln(1+x),\qquad \forall\,x>0.
+\]
+由中值定理，对于 $x>0$，我们有 $0<\eta<\xi<x$ 使得
+\[
+\ln(1+x)-1+\ee^{-x}=\left(\frac{1}{1+\xi}-\ee^{-\xi}\right)x=\frac{(\ee^{\eta}-1)x\xi}{(1+\xi)\ee^{\xi}}>0.
+\]
+\end{solution}

@@ -1,0 +1,53 @@
+\paper{数学 B 类}
+
+\begin{problems}
+
+\item[一、]（本题 15 分）设 $L_1$ 和 $L_2$ 是空间中的两条不垂直的异面直线，点 $B$ 是它们公垂线段的中点. 点 $A_1$ 和 $A_2$ 分别在 $L_1$ 和 $L_2$ 上滑动，使得 $A_1B\perp A_2B$. 证明：直线 $A_1A_2$ 的轨迹是单叶双曲面.
+
+\item[二、]（本题 10 分）计算
+\[
+  \int_0^{+\infty}\frac{\dd x}{(1+x^2)(1+x^{2019})}.
+\]
+
+\item[三、]（本题 15 分）设数列 $\{x_n\}$ 满足
+\[
+  x_1>0,\qquad x_{n+1}=\ln(1+x_n),\qquad n=1,2,\cdots.
+\]
+证明：$\{x_n\}$ 收敛并求其极限.
+
+\item[四、]（本题 15 分）设 $\{\varepsilon_1,\cdots,\varepsilon_n\}$ 是 $n$ 维实线性空间 $V$ 的一组基，令 $\varepsilon_1+\varepsilon_2+\cdots+\varepsilon_n+\varepsilon_{n+1}=0$. 证明：
+\begin{enumerate}
+  \item 对 $i=1,2,\cdots,n+1$，$\{\varepsilon_1,\cdots,\varepsilon_{i-1},\varepsilon_{i+1},\cdots,\varepsilon_{n+1}\}$ 都构成 $V$ 的基；
+  \item $\forall\alpha\in V$，在 (1) 中的 $n+1$ 组基中，必存在一组基使 $\alpha$ 在此基下的坐标分量均非负；
+  \item 若 $\alpha=a_1\varepsilon_1+a_2\varepsilon_2+\cdots+a_n\varepsilon_n$，且 $\abs{a_i}\ (i=1,2,\cdots,n)$ 互不相同，则在 (1) 中的 $n+1$ 组基中，满足 (2) 中非负坐标表示的基是唯一的.
+\end{enumerate}
+
+\item[五、]（本题 20 分）设 $A$ 是数域 $F$ 上的 $n$ 阶矩阵，若 $A^2=I_n$（$I_n$ 表示单位矩阵），则称 $A$ 为对合矩阵. 试证：
+\begin{enumerate}
+  \item 若 $A$ 是 $n$ 阶对合矩阵，则
+  \[
+    \rank(I_n+A)+\rank(I_n-A)=n;
+  \]
+  \item $n$ 阶对合矩阵 $A$ 一定可以对角化，其相似对角形为
+  \[
+    \begin{pmatrix}
+      I_r & 0\\
+      0 & -I_{n-r}
+    \end{pmatrix},
+  \]
+  其中 $r=\rank(I_n+A)$；
+  \item 若 $A,B$ 均是 $n$ 阶对合矩阵，且 $AB=BA$，则存在可逆矩阵 $P$，使得 $P^{-1}AP$ 和 $P^{-1}BP$ 同时为对角矩阵.
+\end{enumerate}
+
+\item[六、]（本题 15 分）设函数 $f(x)$ 为闭区间 $[a,b]$ 上的连续凹函数，满足 $f(a)=0$，$f(b)>0$ 且 $f(x)$ 在 $x=a$ 处存在非零的右导数. 对 $n\ge 2$，记
+\[
+  S_n=\left\{\sum_{k=1}^{n}kx_k:\ \sum_{k=1}^{n}kf(x_k)=f(b),\ x_k\in[a,b]\right\}.
+\]
+\begin{enumerate}
+  \item 证明：对 $\forall\alpha\in(0,f(b))$，存在唯一 $x\in(a,b)$ 使得 $f(x)=\alpha$；
+  \item 求 $\lim\limits_{n\to\infty}(\sup S_n-\inf S_n)$.
+\end{enumerate}
+
+\item[七、]（本题 10 分）设正项级数 $\sum\limits_{n=1}^{\infty}\dfrac{1}{a_n}$ 收敛. 证明：级数 $\sum\limits_{n=1}^{\infty}\dfrac{n^2a_n}{S_n^2}$ 收敛，其中 $S_n=\sum\limits_{k=1}^{n}a_k$.
+
+\end{problems}

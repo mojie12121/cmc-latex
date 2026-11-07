@@ -1,0 +1,224 @@
+\answerpaper{非数学类}
+
+\answerproblem{一、}{30}
+填空题：
+\begin{enumerate}[label=(\arabic*)]
+  \item $\displaystyle \lim_{x\to 0}\frac{\ln(\ee^{\sin x}+\sqrt[3]{1-\cos x})-\sin x}{\arctan(4\sqrt[3]{1-\cos x})}=\underline{\hspace{3.5em}}$．
+  \item 设隐函数 $y=y(x)$ 由方程 $y^2(x-y)=x^2$ 所确定，则 $\displaystyle \int\frac{\dd x}{y^2}=\underline{\hspace{3.5em}}$．
+  \item 定积分 $\displaystyle \int_0^{\frac{\pi}{2}}\frac{\ee^x(1+\sin x)}{1+\cos x}\dd x=\underline{\hspace{3.5em}}$．
+  \item 已知 $\dd u(x,y)=\frac{y\dd x-x\dd y}{3x^2-2xy+3y^2}$，则 $u(x,y)=\underline{\hspace{3.5em}}$．
+  \item 设 $a,b,c,\mu>0$，曲面 $xyz=\mu$ 与曲面 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ 相切，则 $\mu=\underline{\hspace{3.5em}}$．
+\end{enumerate}
+\begin{solution}
+\textbf{(1)}
+\begin{align*}
+&\lim_{x\to0}\frac{\ln(\ee^{\sin x}+\sqrt[3]{1-\cos x})-\sin x}{\arctan(4\sqrt[3]{1-\cos x})}\\
+&\quad=\lim_{x\to0}\frac{(\ee^{\sin x}-1)+\sqrt[3]{1-\cos x}}{4\sqrt[3]{1-\cos x}}
+-\lim_{x\to0}\frac{\sin x}{4\sqrt[3]{1-\cos x}}\\
+&\quad=\lim_{x\to0}\frac{\ee^{\sin x}-1}{4\left(\frac{x^2}{2}\right)^{1/3}}+\frac{1}{4}
+-\lim_{x\to0}\frac{\sin x}{4\left(\frac{x^2}{2}\right)^{1/3}}=\frac{1}{4}.
+\end{align*}
+
+\textbf{(2)} 令 $y=tx$，则
+\[
+x=\frac{1}{t^2(1-t)},\qquad y=\frac{1}{t(1-t)},\qquad
+\dd x=\frac{-2+3t}{t^3(1-t)^2}\dd t,
+\]
+这样，
+\[
+\int\frac{\dd x}{y^2}=\int\frac{-2+3t}{t}\dd t=3t-2\ln|t|+C
+=\frac{3y}{x}-2\ln\left|\frac{y}{x}\right|+C.
+\]
+
+\textbf{(3)}
+\begin{align*}
+\int_0^{\frac{\pi}{2}}\frac{\ee^x(1+\sin x)}{1+\cos x}\dd x
+&=\int_0^{\frac{\pi}{2}}\frac{\ee^x}{1+\cos x}\dd x+\int_0^{\frac{\pi}{2}}\frac{\sin x}{1+\cos x}\dd\ee^x\\
+&=\int_0^{\frac{\pi}{2}}\frac{\ee^x}{1+\cos x}\dd x
++\left.\frac{\sin x\,\ee^x}{1+\cos x}\right|_0^{\frac{\pi}{2}}
+-\int_0^{\frac{\pi}{2}}\ee^x\frac{\cos x(1+\cos x)+\sin^2x}{(1+\cos x)^2}\dd x\\
+&=\int_0^{\frac{\pi}{2}}\frac{\ee^x}{1+\cos x}\dd x
++\left.\frac{\sin x\,\ee^x}{1+\cos x}\right|_0^{\frac{\pi}{2}}
+-\int_0^{\frac{\pi}{2}}\frac{\ee^x}{1+\cos x}\dd x=\ee^{\frac{\pi}{2}}.
+\end{align*}
+
+\textbf{(4)}
+\[
+\dd u(x,y)=\frac{y\dd x-x\dd y}{3x^2-2xy+3y^2}
+=\frac{\dd\left(\frac{x}{y}\right)}{3\left(\frac{x}{y}\right)^2-2\frac{x}{y}+3}
+=\frac{1}{2\sqrt2}\dd\arctan\left(\frac{3}{2\sqrt2}\left(\frac{x}{y}-\frac{1}{3}\right)\right).
+\]
+所以，
+\[
+u(x,y)=\frac{1}{2\sqrt2}\arctan\left(\frac{3}{2\sqrt2}\left(\frac{x}{y}-\frac{1}{3}\right)\right)+C.
+\]
+
+\textbf{(5)} 根据题意有：
+\[
+yz=\frac{2x}{a^2}\lambda,\qquad xz=\frac{2y}{b^2}\lambda,\qquad xy=\frac{2z}{c^2}\lambda,
+\]
+以及
+\[
+\mu=2\lambda\frac{x^2}{a^2},\qquad \mu=2\lambda\frac{y^2}{b^2},\qquad \mu=2\lambda\frac{z^2}{c^2},
+\]
+从而得：
+\[
+\mu=\frac{8\lambda^3}{a^2b^2c^2},\qquad 3\mu=2\lambda,
+\]
+联立解得：$\mu=\dfrac{abc}{3\sqrt3}$．
+\end{solution}
+
+\answerproblem{二、}{14}
+计算三重积分
+\[
+  \iiint_{\Omega}\frac{xyz}{x^2+y^2}\dd x\dd y\dd z,
+\]
+其中 $\Omega$ 是由曲面 $(x^2+y^2+z^2)^2=2xy$ 围成的区域在第一卦限部分．
+\begin{solution}
+采用“球面坐标”计算，并利用对称性，得
+\begin{align*}
+I&=2\int_0^{\frac{\pi}{4}}\dd\theta\int_0^{\frac{\pi}{2}}\dd\varphi
+\int_0^{\sqrt2\sin\varphi\sqrt{\sin\theta\cos\theta}}
+\frac{\rho^3\sin^2\varphi\cos\theta\sin\theta\cos\varphi}{\rho^2\sin^2\varphi}\rho^2\sin\varphi\dd\rho\\
+&=2\int_0^{\frac{\pi}{4}}\sin\theta\cos\theta\dd\theta
+\int_0^{\frac{\pi}{2}}\sin\varphi\cos\varphi\dd\varphi
+\int_0^{\sqrt2\sin\varphi\sqrt{\sin\theta\cos\theta}}\rho^3\dd\rho\\
+&=2\int_0^{\frac{\pi}{4}}\sin^3\theta\cos^3\theta\dd\theta
+\int_0^{\frac{\pi}{2}}\sin^5\varphi\cos\varphi\dd\varphi\\
+&=\frac{1}{4}\int_0^{\frac{\pi}{4}}\sin^32\theta\dd\theta
+\int_0^{\frac{\pi}{2}}\sin^5\varphi\dd(\sin\varphi)\\
+&=\frac{1}{48}\int_0^{\frac{\pi}{2}}\sin^3t\dd t
+=\frac{1}{48}\cdot\frac{2}{3}=\frac{1}{72}.
+\end{align*}
+\end{solution}
+
+\answerproblem{三、}{14}
+设 $f(x)$ 在 $[0,+\infty)$ 上可微，$f(0)=0$，且存在常数 $A>0$，使得 $|f'(x)|\le A|f(x)|$ 在 $[0,+\infty)$ 上成立．试证明：在 $(0,+\infty)$ 上有 $f(x)\equiv 0$．
+\begin{solution}
+设 $x_0\in\left[0,\frac{1}{2A}\right]$，使得
+\[
+|f(x_0)|=\max\left\{|f(x)|\;\middle|\;x\in\left[0,\frac{1}{2A}\right]\right\},
+\]
+\[
+|f(x_0)|=|f(0)+f'(\xi)x_0|\le A|f(x_0)|\frac{1}{2A}=\frac{1}{2}|f(x_0)|,
+\]
+只有 $|f(x_0)|=0$．故当 $x\in\left[0,\frac{1}{2A}\right]$ 时，$f(x)\equiv0$．递推可得，对所有的 $x\in\left[\frac{k-1}{2A},\frac{k}{2A}\right]$，$k=1,2,\cdots$，均有 $f(x)\equiv0$．
+\end{solution}
+
+\answerproblem{四、}{14}
+计算积分
+\[
+  I=\int_0^{2\pi}\dd\varphi\int_0^{\pi}\ee^{\sin\theta(\cos\varphi-\sin\varphi)}\sin\theta\dd\theta.
+\]
+\begin{solution}
+设球面 $\Sigma:x^2+y^2+z^2=1$，由球面参数方程
+\[
+x=\sin\theta\cos\varphi,\qquad y=\sin\theta\sin\varphi,\qquad z=\cos\theta
+\]
+知 $\dd S=\sin\theta\dd\theta\dd\varphi$，所以，所求积分可化为第一型曲面积分
+\[
+I=\iint_{\Sigma}\ee^{x-y}\dd S.
+\]
+设平面 $P_t:\frac{x-y}{\sqrt2}=t$，$-1\le t\le1$，其中 $t$ 为平面 $P_t$ 被球面截下部分中心到原点距离．用平面 $P_t$ 分割球面 $\Sigma$，球面在平面 $P_t$，$P_{t+\dd t}$ 之间的部分形如圆台外表面状，记为 $\Sigma_{t,\dd t}$．被积函数在其上为 $\ee^{x-y}=\ee^{\sqrt2t}$．
+
+由于 $\Sigma_{t,\dd t}$ 半径为 $r_t=\sqrt{1-t^2}$，半径的增长率为 $\dd\sqrt{1-t^2}=\frac{-t\dd t}{\sqrt{1-t^2}}$ 就是 $\Sigma_{t,\dd t}$ 上下底半径之差．记圆台外表面斜高为 $h_t$，则由微元法知 $\dd t^2+\left(\dd\sqrt{1-t^2}\right)^2=h_t^2$，得到 $h_t=\frac{\dd t}{\sqrt{1-t^2}}$，所以 $\Sigma_{t,\dd t}$ 的面积为 $\dd S=2\pi r_th_t=2\pi\dd t$，
+\[
+I=\int_{-1}^{1}\ee^{\sqrt2t}2\pi\dd t=\frac{2\pi}{\sqrt2}\left.\ee^{\sqrt2t}\right|_{-1}^{1}
+=\sqrt2\pi\left(\ee^{\sqrt2}-\ee^{-\sqrt2}\right).
+\]
+\end{solution}
+
+\answerproblem{五、}{14}
+设 $f(x)$ 是仅有正实根的多项式函数，满足
+\[
+  \frac{f'(x)}{f(x)}=-\sum_{n=0}^{+\infty}c_nx^n.
+\]
+试证：$c_n>0$，$(n\ge 0)$，极限 $\displaystyle \lim_{n\to+\infty}\frac{1}{\sqrt[n]{c_n}}$ 存在，且等于 $f(x)$ 的最小根．
+\begin{solution}
+由 $f(x)$ 为仅有正实根的多项式，不妨设 $f(x)$ 的全部根为
+\[
+0<a_1<a_2<\cdots<a_k,
+\]
+这样，
+\[
+f(x)=A(x-a_1)^{r_1}\cdots(x-a_k)^{r_k},
+\]
+其中 $r_i$ 为对应根 $a_i$ 的重数（$i=1,\cdots,k$，$r_k\ge1$）．
+\[
+f'(x)=Ar_1(x-a_1)^{r_1-1}\cdots(x-a_k)^{r_k}
++\cdots+Ar_k(x-a_1)^{r_1}\cdots(x-a_k)^{r_k-1},
+\]
+所以，
+\[
+f'(x)=f(x)\left(\frac{r_1}{x-a_1}+\cdots+\frac{r_k}{x-a_k}\right),
+\]
+从而，
+\[
+-\frac{f'(x)}{f(x)}=\frac{r_1}{a_1}\cdot\frac{1}{1-\frac{x}{a_1}}
++\cdots+\frac{r_k}{a_k}\cdot\frac{1}{1-\frac{x}{a_k}}.
+\]
+若 $|x|<a_1$，则
+\begin{align*}
+-\frac{f'(x)}{f(x)}
+&=\frac{r_1}{a_1}\cdot\sum_{n=0}^{\infty}\left(\frac{x}{a_1}\right)^n
++\cdots+\frac{r_k}{a_k}\cdot\sum_{n=0}^{\infty}\left(\frac{x}{a_k}\right)^n\\
+&=\sum_{n=0}^{\infty}\left(\frac{r_1}{a_1^{n+1}}+\cdots+\frac{r_k}{a_k^{n+1}}\right)x^n.
+\end{align*}
+而 $-\frac{f'(x)}{f(x)}=\sum_{n=0}^{\infty}c_nx^n$，由幂级数的唯一性知
+\[
+c_n=\frac{r_1}{a_1^{n+1}}+\cdots+\frac{r_k}{a_k^{n+1}}>0,
+\]
+\[
+\frac{c_n}{c_{n+1}}
+=\frac{\frac{r_1}{a_1^{n+1}}+\cdots+\frac{r_k}{a_k^{n+1}}}
+{\frac{r_1}{a_1^{n+2}}+\cdots+\frac{r_k}{a_k^{n+2}}}
+=a_1\cdot\frac{r_1+\cdots+\left(\frac{a_1}{a_k}\right)^{n+1}r_k}
+{r_1+\cdots+\left(\frac{a_1}{a_k}\right)^{n+2}r_k},
+\]
+\[
+\lim_{n\to\infty}\frac{c_n}{c_{n+1}}
+=a_1\cdot\frac{r_1+0+\cdots+0}{r_1+0+\cdots+0}=a_1>0,\qquad
+\lim_{n\to\infty}\frac{c_{n+1}}{c_n}=\frac{1}{a_1},
+\]
+\[
+\lim_{n\to\infty}\frac{1}{n}\left(\ln\frac{c_2}{c_1}+\cdots+\ln\frac{c_{n+1}}{c_n}\right)=\ln\frac{1}{a_1},
+\]
+\[
+\sqrt[n]{c_n}=\ee^{\frac{\ln c_n}{n}}
+=\ee^{\frac{\ln c_1}{n}+\frac{1}{n}\left(\ln\frac{c_2}{c_1}+\cdots+\ln\frac{c_{n+1}}{c_n}\right)}
+\to\ee^{\ln\frac{1}{a_1}}=\frac{1}{a_1}.
+\]
+从而，$\lim_{n\to\infty}\frac{1}{\sqrt[n]{c_n}}=a_1$，即 $f(x)$ 的最小正根．
+\end{solution}
+
+\answerproblem{六、}{14}
+设函数 $f(x)$ 在 $[0,+\infty)$ 上具有连续导数，满足
+\[
+  3[3+f^2(x)]f'(x)=2[1+f^2(x)]^2\ee^{-x^2},
+\]
+且 $f(0)\le 1$．证明：存在常数 $M>0$，使得 $x\in[0,+\infty)$ 时，恒有 $|f(x)|\le M$．
+\begin{solution}
+由于 $f'(x)>0$，所以 $f(x)$ 是 $[0,+\infty)$ 上的严格增函数，故 $\lim_{x\to+\infty}f(x)=L$（有限或为 $+\infty$）．下面证明 $L\ne+\infty$．
+
+记 $y=f(x)$，将所给等式分离变量并积分得
+\[
+\int\frac{3+y^2}{(1+y^2)^2}\dd y=\frac{2}{3}\int\ee^{-x^2}\dd x,
+\]
+即
+\[
+\frac{y}{1+y^2}+2\arctan y=\frac{2}{3}\int_0^x\ee^{-t^2}\dd t+C,
+\]
+其中 $C=\frac{f(0)}{1+f^2(0)}+2\arctan f(0)$．
+
+若 $L=+\infty$，则对上式取极限 $x\to+\infty$，并利用 $\int_0^{+\infty}\ee^{-t^2}\dd t=\frac{\sqrt\pi}{2}$，得 $C=\pi-\frac{\sqrt\pi}{3}$．
+
+另一方面，令 $g(u)=\frac{u}{1+u^2}+2\arctan u$，则 $g'(u)=\frac{3+u^2}{(1+u^2)^2}>0$，所以函数 $g(u)$ 在 $(-\infty,+\infty)$ 上严格单调增加．因此，当 $f(0)\le1$ 时，
+\[
+C=g(f(0))\le g(1)=\frac{1+\pi}{2},
+\]
+但
+\[
+C>\frac{2\pi-\sqrt\pi}{2}>\frac{1+\pi}{2},
+\]
+矛盾，这就证明了 $\lim_{x\to+\infty}f(x)=L$ 为有限数．最后，取 $M=\max\{|f(0)|,|L|\}$，则 $|f(x)|\le M$，$\forall x\in[0,+\infty)$．
+\end{solution}

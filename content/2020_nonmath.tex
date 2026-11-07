@@ -1,0 +1,62 @@
+\paper{非数学类}
+
+\begin{problems}
+\item[一、]（本题 30 分，每小题 6 分）填空题：
+\begin{enumerate}
+  \item $\displaystyle \lim_{x\to 0}\frac{(x-\sin x)\ee^{-x^2}}{\sqrt{1-x^3}-1}=\underline{\hspace{6em}}$．
+  \item 设函数 $f(x)=(x+1)^n\ee^{-x^2}$，则 $f^{(n)}(-1)=\underline{\hspace{6em}}$．
+  \item 设 $y=f(x)$ 是由方程
+  \[
+    \arctan\frac{x}{y}=\ln\sqrt{x^2+y^2}-\frac{1}{2}\ln 2+\frac{\pi}{4}
+  \]
+  确定的隐函数，且满足 $f(1)=1$，则曲线 $y=f(x)$ 在点 $(1,1)$ 处的切线方程为 $\underline{\hspace{4em}}$．
+  \item 已知 $\displaystyle \int_0^{+\infty}\frac{\sin x}{x}\dd x=\frac{\pi}{2}$，则
+  \[
+    \int_0^{+\infty}\int_0^{+\infty}\frac{\sin x\sin(x+y)}{x(x+y)}\dd x\dd y=\underline{\hspace{8em}}.
+  \]
+  \item 设 $f(x)$，$g(x)$ 在 $x=0$ 的某一邻域 $U$ 内有定义，对任意 $x\in U$，$f(x)\neq g(x)$，且 $\displaystyle \lim_{x\to 0}f(x)=\lim_{x\to 0}g(x)=a>0$，则
+  \[
+    \lim_{x\to 0}\frac{[f(x)]^{g(x)}-[g(x)]^{g(x)}}{f(x)-g(x)}=\underline{\hspace{8em}}.
+  \]
+\end{enumerate}
+
+\item[二、]（本题 10 分）设数列 $\{a_n\}$ 满足：$a_1=1$，且
+\[
+  a_{n+1}=\frac{a_n}{(n+1)(a_n+1)},\qquad n\ge 1.
+\]
+求极限 $\displaystyle \lim_{n\to\infty}n!a_n$．
+
+\item[三、]（本题 10 分）设 $f(x)$ 在 $[0,1]$ 上连续，$f(x)$ 在 $(0,1)$ 内可导，且 $f(0)=0$，$f(1)=1$．证明：
+\begin{enumerate}
+  \item 存在 $x_0\in(0,1)$ 使得 $f(x_0)=2-3x_0$；
+  \item 存在 $\xi,\eta\in(0,1)$，且 $\xi\neq\eta$，使得 $[1+f'(\xi)][1+f'(\eta)]=4$．
+\end{enumerate}
+
+\item[四、]（本题 12 分）已知 $z=xf\left(\dfrac{y}{x}\right)+2y\varphi\left(\dfrac{x}{y}\right)$，其中 $f$，$\varphi$ 均为二次可微函数．
+\begin{enumerate}
+  \item 求 $\dfrac{\partial z}{\partial x}$，$\dfrac{\partial^2 z}{\partial x\partial y}$；
+  \item 当 $f=\varphi$，且 $\left.\dfrac{\partial^2 z}{\partial x\partial y}\right|_{x=a}=-by^2$ 时，求 $f(y)$．
+\end{enumerate}
+
+\item[五、]（本题 12 分）计算
+\[
+  I=\oint_{\Gamma}\left|\sqrt{3}y-x\right|\dd x-5z\dd z,
+\]
+曲线 $\Gamma:\begin{cases}x^2+y^2+z^2=8,\\ x^2+y^2=2z,\end{cases}$ 从 $z$ 轴正向往坐标原点看去取逆时针方向．
+
+\item[六、]（本题 12 分）证明
+\[
+  f(n)=\sum_{m=1}^{n}\int_0^m\cos\frac{2\pi n[x+1]}{m}\dd x
+\]
+等于 $n$ 的所有因子（包括 $1$ 和 $n$ 本身）之和，其中 $[x+1]$ 表示不超过 $x+1$ 的最大整数，并计算 $f(2021)$．
+
+\item[七、]（本题 14 分）设
+\[
+  u_n=\int_0^1\frac{\dd t}{(1+t^4)^n}\quad(n\ge 1).
+\]
+\begin{enumerate}
+  \item 证明数列 $\{u_n\}$ 收敛，并求极限 $\displaystyle \lim_{n\to\infty}u_n$；
+  \item 证明级数 $\displaystyle \sum_{n=1}^{\infty}(-1)^nu_n$ 条件收敛；
+  \item 证明当 $p\ge 1$ 时级数 $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{n^p}$ 收敛，并求级数 $\displaystyle \sum_{n=1}^{\infty}\frac{u_n}{n}$ 的和．
+\end{enumerate}
+\end{problems}
