@@ -36,13 +36,12 @@
 \titlespacing*{\section}{0pt}{0.9em}{0.8em}
 
 % ---------- 页眉页脚 ----------
+% 不设页眉，仅保留页码
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\color{cmcgray}全国大学生数学竞赛初赛近十年试题汇编}
-\fancyhead[R]{\small\color{cmcgray}\nouppercase{\leftmark}}
 \fancyfoot[C]{\small\color{cmcgray}\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{cmcline}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrule}{}
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyfoot[C]{\small\color{cmcgray}\thepage}%

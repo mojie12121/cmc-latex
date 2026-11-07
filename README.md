@@ -34,14 +34,14 @@
 │   ├── 2016_nonmath.tex
 │   ├── ……
 │   └── 2025_nonmath_B.tex
-├── main.pdf                  # 试题册 PDF
+├── 全国大学生数学竞赛初赛近十年试题汇编.pdf   # 试题册 PDF
 ├── answers/
 │   ├── main.tex              # 答案册主文件
 │   ├── preamble.tex          # 答案册导言区
 │   ├── cover.tex             # 答案册封面
 │   ├── preface.tex           # 答案册说明
 │   ├── content/              # 30 套参考答案与详细解答
-│   └── main.pdf              # 答案册 PDF
+│   └── 全国大学生数学竞赛初赛近十年答案汇编.pdf # 答案册 PDF
 └── README.md
 ```
 
@@ -52,23 +52,23 @@
 试题册：
 
 ```bash
-xelatex main.tex
-xelatex main.tex
+xelatex -jobname="全国大学生数学竞赛初赛近十年试题汇编" main.tex
+xelatex -jobname="全国大学生数学竞赛初赛近十年试题汇编" main.tex
 ```
 
 答案册：
 
 ```bash
 cd answers
-xelatex main.tex
-xelatex main.tex
+xelatex -jobname="全国大学生数学竞赛初赛近十年答案汇编" main.tex
+xelatex -jobname="全国大学生数学竞赛初赛近十年答案汇编" main.tex
 ```
 
 或使用 latexmk：
 
 ```bash
-latexmk -xelatex main.tex
-cd answers && latexmk -xelatex main.tex
+latexmk -xelatex -jobname="全国大学生数学竞赛初赛近十年试题汇编" main.tex
+cd answers && latexmk -xelatex -jobname="全国大学生数学竞赛初赛近十年答案汇编" main.tex
 ```
 
 ## 资料来源
