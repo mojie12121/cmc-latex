@@ -14,14 +14,14 @@
     \newpage
   \fi
   \phantomsection
-  \section*{\cmcyear\quad #1}%
-  \addcontentsline{toc}{section}{\texorpdfstring{\cmcyear\quad #1}{\cmcyear\ #1}}%
+  \section*{\cmcyear{} 年\quad #1}%
+  \addcontentsline{toc}{section}{\texorpdfstring{\cmcyear{} 年\quad #1}{\cmcyear\ 年\ #1}}%
 }
 
 % 题目与分值，后接题目正文
 \newcommand{\answerproblem}[2]{%
   \par\needspace{5\baselineskip}%
-  \medskip\noindent\textbf{#1（本题 #2 分）}\quad
+  \medskip\noindent\textbf{#1（本题 #2 分）}\quad\ignorespaces
 }
 
 % 解答环境

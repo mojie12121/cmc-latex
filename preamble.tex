@@ -23,7 +23,7 @@
 \setcounter{secnumdepth}{0}
 \titleformat{\chapter}[display]
   {\normalfont\bfseries\color{cmcblack}}
-  {\filleft\fontsize{10pt}{12pt}\selectfont 第\chinese{chapter}部分}
+  {\filleft\fontsize{10pt}{12pt}\selectfont 第\chinese{chapter}章}
   {6pt}
   {\filleft\fontsize{26pt}{32pt}\selectfont}
   [{\vspace{10pt}\color{cmcline}\rule{\linewidth}{0.5pt}}]
@@ -116,7 +116,20 @@
     \newpage
   \fi
   \phantomsection
-  \section*{\cmcyear\quad #1}%
-  \addcontentsline{toc}{section}{\texorpdfstring{\cmcyear\quad #1}{\cmcyear\ #1}}%
+  \section*{\cmcyear{} 年\quad #1}%
+  \addcontentsline{toc}{section}{\texorpdfstring{\cmcyear{} 年\quad #1}{\cmcyear\ 年\ #1}}%
   \papermeta
+}
+
+% 修正 hyperref 自动页码标签的偏移。
+% 当前前置部分为：封面 1 页 + 编者的话 1 页 + 目录 2 页，共 4 页；
+% 如增删前置页，请同步修改下面的 4。
+\newcommand{\cmcfixpagelabels}{%
+  \special{pdf:put @catalog <<
+    /PageLabels << /Nums [
+      0 << /P (Cover) >>
+      1 << /S /r /St 1 >>
+      4 << /S /D /St 1 >>
+    ] >>
+  >>}%
 }

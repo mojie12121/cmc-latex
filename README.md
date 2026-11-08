@@ -4,6 +4,13 @@
 
 全国大学生数学竞赛（Chinese Mathematics Competitions，CMC）由中国数学会主办。初赛由各省（市、区）数学会或军队院校数学教学联席会负责组织，使用全国统一试题，在同一时间内进行考试。竞赛按数学专业类与非数学专业类分别命题；历年类别设置略有调整，本项目按各届实际类别收录。
 
+## 下载
+
+- [试题册 PDF](全国大学生数学竞赛初赛近十年试题汇编.pdf)
+- [答案册 PDF](answers/全国大学生数学竞赛初赛近十年答案汇编.pdf)
+
+最新自动构建产物可在 [Actions](../../actions) 页面下载。
+
 ## 内容
 
 | 年份 | 届次 | 试卷类别 |
@@ -42,12 +49,14 @@
 │   ├── preface.tex           # 答案册说明
 │   ├── content/              # 30 套参考答案与详细解答
 │   └── 全国大学生数学竞赛初赛近十年答案汇编.pdf # 答案册 PDF
+├── scripts/check.ps1         # 试题/答案结构检查
+├── .github/workflows/build.yml # GitHub Actions 自动编译
 └── README.md
 ```
 
 ## 编译
 
-需要 TeX Live 2024（或更新版本），使用 XeLaTeX 编译两次。
+需要 TeX Live 2024（或更新版本），使用 XeLaTeX 编译两次。文档使用 `ctex` 的自动字体选择：Windows 使用系统中文字体，Linux/CI 使用 TeX Live 自带字体，无需额外配置。
 
 试题册：
 
@@ -71,9 +80,21 @@ latexmk -xelatex -jobname="全国大学生数学竞赛初赛近十年试题汇�
 cd answers && latexmk -xelatex -jobname="全国大学生数学竞赛初赛近十年答案汇编" main.tex
 ```
 
+## 结构检查
+
+```powershell
+pwsh -NoProfile -File scripts/check.ps1
+```
+
+脚本会检查 30 套试题的题号、分值、答案条目和解答环境是否一一对应。
+
 ## 自动构建
 
 仓库配置了 GitHub Actions：向 `main` 推送或提交 PR 时，会自动使用 XeLaTeX 编译试题册和答案册。编译完成后，可在对应运行记录的 Artifacts 中下载 `cmc-latex-pdfs`。
+
+## 勘误
+
+如发现题目、解答或排版问题，欢迎提交 Issue 或 PR。请注明年份、类别、题号和依据，便于核对。
 
 ## 资料来源
 

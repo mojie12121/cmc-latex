@@ -8,9 +8,16 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.synctex(busy)
 *.xdv
+
+# 本地默认输出
+main.pdf
+answers/main.pdf
 
 # 临时文件
 *.bak
 *.tmp
 ~*
+.DS_Store
+Thumbs.db
